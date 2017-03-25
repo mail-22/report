@@ -93,6 +93,7 @@ inherited SelDepForm: TSelDepForm
     Top = 396
   end
   object cxprprtstr1: TcxPropertiesStore
+    Active = False
     Components = <
       item
         Component = Owner

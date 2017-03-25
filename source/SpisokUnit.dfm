@@ -1,6 +1,6 @@
 inherited SpisokForm: TSpisokForm
-  Left = -391
-  Top = 155
+  Left = -273
+  Top = 325
   Width = 1280
   Height = 768
   HorzScrollBar.Visible = False
@@ -467,6 +467,7 @@ inherited SpisokForm: TSpisokForm
     Top = 495
   end
   object cxprprtstr1: TcxPropertiesStore
+    Active = False
     Components = <
       item
         Component = pnlH

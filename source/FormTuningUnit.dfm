@@ -11,14 +11,14 @@ inherited FormTuning: TFormTuning
   object actmmb1: TActionMainMenuBar [0]
     Left = 0
     Top = 0
-    Width = 632
+    Width = 624
     Height = 51
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -106,6 +106,7 @@ inherited FormTuning: TFormTuning
     Top = 118
   end
   object cxprprtstr1: TcxPropertiesStore
+    Active = False
     Components = <
       item
         Component = Owner

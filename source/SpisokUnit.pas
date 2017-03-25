@@ -108,6 +108,8 @@ type
   private
     { Private declarations }
   public
+    procedure cxLocalizerMethod(Sender: TObject);
+    procedure cxPropertiesStoreMethod(Sender: TObject);
     procedure MakeFiltr;
     { Public declarations }
   end;
@@ -128,40 +130,8 @@ procedure TSpisokForm.FormCreate(Sender: TObject);
 var sMyDocAppPath :string;
 begin
   inherited;
-
-  sMyDocAppPath := ExtractFilePath(Application.ExeName)+'\';
-  cxLocalizer1.FileName:='DevExRus100Proc.ini';
- cxLocalizer1.Active:=true;
- cxLocalizer1.Locale:=1049;
-
-if FileExists(sMyDocAppPath + 'DevExRus100Proc.ini') then
-  begin
-      cxLocalizer1.Active   := false;
-      cxLocalizer1.FileName := sMyDocAppPath + 'DevExRus100Proc.ini';
-      cxLocalizer1.Active   := True;
-
-      if FileExists(sMyDocAppPath + 'lang.ini') then
-        with TIniFile.Create(sMyDocAppPath + 'lang.ini') do
-        begin
-          cxLocalizer1.Locale := ReadInteger('LANG', 'Locale', GetThreadLocale);//если пользователь ещё не указал, то берём локаль винды
-          free;
-        end//with
-      else
-        cxLocalizer1.Locale := GetThreadLocale;//если пользователь ещё не указал, то берём локаль винды
-  end;//if FileExists(sMyDocAppPath + 'Lang\lang.ini') then
-
-  if cxLocalizer1.Locale = 0 then
-    cxLocalizer1.Locale := GetThreadLocale;
-
-    cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +
-    Self.Name + '.cxprprtstr1.ini';
-    if not FileExists(cxprprtstr1.StorageName) then begin
-       cxprprtstr1.StoreTo(True);
-    end
-    else begin
-      cxprprtstr1.RestoreFrom;
-    end;
-
+  cxLocalizerMethod(Sender);
+  cxPropertiesStoreMethod(Sender);
 end;
 
 procedure TSpisokForm.img1Click(Sender: TObject);
@@ -224,6 +194,47 @@ begin
   end;
 
   MakeFiltr;
+end;
+
+procedure TSpisokForm.cxLocalizerMethod(Sender: TObject);
+var
+  sMyDocAppPath: string;
+begin
+    sMyDocAppPath := ExtractFilePath(Application.ExeName)+'\';
+    cxLocalizer1.FileName:='DevExRus100Proc.ini';
+   cxLocalizer1.Active:=true;
+   cxLocalizer1.Locale:=1049;
+
+  if FileExists(sMyDocAppPath + 'DevExRus100Proc.ini') then
+    begin
+        cxLocalizer1.Active   := false;
+        cxLocalizer1.FileName := sMyDocAppPath + 'DevExRus100Proc.ini';
+        cxLocalizer1.Active   := True;
+
+        if FileExists(sMyDocAppPath + 'lang.ini') then
+          with TIniFile.Create(sMyDocAppPath + 'lang.ini') do
+          begin
+            cxLocalizer1.Locale := ReadInteger('LANG', 'Locale', GetThreadLocale);//если пользователь ещё не указал, то берём локаль винды
+            free;
+          end//with
+        else
+          cxLocalizer1.Locale := GetThreadLocale;//если пользователь ещё не указал, то берём локаль винды
+    end;//if FileExists(sMyDocAppPath + 'Lang\lang.ini') then
+
+    if cxLocalizer1.Locale = 0 then
+      cxLocalizer1.Locale := GetThreadLocale;
+end;
+
+procedure TSpisokForm.cxPropertiesStoreMethod(Sender: TObject);
+begin
+  cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +
+  Self.Name + '.cxprprtstr1.ini';
+  if not FileExists(cxprprtstr1.StorageName) then begin
+     cxprprtstr1.StoreTo(True);
+  end
+  else begin
+    cxprprtstr1.RestoreFrom;
+  end;
 end;
 
 procedure TSpisokForm.dblkcbb1Click(Sender: TObject);

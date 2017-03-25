@@ -92,7 +92,7 @@ inherited SelDepForm: TSelDepForm
     Left = 428
     Top = 396
   end
-  object cxprprtstr1: TcxPropertiesStore
+  object cxprprtstr21: TcxPropertiesStore
     Active = False
     Components = <
       item
@@ -104,7 +104,7 @@ inherited SelDepForm: TSelDepForm
           'Top'
           'Width')
       end>
-    StorageName = 'cxprprtstr1'
+    StorageName = 'cxprprtstr21'
     Left = 550
     Top = 40
   end

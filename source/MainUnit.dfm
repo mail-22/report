@@ -2156,10 +2156,11 @@ inherited FormMain: TFormMain
     Left = 16
     Top = 120
   end
-  object cxprprtstr1: TcxPropertiesStore
+  object cxprprtstr2: TcxPropertiesStore
+    Active = False
     Components = <>
-    StorageName = 'cxprprtstr1'
-    Left = 330
-    Top = 30
+    StorageName = 'cxprprtstr3'
+    Left = 458
+    Top = 206
   end
 end

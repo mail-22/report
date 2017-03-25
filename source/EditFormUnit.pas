@@ -8,14 +8,15 @@ uses
   JvFormPlacement, cxGraphics, cxControls, cxLookAndFeels,
   cxLookAndFeelPainters, cxStyles, cxEdit, cxVGrid, cxDBVGrid, DB,
   cxInplaceContainer, cxPropertiesStore, StdCtrls, ExtCtrls,
-  cxDBLookupComboBox, cxMRUEdit, cxCalendar;
+  cxDBLookupComboBox, cxMRUEdit, cxCalendar, dxSkinsCore,
+  dxSkinOffice2007Blue;
 
 type
   TEditForm = class(TBaseForm)
     pnl1: TPanel;
     btnOK: TButton;
     btnCancel: TButton;
-    cxprprtstr1: TcxPropertiesStore;
+    cxprprtstr31: TcxPropertiesStore;
     ds1: TDataSource;
     cxdbvrtclgrd1: TcxDBVerticalGrid;
     Memo1: TMemo;

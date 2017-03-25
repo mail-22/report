@@ -20,7 +20,7 @@ type
     dbgrd1: TDBGrid;
     pnl1: TPanel;
     mmo1: TMemo;
-    cxprprtstr1: TcxPropertiesStore;
+    cxprprtstr21: TcxPropertiesStore;
     pnl2: TPanel;
     mmo2: TMemo;
     openDialog: TOpenDialog;

@@ -35,8 +35,8 @@ type
     jvstctxt4: TJvStaticText;
     jvstctxt5: TJvStaticText;
     actAbout: TAction;
-    cxprprtstr1: TcxPropertiesStore;
     acttb1: TActionToolBar;
+    cxprprtstr2: TcxPropertiesStore;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
@@ -52,6 +52,7 @@ type
     procedure jvplctnhtky1HotKey(Sender: TObject);
     procedure jvstctxt3Click(Sender: TObject);
   private
+    procedure cxPropertiesStoreMethod(Sender: TObject);
 
   public
     procedure FormTuning_Show;
@@ -121,6 +122,7 @@ begin
   end;
 }
 
+  (*TODO: extracted code
   cxprprtstr1.StorageName := ExtractFilePath(Application.ExeName) + Self.Name +'.'+ 'cxprprtstr1.ini';
   if not FileExists(cxprprtstr1.StorageName) then begin
     cxprprtstr1.StoreTo(True);
@@ -128,6 +130,8 @@ begin
   else begin
     cxprprtstr1.RestoreFrom;
   end;
+  *)
+  cxPropertiesStoreMethod(Sender);
 end;
 
 procedure TFormMain.FormShow(Sender: TObject);
@@ -219,10 +223,22 @@ begin
   GridForm_Show;
 end;
 
+procedure TFormMain.cxPropertiesStoreMethod(Sender: TObject);
+begin
+  cxprprtstr2.active := false;
+  cxprprtstr2.StorageName := ExtractFilePath(Application.ExeName) + Self.Name +'.'+ 'cxprprtstr2.ini';
+  if not FileExists(cxprprtstr2.StorageName) then begin
+    cxprprtstr2.StoreTo(True);
+  end
+  else begin
+    cxprprtstr2.RestoreFrom;
+  end;
+end;
+
 procedure TFormMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
-  cxprprtstr1.StoreTo(True);
+  cxprprtstr2.StoreTo(True); // cxprprtstr1.StorageName
 end;
 
 

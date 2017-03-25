@@ -128,6 +128,8 @@ type
     { Public declarations }
   end;
 
+procedure GridForm_Show;
+
 var
   GridForm: TGridForm;
 
@@ -227,8 +229,6 @@ end;
 
 ///////////////////////////////////////////////////////////////////////////////
 procedure TGridForm.AddMethod;
- var
-  tmpBool : Boolean;
 begin
   inherited;
   try
@@ -319,5 +319,13 @@ begin
   end;
 end;
 ///////////////////////////////////////////////////////////////////////////////
+
+//-
+procedure GridForm_Show;
+begin
+  if (GridForm = nil) then
+     Application.CreateForm(TGridForm, GridForm);
+  GridForm.ShowModal;
+end;
 
 end.

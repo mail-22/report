@@ -19,7 +19,15 @@ DBCtrls, cxVGrid, cxDBVGrid,
   cxSplitter, cxTextEdit,JvExStdCtrls, JvEdit, JvDBSearchEdit, Mask, JvExMask,
   JvToolEdit, JvMaskEdit, JvDBFindEdit, IniFiles, cxDBNavigator,
   cxPropertiesStore, DateUtils, Uni, Grids, DBGrids , SelDepUnit,
-  JvExExtCtrls, JvSplitter, JvNetscapeSplitter;
+  JvExExtCtrls, JvSplitter, JvNetscapeSplitter, dxSkinsCore, dxSkinBlack,
+  dxSkinBlue, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide,
+  dxSkinFoggy, dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMoneyTwins,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+  dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven,
+  dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
+  dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
+  dxSkinXmas2008Blue, dxSkinscxPCPainter;
 
 type
   TSpisokForm = class(TBaseForm)
@@ -87,7 +95,6 @@ type
     procedure FormCreate(Sender: TObject);
     procedure img1Click(Sender: TObject);
     procedure dbrchvwdtoleClick(Sender: TObject);
-    procedure act1CopyExecute(Sender: TObject);
     procedure actExportExlExecute(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure chkAllClick(Sender: TObject);
@@ -171,21 +178,6 @@ begin
     if   (FormRTF = nil)  then
        Application.CreateForm(TFormRTF, FormRTF);
     FormRTF.Show;
-end;
-
-procedure TSpisokForm.act1CopyExecute(Sender: TObject);
-var
-    i:Integer;
-    tmpRecordIndex:Integer;
-    sFnn, sFn, sF :String;
-    View : TcxGridDBTableView;
-    //vValue : TcxFieltrCriteriaItem;
-
-    DataSet:TDataSet;
-    DataSet2:TDataSet;
-begin
-  //dm.tblBilding_Add;
-
 end;
 
 procedure TSpisokForm.FormClose(Sender: TObject; var Action: TCloseAction);

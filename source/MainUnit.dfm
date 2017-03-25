@@ -1,6 +1,6 @@
 inherited FormMain: TFormMain
-  Left = 431
-  Top = 336
+  Left = 148
+  Top = 287
   Width = 645
   Height = 498
   Caption = #1052#1086#1085#1080#1090#1086#1088#1080#1085#1075
@@ -11,7 +11,7 @@ inherited FormMain: TFormMain
   TextHeight = 13
   object img1: TJvImage [0]
     Left = 0
-    Top = 169
+    Top = 192
     Width = 629
     Height = 158
     Align = alTop
@@ -1622,7 +1622,7 @@ inherited FormMain: TFormMain
   end
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
-    Top = 0
+    Top = 23
     Width = 629
     Height = 24
     UseSystemFont = False
@@ -1640,7 +1640,7 @@ inherited FormMain: TFormMain
   end
   object jvstctxt1: TJvStaticText [2]
     Left = 0
-    Top = 24
+    Top = 47
     Width = 629
     Height = 25
     Align = alTop
@@ -1664,7 +1664,7 @@ inherited FormMain: TFormMain
   end
   object jvstctxt2: TJvStaticText [3]
     Left = 0
-    Top = 49
+    Top = 72
     Width = 629
     Height = 96
     Align = alTop
@@ -1690,19 +1690,15 @@ inherited FormMain: TFormMain
     TextMargins.X = 0
     TextMargins.Y = 0
     WordWrap = True
-    OnClick = jvstctxt2Click
   end
   object jvstctxt3: TJvStaticText [4]
     Left = 0
-    Top = 349
+    Top = 372
     Width = 629
-    Height = 80
+    Height = 48
     Align = alTop
     Alignment = taCenter
-    Caption = 
-      #1040#1074#1090#1086#1084#1072#1090#1080#1079#1080#1088#1086#1074#1072#1085#1085#1086#1077' '#1088#1072#1073#1086#1095#1077#1077' '#1084#1077#1089#1090#1086' '#13#10#1089#1086#1090#1088#1091#1076#1085#1080#1082#1072' '#1089#1091#1076#1077#1073#1085#1086'-'#1101#1082#1089#1087#1077#1088#1090#1085#1086#1075 +
-      #1086' '#1091#1095#1088#1077#1078#1076#1077#1085#1080#1103' '#13#10#1092#1077#1076#1077#1088#1072#1083#1100#1085#1086#1081' '#1087#1088#1086#1090#1080#1074#1086#1087#1086#1078#1072#1088#1085#1086#1081' '#1089#1083#1091#1078#1073#1099'  '#1052#1063#1057' '#1056#1086#1089#1089#1080#1080'  '#13 +
-      #10#13#10'_'
+    Caption = #1091#1095#1077#1090' '#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089#1090#1080'   '#13#10#13#10'_'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
     Font.Height = -19
@@ -1719,10 +1715,11 @@ inherited FormMain: TFormMain
     TextMargins.X = 0
     TextMargins.Y = 0
     WordWrap = True
+    OnClick = jvstctxt3Click
   end
   object jvstctxt4: TJvStaticText [5]
     Left = 0
-    Top = 145
+    Top = 168
     Width = 629
     Height = 24
     Align = alTop
@@ -1746,7 +1743,7 @@ inherited FormMain: TFormMain
   end
   object jvstctxt5: TJvStaticText [6]
     Left = 0
-    Top = 327
+    Top = 350
     Width = 629
     Height = 22
     Align = alTop
@@ -1767,6 +1764,18 @@ inherited FormMain: TFormMain
     TextMargins.X = 0
     TextMargins.Y = 0
     WordWrap = True
+  end
+  object acttb1: TActionToolBar [7]
+    Left = 0
+    Top = 0
+    Width = 629
+    Height = 23
+    ActionManager = actmgr1
+    Caption = 'acttb1'
+    ColorMap.HighlightColor = clWhite
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = clWhite
+    Spacing = 0
   end
   object il1: TImageList
     Left = 444
@@ -2045,7 +2054,7 @@ inherited FormMain: TFormMain
   end
   object actlst1: TActionList
     Left = 512
-    Top = 32
+    Top = 96
     object hlpcntnts1: THelpContents
       Category = 'Help'
       Caption = '&Contents'
@@ -2078,15 +2087,19 @@ inherited FormMain: TFormMain
       item
         Items = <
           item
-            Action = actListOfBilding
+            Action = actHELP2
           end
           item
             Action = actTuning2
-          end
-          item
-            Action = actHELP2
           end>
         ActionBar = actmmb1
+      end
+      item
+        Items = <
+          item
+            Action = actListOfBilding
+          end>
+        ActionBar = acttb1
       end>
     Left = 544
     Top = 24
@@ -2127,10 +2140,11 @@ inherited FormMain: TFormMain
     end
     object actTuning2: TAction
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
-      OnExecute = actTuning2Execute
     end
     object actListOfBilding: TAction
-      Caption = #1056#1072#1073#1086#1090#1072' '#1089#1086' '#1089#1087#1080#1089#1082#1086#1084' '#1079#1076#1072#1085#1080#1081' '#1087#1086#1076#1083#1077#1078#1072#1097#1080#1093' '#1084#1086#1085#1080#1090#1086#1088#1080#1085#1075#1091
+      Caption = #1044#1086#1075#1086#1074#1086#1088#1072
+      Hint = #1091#1095#1077#1090' '#1076#1086#1075#1086#1074#1086#1088#1085#1099#1093' '#1088#1072#1073#1086#1090
+      OnExecute = actListOfBildingExecute
     end
     object actAbout: TAction
       Caption = 'actAbout'

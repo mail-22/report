@@ -1,0 +1,17 @@
+#define AVI_4	4
+#define AVI_3	3
+#define AVI_2	2
+#define AVI_1	1
+#define AVI	AVI
+
+AVI_1 AVI "time.avi"
+
+
+AVI_2 AVI "go_found.avi"
+
+
+AVI_3 AVI "wait.avi"
+
+
+AVI_4 AVI "warning.avi"
+

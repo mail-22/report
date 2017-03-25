@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = 133
-  Top = 103
+  Left = -139
+  Top = 232
   Width = 1280
   Height = 783
   Caption = 'GridForm'

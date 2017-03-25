@@ -36,12 +36,12 @@ type
     jvstctxt5: TJvStaticText;
     actAbout: TAction;
     cxprprtstr1: TcxPropertiesStore;
+    acttb1: TActionToolBar;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
     procedure actHELP2Execute(Sender: TObject);
-    procedure actTuning2Execute(Sender: TObject);
-    procedure btn1Click(Sender: TObject);
+    procedure actListOfBildingExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -50,7 +50,7 @@ type
     procedure hlpnhlp1Execute(Sender: TObject);
     procedure hlptpcsrch1Execute(Sender: TObject);
     procedure jvplctnhtky1HotKey(Sender: TObject);
-    procedure jvstctxt2Click(Sender: TObject);
+    procedure jvstctxt3Click(Sender: TObject);
   private
 
   public
@@ -69,7 +69,7 @@ implementation
 
 uses
     FormTuningUnit,  CommonUnit,
-   ABOUT, utility, WordUnit,  AddBildUnit;
+   ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit;
 
 {$R *.dfm}
 
@@ -103,20 +103,6 @@ procedure TFormMain.actHELP2Execute(Sender: TObject);
 begin
   inherited;
   Help2;
-end;
-
-
-
-procedure TFormMain.actTuning2Execute(Sender: TObject);
-begin
-  inherited;
-  FormTuning_Show;
-end;
-
-procedure TFormMain.btn1Click(Sender: TObject);
-begin
-  inherited;
-  FormTuning_Show;
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
@@ -227,6 +213,12 @@ begin
   RunFile(strTmp, '');
 end;
 
+procedure TFormMain.actListOfBildingExecute(Sender: TObject);
+begin
+  inherited;
+  GridForm_Show;
+end;
+
 procedure TFormMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
@@ -234,10 +226,11 @@ begin
 end;
 
 
-procedure TFormMain.jvstctxt2Click(Sender: TObject);
+procedure TFormMain.jvstctxt3Click(Sender: TObject);
 begin
   inherited;
 end;
+
 ///////////////////////////////////////////////////////////////////////////////
 
 end.

@@ -35,10 +35,10 @@ uses
 begin
   Application.Initialize;
 
+  Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TCommon, Common);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TGridForm, GridForm);
-  Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TBaseForm, BaseForm);
   Application.CreateForm(TForm2, Form2);
   Application.CreateForm(TBaseForm2, BaseForm2);

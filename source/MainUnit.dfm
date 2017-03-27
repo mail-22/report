@@ -1,6 +1,6 @@
 inherited FormMain: TFormMain
-  Left = 148
-  Top = 287
+  Left = 469
+  Top = 346
   Width = 645
   Height = 498
   Caption = #1052#1086#1085#1080#1090#1086#1088#1080#1085#1075
@@ -1777,9 +1777,17 @@ inherited FormMain: TFormMain
     ColorMap.UnusedColor = clWhite
     Spacing = 0
   end
+  inherited jvfrmstrg1: TJvFormStorage
+    Left = 170
+    Top = 226
+  end
+  inherited jvpnflstrg1: TJvAppIniFileStorage
+    Left = 108
+    Top = 212
+  end
   object il1: TImageList
-    Left = 444
-    Top = 30
+    Left = 516
+    Top = 222
     Bitmap = {
       494C010101000500040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
@@ -2053,8 +2061,8 @@ inherited FormMain: TFormMain
       000000000000}
   end
   object actlst1: TActionList
-    Left = 512
-    Top = 96
+    Left = 440
+    Top = 216
     object hlpcntnts1: THelpContents
       Category = 'Help'
       Caption = '&Contents'
@@ -2098,11 +2106,14 @@ inherited FormMain: TFormMain
         Items = <
           item
             Action = actListOfBilding
+          end
+          item
+            Action = actNir
           end>
         ActionBar = acttb1
       end>
-    Left = 544
-    Top = 24
+    Left = 312
+    Top = 56
     StyleName = 'XP Style'
     object hlpcntnts3: THelpContents
       Category = 'Help'
@@ -2149,18 +2160,23 @@ inherited FormMain: TFormMain
     object actAbout: TAction
       Caption = 'actAbout'
     end
+    object actNir: TAction
+      Caption = #1053#1048#1056
+      Hint = #1091#1095#1077#1090' '#1088#1072#1073#1086#1090' '#1087#1086' '#1053#1048#1056
+      OnExecute = actNirExecute
+    end
   end
   object jvplctnhtky1: TJvApplicationHotKey
     HotKey = 0
     OnHotKey = jvplctnhtky1HotKey
-    Left = 16
-    Top = 120
+    Left = 48
+    Top = 224
   end
   object cxprprtstr2: TcxPropertiesStore
     Active = False
     Components = <>
     StorageName = 'cxprprtstr3'
-    Left = 458
-    Top = 206
+    Left = 450
+    Top = 278
   end
 end

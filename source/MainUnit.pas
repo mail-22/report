@@ -37,11 +37,13 @@ type
     actAbout: TAction;
     acttb1: TActionToolBar;
     cxprprtstr2: TcxPropertiesStore;
+    actNir: TAction;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
     procedure actHELP2Execute(Sender: TObject);
     procedure actListOfBildingExecute(Sender: TObject);
+    procedure actNirExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -221,6 +223,12 @@ procedure TFormMain.actListOfBildingExecute(Sender: TObject);
 begin
   inherited;
   GridForm_Show;
+end;
+
+procedure TFormMain.actNirExecute(Sender: TObject);
+begin
+  inherited;
+  ;
 end;
 
 procedure TFormMain.cxPropertiesStoreMethod(Sender: TObject);

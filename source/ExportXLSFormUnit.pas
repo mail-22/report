@@ -541,7 +541,7 @@ begin
 // Отключаем реакцию Excel на события, чтобы ускорить вывод информации
     ExcelApp.Application.EnableEvents := false;
  // Делаем Excel видимым
-  ExcelApp.Visible := false;
+  ExcelApp.Visible := true;
 
  //  Создаем Книгу (Workbook)
  //  Если заполняем шаблон, то
@@ -591,9 +591,11 @@ begin
             for iField := 0 to DataSetMaster.FieldCount - 1 do    //!!!
             begin
                 s1 := '';
-                //s1 := DataSetMaster.Fields[iField].DisplayText;
-                s1 := DataSetMaster.Fields[iField].FieldName; // test
-                Sheet.Cells[Row, Col] := s1; Col := Col + 1;
+                s1 := DataSetMaster.Fields[iField].DisplayText;
+                //s1 := DataSetMaster.Fields[iField].FieldName; // test
+                s1 := DataSetMaster.Fields[iField].DisplayLabel;
+                Sheet.Cells[Row, Col] := DataSetMaster.Fields[iField].DisplayLabel;;
+                Col := Col + 1;
             end;
             Row := Row + 1; Col := 1;
 

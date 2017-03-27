@@ -1,6 +1,6 @@
 inherited EditGridJOleForm: TEditGridJOleForm
-  Left = 104
-  Top = 135
+  Left = 385
+  Top = 267
   Width = 828
   Height = 640
   Caption = 'EditGridJOleForm'
@@ -93,15 +93,15 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object cxSplitter1: TcxSplitter [2]
     Left = 0
-    Top = 48
+    Top = 23
     Width = 8
-    Height = 482
+    Height = 507
   end
   object pnlL: TPanel [3]
     Left = 8
-    Top = 48
+    Top = 23
     Width = 804
-    Height = 482
+    Height = 507
     Align = alClient
     Caption = 'pnlL'
     TabOrder = 3
@@ -109,7 +109,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
       Left = 1
       Top = 88
       Width = 802
-      Height = 393
+      Height = 418
       Align = alClient
       TabOrder = 0
       object cxgrdbtblvwGrid1DBTableView1: TcxGridDBTableView
@@ -204,7 +204,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     Left = 0
     Top = 0
     Width = 812
-    Height = 48
+    Height = 23
     ActionManager = actmgr1
     Caption = 'acttb2'
     ColorMap.HighlightColor = clWhite

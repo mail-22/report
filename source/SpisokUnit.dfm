@@ -1,6 +1,6 @@
 inherited SpisokForm: TSpisokForm
-  Left = -273
-  Top = 325
+  Left = 301
+  Top = 171
   Width = 1280
   Height = 768
   HorzScrollBar.Visible = False
@@ -630,8 +630,8 @@ inherited SpisokForm: TSpisokForm
     Top = 514
   end
   object actlst1: TActionList
-    Left = 730
-    Top = 386
+    Left = 682
+    Top = 410
     object actExportExl: TAction
       Caption = #1069#1082#1089#1087#1086#1088#1090#1080#1088#1086#1074#1072#1090#1100'  '#1074' '#1069#1082#1089#1077#1083#1100' !'
       OnExecute = actExportExlExecute

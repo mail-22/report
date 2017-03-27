@@ -115,7 +115,9 @@ const
   CommaSpace=', ';
   CRLF=#13#10;
   constTmpDir = 'tmp';
-  constBDname = 'bd';  // имя папки базы данных
+// global const
+
+  constBDname = 'db';  // имя папки базы данных
   constExportDir = 'export';  // имя папки экспорта файлов
 
 implementation
@@ -356,13 +358,17 @@ var
 strTempFile : array[0..MAX_PATH-1] of char;
 nTempNumber : integer;
 bFileExist : Boolean ;
+bResult : Boolean;
+strTmp: string ;
 
  guid:tguid;
 begin
   // TODO -cMM: TEditGridJOleForm.MakeUniqName default body inserted
 
-  nTempNumber := Windows.GetTempFileName(PChar(BDDirPathName), '_prefix_', 0, strTempFile);
-  FileNamePathUniq := strTempFile ;
+//begin
+//  nTempNumber := Windows.GetTempFileName(PChar(BDDirPathName), '_prefix_', 0, strTempFile);
+//  FileNamePathUniq := strTempFile ;
+//end;
 
   Createguid(guid);
   FileNamePathUniq:= BDDirPathName + GUIDToString(guid);
@@ -375,7 +381,18 @@ begin
   FileName  := SysUtils.ChangeFileExt(FileName,'');
   ext  := ExtractFileExtOnly(FileNamePathSource);
 
-  CopyFile(PChar(FileNamePathSource), PChar(FileNamePathUniq), bFileExist);
+  bResult:=CopyFile(PChar(FileNamePathSource), PChar(FileNamePathUniq), bFileExist);
+  if bResult then
+  begin
+     ;// ok!
+  end
+  else
+  begin
+    { TODO -oSVS : svs err }
+    //strTmp := SysErrorMessage(GetLastError);
+    MessageDlg(FileNamePathSource +' '+ FileNamePathUniq +' '
+                      + SysErrorMessage(GetLastError), mtWarning, [mbOK], 0);
+  end;
 
   DataSet.Append;  //!!!
   DataSet.RecNo;   DataSet.RecordCount; //

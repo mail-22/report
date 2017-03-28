@@ -86,6 +86,7 @@ type
     IntegerField7: TIntegerField;
     BooleanField3: TBooleanField;
     SmallintField1: TSmallintField;
+    tblJpgtype: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);

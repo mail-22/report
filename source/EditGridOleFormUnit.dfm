@@ -37,7 +37,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
       object jvdbstslbl1: TJvDBStatusLabel
         Left = 0
         Top = 3
-        Width = 24
+        Width = 18
         Height = 13
         DataSource = DM.dsJpg
         Style = lsRecordNo
@@ -155,6 +155,10 @@ inherited EditGridJOleForm: TEditGridJOleForm
         object cxgrdbclmnGrid1DBTableView1UniqueName: TcxGridDBColumn
           DataBinding.FieldName = 'UniqueName'
           Width = 88
+        end
+        object cxgrdbclmn_Type_MRU: TcxGridDBColumn
+          DataBinding.FieldName = 'type'
+          PropertiesClassName = 'TcxMRUEditProperties'
         end
       end
       object cxgrdlvlGrid1Level1: TcxGridLevel

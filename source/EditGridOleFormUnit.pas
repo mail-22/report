@@ -22,10 +22,22 @@ uses
   dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
   dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinXmas2008Blue, dxSkinscxPCPainter
+  dxSkinXmas2008Blue, dxSkinscxPCPainter, cxMRUEdit
   ;
 
-type
+
+ type
+   tTypeOfDoc = (Basic=2, Invoice, Act, Exec);
+
+  tDoc = record
+    strTypeOfDoc :string;
+    TypeOfDoc :tTypeOfDoc;
+  end;
+
+  aDoc = array of tDoc;
+  actTypeOfDoc = array[tTypeOfDoc] of tDoc;
+
+
   TEditGridJOleForm = class(TBaseForm)
     pnl_Navigator1: TPanel;
     cxdbnvgtr1: TcxDBNavigator;
@@ -66,6 +78,7 @@ type
     acttb1: TActionToolBar;
     acttb2: TActionToolBar;
     xpclrmp1: TXPColorMap;
+    cxgrdbclmn_Type_MRU: TcxGridDBColumn;
     procedure acAddContractExecute(Sender: TObject);
     procedure actAddActExecute(Sender: TObject);
     procedure actAddBasisExecute(Sender: TObject);
@@ -109,7 +122,10 @@ var
   UniqueName :string;  //имя файла во внутренней файловой системы
 
   DataSet :TDataSet;
-  
+
+  MRUEdit_rubricator :string;
+  vDoc :aDoc;
+  cDoc :actTypeOfDoc;
 const
   Qu='"';
   CommaSpace=', ';
@@ -132,7 +148,7 @@ begin
   if (EditGridJOleForm = nil) then
     Application.CreateForm(TEditGridJOleForm, EditGridJOleForm);
   EditGridJOleForm.ShowModal;
-  
+
   EditGridJOleForm.Close;
   FreeAndNil(EditGridJOleForm);
   //AddBildForm.WindowState := wsMaximized;
@@ -303,10 +319,35 @@ begin
 end;
 
 procedure TEditGridJOleForm.Init();
+var i:integer;
 begin
       BDDirPathName := ExtractFileDir(Application.ExeName) +'\'+ constBDname  +'\';
       ExportPath := ExtractFileDir(Application.ExeName) +'\'+ constExportDir  +'\';
       DataSet :=  DM.tblJpg ;
+
+ //MRU
+  MRUEdit_rubricator :=ExtractFilePath(Application.ExeName) + Self.Name +'.'+ 'MRUEdit.rubricator_F.txt';
+  MRUEdit_rubricator :=ExtractFilePath(Application.ExeName)                 + 'MRUEdit.rubricator_F.txt';
+   //
+  if FileExists(MRUEdit_rubricator) then  begin   // проверить на наличие свойства MRU у поля !!!
+
+    TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.LoadFromFile(MRUEdit_rubricator);
+    TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.Text;//
+  end   // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
+  else
+  begin
+  end;
+
+  //    tTypeOfDoc = (Basic=2, Invoice, Act, Exec);
+
+  i:= High(vDoc);
+  i:= Length(vDoc);
+  SetLength(vDoc, Length(vDoc) +1 );
+  vDoc[High(vDoc)].TypeOfDoc := Basic;
+
+  cDoc[Basic].TypeOfDoc := Basic;
+  cDoc[Basic].strTypeOfDoc := 'Основание для договора';
+
 end;
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -21,7 +21,7 @@ object DM: TDM
   end
   object UniConnection1: TUniConnection
     ProviderName = 'Access'
-    Database = 'C:\Dropbox\Share5\Work\Report\Report_d7\BIN\r1.mdb'
+    Database = 'C:\github\report\report\bin\r1.mdb'
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
@@ -61,7 +61,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from depart;')
-    Active = True
     Left = 402
     Top = 64
     object intgrfld1: TIntegerField
@@ -85,11 +84,13 @@ object DM: TDM
   object tblJpg: TUniQuery
     SQLInsert.Strings = (
       'INSERT INTO jpg'
-      '  (idR1, jpg, ole, text1, filename, filepath, ext, UniqueName)'
+      
+        '  (idR1, jpg, ole, text1, filename, filepath, ext, UniqueName, t' +
+        'ype)'
       'VALUES'
       
         '  (:idR1, :jpg, :ole, :text1, :filename, :filepath, :ext, :Uniqu' +
-        'eName)')
+        'eName, :type)')
     SQLDelete.Strings = (
       'DELETE FROM jpg'
       'WHERE'
@@ -100,7 +101,7 @@ object DM: TDM
       
         '  idR1 = :idR1, jpg = :jpg, ole = :ole, text1 = :text1, filename' +
         ' = :filename, filepath = :filepath, ext = :ext, UniqueName = :Un' +
-        'iqueName'
+        'iqueName, type = :type'
       'WHERE'
       '  id = :Old_id')
     SQLLock.Strings = (
@@ -112,7 +113,7 @@ object DM: TDM
     SQLRefresh.Strings = (
       
         'SELECT idR1, jpg, ole, text1, filename, filepath, ext, UniqueNam' +
-        'e FROM jpg'
+        'e, type FROM jpg'
       'WHERE'
       '  id = :P_1_id')
     Connection = UniConnection1
@@ -168,6 +169,11 @@ object DM: TDM
     end
     object strngfldJpgUniqueName: TStringField
       FieldName = 'UniqueName'
+      Size = 255
+    end
+    object tblJpgtype: TStringField
+      DisplayLabel = #1074#1080#1076' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
+      FieldName = 'type'
       Size = 255
     end
   end
@@ -299,7 +305,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
-    Active = True
     Left = 224
     Top = 40
     object tblReport2id: TIntegerField
@@ -463,7 +468,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
-    Active = True
     Left = 608
     Top = 96
     object IntegerField1: TIntegerField

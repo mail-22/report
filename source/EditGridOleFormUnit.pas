@@ -270,6 +270,10 @@ begin
   if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
        dm.tblReport2.Edit;
   dm.tblReport2act_acceptance_file.AsInteger := dm.tblReport2act_acceptance_file.AsInteger  +1;
+
+  if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
+       dm.tblJpg.Edit;
+  dm.tblTypeOfDoc.AsString := cDoc[Act].strTypeOfDoc;
 end;
 
 procedure TEditGridJOleForm.actAddBasisExecute(Sender: TObject);
@@ -280,6 +284,11 @@ begin
   if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
        dm.tblReport2.Edit;
   dm.tblReport2basis_ffile.AsInteger := dm.tblReport2basis_ffile.AsInteger  +1;
+
+  if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
+       dm.tblJpg.Edit;
+  dm.tblTypeOfDoc.AsString := cDoc[Basic].strTypeOfDoc;
+
 end;
 
 procedure TEditGridJOleForm.actAddContrExExecute(Sender: TObject);
@@ -290,6 +299,10 @@ begin
   if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
        dm.tblReport2.Edit;
   dm.tblReport2contract_execution_file.AsInteger := dm.tblReport2contract_execution_file.AsInteger  +1;
+
+  if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
+       dm.tblJpg.Edit;
+    dm.tblTypeOfDoc.AsString := cDoc[Exec].strTypeOfDoc;
 end;
 
 procedure TEditGridJOleForm.actAddInvoiceExecute(Sender: TObject);
@@ -300,6 +313,10 @@ begin
   if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
        dm.tblReport2.Edit;
   dm.tblReport2invoice_file.AsInteger := dm.tblReport2invoice_file.AsInteger  +1;
+
+  if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
+       dm.tblJpg.Edit;
+      dm.tblTypeOfDoc.AsString := cDoc[Invoice].strTypeOfDoc;
 end;
 
 procedure TEditGridJOleForm.actAddPerfExecute(Sender: TObject);
@@ -310,6 +327,7 @@ begin
   if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
        dm.tblReport2.Edit;
   dm.tblReport2performance_of_work_file.AsInteger := dm.tblReport2performance_of_work_file.AsInteger  +1;
+  
 end;
 
 procedure TEditGridJOleForm.FormCreate(Sender: TObject);
@@ -348,6 +366,14 @@ begin
   cDoc[Basic].TypeOfDoc := Basic;
   cDoc[Basic].strTypeOfDoc := 'Основание для договора';
 
+  cDoc[Invoice].TypeOfDoc := Invoice;
+  cDoc[Invoice].strTypeOfDoc := 'Счет на оплату';
+
+  cDoc[Act].TypeOfDoc := Act;
+  cDoc[Act].strTypeOfDoc := 'Акт сдачи приемки';
+
+  cDoc[Exec].TypeOfDoc := Exec;
+  cDoc[Exec].strTypeOfDoc := 'Отметка о выполнении договора';
 end;
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -25,7 +25,6 @@ object DM: TDM
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
-    Connected = True
     Left = 38
     Top = 72
   end
@@ -122,7 +121,6 @@ object DM: TDM
     MasterSource = dsReport
     MasterFields = 'id'
     DetailFields = 'idR1'
-    Active = True
     AfterInsert = tblJpgAfterInsert
     AfterPost = tblJpgAfterPost
     Left = 294
@@ -171,7 +169,7 @@ object DM: TDM
       FieldName = 'UniqueName'
       Size = 255
     end
-    object tblJpgtype: TStringField
+    object tblTypeOfDoc: TStringField
       DisplayLabel = #1074#1080#1076' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
       FieldName = 'type'
       Size = 255

@@ -17,9 +17,9 @@ inherited EditGridJOleForm: TEditGridJOleForm
     BorderStyle = bsSingle
     TabOrder = 0
     object cxdbnvgtr1: TcxDBNavigator
-      Left = 211
+      Left = 248
       Top = 2
-      Width = 585
+      Width = 555
       Height = 23
       DataSource = DM.dsJpg
       Align = alClient
@@ -28,7 +28,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object pnl3: TPanel
       Left = 187
       Top = 2
-      Width = 24
+      Width = 61
       Height = 23
       Align = alLeft
       AutoSize = True
@@ -37,7 +37,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
       object jvdbstslbl1: TJvDBStatusLabel
         Left = 0
         Top = 3
-        Width = 18
+        Width = 61
         Height = 13
         DataSource = DM.dsJpg
         Style = lsRecordNo
@@ -181,12 +181,11 @@ inherited EditGridJOleForm: TEditGridJOleForm
       Top = 62
       Width = 802
       Height = 26
-      UseSystemFont = False
       ActionManager = actmgr1
       Caption = 'actmmb2'
       ColorMap = xpclrmp1
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clMenuText
       Font.Height = -12
       Font.Name = 'Segoe UI'
       Font.Style = []

@@ -181,11 +181,12 @@ inherited EditGridJOleForm: TEditGridJOleForm
       Top = 62
       Width = 802
       Height = 26
+      UseSystemFont = False
       ActionManager = actmgr1
       Caption = 'actmmb2'
       ColorMap = xpclrmp1
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMenuText
+      Font.Color = clWindowText
       Font.Height = -12
       Font.Name = 'Segoe UI'
       Font.Style = []

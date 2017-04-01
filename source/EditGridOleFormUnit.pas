@@ -10,10 +10,9 @@ uses
   cxGridTableView, cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid,
   StdCtrls, JvExControls, JvLabel, JvDBControls, cxNavigator,
   cxDBNavigator, ExtCtrls, cxSplitter, JvAppStorage, JvAppIniStorage,
-  JvComponentBase, JvFormPlacement, cxContainer, cxImage, cxDBEdit
-  ,
+  JvComponentBase, JvFormPlacement, cxContainer, cxImage, cxDBEdit,
   DMUnit, cxBlobEdit, OleCtnrs, DBOleContainer, DialogsX, Grids, DBGrids,
-  ActnList, ToolWin, ActnMan, ActnCtrls, ActnMenus, XPStyleActnCtrls     , ShellApi,
+  ActnList, ToolWin, ActnMan, ActnCtrls, ActnMenus, XPStyleActnCtrls, ShellApi,
   ActnColorMaps, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel,
   dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinFoggy,
   dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky,
@@ -22,12 +21,10 @@ uses
   dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
   dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinXmas2008Blue, dxSkinscxPCPainter, cxMRUEdit
-  ;
+  dxSkinXmas2008Blue, dxSkinscxPCPainter, cxMRUEdit;
 
-
- type
-   tTypeOfDoc = (Basic=2, Invoice, Act, Exec);
+type
+   tTypeOfDoc = (Basic=1, Contract, Invoice, Performance, Act, Contract_Execution);
 
   tDoc = record
     strTypeOfDoc :string;
@@ -179,7 +176,7 @@ begin
 
   // Разрешено выбрать только .dpr и .pas файлы
   openDialog.Filter :=
-    '  files|*.*|  files|*.*';
+    '  files|*.doc*|  files|*.pdf  files|*.jpg';
 
   // Выбор файлов Паскаля как стартовый тип фильтра
   //openDialog.FilterIndex := 2;
@@ -188,7 +185,10 @@ begin
   if openDialog.Execute
   then begin //ShowMessage('File : '+openDialog.FileName);
   end
-  else begin ShowMessage('Открытие файла остановлено');
+  else
+  begin
+    ShowMessage('Открытие файла остановлено');
+    Exit;
   end;
 
   FileNamePathSource := openDialog.FileName;
@@ -302,7 +302,7 @@ begin
 
   if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
        dm.tblJpg.Edit;
-    dm.tblTypeOfDoc.AsString := cDoc[Exec].strTypeOfDoc;
+    dm.tblTypeOfDoc.AsString := cDoc[Contract_Execution].strTypeOfDoc;
 end;
 
 procedure TEditGridJOleForm.actAddInvoiceExecute(Sender: TObject);
@@ -356,7 +356,7 @@ begin
   begin
   end;
 
-  //    tTypeOfDoc = (Basic=2, Invoice, Act, Exec);
+  // tTypeOfDoc = (Basic=1, Contract, Invoice, Performance, Act, Contract_Execution);
 
   i:= High(vDoc);
   i:= Length(vDoc);
@@ -366,14 +366,20 @@ begin
   cDoc[Basic].TypeOfDoc := Basic;
   cDoc[Basic].strTypeOfDoc := 'Основание для договора';
 
+  cDoc[Contract].TypeOfDoc := Contract;
+  cDoc[Contract].strTypeOfDoc := 'Договор';
+
   cDoc[Invoice].TypeOfDoc := Invoice;
   cDoc[Invoice].strTypeOfDoc := 'Счет на оплату';
 
   cDoc[Act].TypeOfDoc := Act;
   cDoc[Act].strTypeOfDoc := 'Акт сдачи приемки';
 
-  cDoc[Exec].TypeOfDoc := Exec;
-  cDoc[Exec].strTypeOfDoc := 'Отметка о выполнении договора';
+  cDoc[Performance].TypeOfDoc := Performance;
+  cDoc[Performance].strTypeOfDoc := 'Отметка о выполнении работы';
+
+  cDoc[Contract_Execution].TypeOfDoc := Contract_Execution;
+  cDoc[Contract_Execution].strTypeOfDoc := 'Отметка о выполнении договора';
 end;
 
 ///////////////////////////////////////////////////////////////////////////////

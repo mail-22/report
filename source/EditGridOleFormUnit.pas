@@ -24,16 +24,16 @@ uses
   dxSkinXmas2008Blue, dxSkinscxPCPainter, cxMRUEdit;
 
 type
-   tTypeOfDoc = (Basic=1, Contract, Invoice, Performance, Act, Contract_Execution);
+  tTypeOfDoc = (Basic = 1, Contract, Invoice, Performance, Act,
+    Contract_Execution);
 
   tDoc = record
-    strTypeOfDoc :string;
-    TypeOfDoc :tTypeOfDoc;
+    strTypeOfDoc: string;
+    TypeOfDoc: tTypeOfDoc;
   end;
 
   aDoc = array of tDoc;
   actTypeOfDoc = array[tTypeOfDoc] of tDoc;
-
 
   TEditGridJOleForm = class(TBaseForm)
     pnl_Navigator1: TPanel;
@@ -86,52 +86,57 @@ type
     procedure actAddPerfExecute(Sender: TObject);
     procedure actExtractExecute(Sender: TObject);
   private
+    procedure AddAnyDocMethod(Sender: TObject);
     procedure OLE2File(OleContainer: TOleContainer; DataSet: TDataSet;
       FileName, FieldName: string);
     procedure Init;
+    procedure SetTypeOfDoc(DataSet: TDataSet; Field: TField; Doc: tDoc);
     { Private declarations }
   public
     procedure AddMethod;
     procedure ExtractMethod;
+    procedure IncMethod(DataSet:TDataSet; Field :TIntegerField);
+
     procedure MakeUniqName;
     { Public declarations }
   end;
 
 procedure EditGridJOleForm_Show;
-procedure File2OleField(OleContainer: TOleContainer; DataSet , MasterDataSet :TDataSet; FileName, FieldName: string);
+procedure File2OleField(OleContainer: TOleContainer; DataSet, MasterDataSet:
+  TDataSet; FileName, FieldName: string);
 
 var
   EditGridJOleForm: TEditGridJOleForm;
 
-  FileName :string;
-  TempDirName :string;
+  FileName: string;
+  TempDirName: string;
 
-  FileNamePathSource :string;  //путь файла их внешней файловой системы
-  BDDirPathName :string; // путь папки базы данных
+  FileNamePathSource: string; //путь файла их внешней файловой системы
+  BDDirPathName: string; // путь папки базы данных
 
-  ExportPath :string ;  // имя папки экспорта файлов
-  ExportFilePath :string ;  //путь файла для экспорта во внешнею файловую систему
+  ExportPath: string; // имя папки экспорта файлов
+  ExportFilePath: string; //путь файла для экспорта во внешнею файловую систему
 
-  ext :string;
-  FileNameSource :string;  //имя файла из внешней файловой системы
+  ext: string;
+  FileNameSource: string; //имя файла из внешней файловой системы
 
-  FileNamePathUniq :string;  //путь файла во внутренней файловой системы
-  UniqueName :string;  //имя файла во внутренней файловой системы
+  FileNamePathUniq: string; //путь файла во внутренней файловой системы
+  UniqueName: string; //имя файла во внутренней файловой системы
 
-  DataSet :TDataSet;
+  DataSet: TDataSet;
 
-  MRUEdit_rubricator :string;
-  vDoc :aDoc;
-  cDoc :actTypeOfDoc;
+  MRUEdit_rubricator: string;
+  vDoc: aDoc;
+  cDoc: actTypeOfDoc;
 const
-  Qu='"';
-  CommaSpace=', ';
-  CRLF=#13#10;
+  Qu = '"';
+  CommaSpace = ', ';
+  CRLF = #13#10;
   constTmpDir = 'tmp';
-// global const
+  // global const
 
-  constBDname = 'db';  // имя папки базы данных
-  constExportDir = 'export';  // имя папки экспорта файлов
+  constBDname = 'db'; // имя папки базы данных
+  constExportDir = 'export'; // имя папки экспорта файлов
 
 implementation
 
@@ -182,8 +187,8 @@ begin
   //openDialog.FilterIndex := 2;
 
   // Показ диалог открытия файла
-  if openDialog.Execute
-  then begin //ShowMessage('File : '+openDialog.FileName);
+  if openDialog.Execute then
+  begin //ShowMessage('File : '+openDialog.FileName);
   end
   else
   begin
@@ -206,8 +211,8 @@ begin
   MakeUniqName;
 end;
 
-
-procedure File2OleField(OleContainer: TOleContainer; DataSet , MasterDataSet :TDataSet; FileName, FieldName :string);
+procedure File2OleField(OleContainer: TOleContainer; DataSet, MasterDataSet:
+  TDataSet; FileName, FieldName: string);
 var
   //fs: TFileStream;
   //ds: TDataSet;
@@ -231,16 +236,17 @@ begin //ds := DM.BLOB;   //OleContainer := XMLForm.XMLFrame1.DBOleContainer1;
   ms.Position := 0;
   OleContainer.DestroyObject;
 
-  DataSet.Append;  //!!!
+  DataSet.Append; //!!!
 
   DataSet.RecNo;
   DataSet.RecordCount; //
   if not (DataSet.State in [dsInsert, dsEdit]) then
     DataSet.Edit;
   //DataSet.FieldByName('id_Description').AsInteger := DM.tblDescription.FieldByName('id').AsInteger;
-  DataSet.FieldByName('idR1').AsInteger := MasterDataSet.FieldByName('id').AsInteger;  //
+  DataSet.FieldByName('idR1').AsInteger :=
+    MasterDataSet.FieldByName('id').AsInteger; //
   strTmp := SysUtils.ExtractFileName(FileName);
-  DataSet.FieldByName('text1').AsString := strTmp;  //???
+  DataSet.FieldByName('text1').AsString := strTmp; //???
   //  //fs := TFileStream.Create(FileName, fmOpenRead + fmShareDenyNone);
 //if not (DataSet.State in [dsInsert, dsEdit]) then DataSet.Edit;
   bf := DataSet.FieldByName(FieldName) as TBlobField;
@@ -255,80 +261,107 @@ end; //File2OLE
 procedure TEditGridJOleForm.acAddContractExecute(Sender: TObject);
 begin
   inherited;
-  //Договор - Добавить документ!
-  AddMethod;
-  if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
-       dm.tblReport2.Edit;
-  dm.tblReport2contract_file.AsInteger := dm.tblReport2contract_file.AsInteger  +1;
+  AddAnyDocMethod(Sender);
 end;
 
 procedure TEditGridJOleForm.actAddActExecute(Sender: TObject);
 begin
   inherited;
-//Акт сдачи приемки
-  AddMethod;
-  if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
-       dm.tblReport2.Edit;
-  dm.tblReport2act_acceptance_file.AsInteger := dm.tblReport2act_acceptance_file.AsInteger  +1;
-
-  if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
-       dm.tblJpg.Edit;
-  dm.tblTypeOfDoc.AsString := cDoc[Act].strTypeOfDoc;
+  //Акт сдачи приемки
+  AddAnyDocMethod(Sender);
 end;
 
 procedure TEditGridJOleForm.actAddBasisExecute(Sender: TObject);
 begin
   inherited;
-  // Основание для договора - Добавить документ !
-  AddMethod;
-  if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
-       dm.tblReport2.Edit;
-  dm.tblReport2basis_ffile.AsInteger := dm.tblReport2basis_ffile.AsInteger  +1;
-
-  if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
-       dm.tblJpg.Edit;
-  dm.tblTypeOfDoc.AsString := cDoc[Basic].strTypeOfDoc;
-
+  AddAnyDocMethod(Sender);
 end;
+
+procedure TEditGridJOleForm.SetTypeOfDoc(DataSet:TDataSet ; Field :TField ; Doc :tDoc);
+begin
+
+    if not (DataSet.State in [dsInsert, dsEdit]) then
+        DataSet.Edit;
+    Field.AsString :=  Doc.strTypeOfDoc;
+end;
+
+procedure TEditGridJOleForm.IncMethod(DataSet:TDataSet ; Field :TIntegerField);
+begin
+    if not (DataSet.State in [dsInsert, dsEdit]) then
+         DataSet.Edit;
+    Field.AsInteger := Field.AsInteger + 1;
+end;
+
 
 procedure TEditGridJOleForm.actAddContrExExecute(Sender: TObject);
 begin
   inherited;
-// Contract execution note  - Отметка о выполнении договора
-  AddMethod;
-  if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
-       dm.tblReport2.Edit;
-  dm.tblReport2contract_execution_file.AsInteger := dm.tblReport2contract_execution_file.AsInteger  +1;
-
-  if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
-       dm.tblJpg.Edit;
-    dm.tblTypeOfDoc.AsString := cDoc[Contract_Execution].strTypeOfDoc;
+  // Contract execution note  - Отметка о выполнении договора
+  AddAnyDocMethod(Sender);
 end;
 
 procedure TEditGridJOleForm.actAddInvoiceExecute(Sender: TObject);
 begin
   inherited;
-//  invoice - счет на оплату -добавить !
-  AddMethod;
-  if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
-       dm.tblReport2.Edit;
-  dm.tblReport2invoice_file.AsInteger := dm.tblReport2invoice_file.AsInteger  +1;
-
-  if not (dm.tblJpg.State in [dsInsert, dsEdit]) then
-       dm.tblJpg.Edit;
-      dm.tblTypeOfDoc.AsString := cDoc[Invoice].strTypeOfDoc;
+  //  invoice - счет на оплату -добавить !
+  AddAnyDocMethod(Sender);
 end;
 
 procedure TEditGridJOleForm.actAddPerfExecute(Sender: TObject);
 begin
   inherited;
-// Отметка о выполнении работы
-  AddMethod;
-  if not (dm.tblReport2.State in [dsInsert, dsEdit]) then
-       dm.tblReport2.Edit;
-  dm.tblReport2performance_of_work_file.AsInteger := dm.tblReport2performance_of_work_file.AsInteger  +1;
-  
+  // Отметка о выполнении работы
+  AddAnyDocMethod(Sender);
 end;
+
+procedure TEditGridJOleForm.AddAnyDocMethod(Sender: TObject);
+begin
+
+  if not (Sender is TComponent) then   begin
+     Exit;
+  end;
+
+  AddMethod;
+
+  if (TComponent(Sender).Name = actAddBasis.Name) then  // Основание для договора
+  begin
+    IncMethod(dm.tblReport2 , dm.tblReport2basis_ffile);
+    SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[Basic]);
+  end
+  else
+  if (TComponent(Sender).Name = acAddContract.Name) then   //Договор
+  begin
+    IncMethod(dm.tblReport2, dm.tblReport2contract_file);
+    SetTypeOfDoc(dm.tblJpg , dm.tblTypeOfDoc ,  cDoc[Contract]);
+  end else
+  if (TComponent(Sender).Name = actAddAct.Name) then  //Акт сдачи приемки
+  begin
+    IncMethod(dm.tblReport2, dm.tblReport2act_acceptance_file);
+    SetTypeOfDoc(dm.tblJpg , dm.tblTypeOfDoc ,  cDoc[Act]);
+  end else
+  if (TComponent(Sender).Name = actAddContrEx.Name) then   // Contract execution note  - Отметка о выполнении договора
+  begin
+    IncMethod(dm.tblReport2, dm.tblReport2contract_execution_file);
+    SetTypeOfDoc(dm.tblJpg , dm.tblTypeOfDoc ,  cDoc[Contract_Execution]);
+  end else
+  if (TComponent(Sender).Name = actAddInvoice.Name) then //  invoice - счет на оплату
+  begin
+    IncMethod(dm.tblReport2, dm.tblReport2invoice_file);
+    SetTypeOfDoc(dm.tblJpg , dm.tblTypeOfDoc ,  cDoc[Invoice]);
+  end
+  else
+  if (TComponent(Sender).Name = actAddPerf.Name) then   // Отметка о выполнении работы
+  begin
+    IncMethod(dm.tblReport2, dm.tblReport2performance_of_work_file);
+    SetTypeOfDoc(dm.tblJpg , dm.tblTypeOfDoc ,  cDoc[Performance]);
+  end
+  else
+  begin
+    MessageDlg('неизвестный тип сопроводительного документа: ' + PAnsiChar(actAddPerf.Name),
+          mtWarning, [mbOK], 0)
+   end;
+
+end;  //  AddAnyDocMethod 
 
 procedure TEditGridJOleForm.FormCreate(Sender: TObject);
 begin
@@ -337,30 +370,36 @@ begin
 end;
 
 procedure TEditGridJOleForm.Init();
-var i:integer;
+var
+  i: integer;
 begin
-      BDDirPathName := ExtractFileDir(Application.ExeName) +'\'+ constBDname  +'\';
-      ExportPath := ExtractFileDir(Application.ExeName) +'\'+ constExportDir  +'\';
-      DataSet :=  DM.tblJpg ;
+  BDDirPathName := ExtractFileDir(Application.ExeName) + '\' + constBDname +
+    '\';
+  ExportPath := ExtractFileDir(Application.ExeName) + '\' + constExportDir +
+    '\';
+  DataSet := DM.tblJpg;
 
- //MRU
-  MRUEdit_rubricator :=ExtractFilePath(Application.ExeName) + Self.Name +'.'+ 'MRUEdit.rubricator_F.txt';
-  MRUEdit_rubricator :=ExtractFilePath(Application.ExeName)                 + 'MRUEdit.rubricator_F.txt';
-   //
-  if FileExists(MRUEdit_rubricator) then  begin   // проверить на наличие свойства MRU у поля !!!
+  //MRU
+  MRUEdit_rubricator := ExtractFilePath(Application.ExeName) + Self.Name + '.' +
+    'MRUEdit.rubricator_F.txt';
+  MRUEdit_rubricator := ExtractFilePath(Application.ExeName) +
+    'MRUEdit.rubricator_F.txt';
+  //
+  if FileExists(MRUEdit_rubricator) then
+  begin // проверить на наличие свойства MRU у поля !!!
 
     TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.LoadFromFile(MRUEdit_rubricator);
-    TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.Text;//
-  end   // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
+    TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.Text; //
+  end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
   else
   begin
   end;
 
   // tTypeOfDoc = (Basic=1, Contract, Invoice, Performance, Act, Contract_Execution);
 
-  i:= High(vDoc);
-  i:= Length(vDoc);
-  SetLength(vDoc, Length(vDoc) +1 );
+  i := High(vDoc);
+  i := Length(vDoc);
+  SetLength(vDoc, Length(vDoc) + 1);
   vDoc[High(vDoc)].TypeOfDoc := Basic;
 
   cDoc[Basic].TypeOfDoc := Basic;
@@ -383,7 +422,9 @@ begin
 end;
 
 ///////////////////////////////////////////////////////////////////////////////
-procedure TEditGridJOleForm.OLE2File(OleContainer: TOleContainer; DataSet: TDataSet; FileName, FieldName: string);
+
+procedure TEditGridJOleForm.OLE2File(OleContainer: TOleContainer; DataSet:
+  TDataSet; FileName, FieldName: string);
 var
   //fs: TFileStream;
   //ds: TDataSet;
@@ -407,34 +448,35 @@ begin
   DataSet.RecordCount; //
 end; //OLEB2File
 
-
-
 procedure TEditGridJOleForm.ExtractMethod;
 var
-  strMyDir : string;
-  bFileExist :Boolean;
+  strMyDir: string;
+  bFileExist: Boolean;
 begin
-  FileName := DataSet.FieldByName('filename').AsString ;
+  FileName := DataSet.FieldByName('filename').AsString;
   ext := DataSet.FieldByName('ext').AsString;
-  ExportFilePath :=  ExportPath + FileName +'.'+ ext;
+  ExportFilePath := ExportPath + FileName + '.' + ext;
 
   UniqueName := DataSet.FieldByName('UniqueName').AsString;
-  FileNamePathUniq := BDDirPathName +'/'+ UniqueName;
+  FileNamePathUniq := BDDirPathName + '/' + UniqueName;
 
   CopyFile(PChar(FileNamePathUniq), PChar(ExportFilePath), bFileExist); //
 
-   ShellApi.ShellExecute(EditGridJOleForm.Handle, 'open', Pchar(ExportFilePath), nil, nil, SW_RESTORE);
+  ShellApi.ShellExecute(EditGridJOleForm.Handle, 'open', Pchar(ExportFilePath),
+    nil, nil, SW_RESTORE);
 end;
+
+
 
 procedure TEditGridJOleForm.MakeUniqName;
 var
-strTempFile : array[0..MAX_PATH-1] of char;
-nTempNumber : integer;
-bFileExist : Boolean ;
-bResult : Boolean;
-strTmp: string ;
+  strTempFile: array[0..MAX_PATH - 1] of char;
+  nTempNumber: integer;
+  bFileExist: Boolean;
+  bResult: Boolean;
+  strTmp: string;
 
- guid:tguid;
+  guid: tguid;
 begin
   // TODO -cMM: TEditGridJOleForm.MakeUniqName default body inserted
 
@@ -444,46 +486,46 @@ begin
 //end;
 
   Createguid(guid);
-  FileNamePathUniq:= BDDirPathName + GUIDToString(guid);
+  FileNamePathUniq := BDDirPathName + GUIDToString(guid);
 
-  UniqueName   := SysUtils.ExtractFileName(FileNamePathUniq);
+  UniqueName := SysUtils.ExtractFileName(FileNamePathUniq);
 
+  FileName := SysUtils.ExtractFileName(FileNamePathSource);
+  FileName := SysUtils.ChangeFileExt(FileName, '');
+  ext := ExtractFileExtOnly(FileNamePathSource);
 
-
-  FileName  := SysUtils.ExtractFileName(FileNamePathSource);
-  FileName  := SysUtils.ChangeFileExt(FileName,'');
-  ext  := ExtractFileExtOnly(FileNamePathSource);
-
-  bResult:=CopyFile(PChar(FileNamePathSource), PChar(FileNamePathUniq), bFileExist);
+  bResult := CopyFile(PChar(FileNamePathSource), PChar(FileNamePathUniq),
+    bFileExist);
   if bResult then
   begin
-     ;// ok!
+    ; // ok!
   end
   else
   begin
     { TODO -oSVS : svs err }
     //strTmp := SysErrorMessage(GetLastError);
-    MessageDlg(FileNamePathSource +' '+ FileNamePathUniq +' '
-                      + SysErrorMessage(GetLastError), mtWarning, [mbOK], 0);
+    MessageDlg(FileNamePathSource + ' ' + FileNamePathUniq + ' '
+      + SysErrorMessage(GetLastError), mtWarning, [mbOK], 0);
   end;
 
-  DataSet.Append;  //!!!
-  DataSet.RecNo;   DataSet.RecordCount; //
+  DataSet.Append; //!!!
+  DataSet.RecNo;
+  DataSet.RecordCount; //
   if not (DataSet.State in [dsInsert, dsEdit]) then
     DataSet.Edit;
 
-  DataSet.FieldByName('idR1').AsInteger := dm.tblReport2.FieldByName('id').AsInteger;  //
+  DataSet.FieldByName('idR1').AsInteger :=
+    dm.tblReport2.FieldByName('id').AsInteger; //
 
-  DataSet.FieldByName('filename').AsString := FileName;  //
-  DataSet.FieldByName('filepath').AsString := FileNamePathSource;  //
-  DataSet.FieldByName('ext').AsString := ext;  //
-  DataSet.FieldByName('UniqueName').AsString := UniqueName;  //
+  DataSet.FieldByName('filename').AsString := FileName; //
+  DataSet.FieldByName('filepath').AsString := FileNamePathSource; //
+  DataSet.FieldByName('ext').AsString := ext; //
+  DataSet.FieldByName('UniqueName').AsString := UniqueName; //
 
   DataSet.Post;
   DataSet.RecNo;
   DataSet.RecordCount;
 end;
 
-
-
 end.
+

@@ -25,7 +25,7 @@ uses
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue,
   dxSkinscxPCPainter, cxGridBandedTableView, cxGridDBBandedTableView,
   dxSkinsdxStatusBarPainter, dxStatusBar, JvAppEvent, ComCtrls,
-  JvExComCtrls, JvStatusBar
+  JvExComCtrls, JvStatusBar, cxPropertiesStore
 
   ;
 
@@ -111,6 +111,7 @@ type
     lbl2: TLabel;
     jvstsbr1: TJvStatusBar;
     jvpvnts1: TJvAppEvents;
+    cxprprtstr1: TcxPropertiesStore;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -119,6 +120,7 @@ type
     procedure actJpgExecute(Sender: TObject);
     procedure actSpisokExecute(Sender: TObject);
     procedure actTunExecute(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure jvpvnts1Hint(Sender: TObject);
   private
@@ -146,7 +148,10 @@ implementation
 uses MainUnit, EditForm2Unit, LogicUnit, SelDepUnit, EditGridJpgFormUnit, EditGridOleFormUnit,  EditEmplFormUnit, SpisokUnit, ExportXLSFormUnit;
 
 {$R *.dfm}
-                      
+
+var
+  FileName_cxgrdbtblvw1 :string;
+  FileName_cxdbvrtclgrd1 :string;
 
 procedure TGridForm.actOleExecute(Sender: TObject);
 begin
@@ -198,10 +203,22 @@ end;
 procedure TGridForm.FormCreate(Sender: TObject);
 begin
   inherited;
-Exit;    // ???
+    // ???
+{
   DM.tblReport2.FindLast;
   DM.tblReport2.FindFirst;
   DM.tblReport2.FindLast;
+}
+
+// cxgrd1
+  FileName_cxgrdbtblvw1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrdbtblvw1' +'.ini';
+  cxgrdbtblvw1.RestoreFromIniFile(FileName_cxgrdbtblvw1);
+
+  FileName_cxdbvrtclgrd1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxdbvrtclgrd1' +'.ini';
+  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
+  cxprprtstr1.Active:=true;
+  cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
+  cxprprtstr1.RestoreFrom;
 end;
 
 procedure TGridForm.DepMethod;
@@ -325,6 +342,16 @@ begin
     //dm.UniTransaction1.Commit;   // ?
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TGridForm.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+
+  cxgrdbtblvw1.StoreToIniFile(FileName_cxgrdbtblvw1, true);
+  cxdbvrtclgrd1.StoreToIniFile(FileName_cxdbvrtclgrd1, true);
+
+  cxprprtstr1.StoreTo(True);
 end;
 
 procedure TGridForm.jvpvnts1Hint(Sender: TObject);

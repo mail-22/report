@@ -25,7 +25,6 @@ object DM: TDM
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
-    Connected = True
     Left = 38
     Top = 72
   end
@@ -61,7 +60,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from depart;')
-    Active = True
     Left = 402
     Top = 64
     object intgrfld1: TIntegerField
@@ -305,7 +303,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
-    Active = True
     Left = 224
     Top = 40
     object tblReport2id: TIntegerField

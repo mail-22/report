@@ -9,7 +9,7 @@ inherited FormMain: TFormMain
   TextHeight = 17
   object img1: TJvImage [0]
     Left = 0
-    Top = 252
+    Top = 198
     Width = 784
     Height = 158
     Align = alTop
@@ -1664,7 +1664,7 @@ inherited FormMain: TFormMain
     Left = 0
     Top = 87
     Width = 784
-    Height = 134
+    Height = 80
     Align = alTop
     Alignment = taCenter
     Caption = 
@@ -1691,7 +1691,7 @@ inherited FormMain: TFormMain
   end
   object jvstctxt3: TJvStaticText [4]
     Left = 0
-    Top = 438
+    Top = 384
     Width = 784
     Height = 48
     Align = alTop
@@ -1717,7 +1717,7 @@ inherited FormMain: TFormMain
   end
   object jvstctxt4: TJvStaticText [5]
     Left = 0
-    Top = 221
+    Top = 167
     Width = 784
     Height = 31
     Align = alTop
@@ -1741,7 +1741,7 @@ inherited FormMain: TFormMain
   end
   object jvstctxt5: TJvStaticText [6]
     Left = 0
-    Top = 410
+    Top = 356
     Width = 784
     Height = 28
     Align = alTop

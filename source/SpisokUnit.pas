@@ -60,8 +60,8 @@ type
     btn1: TButton;
     dtp2: TDateTimePicker;
     edt1: TEdit;
-    lbl2: TLabel;
-    Label1: TLabel;
+    dtp1lbl: TLabel;
+    dtp2lbl: TLabel;
     lbl4: TLabel;
     lbl5: TLabel;
     dblkcbb1: TDBLookupComboBox;
@@ -98,6 +98,8 @@ type
     cbAllData: TCheckBox;
     grp3: TGroupBox;
     grp4: TGroupBox;
+    grpData1: TGroupBox;
+    grpData2: TGroupBox;
     procedure FormCreate(Sender: TObject);
     procedure img1Click(Sender: TObject);
     procedure dbrchvwdtoleClick(Sender: TObject);
@@ -205,10 +207,22 @@ begin
   if (cbAllData.State = cbChecked) then
   begin
      chkAllData := True;
+{
+     dtp1.Visible:=False;
+     dtp1lbl.Visible:=False;
+}
+     grpData1.Visible:=False;
+     grpData2.Visible:=False;
   end;
   if (cbAllData.State = cbUnchecked) then
   begin
      chkAllData := False;
+{
+     dtp2.Visible:=True;
+     dtp1lb2.Visible:=True;
+}
+     grpData1.Visible:=True;
+     grpData2.Visible:=True;
   end;
 
   MakeFiltr;

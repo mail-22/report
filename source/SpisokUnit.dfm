@@ -1,6 +1,6 @@
 inherited SpisokForm: TSpisokForm
-  Left = 113
-  Top = 231
+  Left = 192
+  Top = 135
   Width = 1280
   Height = 768
   HorzScrollBar.Visible = False
@@ -113,7 +113,7 @@ inherited SpisokForm: TSpisokForm
           end
           object grp1: TGroupBox
             Left = 1
-            Top = 331
+            Top = 344
             Width = 207
             Height = 105
             Align = alTop
@@ -154,67 +154,82 @@ inherited SpisokForm: TSpisokForm
             Left = 1
             Top = 49
             Width = 207
-            Height = 177
+            Height = 208
             Align = alTop
             Caption = '...'
             TabOrder = 2
-            object Label1: TLabel
-              Left = 5
-              Top = 96
-              Width = 139
-              Height = 17
-              Caption = #1076#1072#1090#1072' '#1086#1082#1086#1085#1095#1072#1085#1080#1103' '#1088#1072#1073#1086#1090':'
-            end
-            object lbl2: TLabel
-              Left = 5
-              Top = 32
-              Width = 118
-              Height = 17
-              Caption = #1076#1072#1090#1072' '#1085#1072#1095#1072#1083#1072' '#1088#1072#1073#1086#1090':'
-            end
-            object dtp2: TDateTimePicker
-              Left = 5
-              Top = 112
-              Width = 186
-              Height = 25
-              Date = 42795.473246527780000000
-              Time = 42795.473246527780000000
-              TabOrder = 0
-              OnChange = dtp2Change
-            end
-            object dtp1: TDateTimePicker
-              Left = 5
-              Top = 48
-              Width = 186
-              Height = 25
-              Date = 42795.473246527780000000
-              Time = 42795.473246527780000000
-              TabOrder = 1
-              OnChange = dtp1Change
-            end
             object cbAllData: TCheckBox
-              Left = 5
-              Top = 152
+              Left = 13
+              Top = 176
               Width = 153
               Height = 17
-              AllowGrayed = True
               Caption = #1074#1082#1083#1102#1095#1080#1090#1100' '#1074#1089#1077' '#1075#1086#1076#1072
-              TabOrder = 2
+              TabOrder = 0
               OnClick = cbAllDataClick
+            end
+            object grpData1: TGroupBox
+              Left = 5
+              Top = 16
+              Width = 196
+              Height = 73
+              Caption = 'grpData1'
+              TabOrder = 1
+              object dtp1lbl: TLabel
+                Left = 5
+                Top = 24
+                Width = 118
+                Height = 17
+                Caption = #1076#1072#1090#1072' '#1085#1072#1095#1072#1083#1072' '#1088#1072#1073#1086#1090':'
+              end
+              object dtp1: TDateTimePicker
+                Left = 5
+                Top = 40
+                Width = 186
+                Height = 25
+                Date = 42795.473246527780000000
+                Time = 42795.473246527780000000
+                TabOrder = 0
+                OnChange = dtp1Change
+              end
+            end
+            object grpData2: TGroupBox
+              Left = 5
+              Top = 96
+              Width = 190
+              Height = 65
+              Caption = 'grpData2'
+              TabOrder = 2
+              object dtp2lbl: TLabel
+                Left = 5
+                Top = 29
+                Width = 139
+                Height = 17
+                Caption = #1076#1072#1090#1072' '#1086#1082#1086#1085#1095#1072#1085#1080#1103' '#1088#1072#1073#1086#1090':'
+              end
+              object dtp2: TDateTimePicker
+                Left = 5
+                Top = 29
+                Width = 186
+                Height = 25
+                Date = 42795.473246527780000000
+                Time = 42795.473246527780000000
+                TabOrder = 0
+                OnChange = dtp2Change
+              end
             end
           end
           object grp3: TGroupBox
             Left = 1
-            Top = 226
+            Top = 257
             Width = 207
-            Height = 105
+            Height = 87
             Align = alTop
             Caption = '...'
             TabOrder = 3
             object lbl5: TLabel
               Left = 5
               Top = 24
-              Width = 124
+              Width = 101
               Height = 17
               Caption = #1054#1090#1074#1077#1090#1089#1090#1074#1077#1085#1085#1099#1081':'
             end

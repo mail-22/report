@@ -93,8 +93,10 @@ inherited GridForm: TGridForm
           Font.Style = []
           LookAndFeel.Kind = lfStandard
           LookAndFeel.NativeStyle = False
+          OptionsView.CellEndEllipsis = True
           OptionsView.GridLineColor = clBlue
           OptionsView.RowHeaderWidth = 236
+          OptionsBehavior.AlwaysShowEditor = True
           OptionsBehavior.RowSizing = True
           ParentFont = False
           TabOrder = 0
@@ -662,5 +664,21 @@ inherited GridForm: TGridForm
     OnHint = jvpvnts1Hint
     Left = 546
     Top = 401
+  end
+  object cxprprtstr1: TcxPropertiesStore
+    Components = <
+      item
+        Component = cxspltr1
+        Properties.Strings = (
+          'Left')
+      end
+      item
+        Component = pnlR
+        Properties.Strings = (
+          'Width')
+      end>
+    StorageName = 'cxprprtstr1'
+    Left = 762
+    Top = 329
   end
 end

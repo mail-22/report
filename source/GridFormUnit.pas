@@ -23,7 +23,9 @@ uses
   dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven, dxSkinSharp,
   dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue,
-  dxSkinscxPCPainter
+  dxSkinscxPCPainter, cxGridBandedTableView, cxGridDBBandedTableView,
+  dxSkinsdxStatusBarPainter, dxStatusBar, JvAppEvent, ComCtrls,
+  JvExComCtrls, JvStatusBar
 
   ;
 
@@ -36,14 +38,12 @@ type
     cxgrdbtblvw1: TcxGridDBTableView;
     cxgrdlvl1: TcxGridLevel;
     pnlBBB: TPanel;
-    lbl2: TLabel;
     pnl_Navigator1: TPanel;
     cxDBNavigator3: TcxDBNavigator;
     pnl3: TPanel;
     jvdbstslbl1: TJvDBStatusLabel;
     pnl4: TPanel;
     JvDBStatusLabel3: TJvDBStatusLabel;
-    ctrlbr1: TControlBar;
     cxspltr1: TcxSplitter;
     cxdbvrtclgrd1: TcxDBVerticalGrid;
     actmmb1: TActionMainMenuBar;
@@ -104,6 +104,13 @@ type
     cxctgryrwcxdbvrtclgrd1CategoryRow1: TcxCategoryRow;
     cxctgryrwcxdbvrtclgrd1CategoryRow2: TcxCategoryRow;
     cxctgryrwcxdbvrtclgrd1CategoryRow3: TcxCategoryRow;
+    pnlR: TPanel;
+    pnlL: TPanel;
+    dxstsbr1: TdxStatusBar;
+    lbl3: TLabel;
+    lbl2: TLabel;
+    jvstsbr1: TJvStatusBar;
+    jvpvnts1: TJvAppEvents;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -113,6 +120,7 @@ type
     procedure actSpisokExecute(Sender: TObject);
     procedure actTunExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure jvpvnts1Hint(Sender: TObject);
   private
     { Private declarations }
   public
@@ -318,6 +326,13 @@ begin
     Screen.Cursor := crDefault;
   end;
 end;
+
+procedure TGridForm.jvpvnts1Hint(Sender: TObject);
+begin
+  inherited;
+  jvstsbr1.SimpleText := Application.Hint;
+end;
+
 ///////////////////////////////////////////////////////////////////////////////
 
 //-

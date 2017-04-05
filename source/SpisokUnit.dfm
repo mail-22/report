@@ -1,6 +1,6 @@
 inherited SpisokForm: TSpisokForm
-  Left = 301
-  Top = 171
+  Left = 38
+  Top = 163
   Width = 1280
   Height = 768
   HorzScrollBar.Visible = False
@@ -10,17 +10,17 @@ inherited SpisokForm: TSpisokForm
   Caption = ''
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
   object lbl4: TLabel [0]
     Left = 8
     Top = 176
-    Width = 85
-    Height = 13
+    Width = 101
+    Height = 17
     Caption = #1054#1090#1074#1077#1090#1089#1090#1074#1077#1085#1085#1099#1081':'
   end
   object pnlH: TPanel [1]
     Left = 0
-    Top = 23
+    Top = 27
     Width = 1264
     Height = 41
     Align = alTop
@@ -42,7 +42,7 @@ inherited SpisokForm: TSpisokForm
     Left = 0
     Top = 0
     Width = 1264
-    Height = 23
+    Height = 27
     ActionManager = actmgr1
     Caption = 'acttb1'
     ColorMap.HighlightColor = clWhite
@@ -52,16 +52,16 @@ inherited SpisokForm: TSpisokForm
   end
   object pnl_LR: TPanel [3]
     Left = 0
-    Top = 64
+    Top = 68
     Width = 1264
-    Height = 666
+    Height = 662
     Align = alClient
     Caption = 'pnl_LR'
     TabOrder = 2
     object jvntscpspltr1: TJvNetscapeSplitter
       Left = 369
       Top = 1
-      Height = 633
+      Height = 629
       Align = alLeft
       Maximized = False
       Minimized = False
@@ -71,7 +71,7 @@ inherited SpisokForm: TSpisokForm
       Left = 1
       Top = 1
       Width = 368
-      Height = 633
+      Height = 629
       Align = alLeft
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -90,56 +90,56 @@ inherited SpisokForm: TSpisokForm
         Left = 2
         Top = 43
         Width = 364
-        Height = 588
+        Height = 584
         Align = alClient
         TabOrder = 1
         object pnlData1: TPanel
           Left = 56
           Top = 24
           Width = 209
-          Height = 401
+          Height = 481
           TabOrder = 0
           object lbl1: TLabel
             Left = 0
             Top = 256
-            Width = 37
-            Height = 13
+            Width = 43
+            Height = 17
             Caption = #1054#1090#1076#1077#1083':'
           end
           object lbl2: TLabel
             Left = 16
             Top = 72
-            Width = 101
-            Height = 13
+            Width = 118
+            Height = 17
             Caption = #1076#1072#1090#1072' '#1085#1072#1095#1072#1083#1072' '#1088#1072#1073#1086#1090':'
           end
           object Label1: TLabel
             Left = 8
             Top = 120
-            Width = 119
-            Height = 13
+            Width = 139
+            Height = 17
             Caption = #1076#1072#1090#1072' '#1086#1082#1086#1085#1095#1072#1085#1080#1103' '#1088#1072#1073#1086#1090':'
           end
           object lbl5: TLabel
             Left = 8
             Top = 184
-            Width = 85
-            Height = 13
+            Width = 101
+            Height = 17
             Caption = #1054#1090#1074#1077#1090#1089#1090#1074#1077#1085#1085#1099#1081':'
           end
           object dtp1: TDateTimePicker
             Left = 8
             Top = 88
             Width = 186
-            Height = 21
+            Height = 25
             Date = 42795.473246527780000000
             Time = 42795.473246527780000000
             TabOrder = 0
             OnChange = dtp1Change
           end
           object btn1: TButton
-            Left = 8
-            Top = 360
+            Left = 16
+            Top = 432
             Width = 161
             Height = 25
             Caption = #1086#1090#1086#1073#1088#1072#1090#1100' '#1079#1072#1087#1080#1089#1080' !'
@@ -150,7 +150,7 @@ inherited SpisokForm: TSpisokForm
             Left = 8
             Top = 136
             Width = 186
-            Height = 21
+            Height = 25
             Date = 42795.473246527780000000
             Time = 42795.473246527780000000
             TabOrder = 2
@@ -160,7 +160,7 @@ inherited SpisokForm: TSpisokForm
             Left = 8
             Top = 200
             Width = 121
-            Height = 21
+            Height = 25
             TabOrder = 3
             OnChange = edt1Change
           end
@@ -168,7 +168,7 @@ inherited SpisokForm: TSpisokForm
             Left = 4
             Top = 270
             Width = 145
-            Height = 21
+            Height = 25
             KeyField = 'id'
             ListField = 'depart'
             ListSource = DM.dsDepart
@@ -206,7 +206,7 @@ inherited SpisokForm: TSpisokForm
       Left = 379
       Top = 1
       Width = 884
-      Height = 633
+      Height = 629
       Align = alClient
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -231,7 +231,7 @@ inherited SpisokForm: TSpisokForm
         Left = 2
         Top = 20
         Width = 880
-        Height = 611
+        Height = 607
         Align = alClient
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
@@ -358,10 +358,18 @@ inherited SpisokForm: TSpisokForm
           GridView = cxGrid2DBTableView1
         end
       end
+      object cxdbfltrcntrl1: TcxDBFilterControl
+        Left = 576
+        Top = 160
+        Width = 300
+        Height = 200
+        Items = <>
+        TabOrder = 1
+      end
     end
     object pnl_Navigator1: TPanel
       Left = 1
-      Top = 634
+      Top = 630
       Width = 1262
       Height = 31
       Align = alBottom
@@ -370,7 +378,7 @@ inherited SpisokForm: TSpisokForm
       BorderStyle = bsSingle
       TabOrder = 2
       object cxdbnvgtr1: TcxDBNavigator
-        Left = 207
+        Left = 261
         Top = 2
         Width = 885
         Height = 23
@@ -381,7 +389,7 @@ inherited SpisokForm: TSpisokForm
       object pnl3: TPanel
         Left = 187
         Top = 2
-        Width = 20
+        Width = 74
         Height = 23
         Align = alLeft
         AutoSize = True
@@ -389,8 +397,8 @@ inherited SpisokForm: TSpisokForm
         object jvdbstslbl2: TJvDBStatusLabel
           Left = 1
           Top = 3
-          Width = 18
-          Height = 13
+          Width = 72
+          Height = 17
           DataSource = dsReportFiltr
           Style = lsRecordNo
           CalcRecCount = True
@@ -408,7 +416,7 @@ inherited SpisokForm: TSpisokForm
         object jvdbstslbl3: TJvDBStatusLabel
           Left = 1
           Top = 1
-          Width = 81
+          Width = 92
           Height = 21
           DataSource = dsReportFiltr
           CalcRecCount = True

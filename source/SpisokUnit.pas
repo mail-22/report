@@ -27,7 +27,8 @@ DBCtrls, cxVGrid, cxDBVGrid,
   dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
   dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinXmas2008Blue, dxSkinscxPCPainter;
+  dxSkinXmas2008Blue, dxSkinscxPCPainter, cxFilterControl,
+  cxDBFilterControl;
 
 type
   TSpisokForm = class(TBaseForm)
@@ -92,6 +93,7 @@ type
     cxGrid2DBTableView1act_acceptance_file: TcxGridDBColumn;
     cxGrid2DBTableView1contract_execution_note: TcxGridDBColumn;
     cxGrid2DBTableView1contract_execution_file: TcxGridDBColumn;
+    cxdbfltrcntrl1: TcxDBFilterControl;
     procedure FormCreate(Sender: TObject);
     procedure img1Click(Sender: TObject);
     procedure dbrchvwdtoleClick(Sender: TObject);

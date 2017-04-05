@@ -1,6 +1,6 @@
 inherited SpisokForm: TSpisokForm
-  Left = 38
-  Top = 163
+  Left = 113
+  Top = 231
   Width = 1280
   Height = 768
   HorzScrollBar.Visible = False
@@ -97,85 +97,8 @@ inherited SpisokForm: TSpisokForm
           Left = 56
           Top = 24
           Width = 209
-          Height = 481
+          Height = 521
           TabOrder = 0
-          object lbl1: TLabel
-            Left = 0
-            Top = 256
-            Width = 43
-            Height = 17
-            Caption = #1054#1090#1076#1077#1083':'
-          end
-          object lbl2: TLabel
-            Left = 16
-            Top = 72
-            Width = 118
-            Height = 17
-            Caption = #1076#1072#1090#1072' '#1085#1072#1095#1072#1083#1072' '#1088#1072#1073#1086#1090':'
-          end
-          object Label1: TLabel
-            Left = 8
-            Top = 120
-            Width = 139
-            Height = 17
-            Caption = #1076#1072#1090#1072' '#1086#1082#1086#1085#1095#1072#1085#1080#1103' '#1088#1072#1073#1086#1090':'
-          end
-          object lbl5: TLabel
-            Left = 8
-            Top = 184
-            Width = 101
-            Height = 17
-            Caption = #1054#1090#1074#1077#1090#1089#1090#1074#1077#1085#1085#1099#1081':'
-          end
-          object dtp1: TDateTimePicker
-            Left = 8
-            Top = 88
-            Width = 186
-            Height = 25
-            Date = 42795.473246527780000000
-            Time = 42795.473246527780000000
-            TabOrder = 0
-            OnChange = dtp1Change
-          end
-          object btn1: TButton
-            Left = 16
-            Top = 432
-            Width = 161
-            Height = 25
-            Caption = #1086#1090#1086#1073#1088#1072#1090#1100' '#1079#1072#1087#1080#1089#1080' !'
-            TabOrder = 1
-            OnClick = btn1Click
-          end
-          object dtp2: TDateTimePicker
-            Left = 8
-            Top = 136
-            Width = 186
-            Height = 25
-            Date = 42795.473246527780000000
-            Time = 42795.473246527780000000
-            TabOrder = 2
-            OnChange = dtp2Change
-          end
-          object edt1: TEdit
-            Left = 8
-            Top = 200
-            Width = 121
-            Height = 25
-            TabOrder = 3
-            OnChange = edt1Change
-          end
-          object dblkcbb1: TDBLookupComboBox
-            Left = 4
-            Top = 270
-            Width = 145
-            Height = 25
-            KeyField = 'id'
-            ListField = 'depart'
-            ListSource = DM.dsDepart
-            TabOrder = 4
-            OnClick = dblkcbb1Click
-            OnExit = dblkcbb1Exit
-          end
           object mmo2: TMemo
             Left = 1
             Top = 1
@@ -186,18 +109,141 @@ inherited SpisokForm: TSpisokForm
             Lines.Strings = (
               #1092#1080#1083#1100#1090#1088#1072#1094#1080#1103' '#1079#1072#1087#1080#1089#1077#1081', '
               #1076#1083#1103' '#1074#1082#1083#1102#1095#1077#1085#1080#1103' '#1074' '#1086#1090#1095#1077#1090' ')
-            TabOrder = 5
+            TabOrder = 0
           end
-          object chkAll: TCheckBox
-            Left = 8
-            Top = 296
-            Width = 97
-            Height = 17
-            AllowGrayed = True
-            Caption = #1074#1089#1077' '#1086#1090#1076#1077#1083#1099
-            State = cbGrayed
-            TabOrder = 6
-            OnClick = chkAllClick
+          object grp1: TGroupBox
+            Left = 1
+            Top = 331
+            Width = 207
+            Height = 105
+            Align = alTop
+            Caption = '...'
+            TabOrder = 1
+            object lbl1: TLabel
+              Left = 5
+              Top = 24
+              Width = 43
+              Height = 17
+              Caption = #1054#1090#1076#1077#1083':'
+            end
+            object dblkcbb1: TDBLookupComboBox
+              Left = 5
+              Top = 48
+              Width = 145
+              Height = 25
+              KeyField = 'id'
+              ListField = 'depart'
+              ListSource = DM.dsDepart
+              TabOrder = 0
+              OnClick = dblkcbb1Click
+              OnExit = dblkcbb1Exit
+            end
+            object chkAll: TCheckBox
+              Left = 5
+              Top = 80
+              Width = 161
+              Height = 17
+              AllowGrayed = True
+              Caption = #1074#1082#1083#1102#1095#1080#1090#1100' '#1074#1089#1077' '#1086#1090#1076#1077#1083#1099
+              State = cbGrayed
+              TabOrder = 1
+              OnClick = chkAllClick
+            end
+          end
+          object grp2: TGroupBox
+            Left = 1
+            Top = 49
+            Width = 207
+            Height = 177
+            Align = alTop
+            Caption = '...'
+            TabOrder = 2
+            object Label1: TLabel
+              Left = 5
+              Top = 96
+              Width = 139
+              Height = 17
+              Caption = #1076#1072#1090#1072' '#1086#1082#1086#1085#1095#1072#1085#1080#1103' '#1088#1072#1073#1086#1090':'
+            end
+            object lbl2: TLabel
+              Left = 5
+              Top = 32
+              Width = 118
+              Height = 17
+              Caption = #1076#1072#1090#1072' '#1085#1072#1095#1072#1083#1072' '#1088#1072#1073#1086#1090':'
+            end
+            object dtp2: TDateTimePicker
+              Left = 5
+              Top = 112
+              Width = 186
+              Height = 25
+              Date = 42795.473246527780000000
+              Time = 42795.473246527780000000
+              TabOrder = 0
+              OnChange = dtp2Change
+            end
+            object dtp1: TDateTimePicker
+              Left = 5
+              Top = 48
+              Width = 186
+              Height = 25
+              Date = 42795.473246527780000000
+              Time = 42795.473246527780000000
+              TabOrder = 1
+              OnChange = dtp1Change
+            end
+            object cbAllData: TCheckBox
+              Left = 5
+              Top = 152
+              Width = 153
+              Height = 17
+              AllowGrayed = True
+              Caption = #1074#1082#1083#1102#1095#1080#1090#1100' '#1074#1089#1077' '#1075#1086#1076#1072
+              TabOrder = 2
+              OnClick = cbAllDataClick
+            end
+          end
+          object grp3: TGroupBox
+            Left = 1
+            Top = 226
+            Width = 207
+            Height = 105
+            Align = alTop
+            Caption = '...'
+            TabOrder = 3
+            object lbl5: TLabel
+              Left = 5
+              Top = 24
+              Width = 124
+              Height = 17
+              Caption = #1054#1090#1074#1077#1090#1089#1090#1074#1077#1085#1085#1099#1081':'
+            end
+            object edt1: TEdit
+              Left = 5
+              Top = 48
+              Width = 121
+              Height = 25
+              TabOrder = 0
+              OnChange = edt1Change
+            end
+          end
+          object grp4: TGroupBox
+            Left = 1
+            Top = 456
+            Width = 207
+            Height = 64
+            Align = alBottom
+            TabOrder = 4
+            object btn1: TButton
+              Left = 5
+              Top = 27
+              Width = 161
+              Height = 25
+              Caption = #1086#1090#1086#1073#1088#1072#1090#1100' '#1079#1072#1087#1080#1089#1080' !'
+              Default = True
+              TabOrder = 0
+              OnClick = btn1Click
+            end
           end
         end
       end
@@ -357,14 +403,6 @@ inherited SpisokForm: TSpisokForm
         object cxGrid2Level1: TcxGridLevel
           GridView = cxGrid2DBTableView1
         end
-      end
-      object cxdbfltrcntrl1: TcxDBFilterControl
-        Left = 576
-        Top = 160
-        Width = 300
-        Height = 200
-        Items = <>
-        TabOrder = 1
       end
     end
     object pnl_Navigator1: TPanel

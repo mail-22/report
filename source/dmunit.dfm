@@ -469,6 +469,7 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
+    OnFilterRecord = tblReportFiltr2FilterRecord
     Left = 608
     Top = 96
     object IntegerField1: TIntegerField

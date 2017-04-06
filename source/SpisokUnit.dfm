@@ -156,7 +156,7 @@ inherited SpisokForm: TSpisokForm
             Width = 207
             Height = 208
             Align = alTop
-            Caption = '...'
+            Caption = #1044#1080#1072#1087#1072#1079#1086#1085' '#1076#1072#1090
             TabOrder = 2
             object cbAllData: TCheckBox
               Left = 13
@@ -172,7 +172,7 @@ inherited SpisokForm: TSpisokForm
               Top = 16
               Width = 196
               Height = 73
-              Caption = 'grpData1'
+              Caption = '...'
               TabOrder = 1
               object dtp1lbl: TLabel
                 Left = 5
@@ -197,7 +197,7 @@ inherited SpisokForm: TSpisokForm
               Top = 96
               Width = 190
               Height = 65
-              Caption = 'grpData2'
+              Caption = '...'
               TabOrder = 2
               object dtp2lbl: TLabel
                 Left = 5

@@ -1,7 +1,7 @@
 inherited GridForm: TGridForm
-  Left = 89
-  Top = 235
-  Width = 1280
+  Left = -1577
+  Top = 177
+  Width = 1501
   Height = 783
   Caption = 'GridForm'
   PixelsPerInch = 96
@@ -9,7 +9,7 @@ inherited GridForm: TGridForm
   object pnlT: TPanel [0]
     Left = 0
     Top = 26
-    Width = 1264
+    Width = 1485
     Height = 680
     Align = alClient
     BevelOuter = bvLowered
@@ -18,7 +18,7 @@ inherited GridForm: TGridForm
     object pnlGrid: TPanel
       Left = 1
       Top = 1
-      Width = 1262
+      Width = 1483
       Height = 678
       Align = alClient
       AutoSize = True
@@ -26,7 +26,7 @@ inherited GridForm: TGridForm
       object lbl2: TLabel
         Left = 1
         Top = 1
-        Width = 1260
+        Width = 1481
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -41,14 +41,14 @@ inherited GridForm: TGridForm
       object pnlBBB: TPanel
         Left = 1
         Top = 666
-        Width = 1260
+        Width = 1481
         Height = 11
         Align = alBottom
         TabOrder = 0
         Visible = False
       end
       object cxspltr1: TcxSplitter
-        Left = 920
+        Left = 1304
         Top = 14
         Width = 8
         Height = 652
@@ -57,9 +57,9 @@ inherited GridForm: TGridForm
         Control = pnlR
       end
       object pnlR: TPanel
-        Left = 928
+        Left = 1312
         Top = 14
-        Width = 333
+        Width = 170
         Height = 652
         Align = alRight
         Caption = 'pnlR'
@@ -67,7 +67,7 @@ inherited GridForm: TGridForm
         object lbl3: TLabel
           Left = 1
           Top = 1
-          Width = 331
+          Width = 168
           Height = 13
           Align = alTop
           Alignment = taCenter
@@ -82,7 +82,7 @@ inherited GridForm: TGridForm
         object cxdbvrtclgrd1: TcxDBVerticalGrid
           Left = 1
           Top = 14
-          Width = 331
+          Width = 168
           Height = 637
           Align = alClient
           DragCursor = crDrag
@@ -95,7 +95,7 @@ inherited GridForm: TGridForm
           LookAndFeel.NativeStyle = False
           OptionsView.CellEndEllipsis = True
           OptionsView.GridLineColor = clBlue
-          OptionsView.RowHeaderWidth = 236
+          OptionsView.RowHeaderWidth = 124
           OptionsBehavior.AlwaysShowEditor = True
           OptionsBehavior.RowSizing = True
           ParentFont = False
@@ -309,7 +309,7 @@ inherited GridForm: TGridForm
       object pnlL: TPanel
         Left = 1
         Top = 14
-        Width = 919
+        Width = 1303
         Height = 652
         Align = alClient
         Caption = 'pnlL'
@@ -317,7 +317,7 @@ inherited GridForm: TGridForm
         object lbl1: TLabel
           Left = 1
           Top = 1
-          Width = 917
+          Width = 1301
           Height = 13
           Align = alTop
           Alignment = taCenter
@@ -332,7 +332,7 @@ inherited GridForm: TGridForm
         object cxgrd1: TcxGrid
           Left = 1
           Top = 14
-          Width = 917
+          Width = 1301
           Height = 606
           Align = alClient
           BevelInner = bvLowered
@@ -373,6 +373,7 @@ inherited GridForm: TGridForm
             OptionsCustomize.ColumnsQuickCustomization = True
             OptionsData.Appending = True
             OptionsView.CellEndEllipsis = True
+            OptionsView.ShowEditButtons = gsebAlways
             OptionsView.CellAutoHeight = True
             OptionsView.ColumnAutoWidth = True
             OptionsView.FooterAutoHeight = True
@@ -473,14 +474,222 @@ inherited GridForm: TGridForm
               Width = 24
             end
           end
+          object cxgrd1DBBandedTableView1: TcxGridDBBandedTableView
+            NavigatorButtons.ConfirmDelete = False
+            DataController.DataSource = DM.dsReport
+            DataController.Summary.DefaultGroupSummaryItems = <>
+            DataController.Summary.FooterSummaryItems = <>
+            DataController.Summary.SummaryGroups = <>
+            OptionsCustomize.ColumnHiding = True
+            OptionsCustomize.ColumnsQuickCustomization = True
+            OptionsCustomize.DataRowSizing = True
+            OptionsCustomize.BandHiding = True
+            OptionsCustomize.BandsQuickCustomization = True
+            OptionsCustomize.BandsQuickCustomizationReordering = qcrEnabled
+            OptionsView.CellEndEllipsis = True
+            OptionsView.CellAutoHeight = True
+            OptionsView.ColumnAutoWidth = True
+            OptionsView.GroupByBox = False
+            OptionsView.HeaderAutoHeight = True
+            OptionsView.BandHeaderEndEllipsis = True
+            Bands = <
+              item
+                Caption = #1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072
+                Width = 168
+              end
+              item
+                Caption = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077' , '#1086#1090#1076#1077#1083
+                Width = 121
+              end
+              item
+                Caption = #1044#1086#1075#1086#1074#1086#1088
+                Width = 311
+              end
+              item
+                Caption = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080
+                Width = 139
+              end
+              item
+                Caption = #1057#1095#1077#1090
+                Width = 277
+              end
+              item
+                Caption = #1042#1099#1087#1086#1083#1085#1077#1085#1080#1077
+                Width = 267
+              end>
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'basis'
+              Width = 131
+              Position.BandIndex = 0
+              Position.ColIndex = 0
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'basis_ffile'
+              Width = 126
+              Position.BandIndex = 0
+              Position.ColIndex = 1
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'department'
+              Width = 42
+              Position.BandIndex = 1
+              Position.ColIndex = 0
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'DepartL'
+              Width = 74
+              Position.BandIndex = 1
+              Position.ColIndex = 1
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'contract_execution_note'
+              Width = 43
+              Position.BandIndex = 2
+              Position.ColIndex = 3
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'contract_file'
+              Width = 43
+              Position.BandIndex = 2
+              Position.ColIndex = 2
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'contract_name'
+              Width = 70
+              Position.BandIndex = 2
+              Position.ColIndex = 0
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'deadline'
+              Width = 43
+              Position.BandIndex = 2
+              Position.ColIndex = 5
+              Position.RowIndex = 0
+            end
+            object cxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'contract_execution_file'
+              Width = 44
+              Position.BandIndex = 2
+              Position.ColIndex = 4
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'contract_execution_note'
+              Width = 55
+              Position.BandIndex = 5
+              Position.ColIndex = 0
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'id'
+              Width = 55
+              Position.BandIndex = -1
+              Position.ColIndex = -1
+              Position.RowIndex = -1
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1contract_number: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'contract_number'
+              Width = 68
+              Position.BandIndex = 2
+              Position.ColIndex = 1
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1costofwork: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'costofwork'
+              Width = 55
+              Position.BandIndex = 4
+              Position.ColIndex = 0
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'responsible'
+              Width = 55
+              Position.BandIndex = 5
+              Position.ColIndex = 4
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1invoice: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'invoice'
+              Width = 55
+              Position.BandIndex = 4
+              Position.ColIndex = 4
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1invoice_file: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'invoice_file'
+              Width = 55
+              Position.BandIndex = 4
+              Position.ColIndex = 3
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1payment_note: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'payment_note'
+              Width = 55
+              Position.BandIndex = 4
+              Position.ColIndex = 2
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1payment_date: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'payment_date'
+              Width = 55
+              Position.BandIndex = 4
+              Position.ColIndex = 1
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_note: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'performance_of_work_note'
+              Width = 55
+              Position.BandIndex = 5
+              Position.ColIndex = 2
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_file: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'performance_of_work_file'
+              Width = 55
+              Position.BandIndex = 5
+              Position.ColIndex = 3
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_date: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'performance_of_work_date'
+              Width = 55
+              Position.BandIndex = 5
+              Position.ColIndex = 1
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'act_acceptance'
+              Width = 55
+              Position.BandIndex = 3
+              Position.ColIndex = 1
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'act_acceptance_file'
+              Width = 55
+              Position.BandIndex = 3
+              Position.ColIndex = 0
+              Position.RowIndex = 0
+            end
+          end
           object cxgrdlvl1: TcxGridLevel
+            GridView = cxgrd1DBBandedTableView1
+          end
+          object cxgrdlvlcxgrd1Level1: TcxGridLevel
             GridView = cxgrdbtblvw1
           end
         end
         object pnl_Navigator1: TPanel
           Left = 1
           Top = 620
-          Width = 917
+          Width = 1301
           Height = 31
           Align = alBottom
           BevelInner = bvLowered
@@ -490,7 +699,7 @@ inherited GridForm: TGridForm
           object cxDBNavigator3: TcxDBNavigator
             Left = 206
             Top = 2
-            Width = 705
+            Width = 1080
             Height = 23
             DataSource = DM.dsReport
             Align = alClient
@@ -508,7 +717,7 @@ inherited GridForm: TGridForm
             object jvdbstslbl1: TJvDBStatusLabel
               Left = 0
               Top = 3
-              Width = 19
+              Width = 72
               Height = 17
               DataSource = DM.dsReport
               Style = lsRecordNo
@@ -544,7 +753,7 @@ inherited GridForm: TGridForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1264
+    Width = 1485
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
@@ -562,7 +771,7 @@ inherited GridForm: TGridForm
   object jvstsbr1: TJvStatusBar [2]
     Left = 0
     Top = 726
-    Width = 1264
+    Width = 1485
     Height = 19
     Panels = <>
     SimplePanel = True
@@ -570,7 +779,7 @@ inherited GridForm: TGridForm
   object dxstsbr1: TdxStatusBar [3]
     Left = 0
     Top = 706
-    Width = 1264
+    Width = 1485
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET
@@ -618,13 +827,13 @@ inherited GridForm: TGridForm
         ActionList = actlst1
         Caption = 'actlst1'
       end>
-    Left = 162
-    Top = 40
+    Left = 178
+    Top = 352
     StyleName = 'XP Style'
   end
   object actlst1: TActionList
-    Left = 218
-    Top = 40
+    Left = 250
+    Top = 264
     object actAdd: TAction
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1079#1072#1087#1080#1089#1100' '
       OnExecute = actAddExecute

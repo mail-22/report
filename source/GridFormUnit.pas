@@ -112,6 +112,31 @@ type
     jvstsbr1: TJvStatusBar;
     jvpvnts1: TJvAppEvents;
     cxprprtstr1: TcxPropertiesStore;
+    cxgrd1DBBandedTableView1: TcxGridDBBandedTableView;
+    cxgrdlvlcxgrd1Level1: TcxGridLevel;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1contract_number: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1costofwork: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1invoice: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1invoice_file: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1payment_note: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1payment_date: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_note: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_file: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_date: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file: TcxGridDBBandedColumn;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -152,6 +177,8 @@ uses MainUnit, EditForm2Unit, LogicUnit, SelDepUnit, EditGridJpgFormUnit, EditGr
 var
   FileName_cxgrdbtblvw1 :string;
   FileName_cxdbvrtclgrd1 :string;
+  FileName_cxgrd1DBBandedTableView1 :string;
+
 
 procedure TGridForm.actOleExecute(Sender: TObject);
 begin
@@ -216,6 +243,10 @@ begin
 
   FileName_cxdbvrtclgrd1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxdbvrtclgrd1' +'.ini';
   cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
+
+  FileName_cxgrd1DBBandedTableView1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd1DBBandedTableView1' +'.ini';
+  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
+
   cxprprtstr1.Active:=true;
   cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
   cxprprtstr1.RestoreFrom;
@@ -350,6 +381,7 @@ begin
 
   cxgrdbtblvw1.StoreToIniFile(FileName_cxgrdbtblvw1, true);
   cxdbvrtclgrd1.StoreToIniFile(FileName_cxdbvrtclgrd1, true);
+  cxgrd1DBBandedTableView1.StoreToIniFile(FileName_cxgrd1DBBandedTableView1, true);
 
   cxprprtstr1.StoreTo(True);
 end;

@@ -23,7 +23,9 @@ uses
   dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven, dxSkinSharp,
   dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue,
-  dxSkinscxPCPainter
+  dxSkinscxPCPainter, cxGridBandedTableView, cxGridDBBandedTableView,
+  dxSkinsdxStatusBarPainter, dxStatusBar, JvAppEvent, ComCtrls,
+  JvExComCtrls, JvStatusBar, cxPropertiesStore
 
   ;
 
@@ -36,14 +38,12 @@ type
     cxgrdbtblvw1: TcxGridDBTableView;
     cxgrdlvl1: TcxGridLevel;
     pnlBBB: TPanel;
-    lbl2: TLabel;
     pnl_Navigator1: TPanel;
     cxDBNavigator3: TcxDBNavigator;
     pnl3: TPanel;
     jvdbstslbl1: TJvDBStatusLabel;
     pnl4: TPanel;
     JvDBStatusLabel3: TJvDBStatusLabel;
-    ctrlbr1: TControlBar;
     cxspltr1: TcxSplitter;
     cxdbvrtclgrd1: TcxDBVerticalGrid;
     actmmb1: TActionMainMenuBar;
@@ -104,6 +104,39 @@ type
     cxctgryrwcxdbvrtclgrd1CategoryRow1: TcxCategoryRow;
     cxctgryrwcxdbvrtclgrd1CategoryRow2: TcxCategoryRow;
     cxctgryrwcxdbvrtclgrd1CategoryRow3: TcxCategoryRow;
+    pnlR: TPanel;
+    pnlL: TPanel;
+    dxstsbr1: TdxStatusBar;
+    lbl3: TLabel;
+    lbl2: TLabel;
+    jvstsbr1: TJvStatusBar;
+    jvpvnts1: TJvAppEvents;
+    cxprprtstr1: TcxPropertiesStore;
+    cxgrd1DBBandedTableView1: TcxGridDBBandedTableView;
+    cxgrdlvlcxgrd1Level1: TcxGridLevel;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1contract_number: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1costofwork: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1invoice: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1invoice_file: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1payment_note: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1payment_date: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_note: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_file: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_date: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file: TcxGridDBBandedColumn;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -112,7 +145,9 @@ type
     procedure actJpgExecute(Sender: TObject);
     procedure actSpisokExecute(Sender: TObject);
     procedure actTunExecute(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure jvpvnts1Hint(Sender: TObject);
   private
     { Private declarations }
   public
@@ -138,7 +173,12 @@ implementation
 uses MainUnit, EditForm2Unit, LogicUnit, SelDepUnit, EditGridJpgFormUnit, EditGridOleFormUnit,  EditEmplFormUnit, SpisokUnit, ExportXLSFormUnit;
 
 {$R *.dfm}
-                      
+
+var
+  FileName_cxgrdbtblvw1 :string;
+  FileName_cxdbvrtclgrd1 :string;
+  FileName_cxgrd1DBBandedTableView1 :string;
+
 
 procedure TGridForm.actOleExecute(Sender: TObject);
 begin
@@ -190,10 +230,26 @@ end;
 procedure TGridForm.FormCreate(Sender: TObject);
 begin
   inherited;
-Exit;    // ???
+    // ???
+{
   DM.tblReport2.FindLast;
   DM.tblReport2.FindFirst;
   DM.tblReport2.FindLast;
+}
+
+// cxgrd1
+  FileName_cxgrdbtblvw1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrdbtblvw1' +'.ini';
+  cxgrdbtblvw1.RestoreFromIniFile(FileName_cxgrdbtblvw1);
+
+  FileName_cxdbvrtclgrd1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxdbvrtclgrd1' +'.ini';
+  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
+
+  FileName_cxgrd1DBBandedTableView1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd1DBBandedTableView1' +'.ini';
+  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
+
+  cxprprtstr1.Active:=true;
+  cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
+  cxprprtstr1.RestoreFrom;
 end;
 
 procedure TGridForm.DepMethod;
@@ -318,6 +374,24 @@ begin
     Screen.Cursor := crDefault;
   end;
 end;
+
+procedure TGridForm.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+
+  cxgrdbtblvw1.StoreToIniFile(FileName_cxgrdbtblvw1, true);
+  cxdbvrtclgrd1.StoreToIniFile(FileName_cxdbvrtclgrd1, true);
+  cxgrd1DBBandedTableView1.StoreToIniFile(FileName_cxgrd1DBBandedTableView1, true);
+
+  cxprprtstr1.StoreTo(True);
+end;
+
+procedure TGridForm.jvpvnts1Hint(Sender: TObject);
+begin
+  inherited;
+  jvstsbr1.SimpleText := Application.Hint;
+end;
+
 ///////////////////////////////////////////////////////////////////////////////
 
 //-

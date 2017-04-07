@@ -8,8 +8,8 @@ object BaseForm: TBaseForm
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
+  Font.Height = -15
+  Font.Name = 'Times New Roman'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
@@ -18,7 +18,7 @@ object BaseForm: TBaseForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
   object jvfrmstrg1: TJvFormStorage
     Active = False
     AppStorage = jvpnflstrg1

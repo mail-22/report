@@ -1,8 +1,8 @@
 object DM: TDM
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 134
-  Top = 307
+  Left = 451
+  Top = 318
   Height = 458
   Width = 760
   object OpenDialog1: TOpenDialog
@@ -332,7 +332,7 @@ object DM: TDM
       Size = 255
     end
     object tblReport2basis_ffile: TIntegerField
-      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077', '#1092#1072#1081#1083
+      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
       FieldName = 'basis_ffile'
     end
     object tblReport2contract_number: TStringField
@@ -346,7 +346,7 @@ object DM: TDM
       Size = 255
     end
     object tblReport2contract_file: TIntegerField
-      DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' - '#1092#1072#1081#1083
+      DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
       FieldName = 'contract_file'
     end
     object tblReport2deadline: TDateTimeField
@@ -368,6 +368,7 @@ object DM: TDM
       Size = 255
     end
     object tblReport2invoice_file: TIntegerField
+      DisplayLabel = #1057#1095#1077#1090' '#1085#1072' '#1086#1087#1083#1072#1090#1091' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
       FieldName = 'invoice_file'
     end
     object tblReport2payment_note: TBooleanField
@@ -383,7 +384,7 @@ object DM: TDM
       FieldName = 'performance_of_work_note'
     end
     object tblReport2performance_of_work_file: TIntegerField
-      DisplayLabel = #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1088#1072#1073#1086#1090#1099' - '#1092#1072#1081#1083
+      DisplayLabel = #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1088#1072#1073#1086#1090#1099' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
       FieldName = 'performance_of_work_file'
     end
     object tblReport2performance_of_work_date: TDateTimeField
@@ -396,7 +397,7 @@ object DM: TDM
       Size = 255
     end
     object tblReport2act_acceptance_file: TIntegerField
-      DisplayLabel = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080' '#1092#1074#1081#1083
+      DisplayLabel = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
       FieldName = 'act_acceptance_file'
     end
     object blnfldReport2contract_execution_note: TBooleanField
@@ -404,7 +405,7 @@ object DM: TDM
       FieldName = 'contract_execution_note'
     end
     object tblReport2contract_execution_file: TSmallintField
-      DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072', '#1092#1072#1081#1083
+      DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072'- '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
       FieldName = 'contract_execution_file'
     end
   end
@@ -466,6 +467,7 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
+    OnFilterRecord = tblReportFiltr2FilterRecord
     Left = 608
     Top = 96
     object IntegerField1: TIntegerField

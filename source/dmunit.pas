@@ -101,6 +101,7 @@ type
     procedure tblBildingAfterInsert(DataSet: TDataSet);
     procedure tblJpgAfterInsert(DataSet: TDataSet);
     procedure tblJpgAfterPost(DataSet: TDataSet);
+    procedure tblReportFiltr2FilterRecord(DataSet: TDataSet; var Accept: Boolean);
 
   private
     Data_Source: string;
@@ -764,6 +765,12 @@ begin
 
   //DM.tblVypoln.Parameters[1].Value := '*' ;
 end; //Init
+
+procedure TDM.tblReportFiltr2FilterRecord(DataSet: TDataSet; var Accept:
+    Boolean);
+begin
+//
+end;
 
 initialization
 

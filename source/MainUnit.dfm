@@ -1,18 +1,16 @@
 inherited FormMain: TFormMain
   Left = 469
   Top = 346
-  Width = 645
-  Height = 498
   Caption = #1052#1086#1085#1080#1090#1086#1088#1080#1085#1075
   Color = clGradientInactiveCaption
   OnHelp = FormHelp
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
   object img1: TJvImage [0]
     Left = 0
-    Top = 192
-    Width = 629
+    Top = 198
+    Width = 784
     Height = 158
     Align = alTop
     AutoSize = True
@@ -1622,9 +1620,9 @@ inherited FormMain: TFormMain
   end
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
-    Top = 23
-    Width = 629
-    Height = 24
+    Top = 27
+    Width = 784
+    Height = 27
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
@@ -1633,26 +1631,26 @@ inherited FormMain: TFormMain
     ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
     Spacing = 0
   end
   object jvstctxt1: TJvStaticText [2]
     Left = 0
-    Top = 47
-    Width = 629
-    Height = 25
+    Top = 54
+    Width = 784
+    Height = 33
     Align = alTop
     Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
-    Font.Height = -19
+    Font.Height = -24
     Font.Name = 'Times New Roman'
     Font.Style = []
     HotTrackFont.Charset = DEFAULT_CHARSET
     HotTrackFont.Color = clWindowText
-    HotTrackFont.Height = -19
+    HotTrackFont.Height = -24
     HotTrackFont.Name = 'Times New Roman'
     HotTrackFont.Style = []
     Layout = tlTop
@@ -1664,9 +1662,9 @@ inherited FormMain: TFormMain
   end
   object jvstctxt2: TJvStaticText [3]
     Left = 0
-    Top = 72
-    Width = 629
-    Height = 96
+    Top = 87
+    Width = 784
+    Height = 80
     Align = alTop
     Alignment = taCenter
     Caption = 
@@ -1676,12 +1674,12 @@ inherited FormMain: TFormMain
       #1088#1086#1090#1080#1074#1086#1087#1086#1078#1072#1088#1085#1086#1081' '#1089#1083#1091#1078#1073#1099' '#1052#1063#1057' '#1056#1086#1089#1089#1080#1080#187'   '#13#10#13#10' _'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
-    Font.Height = -19
+    Font.Height = -24
     Font.Name = 'Times New Roman'
     Font.Style = []
     HotTrackFont.Charset = DEFAULT_CHARSET
     HotTrackFont.Color = clWindowText
-    HotTrackFont.Height = -19
+    HotTrackFont.Height = -24
     HotTrackFont.Name = 'Times New Roman'
     HotTrackFont.Style = []
     Layout = tlTop
@@ -1693,20 +1691,20 @@ inherited FormMain: TFormMain
   end
   object jvstctxt3: TJvStaticText [4]
     Left = 0
-    Top = 372
-    Width = 629
+    Top = 384
+    Width = 784
     Height = 48
     Align = alTop
     Alignment = taCenter
     Caption = #1091#1095#1077#1090' '#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089#1090#1080'   '#13#10#13#10'_'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
-    Font.Height = -19
+    Font.Height = -24
     Font.Name = 'Times New Roman'
     Font.Style = []
     HotTrackFont.Charset = DEFAULT_CHARSET
     HotTrackFont.Color = clWindowText
-    HotTrackFont.Height = -19
+    HotTrackFont.Height = -24
     HotTrackFont.Name = 'Times New Roman'
     HotTrackFont.Style = []
     Layout = tlTop
@@ -1719,19 +1717,19 @@ inherited FormMain: TFormMain
   end
   object jvstctxt4: TJvStaticText [5]
     Left = 0
-    Top = 168
-    Width = 629
-    Height = 24
+    Top = 167
+    Width = 784
+    Height = 31
     Align = alTop
     Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
-    Font.Height = -19
+    Font.Height = -24
     Font.Name = 'Times New Roman'
     Font.Style = []
     HotTrackFont.Charset = DEFAULT_CHARSET
     HotTrackFont.Color = clWindowText
-    HotTrackFont.Height = -19
+    HotTrackFont.Height = -24
     HotTrackFont.Name = 'Times New Roman'
     HotTrackFont.Style = []
     Layout = tlTop
@@ -1743,19 +1741,19 @@ inherited FormMain: TFormMain
   end
   object jvstctxt5: TJvStaticText [6]
     Left = 0
-    Top = 350
-    Width = 629
-    Height = 22
+    Top = 356
+    Width = 784
+    Height = 28
     Align = alTop
     Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
-    Font.Height = -19
+    Font.Height = -24
     Font.Name = 'Times New Roman'
     Font.Style = []
     HotTrackFont.Charset = DEFAULT_CHARSET
     HotTrackFont.Color = clWindowText
-    HotTrackFont.Height = -19
+    HotTrackFont.Height = -24
     HotTrackFont.Name = 'Times New Roman'
     HotTrackFont.Style = []
     Layout = tlTop
@@ -1768,8 +1766,8 @@ inherited FormMain: TFormMain
   object acttb1: TActionToolBar [7]
     Left = 0
     Top = 0
-    Width = 629
-    Height = 23
+    Width = 784
+    Height = 27
     ActionManager = actmgr1
     Caption = 'acttb1'
     ColorMap.HighlightColor = clWhite

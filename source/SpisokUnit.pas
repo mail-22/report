@@ -27,7 +27,8 @@ DBCtrls, cxVGrid, cxDBVGrid,
   dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
   dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinXmas2008Blue, dxSkinscxPCPainter;
+  dxSkinXmas2008Blue, dxSkinscxPCPainter, cxFilterControl,
+  cxDBFilterControl;
 
 type
   TSpisokForm = class(TBaseForm)
@@ -58,10 +59,9 @@ type
     dtp1: TDateTimePicker;
     btn1: TButton;
     dtp2: TDateTimePicker;
-    lbl1: TLabel;
     edt1: TEdit;
-    lbl2: TLabel;
-    Label1: TLabel;
+    dtp1lbl: TLabel;
+    dtp2lbl: TLabel;
     lbl4: TLabel;
     lbl5: TLabel;
     dblkcbb1: TDBLookupComboBox;
@@ -92,11 +92,20 @@ type
     cxGrid2DBTableView1act_acceptance_file: TcxGridDBColumn;
     cxGrid2DBTableView1contract_execution_note: TcxGridDBColumn;
     cxGrid2DBTableView1contract_execution_file: TcxGridDBColumn;
+    grp1: TGroupBox;
+    lbl1: TLabel;
+    grp2: TGroupBox;
+    cbAllData: TCheckBox;
+    grp3: TGroupBox;
+    grp4: TGroupBox;
+    grpData1: TGroupBox;
+    grpData2: TGroupBox;
     procedure FormCreate(Sender: TObject);
     procedure img1Click(Sender: TObject);
     procedure dbrchvwdtoleClick(Sender: TObject);
     procedure actExportExlExecute(Sender: TObject);
     procedure btn1Click(Sender: TObject);
+    procedure cbAllDataClick(Sender: TObject);
     procedure chkAllClick(Sender: TObject);
     procedure dblkcbb1Click(Sender: TObject);
     procedure dblkcbb1Exit(Sender: TObject);
@@ -119,10 +128,12 @@ procedure SpisokForm_Show;
 var
   SpisokForm: TSpisokForm;
   chkAllDep : Boolean;
+  chkAllData  : Boolean;
 
 implementation
 
-uses FormJPGUnit, FormRTFUnit, DMUnit, ExportXLSFormUnit, GridFormUnit;
+uses FormJPGUnit, FormRTFUnit, DMUnit, ExportXLSFormUnit, GridFormUnit
+;
 
 {$R *.dfm}
 
@@ -132,7 +143,14 @@ begin
   inherited;
   cxLocalizerMethod(Sender);
   cxPropertiesStoreMethod(Sender);
+
+dtp1.Date := Now;
+dtp2.Date := Now;
+
+chkAll.State := cbChecked;
+  
 end;
+
 
 procedure TSpisokForm.img1Click(Sender: TObject);
 begin
@@ -180,6 +198,37 @@ begin
   MakeFiltr;
 end;
 
+procedure TSpisokForm.cbAllDataClick(Sender: TObject);
+begin
+  inherited;
+//
+
+ //chkAll.AllowGrayed := True;
+  if (cbAllData.State = cbChecked) then
+  begin
+     chkAllData := True;
+{
+     dtp1.Visible:=False;
+     dtp1lbl.Visible:=False;
+}
+     grpData1.Visible:=False;
+     grpData2.Visible:=False;
+  end;
+  if (cbAllData.State = cbUnchecked) then
+  begin
+     chkAllData := False;
+{
+     dtp2.Visible:=True;
+     dtp1lb2.Visible:=True;
+}
+     grpData1.Visible:=True;
+     grpData2.Visible:=True;
+  end;
+
+  MakeFiltr;
+
+end;
+
 procedure TSpisokForm.chkAllClick(Sender: TObject);
 begin
   inherited;
@@ -187,10 +236,12 @@ begin
   if (chkAll.State = cbChecked) then
   begin
      chkAllDep := True;
+     dblkcbb1.Visible:=False;
   end;
   if (chkAll.State = cbUnchecked) then
   begin
      chkAllDep := False;
+     dblkcbb1.Visible:=True;
   end;
 
   MakeFiltr;
@@ -274,6 +325,7 @@ begin
 
 dblkcbb1.KeyValue := dblkcbb1.ListSource.DataSet.FieldByName(dblkcbb1.KeyField).Value;
 
+
 end;
 
 procedure TSpisokForm.MakeFiltr;
@@ -309,6 +361,14 @@ begin
   SelDepUnit.DepDefaultName := DM.strngfldunqry1depart.AsString;
   strDepDefaultID := IntToStr(DepDefaultID);
   if (chkAllDep) then begin strDepDefaultID := ''; end;
+
+  if (chkAllData) then begin
+     Date1:= DateUtils.IncYear(Now, -10 );
+     dtp1.Date := Date1;
+
+     Date2:= DateUtils.IncYear(Now, +10 );
+     dtp2.Date := Date2;
+  end;
 
   EmplName:= edt1.Text;
   dataset.ParamByName('responsible').Value := EmplName + '%';

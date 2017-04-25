@@ -9,7 +9,8 @@ uses
   cxLookAndFeelPainters, cxStyles, cxEdit, cxVGrid, cxDBVGrid, DB,
   cxInplaceContainer, cxPropertiesStore, StdCtrls, ExtCtrls,
   cxDBLookupComboBox, cxMRUEdit, cxCalendar, dxSkinsCore,
-  dxSkinOffice2007Blue;
+  dxSkinOffice2007Blue, XPStyleActnCtrls, ActnList, ActnMan, ToolWin,
+  ActnCtrls, GridFormUnit, cxCheckBox;
 
 type
   TEditForm = class(TBaseForm)
@@ -42,6 +43,8 @@ type
     cxdbvrtclgrd1act_acceptance_file: TcxDBEditorRow;
     cxdbvrtclgrd1contract_execution_note: TcxDBEditorRow;
     cxdbvrtclgrd1contract_execution_file: TcxDBEditorRow;
+    ActionManager1: TActionManager;
+    acttb2: TActionToolBar;
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
   private
@@ -71,7 +74,7 @@ procedure TEditForm.btnOKClick(Sender: TObject);
 begin
   inherited;
    AddBildFormResult := +1;
-   EditForm.Close;  
+   EditForm.Close;
 end;
 
 procedure EditForm_Show;

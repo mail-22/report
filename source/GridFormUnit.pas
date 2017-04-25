@@ -12,7 +12,7 @@ uses
   StdCtrls, ExtCtrls, JvAppStorage, JvAppIniStorage, JvComponentBase,
   JvFormPlacement,
   DMUnit, Grids, DBGrids
-  ,EditFormUnit, cxDBLookupComboBox, cxVGrid, cxDBVGrid,
+  , cxDBLookupComboBox, cxVGrid, cxDBVGrid,
   cxInplaceContainer, cxSplitter, ActnList, XPStyleActnCtrls, ActnMan,
   ToolWin, ActnCtrls, ActnMenus, cxCalendar, cxMRUEdit, cxCheckBox,
   dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel, dxSkinCoffee,
@@ -137,6 +137,7 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_date: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file: TcxGridDBBandedColumn;
+    cxprprtstr2cxgrdbtblvw1: TcxPropertiesStore;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -170,7 +171,7 @@ var
 
 implementation
 
-uses MainUnit, EditForm2Unit, LogicUnit, SelDepUnit, EditGridJpgFormUnit, EditGridOleFormUnit,  EditEmplFormUnit, SpisokUnit, ExportXLSFormUnit;
+uses MainUnit, EditForm2Unit, LogicUnit, SelDepUnit, EditGridJpgFormUnit, EditGridOleFormUnit,  EditEmplFormUnit, SpisokUnit, ExportXLSFormUnit, EditFormUnit;
 
 {$R *.dfm}
 
@@ -227,31 +228,6 @@ begin
    TunMethod;
 end;
 
-procedure TGridForm.FormCreate(Sender: TObject);
-begin
-  inherited;
-    // ???
-{
-  DM.tblReport2.FindLast;
-  DM.tblReport2.FindFirst;
-  DM.tblReport2.FindLast;
-}
-
-// cxgrd1
-  FileName_cxgrdbtblvw1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrdbtblvw1' +'.ini';
-  cxgrdbtblvw1.RestoreFromIniFile(FileName_cxgrdbtblvw1);
-
-  FileName_cxdbvrtclgrd1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxdbvrtclgrd1' +'.ini';
-  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
-
-  FileName_cxgrd1DBBandedTableView1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd1DBBandedTableView1' +'.ini';
-  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
-
-  cxprprtstr1.Active:=true;
-  cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
-  cxprprtstr1.RestoreFrom;
-end;
-
 procedure TGridForm.DepMethod;
 begin
    EditForm2_Show;
@@ -300,6 +276,9 @@ begin
 
     DM.DepartL.AsInteger := DepDefaultID;
     DM.DepartL.AsInteger := DepDefaultID;
+
+    dm.tblReport2.Post; // !!!
+    dm.tblReport2.Edit;
 
     EditForm_Show;
     if (EditForm.AddBildFormResult = -1) then
@@ -375,6 +354,34 @@ begin
   end;
 end;
 
+procedure TGridForm.FormCreate(Sender: TObject);
+begin
+  inherited;
+    // ???
+{
+  DM.tblReport2.FindLast;
+  DM.tblReport2.FindFirst;
+  DM.tblReport2.FindLast;
+}
+
+// cxgrd1
+  FileName_cxgrdbtblvw1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrdbtblvw1' +'.ini';
+  cxgrdbtblvw1.RestoreFromIniFile(FileName_cxgrdbtblvw1);
+
+  FileName_cxdbvrtclgrd1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxdbvrtclgrd1' +'.ini';
+  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
+
+//cxgrd1DBBandedTableView1
+  FileName_cxgrd1DBBandedTableView1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd1DBBandedTableView1' +'.ini';
+  cxgrd1DBBandedTableView1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
+
+  {
+  cxprprtstr1.Active:=true;
+  cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
+  cxprprtstr1.RestoreFrom;
+}
+end;
+
 procedure TGridForm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
@@ -383,7 +390,7 @@ begin
   cxdbvrtclgrd1.StoreToIniFile(FileName_cxdbvrtclgrd1, true);
   cxgrd1DBBandedTableView1.StoreToIniFile(FileName_cxgrd1DBBandedTableView1, true);
 
-  cxprprtstr1.StoreTo(True);
+  //cxprprtstr1.StoreTo(True);
 end;
 
 procedure TGridForm.jvpvnts1Hint(Sender: TObject);

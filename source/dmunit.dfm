@@ -327,12 +327,12 @@ object DM: TDM
       Lookup = True
     end
     object tblReport2basis: TStringField
-      DisplayLabel = ' '#1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072
+      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072' - '#1053#1072#1079#1074#1072#1085#1080#1077' '
       FieldName = 'basis'
       Size = 255
     end
     object tblReport2basis_ffile: TIntegerField
-      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
+      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1076#1086#1082#1091#1084#1077#1085#1090')'
       FieldName = 'basis_ffile'
     end
     object tblReport2contract_number: TStringField
@@ -350,11 +350,11 @@ object DM: TDM
       FieldName = 'contract_file'
     end
     object tblReport2deadline: TDateTimeField
-      DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' - '#1089#1088#1086#1082' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1103
+      DisplayLabel = #1089#1088#1086#1082' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1103
       FieldName = 'deadline'
     end
     object tblReport2costofwork: TIntegerField
-      DisplayLabel = #1057#1090#1086#1080#1084#1086#1089#1090#1100
+      DisplayLabel = #1057#1091#1084#1084#1072
       FieldName = 'costofwork'
     end
     object tblReport2responsible: TStringField
@@ -388,7 +388,7 @@ object DM: TDM
       FieldName = 'performance_of_work_file'
     end
     object tblReport2performance_of_work_date: TDateTimeField
-      DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1088#1072#1073#1086#1090#1099'  '#1076#1072#1090#1072
+      DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1088#1072#1073#1086#1090#1099' -  '#1076#1072#1090#1072
       FieldName = 'performance_of_work_date'
     end
     object tblReport2act_acceptance: TStringField
@@ -405,7 +405,9 @@ object DM: TDM
       FieldName = 'contract_execution_note'
     end
     object tblReport2contract_execution_file: TSmallintField
-      DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072'- '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
+      DisplayLabel = 
+        #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1076#1086#1082#1091#1084#1077#1085#1090 +
+        ')'
       FieldName = 'contract_execution_file'
     end
   end

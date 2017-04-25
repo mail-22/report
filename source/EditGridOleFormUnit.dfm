@@ -5,40 +5,48 @@ inherited EditGridJOleForm: TEditGridJOleForm
   Height = 640
   Caption = 'EditGridJOleForm'
   PixelsPerInch = 96
-  TextHeight = 13
-  object pnl_Navigator1: TPanel [0]
+  TextHeight = 17
+  object lbl1: TLabel [0]
     Left = 0
-    Top = 530
-    Width = 812
-    Height = 31
+    Top = 42
+    Width = 820
+    Height = 17
+    Align = alTop
+    Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090#1099' '#1074#1080#1076#1072' :'
+  end
+  object pnl_Navigator1: TPanel [1]
+    Left = 0
+    Top = 519
+    Width = 820
+    Height = 41
     Align = alBottom
     BevelInner = bvLowered
     BevelOuter = bvLowered
     BorderStyle = bsSingle
     TabOrder = 0
     object cxdbnvgtr1: TcxDBNavigator
-      Left = 248
+      Left = 324
       Top = 2
-      Width = 555
-      Height = 23
+      Width = 480
+      Height = 33
       DataSource = DM.dsJpg
       Align = alClient
       TabOrder = 0
     end
     object pnl3: TPanel
-      Left = 187
+      Left = 244
       Top = 2
-      Width = 61
-      Height = 23
+      Width = 80
+      Height = 33
       Align = alLeft
       AutoSize = True
       BevelOuter = bvNone
       TabOrder = 1
       object jvdbstslbl1: TJvDBStatusLabel
         Left = 0
-        Top = 3
-        Width = 61
-        Height = 13
+        Top = 4
+        Width = 72
+        Height = 17
         DataSource = DM.dsJpg
         Style = lsRecordNo
         CalcRecCount = True
@@ -49,16 +57,16 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object pnl4: TPanel
       Left = 2
       Top = 2
-      Width = 185
-      Height = 23
+      Width = 242
+      Height = 33
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 2
       object jvdbstslbl2: TJvDBStatusLabel
         Left = 0
         Top = 0
-        Width = 81
-        Height = 23
+        Width = 92
+        Height = 33
         DataSource = DM.dsJpg
         CalcRecCount = True
         ShowOptions = doBoth
@@ -67,49 +75,49 @@ inherited EditGridJOleForm: TEditGridJOleForm
       end
     end
   end
-  object pnl1: TPanel [1]
+  object pnl1: TPanel [2]
     Left = 0
-    Top = 561
-    Width = 812
-    Height = 41
+    Top = 560
+    Width = 820
+    Height = 53
     Align = alBottom
     TabOrder = 1
     object btnOK: TButton
-      Left = 40
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 52
+      Top = 13
+      Width = 98
+      Height = 33
       Caption = 'Ok'
       TabOrder = 0
     end
     object btnCancel: TButton
-      Left = 190
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 248
+      Top = 13
+      Width = 99
+      Height = 33
       Caption = 'Cancel'
       TabOrder = 1
     end
   end
-  object cxSplitter1: TcxSplitter [2]
+  object cxSplitter1: TcxSplitter [3]
     Left = 0
-    Top = 23
-    Width = 8
-    Height = 507
+    Top = 115
+    Width = 10
+    Height = 404
   end
-  object pnlL: TPanel [3]
-    Left = 8
-    Top = 23
-    Width = 804
-    Height = 507
+  object pnlL: TPanel [4]
+    Left = 10
+    Top = 115
+    Width = 810
+    Height = 404
     Align = alClient
     Caption = 'pnlL'
     TabOrder = 3
     object cxgrd1: TcxGrid
       Left = 1
-      Top = 88
-      Width = 802
-      Height = 418
+      Top = 71
+      Width = 808
+      Height = 332
       Align = alClient
       TabOrder = 0
       object cxgrdbtblvwGrid1DBTableView1: TcxGridDBTableView
@@ -120,6 +128,9 @@ inherited EditGridJOleForm: TEditGridJOleForm
         DataController.Summary.SummaryGroups = <>
         OptionsView.CellEndEllipsis = True
         OptionsView.ColumnAutoWidth = True
+        OptionsView.GroupByBox = False
+        OptionsView.HeaderEndEllipsis = True
+        OptionsView.Indicator = True
         object cxgrdbclmnGrid1DBTableView1id: TcxGridDBColumn
           DataBinding.FieldName = 'id'
           Width = 33
@@ -165,38 +176,27 @@ inherited EditGridJOleForm: TEditGridJOleForm
         GridView = cxgrdbtblvwGrid1DBTableView1
       end
     end
-    object Memo1: TMemo
-      Left = 1
-      Top = 1
-      Width = 802
-      Height = 32
-      Align = alTop
-      Alignment = taCenter
-      Lines.Strings = (
-        #1089#1087#1080#1089#1086#1082' '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1093' '#1076#1086#1082#1091#1084#1077#1085#1090#1086#1074)
-      TabOrder = 1
-    end
     object actmmb2: TActionMainMenuBar
       Left = 1
-      Top = 62
-      Width = 802
-      Height = 26
+      Top = 39
+      Width = 808
+      Height = 32
       UseSystemFont = False
       ActionManager = actmgr1
       Caption = 'actmmb2'
       ColorMap = xpclrmp1
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
       Spacing = 0
     end
     object acttb1: TActionToolBar
       Left = 1
-      Top = 33
-      Width = 802
-      Height = 29
+      Top = 1
+      Width = 808
+      Height = 38
       Caption = 'acttb1'
       ColorMap.HighlightColor = clWhite
       ColorMap.BtnSelectedColor = clBtnFace
@@ -204,17 +204,28 @@ inherited EditGridJOleForm: TEditGridJOleForm
       Spacing = 0
     end
   end
-  object acttb2: TActionToolBar [4]
+  object acttb2: TActionToolBar [5]
     Left = 0
-    Top = 0
-    Width = 812
-    Height = 23
+    Top = 59
+    Width = 820
+    Height = 56
     ActionManager = actmgr1
     Caption = 'acttb2'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Spacing = 0
+  end
+  object Memo1: TMemo [6]
+    Left = 0
+    Top = 0
+    Width = 820
+    Height = 42
+    Align = alTop
+    Alignment = taCenter
+    Lines.Strings = (
+      #1089#1087#1080#1089#1086#1082' '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1093' '#1076#1086#1082#1091#1084#1077#1085#1090#1086#1074)
+    TabOrder = 5
   end
   inherited jvpnflstrg1: TJvAppIniFileStorage
     Left = 124

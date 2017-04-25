@@ -1,31 +1,31 @@
 inherited EditForm: TEditForm
-  Left = 133
-  Top = 163
+  Left = 460
+  Top = 200
   Height = 782
   Caption = 'EditForm'
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
   object pnl1: TPanel [0]
     Left = 0
-    Top = 703
-    Width = 784
-    Height = 41
+    Top = 701
+    Width = 792
+    Height = 54
     Align = alBottom
     TabOrder = 0
     object btnOK: TButton
-      Left = 40
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 52
+      Top = 13
+      Width = 98
+      Height = 33
       Caption = 'Ok'
       TabOrder = 0
       OnClick = btnOKClick
     end
     object btnCancel: TButton
-      Left = 190
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 248
+      Top = 13
+      Width = 99
+      Height = 33
       Caption = 'Cancel'
       TabOrder = 1
       OnClick = btnCancelClick
@@ -33,19 +33,20 @@ inherited EditForm: TEditForm
   end
   object cxdbvrtclgrd1: TcxDBVerticalGrid [1]
     Left = 0
-    Top = 25
-    Width = 784
-    Height = 678
+    Top = 60
+    Width = 792
+    Height = 641
     Align = alClient
+    DragCursor = crDrag
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -19
     Font.Name = 'Times'
     Font.Style = []
     LookAndFeel.Kind = lfStandard
     LookAndFeel.NativeStyle = False
     OptionsView.GridLineColor = clBlue
-    OptionsView.RowHeaderWidth = 309
+    OptionsView.RowHeaderWidth = 383
     OptionsBehavior.RowSizing = True
     ParentFont = False
     TabOrder = 1
@@ -215,13 +216,25 @@ inherited EditForm: TEditForm
   object Memo1: TMemo [2]
     Left = 0
     Top = 0
-    Width = 784
-    Height = 25
+    Width = 792
+    Height = 33
     Align = alTop
     Alignment = taCenter
     Lines.Strings = (
       #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1080' '#1087#1086' '#1076#1086#1075#1086#1074#1086#1088#1085#1086#1081' '#1088#1072#1073#1086#1090#1077)
     TabOrder = 2
+  end
+  object acttb2: TActionToolBar [3]
+    Left = 0
+    Top = 33
+    Width = 792
+    Height = 27
+    ActionManager = ActionManager1
+    Caption = 'acttb2'
+    ColorMap.HighlightColor = 14410210
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = 14410210
+    Spacing = 0
   end
   object cxprprtstr31: TcxPropertiesStore
     Active = False
@@ -241,5 +254,23 @@ inherited EditForm: TEditForm
   object ds1: TDataSource
     Left = 314
     Top = 506
+  end
+  object ActionManager1: TActionManager
+    ActionBars = <
+      item
+        Items = <
+          item
+            Action = GridForm.acOle
+          end>
+        ActionBar = acttb2
+      end>
+    LinkedActionLists = <
+      item
+        ActionList = GridForm.actlst1
+        Caption = 'actlst1'
+      end>
+    Left = 528
+    Top = 240
+    StyleName = 'XP Style'
   end
 end

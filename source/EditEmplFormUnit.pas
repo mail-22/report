@@ -12,7 +12,8 @@ uses
   cxGridCustomView, cxGrid, cxVGrid, cxDBVGrid, cxInplaceContainer,
   StdCtrls, ExtCtrls, JvAppStorage, JvAppIniStorage, JvComponentBase,
   JvFormPlacement
-  ,dmunit, cxSplitter
+  ,dmunit, cxSplitter, dxSkinsCore, dxSkinOffice2007Blue,
+  dxSkinscxPCPainter
   ;
 
 type
@@ -20,7 +21,6 @@ type
     pnl1: TPanel;
     btnOK: TButton;
     btnCancel: TButton;
-    cxdbvrtclgrd1: TcxDBVerticalGrid;
     dsEmpl: TDataSource;
     pnl_Navigator1: TPanel;
     cxdbnvgtr1: TcxDBNavigator;
@@ -28,16 +28,20 @@ type
     jvdbstslbl1: TJvDBStatusLabel;
     pnl4: TPanel;
     jvdbstslbl2: TJvDBStatusLabel;
-    cxgrd2: TcxGrid;
+    cxgrdDep: TcxGrid;
     cxgrdbtblvwGrid2DBTableView1: TcxGridDBTableView;
     cxgrdlvlGrid2Level1: TcxGridLevel;
-    cxspltr1: TcxSplitter;
-    cxdbdtrwcxdbvrtclgrd1id: TcxDBEditorRow;
-    cxdbdtrwcxdbvrtclgrd1id_depart: TcxDBEditorRow;
-    cxdbdtrwcxdbvrtclgrd1DBEditorRow: TcxDBEditorRow;
+    PanelTop: TPanel;
+    mmoTop: TMemo;
+    cxgrdEmpl: TcxGrid;
+    cxgrdbtblvw1: TcxGridDBTableView;
+    cxgrdbclmn1: TcxGridDBColumn;
+    cxgrdbclmn2: TcxGridDBColumn;
+    cxgrdbclmn3: TcxGridDBColumn;
+    cxgrdlvl1: TcxGridLevel;
     cxgrdbclmnGrid2DBTableView1id: TcxGridDBColumn;
-    cxgrdbclmnGrid2DBTableView1id_depart: TcxGridDBColumn;
-    cxgrdbclmnGrid2DBTableView1DBColumn: TcxGridDBColumn;
+    cxgrdbclmnGrid2DBTableView1depart: TcxGridDBColumn;
+    cxspltr1: TcxSplitter;
   private
     { Private declarations }
   public

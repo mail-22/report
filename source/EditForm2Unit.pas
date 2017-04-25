@@ -12,7 +12,8 @@ uses
   cxGridCustomView, cxGrid, cxVGrid, cxDBVGrid, cxInplaceContainer,
   StdCtrls, ExtCtrls, JvAppStorage, JvAppIniStorage, JvComponentBase,
   JvFormPlacement
-  ,dmunit, cxSplitter
+  ,dmunit, cxSplitter, dxSkinsCore, dxSkinOffice2007Blue,
+  dxSkinscxPCPainter
   ;
 
 type

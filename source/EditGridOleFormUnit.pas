@@ -76,6 +76,7 @@ type
     acttb2: TActionToolBar;
     xpclrmp1: TXPColorMap;
     cxgrdbclmn_Type_MRU: TcxGridDBColumn;
+    lbl1: TLabel;
     procedure acAddContractExecute(Sender: TObject);
     procedure actAddActExecute(Sender: TObject);
     procedure actAddBasisExecute(Sender: TObject);

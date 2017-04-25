@@ -3,40 +3,40 @@ inherited EditForm2: TEditForm2
   Top = 279
   Caption = 'EditForm2 - '#1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1081' '#1086#1090#1076#1077#1083#1086#1074
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
   object pnl1: TPanel [0]
     Left = 0
-    Top = 521
-    Width = 784
-    Height = 41
+    Top = 519
+    Width = 792
+    Height = 54
     Align = alBottom
     TabOrder = 0
     object btnOK: TButton
-      Left = 40
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 52
+      Top = 13
+      Width = 98
+      Height = 33
       Caption = 'Ok'
       TabOrder = 0
     end
     object btnCancel: TButton
-      Left = 190
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 248
+      Top = 13
+      Width = 99
+      Height = 33
       Caption = 'Cancel'
       TabOrder = 1
     end
   end
   object cxdbvrtclgrd1: TcxDBVerticalGrid [1]
-    Left = 479
+    Left = 626
     Top = 0
-    Width = 305
-    Height = 490
+    Width = 166
+    Height = 479
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -15
+    Font.Height = -19
     Font.Name = 'Times'
     Font.Style = []
     LookAndFeel.Kind = lfStandard
@@ -66,37 +66,37 @@ inherited EditForm2: TEditForm2
   end
   object pnl_Navigator1: TPanel [2]
     Left = 0
-    Top = 490
-    Width = 784
-    Height = 31
+    Top = 479
+    Width = 792
+    Height = 40
     Align = alBottom
     BevelInner = bvLowered
     BevelOuter = bvLowered
     BorderStyle = bsSingle
     TabOrder = 2
     object cxdbnvgtr1: TcxDBNavigator
-      Left = 205
+      Left = 268
       Top = 2
-      Width = 570
-      Height = 23
+      Width = 510
+      Height = 32
       DataSource = ds1
       Align = alClient
       TabOrder = 0
     end
     object pnl3: TPanel
-      Left = 187
+      Left = 244
       Top = 2
-      Width = 18
-      Height = 23
+      Width = 24
+      Height = 32
       Align = alLeft
       AutoSize = True
       BevelOuter = bvNone
       TabOrder = 1
       object jvdbstslbl1: TJvDBStatusLabel
         Left = 0
-        Top = 3
-        Width = 18
-        Height = 13
+        Top = 4
+        Width = 72
+        Height = 17
         DataSource = ds1
         Style = lsRecordNo
         CalcRecCount = True
@@ -107,16 +107,16 @@ inherited EditForm2: TEditForm2
     object pnl4: TPanel
       Left = 2
       Top = 2
-      Width = 185
-      Height = 23
+      Width = 242
+      Height = 32
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 2
       object jvdbstslbl2: TJvDBStatusLabel
         Left = 0
         Top = 0
-        Width = 81
-        Height = 23
+        Width = 92
+        Height = 32
         DataSource = ds1
         CalcRecCount = True
         ShowOptions = doBoth
@@ -128,12 +128,12 @@ inherited EditForm2: TEditForm2
   object cxgrd2: TcxGrid [3]
     Left = 0
     Top = 0
-    Width = 471
-    Height = 490
+    Width = 616
+    Height = 479
     Align = alLeft
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -21
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
@@ -180,10 +180,10 @@ inherited EditForm2: TEditForm2
     end
   end
   object cxspltr1: TcxSplitter [4]
-    Left = 471
+    Left = 616
     Top = 0
-    Width = 8
-    Height = 490
+    Width = 10
+    Height = 479
     Control = cxgrd2
   end
   object ds1: TDataSource

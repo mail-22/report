@@ -1,7 +1,7 @@
 inherited GridForm: TGridForm
   Left = -421
   Top = 175
-  Width = 1811
+  Width = 1460
   Height = 783
   Caption = 'GridForm'
   PixelsPerInch = 96
@@ -9,8 +9,8 @@ inherited GridForm: TGridForm
   object pnlT: TPanel [0]
     Left = 0
     Top = 26
-    Width = 1803
-    Height = 691
+    Width = 1444
+    Height = 680
     Align = alClient
     BevelOuter = bvLowered
     Caption = 'pnlT'
@@ -18,15 +18,15 @@ inherited GridForm: TGridForm
     object pnlGrid: TPanel
       Left = 1
       Top = 1
-      Width = 1801
-      Height = 689
+      Width = 1442
+      Height = 678
       Align = alClient
       AutoSize = True
       TabOrder = 0
       object lbl2: TLabel
         Left = 1
         Top = 1
-        Width = 1799
+        Width = 1440
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -40,27 +40,27 @@ inherited GridForm: TGridForm
       end
       object pnlBBB: TPanel
         Left = 1
-        Top = 677
-        Width = 1799
+        Top = 666
+        Width = 1440
         Height = 11
         Align = alBottom
         TabOrder = 0
         Visible = False
       end
       object cxspltr1: TcxSplitter
-        Left = 1622
+        Left = 1263
         Top = 14
         Width = 8
-        Height = 663
+        Height = 652
         HotZoneClassName = 'TcxMediaPlayer8Style'
         AlignSplitter = salRight
         Control = pnlR
       end
       object pnlR: TPanel
-        Left = 1630
+        Left = 1271
         Top = 14
         Width = 170
-        Height = 663
+        Height = 652
         Align = alRight
         TabOrder = 2
         object lbl3: TLabel
@@ -82,7 +82,7 @@ inherited GridForm: TGridForm
           Left = 1
           Top = 14
           Width = 168
-          Height = 648
+          Height = 637
           Align = alClient
           DragCursor = crDrag
           Font.Charset = DEFAULT_CHARSET
@@ -310,15 +310,15 @@ inherited GridForm: TGridForm
       object pnlL: TPanel
         Left = 1
         Top = 14
-        Width = 1621
-        Height = 663
+        Width = 1262
+        Height = 652
         Align = alClient
         Caption = 'pnlL'
         TabOrder = 3
         object lbl1: TLabel
           Left = 1
           Top = 1
-          Width = 1619
+          Width = 1260
           Height = 13
           Align = alTop
           Alignment = taCenter
@@ -333,8 +333,8 @@ inherited GridForm: TGridForm
         object cxgrd1: TcxGrid
           Left = 1
           Top = 14
-          Width = 1619
-          Height = 617
+          Width = 1260
+          Height = 606
           Align = alClient
           BevelInner = bvLowered
           BevelKind = bkSoft
@@ -694,8 +694,8 @@ inherited GridForm: TGridForm
         end
         object pnl_Navigator1: TPanel
           Left = 1
-          Top = 631
-          Width = 1619
+          Top = 620
+          Width = 1260
           Height = 31
           Align = alBottom
           BevelInner = bvLowered
@@ -705,7 +705,7 @@ inherited GridForm: TGridForm
           object cxDBNavigator3: TcxDBNavigator
             Left = 206
             Top = 2
-            Width = 1395
+            Width = 1035
             Height = 23
             DataSource = DM.dsReport
             Align = alClient
@@ -759,14 +759,14 @@ inherited GridForm: TGridForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1803
+    Width = 1444
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -776,16 +776,16 @@ inherited GridForm: TGridForm
   end
   object jvstsbr1: TJvStatusBar [2]
     Left = 0
-    Top = 737
-    Width = 1803
+    Top = 726
+    Width = 1444
     Height = 19
     Panels = <>
     SimplePanel = True
   end
   object dxstsbr1: TdxStatusBar [3]
     Left = 0
-    Top = 717
-    Width = 1803
+    Top = 706
+    Width = 1444
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET

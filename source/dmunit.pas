@@ -756,6 +756,7 @@ begin
   //MaxRecords := 1;  OpenDB(adsBlob);
 
   ProcessDL := utility.INI(IniFile, 'DL', 'ProcessDL', false); //DataIniFile.UpdateFile;
+  ProcessDL := True; // ???
   if ProcessDL then
   begin
     DL := TDL.Create;

@@ -28,7 +28,8 @@ uses
   EditEmplFormUnit in 'EditEmplFormUnit.pas' {EditEmplForm},
   SpisokUnit in 'SpisokUnit.pas' {SpisokForm},
   ExportXLSFormUnit in 'ExportXLSFormUnit.pas' {ExportXLSForm},
-  FileUnit in 'FileUnit.pas';
+  FileUnit in 'FileUnit.pas',
+  DisplayLabel in 'DisplayLabel.pas';
 
 {$R *.res}
 

@@ -375,11 +375,11 @@ begin
   FileName_cxgrd1DBBandedTableView1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd1DBBandedTableView1' +'.ini';
   cxgrd1DBBandedTableView1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
 
-  {
+
   cxprprtstr1.Active:=true;
   cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
   cxprprtstr1.RestoreFrom;
-}
+
 end;
 
 procedure TGridForm.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -389,8 +389,7 @@ begin
   cxgrdbtblvw1.StoreToIniFile(FileName_cxgrdbtblvw1, true);
   cxdbvrtclgrd1.StoreToIniFile(FileName_cxdbvrtclgrd1, true);
   cxgrd1DBBandedTableView1.StoreToIniFile(FileName_cxgrd1DBBandedTableView1, true);
-
-  //cxprprtstr1.StoreTo(True);
+  cxprprtstr1.StoreTo(True);
 end;
 
 procedure TGridForm.jvpvnts1Hint(Sender: TObject);

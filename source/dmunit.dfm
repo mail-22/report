@@ -25,7 +25,6 @@ object DM: TDM
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
-    Connected = True
     Left = 38
     Top = 72
   end

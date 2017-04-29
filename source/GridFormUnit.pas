@@ -372,7 +372,7 @@ begin
   cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
 
 //cxgrd1DBBandedTableView1
-  FileName_cxgrd1DBBandedTableView1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd1DBBandedTableView1' +'.ini';
+  FileName_cxcxgrd1DBBandedTableView1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd1DBBandedTableView1' +'.ini';
   cxgrd1DBBandedTableView1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
 
 
@@ -389,6 +389,7 @@ begin
   cxgrdbtblvw1.StoreToIniFile(FileName_cxgrdbtblvw1, true);
   cxdbvrtclgrd1.StoreToIniFile(FileName_cxdbvrtclgrd1, true);
   cxgrd1DBBandedTableView1.StoreToIniFile(FileName_cxgrd1DBBandedTableView1, true);
+
   cxprprtstr1.StoreTo(True);
 end;
 

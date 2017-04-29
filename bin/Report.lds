@@ -1,0 +1,64 @@
+[tblReport2]
+id=id
+department=Подразделение ?? , отдел
+DepartL=DepartL Подразделение , отдел
+basis=Основание для договора - Название
+basis_ffile=Основание - наличие файла (загружен документ)
+contract_number=договор -номер
+contract_name=договор - наименование
+contract_file=договор - наличие файла
+deadline=срок выполнения
+costofwork=Сумма
+responsible=Ответственный
+invoice=Счет на оплату
+invoice_file=Счет на оплату - наличие файла
+payment_note=отметка об оплате
+payment_date=отметка об оплате дата
+performance_of_work_note=Отметка о выполнении работы
+performance_of_work_file=выполнение работы - наличие файла
+performance_of_work_date=Отметка о выполнении работы -  дата
+act_acceptance=Акт сдачи приемки
+act_acceptance_file=Акт сдачи приемки - наличие файла
+contract_execution_note=Отметка о выполнении договора
+contract_execution_file=Отметка о выполнении договора - наличие файла (загружен документ)
+[tblDepart]
+id=№
+depart=Отдел
+[tblJpg]
+id=id
+idR1=idR1
+jpg=jpg
+ole=ole
+text1=text1
+filename=filename
+filepath=filepath
+ext=ext
+UniqueName=UniqueName
+type=вид документа
+[tblEmpl]
+id=№
+id_depart=id_depart
+surname=surname
+[tblReportFiltr2]
+id=id
+department=Подразделение , отдел
+DepartL=DepartL Подразделение , отдел
+basis=Основание для договора
+basis_ffile=Основание, файл
+contract_number=договор -номер
+contract_name=договор - наименование
+contract_file=договор - файл
+deadline=договор - срок выполнения
+costofwork=Стоимость
+responsible=Ответственный
+invoice=Счет на оплату
+invoice_file=invoice_file
+payment_note=отметка об оплате
+payment_date=отметка об оплате дата
+performance_of_work_note=Отметка о выполнении работы
+performance_of_work_file=выполнение работы - файл
+performance_of_work_date=Отметка о выполнении работы  дата
+act_acceptance=Акт сдачи приемки
+act_acceptance_file=Акт сдачи приемки фвйл
+contract_execution_note=Отметка о выполнении договора
+contract_execution_file=Отметка о выполнении договора, файл

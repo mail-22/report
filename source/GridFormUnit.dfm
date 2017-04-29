@@ -62,7 +62,6 @@ inherited GridForm: TGridForm
         Width = 170
         Height = 663
         Align = alRight
-        Caption = 'pnlR'
         TabOrder = 2
         object lbl3: TLabel
           Left = 1
@@ -94,6 +93,7 @@ inherited GridForm: TGridForm
           LookAndFeel.Kind = lfStandard
           LookAndFeel.NativeStyle = False
           OptionsView.CellEndEllipsis = True
+          OptionsView.CategoryExplorerStyle = True
           OptionsView.GridLineColor = clBlue
           OptionsView.RowHeaderWidth = 124
           OptionsBehavior.AlwaysShowEditor = True

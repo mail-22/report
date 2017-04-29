@@ -25,6 +25,7 @@ object DM: TDM
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
+    Connected = True
     Left = 38
     Top = 72
   end
@@ -183,9 +184,9 @@ object DM: TDM
   object tblEmpl: TUniQuery
     SQLInsert.Strings = (
       'INSERT INTO employees'
-      '  (id_depart, `'#1080#1084#1103'`)'
+      '  (id_depart, surname)'
       'VALUES'
-      '  (:id_depart, :`'#1080#1084#1103'`)')
+      '  (:id_depart, :surname)')
     SQLDelete.Strings = (
       'DELETE FROM employees'
       'WHERE'
@@ -193,7 +194,7 @@ object DM: TDM
     SQLUpdate.Strings = (
       'UPDATE employees'
       'SET'
-      '  id_depart = :id_depart, `'#1080#1084#1103'` = :`'#1080#1084#1103'`'
+      '  id_depart = :id_depart, surname = :surname'
       'WHERE'
       '  id = :Old_id')
     SQLLock.Strings = (
@@ -203,9 +204,9 @@ object DM: TDM
       'WHERE'
       '  id = :Old_id')
     SQLRefresh.Strings = (
-      'SELECT id_depart, `'#1080#1084#1103'` FROM employees'
+      'SELECT id_depart, surname FROM employees'
       'WHERE'
-      '  id = :id')
+      '  id = :P_1_id')
     Connection = UniConnection1
     SQL.Strings = (
       'select * from employees where ( id_depart = :id)')
@@ -230,8 +231,8 @@ object DM: TDM
     object intgrfldEmplid_depart: TIntegerField
       FieldName = 'id_depart'
     end
-    object strngfldEmplDSDesigner: TStringField
-      FieldName = #1080#1084#1103
+    object strngfldEmplsurname: TStringField
+      FieldName = 'surname'
       Size = 255
     end
   end

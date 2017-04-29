@@ -34,7 +34,6 @@ type
     intgrfld2: TIntegerField;
     ds1: TDataSource;
     intgrfldEmplid_depart: TIntegerField;
-    strngfldEmplDSDesigner: TStringField;
     dsReportFiltr: TDataSource;
     tblReport2: TUniQuery;
     tblReport2id: TIntegerField;
@@ -87,6 +86,7 @@ type
     BooleanField3: TBooleanField;
     SmallintField1: TSmallintField;
     tblTypeOfDoc: TStringField;
+    strngfldEmplsurname: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);

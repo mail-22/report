@@ -202,17 +202,14 @@ inherited EditEmplForm: TEditEmplForm
       OptionsView.GroupByBox = False
       OptionsView.Indicator = True
       OptionsView.ShowColumnFilterButtons = sfbAlways
-      object cxgrdbclmn1: TcxGridDBColumn
+      object cxgrdbclmncxgrdbtblvw1id: TcxGridDBColumn
         DataBinding.FieldName = 'id'
-        Width = 55
       end
-      object cxgrdbclmn2: TcxGridDBColumn
+      object cxgrdbclmncxgrdbtblvw1id_depart: TcxGridDBColumn
         DataBinding.FieldName = 'id_depart'
-        Width = 55
       end
-      object cxgrdbclmn3: TcxGridDBColumn
-        DataBinding.FieldName = #1080#1084#1103
-        Width = 356
+      object cxgrdbclmncxgrdbtblvw1surname: TcxGridDBColumn
+        DataBinding.FieldName = 'surname'
       end
     end
     object cxgrdlvl1: TcxGridLevel

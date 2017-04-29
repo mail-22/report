@@ -35,13 +35,13 @@ type
     mmoTop: TMemo;
     cxgrdEmpl: TcxGrid;
     cxgrdbtblvw1: TcxGridDBTableView;
-    cxgrdbclmn1: TcxGridDBColumn;
-    cxgrdbclmn2: TcxGridDBColumn;
-    cxgrdbclmn3: TcxGridDBColumn;
     cxgrdlvl1: TcxGridLevel;
     cxgrdbclmnGrid2DBTableView1id: TcxGridDBColumn;
     cxgrdbclmnGrid2DBTableView1depart: TcxGridDBColumn;
     cxspltr1: TcxSplitter;
+    cxgrdbclmncxgrdbtblvw1id: TcxGridDBColumn;
+    cxgrdbclmncxgrdbtblvw1id_depart: TcxGridDBColumn;
+    cxgrdbclmncxgrdbtblvw1surname: TcxGridDBColumn;
   private
     { Private declarations }
   public

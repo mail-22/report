@@ -12,13 +12,30 @@ type
   TCommon = class(TDataModule)
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
-    procedure FormTuningactXLSExecute(Sender: TObject);
   private
+    procedure Init;
     { Private declarations }
   protected
   public
     { Public declarations }
+  end;  
+
+//////////////////////
+type
+  tTypeOfTask = (Basic = 1, Mail, NiR, Dogovor );
+
+  tTask = record
+    strTypeOfTask: string;
+    iTypeOfTask: integer;
+    TypeOfTask: tTypeOfTask;
   end;
+
+  aTask = array of tTask;
+  actTypeOfTask = array[tTypeOfTask] of tTask;
+  
+var
+  vTask: aTask;
+  cTask: actTypeOfTask;
 
 type
   TModuleOption = (moRemovePath, moIncludeHandle);
@@ -32,42 +49,8 @@ function Float2Str(Value: Extended): string; overload;
 function Str2Float(const S: string): Extended; overload;
 function TempDir: string;
 
-
-type
-  enStation_type  = (Odnosvodchataja_stancija_otkrytogo_tipa ,
-  Odnosvodchataja_stancija_zakrytogo_tipa ,
-  Trehsvodchataja_stancija,
-  //Trehsvodchataja_stancija_kolonnogo_tipa ,
-  //Trehsvodchataja_stancija_pilonnogo_tipa,
-  Peregonnyj_tonnel
- );
-
-  TStation  = class(TObject)
-  private
-  protected
-  public
-    nameStation_type : string;
-    idStation_type :Integer;
-    Form :TForm;
-    enStation :enStation_type;
-    constructor Create(); overload;
-    //destructor Destroy; override;
-  end;
-  arrStation_type = array[0..3] of TStation;
-
 var
   xls_template_FileName  : string;
-
-
-  arrStation : arrStation_type;
-  Station :TStation;
-  CurStation_type :Integer;
-
-Station_type :Integer;
-nameStation_type : array[0..5] of string = ('односводчатая', 'трехсводчатая', 'перегон' ,
-                                            'пересадочный узел' ,
-                                            'открытая' ,
-                                            'закрытая (при наличии автоматических дверей в платформенном зале станции)' );
 
   Common: TCommon;
 
@@ -114,11 +97,32 @@ begin
   Result := Dir;
 end;
 
+
+procedure TCommon.Init;
+var
+  Section, Ident, Default: string;
+  i: integer;
+begin
+  i := High(vTask);
+  i := Length(vTask);
+
+  SetLength(vTask, Length(vTask) + 1);
+  vTask[High(vTask)].TypeOfTask := Mail;  
+  cTask[Mail].TypeOfTask := Mail;
+  cTask[Mail].strTypeOfTask := 'письмо';
+
+  SetLength(vTask, Length(vTask) + 1);
+  vTask[High(vTask)].TypeOfTask := Dogovor;
+  cTask[Dogovor].TypeOfTask := Dogovor;
+  cTask[Dogovor].strTypeOfTask := 'договор';
+end;
+
 procedure TCommon.DataModuleCreate(Sender: TObject);
 var
   Section, Ident, Default: string;
   i: integer;
 begin
+  Init;
 
   IniFileName := ChangeFileExt(Application.ExeName, '.ini');
   //IniFileName := JvJCLUtils.GetWindowsDir +'\'+ ChangeFileExt(ExtractFileName(Application.ExeName), '.ini');
@@ -158,12 +162,6 @@ begin
   //MessageDlg('TCommon.DataModuleDestroy', mtInformation, [mbOK], 0);
 {$ENDIF}
 end;
-
-procedure TCommon.FormTuningactXLSExecute(Sender: TObject);
-begin
-
-end;
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -307,31 +305,11 @@ begin
 
   Result := dTmt;
 end; //Str2Float
-
 ////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
-
-{ TStation }
-
-constructor TStation.Create;
-begin
-
-end;
-          
-
 initialization
 
-{
-Station_type :Integer;
-nameStation_type : array[0..5] of string = ('односводчатая', 'трехсводчатая', 'перегон' ,
-                                            'пересадочный узел' ,
-                                            'открытая' ,
-                                            'закрытая (при наличии автоматических дверей в платформенном зале станции)' );
-}
 finalization
   //Dir := TempDirName + '\';
   //DeleteAllFilesInDir(TempDirName);

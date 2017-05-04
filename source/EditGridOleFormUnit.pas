@@ -129,6 +129,7 @@ var
   MRUEdit_rubricator: string;
   vDoc: aDoc;
   cDoc: actTypeOfDoc;
+
 const
   Qu = '"';
   CommaSpace = ', ';

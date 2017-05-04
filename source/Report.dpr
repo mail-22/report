@@ -29,7 +29,9 @@ uses
   SpisokUnit in 'SpisokUnit.pas' {SpisokForm},
   ExportXLSFormUnit in 'ExportXLSFormUnit.pas' {ExportXLSForm},
   FileUnit in 'FileUnit.pas',
-  DisplayLabel in 'DisplayLabel.pas';
+  DisplayLabel in 'DisplayLabel.pas',
+  MailFormUnit in 'MailFormUnit.pas' {MailForm},
+  MailEditFormUnit in 'MailEditFormUnit.pas' {MailEditForm};
 
 {$R *.res}
 
@@ -52,5 +54,7 @@ begin
   Application.CreateForm(TEditEmplForm, EditEmplForm);
   Application.CreateForm(TSpisokForm, SpisokForm);
   Application.CreateForm(TExportXLSForm, ExportXLSForm);
+  Application.CreateForm(TMailForm, MailForm);
+  Application.CreateForm(TMailEditForm, MailEditForm);
   Application.Run;
 end.

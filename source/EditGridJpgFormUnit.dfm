@@ -3,48 +3,48 @@ inherited EditGridJpgForm: TEditGridJpgForm
   Top = 322
   Caption = 'EditGridJpgForm'
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
   object cxspltr1: TcxSplitter [0]
-    Left = 473
+    Left = 619
     Top = 0
     Width = 8
-    Height = 490
+    Height = 479
     HotZoneClassName = 'TcxSimpleStyle'
     Control = pnlL
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 490
-    Width = 784
-    Height = 31
+    Top = 479
+    Width = 792
+    Height = 40
     Align = alBottom
     BevelInner = bvLowered
     BevelOuter = bvLowered
     BorderStyle = bsSingle
     TabOrder = 1
     object cxdbnvgtr1: TcxDBNavigator
-      Left = 209
+      Left = 324
       Top = 2
-      Width = 555
-      Height = 23
+      Width = 450
+      Height = 32
       DataSource = ds1
       Align = alClient
       TabOrder = 0
     end
     object pnl3: TPanel
-      Left = 187
+      Left = 244
       Top = 2
-      Width = 22
-      Height = 23
+      Width = 80
+      Height = 32
       Align = alLeft
       AutoSize = True
       BevelOuter = bvNone
       TabOrder = 1
       object jvdbstslbl1: TJvDBStatusLabel
         Left = 0
-        Top = 3
-        Width = 61
-        Height = 13
+        Top = 4
+        Width = 72
+        Height = 17
         DataSource = ds1
         Style = lsRecordNo
         CalcRecCount = True
@@ -55,16 +55,16 @@ inherited EditGridJpgForm: TEditGridJpgForm
     object pnl4: TPanel
       Left = 2
       Top = 2
-      Width = 185
-      Height = 23
+      Width = 242
+      Height = 32
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 2
       object jvdbstslbl2: TJvDBStatusLabel
         Left = 0
         Top = 0
-        Width = 81
-        Height = 23
+        Width = 92
+        Height = 32
         DataSource = ds1
         CalcRecCount = True
         ShowOptions = doBoth
@@ -75,24 +75,24 @@ inherited EditGridJpgForm: TEditGridJpgForm
   end
   object pnl1: TPanel [2]
     Left = 0
-    Top = 521
-    Width = 784
-    Height = 41
+    Top = 519
+    Width = 792
+    Height = 54
     Align = alBottom
     TabOrder = 2
     object btnOK: TButton
-      Left = 40
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 52
+      Top = 13
+      Width = 98
+      Height = 33
       Caption = 'Ok'
       TabOrder = 0
     end
     object btnCancel: TButton
-      Left = 190
-      Top = 10
-      Width = 75
-      Height = 25
+      Left = 248
+      Top = 13
+      Width = 99
+      Height = 33
       Caption = 'Cancel'
       TabOrder = 1
     end
@@ -100,27 +100,27 @@ inherited EditGridJpgForm: TEditGridJpgForm
   object cxSplitter1: TcxSplitter [3]
     Left = 0
     Top = 0
-    Width = 8
-    Height = 490
+    Width = 10
+    Height = 479
     Control = cxgrd2
   end
   object pnlL: TPanel [4]
-    Left = 8
+    Left = 10
     Top = 0
-    Width = 465
-    Height = 490
+    Width = 609
+    Height = 479
     Align = alLeft
     Caption = 'pnlL'
     TabOrder = 4
     object cxgrd2: TcxGrid
       Left = 1
-      Top = 24
-      Width = 463
-      Height = 465
+      Top = 28
+      Width = 607
+      Height = 450
       Align = alClient
       Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
-      Font.Height = -16
+      Font.Height = -21
       Font.Name = 'Times New Roman'
       Font.Style = []
       ParentFont = False
@@ -176,27 +176,27 @@ inherited EditGridJpgForm: TEditGridJpgForm
     object acttb1: TActionToolBar
       Left = 1
       Top = 1
-      Width = 463
-      Height = 23
+      Width = 607
+      Height = 27
       ActionManager = actmgr1
       Caption = 'acttb1'
-      ColorMap.HighlightColor = clWhite
+      ColorMap.HighlightColor = 14410210
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = clWhite
+      ColorMap.UnusedColor = 14410210
       Spacing = 0
     end
   end
   object pnlR: TPanel [5]
-    Left = 481
+    Left = 627
     Top = 0
-    Width = 303
-    Height = 490
+    Width = 165
+    Height = 479
     Align = alClient
     Caption = 'pnlR'
     TabOrder = 5
     object imgjpg: TcxDBImage
       Left = 1
-      Top = 42
+      Top = 55
       Align = alClient
       DataBinding.DataField = 'jpg'
       DataBinding.DataSource = ds1
@@ -204,22 +204,22 @@ inherited EditGridJpgForm: TEditGridJpgForm
       Properties.GraphicClassName = 'TJPEGImage'
       Properties.ImmediatePost = True
       TabOrder = 0
-      Height = 447
-      Width = 301
+      Height = 423
+      Width = 163
     end
     object pnl2: TPanel
       Left = 1
       Top = 1
-      Width = 301
-      Height = 41
+      Width = 163
+      Height = 54
       Align = alTop
       Caption = 'pnl2'
       TabOrder = 1
       object mmo1: TMemo
         Left = 1
         Top = 1
-        Width = 299
-        Height = 39
+        Width = 161
+        Height = 52
         Align = alClient
         Alignment = taCenter
         Lines.Strings = (

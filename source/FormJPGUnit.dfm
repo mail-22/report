@@ -21,13 +21,13 @@ object FormJPG: TFormJPG
     DataBinding.DataSource = ds1
     Properties.GraphicClassName = 'TJPEGImage'
     TabOrder = 0
-    Height = 541
-    Width = 704
+    Height = 552
+    Width = 712
   end
   object mmo1: TMemo
     Left = 0
     Top = 0
-    Width = 704
+    Width = 712
     Height = 25
     Align = alTop
     Lines.Strings = (

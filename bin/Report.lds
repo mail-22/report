@@ -21,6 +21,10 @@ act_acceptance=Акт сдачи приемки
 act_acceptance_file=Акт сдачи приемки - наличие файла
 contract_execution_note=Отметка о выполнении договора
 contract_execution_file=Отметка о выполнении договора - наличие файла (загружен документ)
+type_task=тип задачи
+basis_N=основание для договора - письмо №
+type_task_i=тип задачи
+type_task_str=тип задачи
 [tblDepart]
 id=№
 depart=Отдел

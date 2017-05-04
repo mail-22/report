@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = -421
-  Top = 175
+  Left = -1587
+  Top = 256
   Width = 1811
   Height = 783
   Caption = 'GridForm'
@@ -30,7 +30,6 @@ inherited GridForm: TGridForm
         Height = 13
         Align = alTop
         Alignment = taCenter
-        Caption = #1057#1087#1080#1089#1086#1082' '#1079#1072#1087#1080#1089#1077#1081' '#1086' '#1088#1072#1073#1086#1090#1072#1093
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
@@ -723,7 +722,7 @@ inherited GridForm: TGridForm
             object jvdbstslbl1: TJvDBStatusLabel
               Left = 0
               Top = 3
-              Width = 72
+              Width = 19
               Height = 17
               DataSource = DM.dsReport
               Style = lsRecordNo
@@ -833,13 +832,13 @@ inherited GridForm: TGridForm
         ActionList = actlst1
         Caption = 'actlst1'
       end>
-    Left = 346
-    Top = 344
+    Left = 378
+    Top = 408
     StyleName = 'XP Style'
   end
   object actlst1: TActionList
-    Left = 498
-    Top = 328
+    Left = 442
+    Top = 440
     object actAdd: TAction
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1079#1072#1087#1080#1089#1100' '
       OnExecute = actAddExecute
@@ -894,8 +893,8 @@ inherited GridForm: TGridForm
           'Width')
       end>
     StorageName = 'cxprprtstr1'
-    Left = 706
-    Top = 289
+    Left = 778
+    Top = 433
   end
   object cxprprtstr2cxgrdbtblvw1: TcxPropertiesStore
     Active = False

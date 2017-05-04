@@ -13,7 +13,8 @@ uses
   JvComponentBase, JvFormPlacement, cxContainer, cxImage, cxDBEdit
   ,
   DMUnit, OleCtnrs, DBOleContainer, ActnList, ToolWin, ActnMan, ActnCtrls,
-  XPStyleActnCtrls, ExtDlgs, jpeg ,  ShellApi
+  XPStyleActnCtrls, ExtDlgs, jpeg ,  ShellApi, dxSkinsCore,
+  dxSkinOffice2007Blue, dxSkinscxPCPainter
   ;
 
 type

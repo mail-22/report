@@ -87,6 +87,9 @@ type
     SmallintField1: TSmallintField;
     tblTypeOfDoc: TStringField;
     strngfldEmplsurname: TStringField;
+    strngfldReport2basis_N: TStringField;
+    strngfldReport2type_task_i: TStringField;
+    strngfldReport2type_task_str: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);

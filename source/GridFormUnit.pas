@@ -25,8 +25,7 @@ uses
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue,
   dxSkinscxPCPainter, cxGridBandedTableView, cxGridDBBandedTableView,
   dxSkinsdxStatusBarPainter, dxStatusBar, JvAppEvent, ComCtrls,
-  JvExComCtrls, JvStatusBar, cxPropertiesStore
-
+  JvExComCtrls, JvStatusBar, cxPropertiesStore, CommonUnit
   ;
 
 type
@@ -277,18 +276,21 @@ begin
     DM.DepartL.AsInteger := DepDefaultID;
     DM.DepartL.AsInteger := DepDefaultID;
 
+    dm.strngfldReport2type_task_str.AsString := cTask[Dogovor].strTypeOfTask;
+    dm.strngfldReport2type_task_i.AsInteger := Integer(cTask[Dogovor].TypeOfTask);
+
     dm.tblReport2.Post; // !!!
     dm.tblReport2.Edit;
 
     EditForm_Show;
-    if (EditForm.AddBildFormResult = -1) then
+    if (AddBildFormResult = -1) then
     begin
       dm.UniTransaction1.Rollback;
       Beep;
       dm.RefreshDB(dm.tblReport2);
       Exit;
     end;
-    if (EditForm.AddBildFormResult = +1) then
+    if (AddBildFormResult = +1) then
     begin ;
       dm.tblReport2.Post; // !!!
       dm.UniTransaction1.Commit;
@@ -307,10 +309,14 @@ begin
     Screen.Cursor := crDefault;
   end;
 end;
-///////////////////////////////////////////////////////////////////////////////
 
+///////////////////////////////////////////////////////////////////////////////
 procedure TGridForm.EditMethod;
+var
+  Form: TForm;
 begin
+  //Form := EditForm;
+
   try
      Screen.Cursor := crHourGlass;
    try
@@ -321,20 +327,21 @@ begin
     dm.tblReport2.Edit;
     //DM.tblReport.FieldByName('department').AsInteger := Year;   //department
 
-    EditForm_Show;
-    if (EditForm.AddBildFormResult = -1) then
+    EditForm_Show;//!!!
+
+    if (AddBildFormResult = -1) then
     begin
       dm.UniTransaction1.Rollback;
       Beep;
       dm.RefreshDB(dm.tblReport2);
       Exit;
     end;
-    if (EditForm.AddBildFormResult = +1) then
+    if (AddBildFormResult = +1) then
     begin ;
       dm.tblReport2.Post; // !!!
       dm.UniTransaction1.Commit;
      end;
-    if (EditForm.AddBildFormResult = 0) then
+    if (AddBildFormResult = 0) then
     begin ;
       dm.tblReport2.Post; // ???
       dm.UniTransaction1.Commit; //?

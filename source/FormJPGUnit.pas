@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   cxContainer, cxEdit, cxImage, cxDBEdit, DB, StdCtrls, OleCtnrs,
-  DBOleContainer;
+  DBOleContainer, dxSkinsCore, dxSkinOffice2007Blue;
 
 type
   TFormJPG = class(TForm)

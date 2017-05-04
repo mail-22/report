@@ -38,11 +38,13 @@ type
     acttb1: TActionToolBar;
     cxprprtstr2: TcxPropertiesStore;
     actNir: TAction;
+    actMail: TAction;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
     procedure actHELP2Execute(Sender: TObject);
     procedure actListOfBildingExecute(Sender: TObject);
+    procedure actMailExecute(Sender: TObject);
     procedure actNirExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -72,7 +74,7 @@ implementation
 
 uses
     FormTuningUnit,  CommonUnit,
-   ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit;
+   ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit;
 
 {$R *.dfm}
 
@@ -223,6 +225,12 @@ procedure TFormMain.actListOfBildingExecute(Sender: TObject);
 begin
   inherited;
   GridForm_Show;
+end;
+
+procedure TFormMain.actMailExecute(Sender: TObject);
+begin
+  inherited;
+  MailForm_Show;
 end;
 
 procedure TFormMain.actNirExecute(Sender: TObject);

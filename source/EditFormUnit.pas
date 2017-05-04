@@ -50,14 +50,15 @@ type
   private
     { Private declarations }
   public
-    AddBildFormResult :Integer;
+    
   end;
 
 procedure EditForm_Show;
 
 var
   EditForm: TEditForm;
-
+  AddBildFormResult :Integer;
+  
 implementation
 
 {$R *.dfm}
@@ -82,7 +83,7 @@ begin
   if (EditForm = nil) then
     Application.CreateForm(TEditForm, EditForm);
 
-     
+
   EditForm.ShowModal;
   //AddBildForm.WindowState := wsMaximized;
 end;

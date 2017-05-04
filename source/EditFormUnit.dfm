@@ -1,6 +1,6 @@
 inherited EditForm: TEditForm
-  Left = 460
-  Top = 200
+  Left = -813
+  Top = 181
   Height = 782
   Caption = 'EditForm'
   PixelsPerInch = 96
@@ -248,8 +248,8 @@ inherited EditForm: TEditForm
           'Width')
       end>
     StorageName = 'cxprprtstr32'
-    Left = 700
-    Top = 20
+    Left = 612
+    Top = 100
   end
   object ds1: TDataSource
     Left = 314

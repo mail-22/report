@@ -375,10 +375,13 @@ procedure TEditGridJOleForm.Init();
 var
   i: integer;
 begin
-  BDDirPathName := ExtractFileDir(Application.ExeName) + '\' + constBDname +
-    '\';
+  BDDirPathName := ExtractFileDir(Application.ExeName) +'\'+ constBDname +'\';
+  BDDirPathName := ExtractFileDir(strConnection) +'\'+ constBDname +'\';
+
   ExportPath := ExtractFileDir(Application.ExeName) + '\' + constExportDir +
     '\';
+
+  //'ConnectionString'
   DataSet := DM.tblJpg;
 
   //MRU

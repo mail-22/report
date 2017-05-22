@@ -21,7 +21,7 @@ object DM: TDM
   end
   object UniConnection1: TUniConnection
     ProviderName = 'Access'
-    Database = 'C:\github\report\report\bin\r1.mdb'
+    Database = '\\192.168.80.10\r\bin\r1.mdb'
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
@@ -61,7 +61,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from depart;')
-    Active = True
     Left = 466
     Top = 272
     object intgrfld1: TIntegerField
@@ -308,7 +307,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
-    Active = True
     Left = 224
     Top = 40
     object tblReport2id: TIntegerField
@@ -317,12 +315,13 @@ object DM: TDM
       ReadOnly = True
     end
     object tblReport2department: TStringField
-      DisplayLabel = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077' , '#1086#1090#1076#1077#1083
+      DisplayLabel = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077' ('#1091#1089#1083#1086#1074#1085#1099#1081' '#1085#1086#1084#1077#1088')'
       FieldName = 'department'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfHidden]
       Size = 255
     end
     object DepartL: TStringField
-      DisplayLabel = 'DepartL '#1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077' , '#1086#1090#1076#1077#1083
+      DisplayLabel = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077
       DisplayWidth = 50
       FieldKind = fkLookup
       FieldName = 'DepartL'
@@ -332,8 +331,27 @@ object DM: TDM
       KeyFields = 'department'
       Lookup = True
     end
+    object tblReport2responsible: TStringField
+      DisplayLabel = #1054#1090#1074#1077#1090#1089#1090#1074#1077#1085#1085#1099#1081
+      FieldName = 'responsible'
+      Size = 255
+    end
+    object tblReport2deadline: TDateTimeField
+      DisplayLabel = #1089#1088#1086#1082' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1103
+      FieldName = 'deadline'
+    end
+    object strngfldReport2type_task_i: TStringField
+      DisplayLabel = #1090#1080#1087' '#1079#1072#1076#1072#1095#1080' i'
+      FieldName = 'type_task_i'
+      Size = 255
+    end
+    object strngfldReport2type_task_str: TStringField
+      DisplayLabel = #1090#1080#1087' '#1079#1072#1076#1072#1095#1080' s'
+      FieldName = 'type_task_str'
+      Size = 255
+    end
     object tblReport2basis: TStringField
-      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072' - '#1053#1072#1079#1074#1072#1085#1080#1077' '
+      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072'  - '#1082#1086#1084#1084#1077#1085#1090#1072#1088#1080#1081' '
       FieldName = 'basis'
       Size = 255
     end
@@ -343,8 +361,15 @@ object DM: TDM
       Size = 255
     end
     object tblReport2basis_ffile: TIntegerField
-      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1076#1086#1082#1091#1084#1077#1085#1090')'
+      DefaultExpression = '0'
+      DisplayLabel = 
+        #1086#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072'  - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080' '#1073#1099#1083' '#1076#1086#1082#1091#1084#1077#1085 +
+        #1090') -'#1092#1072#1081#1083' !'
       FieldName = 'basis_ffile'
+    end
+    object tblReport2costofwork: TIntegerField
+      DisplayLabel = #1057#1091#1084#1084#1072
+      FieldName = 'costofwork'
     end
     object tblReport2contract_number: TStringField
       DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' -'#1085#1086#1084#1077#1088
@@ -357,21 +382,9 @@ object DM: TDM
       Size = 255
     end
     object tblReport2contract_file: TIntegerField
-      DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
+      DefaultExpression = '0'
+      DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080' '#1076#1086#1082#1091#1084#1077#1085#1090') '#1092#1072#1081#1083' !'
       FieldName = 'contract_file'
-    end
-    object tblReport2deadline: TDateTimeField
-      DisplayLabel = #1089#1088#1086#1082' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1103
-      FieldName = 'deadline'
-    end
-    object tblReport2costofwork: TIntegerField
-      DisplayLabel = #1057#1091#1084#1084#1072
-      FieldName = 'costofwork'
-    end
-    object tblReport2responsible: TStringField
-      DisplayLabel = #1054#1090#1074#1077#1090#1089#1090#1074#1077#1085#1085#1099#1081
-      FieldName = 'responsible'
-      Size = 255
     end
     object tblReport2invoice: TStringField
       DisplayLabel = #1057#1095#1077#1090' '#1085#1072' '#1086#1087#1083#1072#1090#1091
@@ -379,7 +392,8 @@ object DM: TDM
       Size = 255
     end
     object tblReport2invoice_file: TIntegerField
-      DisplayLabel = #1057#1095#1077#1090' '#1085#1072' '#1086#1087#1083#1072#1090#1091' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
+      DefaultExpression = '0'
+      DisplayLabel = #1089#1095#1077#1090' '#1085#1072' '#1086#1087#1083#1072#1090#1091'  - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080'  '#1076#1086#1082#1091#1084#1077#1085#1090') -'#1092#1072#1081#1083' !'
       FieldName = 'invoice_file'
     end
     object tblReport2payment_note: TBooleanField
@@ -387,49 +401,44 @@ object DM: TDM
       FieldName = 'payment_note'
     end
     object tblReport2payment_date: TDateTimeField
-      DisplayLabel = #1086#1090#1084#1077#1090#1082#1072' '#1086#1073' '#1086#1087#1083#1072#1090#1077' '#1076#1072#1090#1072
+      DisplayLabel = #1076#1072#1090#1072' '#1086#1087#1083#1072#1090#1099' - '#1085#1072#1095#1072#1083#1086' '#1088#1072#1073#1086#1090#1099' '#1085#1072#1076' '#1076#1086#1075#1086#1074#1086#1088#1086#1084
       FieldName = 'payment_date'
     end
     object tblReport2performance_of_work_note: TBooleanField
-      DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1088#1072#1073#1086#1090#1099' '
+      DisplayLabel = #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1088#1072#1073#1086#1090#1099' - '#1054#1090#1084#1077#1090#1082#1072
       FieldName = 'performance_of_work_note'
     end
     object tblReport2performance_of_work_file: TIntegerField
-      DisplayLabel = #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1088#1072#1073#1086#1090#1099' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
+      DefaultExpression = '0'
+      DisplayLabel = 
+        #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1088#1072#1073#1086#1090#1099'  - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080'  '#1076#1086#1082#1091#1084#1077#1085#1090') -'#1092#1072#1081#1083 +
+        ' !'
       FieldName = 'performance_of_work_file'
     end
     object tblReport2performance_of_work_date: TDateTimeField
-      DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1088#1072#1073#1086#1090#1099' -  '#1076#1072#1090#1072
+      DisplayLabel = #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1088#1072#1073#1086#1090#1099' - '#1076#1072#1090#1072
       FieldName = 'performance_of_work_date'
     end
     object tblReport2act_acceptance: TStringField
-      DisplayLabel = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080
+      DisplayLabel = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080' - '#1085#1086#1084#1077#1088
       FieldName = 'act_acceptance'
       Size = 255
     end
     object tblReport2act_acceptance_file: TIntegerField
-      DisplayLabel = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
+      DefaultExpression = '0'
+      DisplayLabel = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080'  - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1076#1086#1082#1091#1084#1077#1085#1090') - '#1092#1072#1081#1083' !'
       FieldName = 'act_acceptance_file'
     end
     object blnfldReport2contract_execution_note: TBooleanField
-      DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072
+      DisplayLabel = #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1076#1086#1075#1086#1074#1086#1088#1072' -'#1086#1090#1084#1077#1090#1082#1072
       FieldName = 'contract_execution_note'
     end
     object tblReport2contract_execution_file: TSmallintField
+      DefaultExpression = '0'
       DisplayLabel = 
-        #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1076#1086#1082#1091#1084#1077#1085#1090 +
-        ')'
+        #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1076#1086#1075#1086#1074#1086#1088#1072' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080' '#1076#1086#1082#1091#1084#1077#1085#1090') - '#1092#1072#1081 +
+        #1083' !'
       FieldName = 'contract_execution_file'
-    end
-    object strngfldReport2type_task_i: TStringField
-      DisplayLabel = #1090#1080#1087' '#1079#1072#1076#1072#1095#1080
-      FieldName = 'type_task_i'
-      Size = 255
-    end
-    object strngfldReport2type_task_str: TStringField
-      DisplayLabel = #1090#1080#1087' '#1079#1072#1076#1072#1095#1080
-      FieldName = 'type_task_str'
-      Size = 255
     end
   end
   object tblReportFiltr2: TUniQuery

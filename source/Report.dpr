@@ -31,7 +31,8 @@ uses
   FileUnit in 'FileUnit.pas',
   DisplayLabel in 'DisplayLabel.pas',
   MailFormUnit in 'MailFormUnit.pas' {MailForm},
-  MailEditFormUnit in 'MailEditFormUnit.pas' {MailEditForm};
+  MailEditFormUnit in 'MailEditFormUnit.pas' {MailEditForm},
+  SystemDirs in 'SystemDirs.pas';
 
 {$R *.res}
 

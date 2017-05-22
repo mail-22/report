@@ -23,7 +23,6 @@ type
     actmgr1: TActionManager;
     dxstsbr1: TdxStatusBar;
     actmmb1: TActionMainMenuBar;
-    lbl2: TLabel;
     pnlGrid: TPanel;
     Label1: TLabel;
     pnlBBB: TPanel;
@@ -123,7 +122,6 @@ type
     actTun: TAction;
     actEmpl: TAction;
     actSpisok: TAction;
-    btn1: TButton;
     cxgrdbndclmncxgrd21Viewbasis_N: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd21Viewtype_task_i: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd21Viewtype_task_str: TcxGridDBBandedColumn;

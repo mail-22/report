@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = -1587
-  Top = 256
+  Left = -703
+  Top = 272
   Width = 1811
   Height = 783
   Caption = 'GridForm'
@@ -62,6 +62,7 @@ inherited GridForm: TGridForm
         Height = 663
         Align = alRight
         TabOrder = 2
+        Visible = False
         object lbl3: TLabel
           Left = 1
           Top = 1

@@ -1,29 +1,14 @@
 inherited MailForm: TMailForm
-  Left = -467
-  Top = 293
-  Width = 1715
+  Left = -969
+  Top = 308
+  Width = 2096
   Caption = 'MailForm'
   PixelsPerInch = 96
   TextHeight = 17
-  object lbl2: TLabel [0]
-    Left = 0
-    Top = 26
-    Width = 1707
-    Height = 13
-    Align = alTop
-    Alignment = taCenter
-    Caption = #1057#1087#1080#1089#1086#1082' '#1079#1072#1087#1080#1089#1077#1081' '#1086' '#1087#1080#1089#1100#1084#1072#1093' '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'Times New Roman'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object dxstsbr1: TdxStatusBar [1]
+  object dxstsbr1: TdxStatusBar [0]
     Left = 0
     Top = 553
-    Width = 1707
+    Width = 2088
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET
@@ -32,10 +17,10 @@ inherited MailForm: TMailForm
     Font.Name = 'Tahoma'
     Font.Style = []
   end
-  object actmmb1: TActionMainMenuBar [2]
+  object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1707
+    Width = 2088
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
@@ -50,18 +35,18 @@ inherited MailForm: TMailForm
     Font.Style = []
     Spacing = 0
   end
-  object pnlGrid: TPanel [3]
+  object pnlGrid: TPanel [2]
     Left = 0
-    Top = 39
-    Width = 1707
-    Height = 514
+    Top = 26
+    Width = 2088
+    Height = 527
     Align = alClient
     AutoSize = True
     TabOrder = 2
     object Label1: TLabel
       Left = 1
       Top = 1
-      Width = 1705
+      Width = 2086
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -74,29 +59,30 @@ inherited MailForm: TMailForm
     end
     object pnlBBB: TPanel
       Left = 1
-      Top = 502
-      Width = 1705
+      Top = 515
+      Width = 2086
       Height = 11
       Align = alBottom
       TabOrder = 0
       Visible = False
     end
     object cxspltr1: TcxSplitter
-      Left = 1528
+      Left = 1909
       Top = 14
       Width = 8
-      Height = 488
+      Height = 501
       HotZoneClassName = 'TcxMediaPlayer8Style'
       AlignSplitter = salRight
       Control = pnlR
     end
     object pnlR: TPanel
-      Left = 1536
+      Left = 1917
       Top = 14
       Width = 170
-      Height = 488
+      Height = 501
       Align = alRight
       TabOrder = 2
+      Visible = False
       object lbl3: TLabel
         Left = 1
         Top = 1
@@ -116,7 +102,7 @@ inherited MailForm: TMailForm
         Left = 1
         Top = 14
         Width = 168
-        Height = 473
+        Height = 486
         Align = alClient
         DragCursor = crDrag
         Font.Charset = DEFAULT_CHARSET
@@ -344,15 +330,15 @@ inherited MailForm: TMailForm
     object pnlL: TPanel
       Left = 1
       Top = 14
-      Width = 1527
-      Height = 488
+      Width = 1908
+      Height = 501
       Align = alClient
       Caption = 'pnlL'
       TabOrder = 3
       object lbl1: TLabel
         Left = 1
         Top = 1
-        Width = 1525
+        Width = 1906
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -367,8 +353,8 @@ inherited MailForm: TMailForm
       object cxgrd2: TcxGrid
         Left = 1
         Top = 14
-        Width = 1525
-        Height = 442
+        Width = 1906
+        Height = 455
         Align = alClient
         BevelInner = bvLowered
         BevelKind = bkSoft
@@ -547,210 +533,220 @@ inherited MailForm: TMailForm
           OptionsView.BandHeaderEndEllipsis = True
           Bands = <
             item
+              Caption = #1047#1072#1076#1072#1095#1072
+              Width = 77
+            end
+            item
               Caption = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077' , '#1086#1090#1076#1077#1083
-              Width = 416
+              Width = 113
             end
             item
               Caption = #1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072
-              Width = 159
+              Width = 514
             end
             item
               Caption = #1044#1086#1075#1086#1074#1086#1088
-              Width = 328
+              Width = 560
             end
             item
               Caption = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080
-              Width = 122
+              Width = 188
             end
             item
               Caption = #1057#1095#1077#1090
-              Width = 246
+              Width = 189
             end
             item
               Caption = #1042#1099#1087#1086#1083#1085#1077#1085#1080#1077
-              Width = 236
+              Width = 167
+            end
+            item
+              Caption = #1055#1088#1086#1095#1077#1077
             end>
+          object cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'id'
+            Width = 20
+            Position.BandIndex = 0
+            Position.ColIndex = 0
+            Position.RowIndex = 0
+          end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn
             DataBinding.FieldName = 'basis'
-            Width = 85
-            Position.BandIndex = 1
-            Position.ColIndex = 0
+            Width = 100
+            Position.BandIndex = 2
+            Position.ColIndex = 1
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn
             DataBinding.FieldName = 'basis_ffile'
-            Width = 46
-            Position.BandIndex = 1
-            Position.ColIndex = 3
+            Width = 81
+            Position.BandIndex = 2
+            Position.ColIndex = 4
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn
             DataBinding.FieldName = 'department'
-            Width = 30
-            Position.BandIndex = 0
+            Visible = False
+            Width = 60
+            Position.BandIndex = 1
             Position.ColIndex = 0
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn
             DataBinding.FieldName = 'DepartL'
-            Width = 30
-            Position.BandIndex = 0
+            Width = 60
+            Position.BandIndex = 1
             Position.ColIndex = 2
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn
             DataBinding.FieldName = 'contract_execution_note'
-            Width = 43
-            Position.BandIndex = 2
-            Position.ColIndex = 5
+            Width = 110
+            Position.BandIndex = 3
+            Position.ColIndex = 4
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn
             DataBinding.FieldName = 'contract_file'
-            Width = 43
-            Position.BandIndex = 2
-            Position.ColIndex = 4
+            Width = 107
+            Position.BandIndex = 3
+            Position.ColIndex = 3
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn
             Caption = #1076#1086#1075#1086#1074#1086#1088' - ( '#1088#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072')- '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077'  '
             DataBinding.FieldName = 'contract_name'
-            Width = 70
-            Position.BandIndex = 2
+            Width = 127
+            Position.BandIndex = 3
             Position.ColIndex = 0
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn
             DataBinding.FieldName = 'deadline'
-            Width = 71
-            Position.BandIndex = 1
-            Position.ColIndex = 2
+            Width = 75
+            Position.BandIndex = 2
+            Position.ColIndex = 3
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd2DBBandedTableViewColumn1: TcxGridDBBandedColumn
             DataBinding.FieldName = 'contract_execution_file'
-            Width = 44
-            Position.BandIndex = 2
-            Position.ColIndex = 6
+            Width = 112
+            Position.BandIndex = 3
+            Position.ColIndex = 5
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn
             DataBinding.FieldName = 'contract_execution_note'
-            Width = 55
-            Position.BandIndex = 5
+            Visible = False
+            Width = 75
+            Position.BandIndex = 6
             Position.ColIndex = 0
             Position.RowIndex = 0
-          end
-          object cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'id'
-            Width = 55
-            Position.BandIndex = -1
-            Position.ColIndex = -1
-            Position.RowIndex = -1
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1contract_number: TcxGridDBBandedColumn
             DataBinding.FieldName = 'contract_number'
             Width = 68
-            Position.BandIndex = 2
+            Position.BandIndex = 3
             Position.ColIndex = 1
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1costofwork: TcxGridDBBandedColumn
             DataBinding.FieldName = 'costofwork'
-            Width = 55
-            Position.BandIndex = 2
+            Width = 61
+            Position.BandIndex = 3
             Position.ColIndex = 2
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn
             DataBinding.FieldName = 'responsible'
-            Width = 30
-            Position.BandIndex = 0
+            Width = 58
+            Position.BandIndex = 1
             Position.ColIndex = 1
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1invoice: TcxGridDBBandedColumn
             DataBinding.FieldName = 'invoice'
-            Width = 55
-            Position.BandIndex = 4
-            Position.ColIndex = 1
+            Width = 56
+            Position.BandIndex = 5
+            Position.ColIndex = 0
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1invoice_file: TcxGridDBBandedColumn
             DataBinding.FieldName = 'invoice_file'
-            Width = 55
-            Position.BandIndex = 4
-            Position.ColIndex = 0
+            Width = 42
+            Position.BandIndex = 5
+            Position.ColIndex = 2
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1payment_note: TcxGridDBBandedColumn
             DataBinding.FieldName = 'payment_note'
-            Width = 55
-            Position.BandIndex = 2
-            Position.ColIndex = 3
+            Width = 53
+            Position.BandIndex = 5
+            Position.ColIndex = 1
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1payment_date: TcxGridDBBandedColumn
             DataBinding.FieldName = 'payment_date'
-            Width = 55
-            Position.BandIndex = 1
-            Position.ColIndex = 1
+            Width = 100
+            Position.BandIndex = 2
+            Position.ColIndex = 2
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_note: TcxGridDBBandedColumn
             DataBinding.FieldName = 'performance_of_work_note'
-            Width = 55
-            Position.BandIndex = 5
+            Width = 67
+            Position.BandIndex = 6
             Position.ColIndex = 2
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_file: TcxGridDBBandedColumn
             DataBinding.FieldName = 'performance_of_work_file'
-            Width = 55
-            Position.BandIndex = 5
+            Width = 49
+            Position.BandIndex = 6
             Position.ColIndex = 3
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_date: TcxGridDBBandedColumn
             DataBinding.FieldName = 'performance_of_work_date'
-            Width = 55
-            Position.BandIndex = 5
+            Width = 58
+            Position.BandIndex = 6
             Position.ColIndex = 1
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn
             DataBinding.FieldName = 'act_acceptance'
             Width = 55
-            Position.BandIndex = 3
-            Position.ColIndex = 1
+            Position.BandIndex = 4
+            Position.ColIndex = 0
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file: TcxGridDBBandedColumn
             DataBinding.FieldName = 'act_acceptance_file'
             Width = 55
-            Position.BandIndex = 3
-            Position.ColIndex = 0
+            Position.BandIndex = 4
+            Position.ColIndex = 1
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21Viewbasis_N: TcxGridDBBandedColumn
             DataBinding.FieldName = 'basis_N'
-            Width = 74
-            Position.BandIndex = 0
-            Position.ColIndex = 3
+            Width = 84
+            Position.BandIndex = 2
+            Position.ColIndex = 0
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21Viewtype_task_i: TcxGridDBBandedColumn
             DataBinding.FieldName = 'type_task_i'
-            Width = 74
-            Position.BandIndex = 0
-            Position.ColIndex = 4
+            Visible = False
+            Width = 43
+            Position.BandIndex = 1
+            Position.ColIndex = 3
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21Viewtype_task_str: TcxGridDBBandedColumn
             DataBinding.FieldName = 'type_task_str'
-            Width = 74
+            Width = 63
             Position.BandIndex = 0
-            Position.ColIndex = 5
+            Position.ColIndex = 1
             Position.RowIndex = 0
           end
         end
@@ -765,8 +761,8 @@ inherited MailForm: TMailForm
       end
       object pnl_Navigator1: TPanel
         Left = 1
-        Top = 456
-        Width = 1525
+        Top = 469
+        Width = 1906
         Height = 31
         Align = alBottom
         BevelInner = bvLowered
@@ -776,7 +772,7 @@ inherited MailForm: TMailForm
         object cxDBNavigator3: TcxDBNavigator
           Left = 206
           Top = 2
-          Width = 1305
+          Width = 1680
           Height = 23
           DataSource = DM.dsReport
           Align = alClient
@@ -794,7 +790,7 @@ inherited MailForm: TMailForm
           object jvdbstslbl1: TJvDBStatusLabel
             Left = 0
             Top = 3
-            Width = 19
+            Width = 72
             Height = 17
             DataSource = DM.dsReport
             Style = lsRecordNo
@@ -825,15 +821,6 @@ inherited MailForm: TMailForm
         end
       end
     end
-  end
-  object btn1: TButton [4]
-    Left = 920
-    Top = 0
-    Width = 75
-    Height = 25
-    Caption = 'btn1'
-    TabOrder = 3
-    OnClick = btn1Click
   end
   object cxprprtstr1: TcxPropertiesStore
     Components = <>

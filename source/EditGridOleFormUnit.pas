@@ -86,6 +86,8 @@ type
     procedure actAddInvoiceExecute(Sender: TObject);
     procedure actAddPerfExecute(Sender: TObject);
     procedure actExtractExecute(Sender: TObject);
+    procedure btnCancelClick(Sender: TObject);
+    procedure btnOKClick(Sender: TObject);
   private
     procedure AddAnyDocMethod(Sender: TObject);
     procedure OLE2File(OleContainer: TOleContainer; DataSet: TDataSet;
@@ -365,6 +367,18 @@ begin
 
 end;  //  AddAnyDocMethod 
 
+procedure TEditGridJOleForm.btnCancelClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
+
+procedure TEditGridJOleForm.btnOKClick(Sender: TObject);
+begin
+  inherited;
+  Close;
+end;
+
 procedure TEditGridJOleForm.FormCreate(Sender: TObject);
 begin
   inherited;
@@ -376,10 +390,22 @@ var
   i: integer;
 begin
   BDDirPathName := ExtractFileDir(Application.ExeName) +'\'+ constBDname +'\';
-  BDDirPathName := ExtractFileDir(strConnection) +'\'+ constBDname +'\';
+  BDDirPathName := ExtractFileDir(dm.strConnection_Get) +'\'+ constBDname +'\';
 
-  ExportPath := ExtractFileDir(Application.ExeName) + '\' + constExportDir +
-    '\';
+  ExportPath := ExtractFileDir(Application.ExeName) +'\'+ constExportDir + '\';
+  if  DirectoryExists(ExportPath) then
+  begin // проверить на наличие
+  end //
+  else
+  begin
+     MessageDlg('нет папки: ' + ExportPath, mtWarning, [mbOK], 0);
+    // Now force it to create this directory
+     if ForceDirectories('ExportPath')
+     then ShowMessage('Добавление нового каталога прошло успешно')
+     else ShowMessage('Добавление нового каталога вызвало ошибку : '+
+                      IntToStr(GetLastError));
+  end;
+
 
   //'ConnectionString'
   DataSet := DM.tblJpg;
@@ -466,9 +492,7 @@ begin
   FileNamePathUniq := BDDirPathName + '/' + UniqueName;
 
   CopyFile(PChar(FileNamePathUniq), PChar(ExportFilePath), bFileExist); //
-
-  ShellApi.ShellExecute(EditGridJOleForm.Handle, 'open', Pchar(ExportFilePath),
-    nil, nil, SW_RESTORE);
+  ShellApi.ShellExecute(EditGridJOleForm.Handle, 'open', Pchar(ExportFilePath), nil, nil, SW_RESTORE);
 end;
 
 

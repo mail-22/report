@@ -89,6 +89,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
       Height = 33
       Caption = 'Ok'
       TabOrder = 0
+      OnClick = btnOKClick
     end
     object btnCancel: TButton
       Left = 248
@@ -97,6 +98,8 @@ inherited EditGridJOleForm: TEditGridJOleForm
       Height = 33
       Caption = 'Cancel'
       TabOrder = 1
+      Visible = False
+      OnClick = btnCancelClick
     end
   end
   object cxSplitter1: TcxSplitter [3]

@@ -113,6 +113,8 @@ type
     procedure AfterPost(DataSet: TDataSet);
     procedure BeforePost(DataSet: TDataSet);
 
+
+
   protected
     CursorLocation: TCursorLocation;
     ResyncValue: OleVariant;
@@ -125,6 +127,7 @@ type
     BlockReadSize: Integer;
     CacheSize: Integer;
 
+    strConnection:string;  //ConnectionString - путь к БД
   public
     //DbFileName: string;
     TOP: Integer;
@@ -141,6 +144,9 @@ type
     procedure ReopenDB();
     function GetDBPath(): boolean;
     procedure start;
+
+    function  strConnection_Get: string;
+    procedure strConnection_Set(astrConnection: string);
   end;
 
   TMethodMakeConnectionString = (
@@ -149,10 +155,11 @@ type
     csINI
     );
 
-procedure TestADO();
-procedure WillChangeRecord(DataSet: TDataSet;
-  const Reason: TEventReason; const RecordCount: Integer;
-  var EventStatus: TEventStatus);
+  procedure TestADO();
+  procedure WillChangeRecord(DataSet: TDataSet;
+    const Reason: TEventReason; const RecordCount: Integer;
+    var EventStatus: TEventStatus);
+
 
 var
   DM: TDM;
@@ -164,19 +171,19 @@ var
   word2: string = '74278775'; //= Password для Access; //word1 = Password для программы
   DbFileName: string = 'db.mdb';
 
-  strConnection:string;
-  
+
 const
   id_TypeOfDoc_NONE = 10;
 
 implementation
+
 
 uses
   CommonUnit;
 
 {$R *.dfm}
 
-
+//var  strConnection:string;
 
 procedure TDM.tblBildingAfterInsert(DataSet: TDataSet);
 begin
@@ -248,15 +255,30 @@ begin
   
   UniConnection1.Disconnect;
   strTmp := ExtractFilePath(Application.ExeName) + 'r1.mdb';
-// приоритет локальной БД
+
+{
   if ( FileExists(strTmp)) then
   begin
-    strConnection  := strTmp;
+    strConnection_Set(strTmp);
   end else
   begin
-     strConnection  :=  IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp);
+     strConnection_Set(IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp) );
+  end;  ;
+}
+
+// приоритет НЕ локальной БД !!!     // \\Fds7\r\bin\r1.mdb  // R:\bin\r1.mdb   // \\SRV-NIIPIIT\r\bin\r1.mdb  ///\\192.168.80.10\r\bin\r1.mdb
+  strTmp := IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp);
+  if ( FileExists(strTmp)) then
+  begin
+    strConnection_Set(strTmp);
+  end else
+  begin
+     //strTmp := ExtractFilePath(Application.ExeName) + 'r1.mdb';
+     //strConnection_Set(strTmp) );
   end;  ;
 
+  strConnection   := '\\SRV-NIIPIIT\r\bin\r1.mdb'; 
+  strConnection   := '\\192.168.80.10\r\bin\r1.mdb';
 
   UniConnection1.Database := strConnection;
   tmpB := UniConnection1.Connected;
@@ -578,6 +600,16 @@ begin
   ShowMessage(string(MessageString));
 }
 end;
+
+  procedure TDM.strConnection_Set(astrConnection:string);
+  begin
+    strConnection := astrConnection;
+  end;
+
+  function TDM.strConnection_Get: string;
+  begin
+    Result := strConnection;
+  end;
 
 function TDM.GetDBPath: boolean;
 begin

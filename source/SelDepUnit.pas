@@ -82,10 +82,10 @@ begin
   // Показ диалог открытия файла
   if openDialog.Execute
   then begin //ShowMessage('File : '+openDialog.FileName);
-    edt1.text := strConnection;
-  strConnection := openDialog.FileName;
-  IniFile.WriteString('ConnectionString', 'ConnectionString', strConnection);
-  edt1.text := strConnection;
+    edt1.text := DM.strConnection_Get;
+  dm.strConnection_Set ( openDialog.FileName);
+  IniFile.WriteString('ConnectionString', 'ConnectionString', dm.strConnection_Get);
+  edt1.text := dm.strConnection_Get;
   end
   else begin ShowMessage('Открытие файла остановлено');
   end;
@@ -123,7 +123,7 @@ begin
 
   DM.tblDepart.Locate('id', IntToStr(DepDefaultID), [loCaseInsensitive]);
 
-   edt1.text := strConnection;
+   edt1.text := dm.strConnection_Get;
 /////////////////////////
 
 

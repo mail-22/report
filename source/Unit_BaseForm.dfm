@@ -1,6 +1,6 @@
 object BaseForm: TBaseForm
-  Left = 177
-  Top = 310
+  Left = 624
+  Top = 280
   Width = 800
   Height = 600
   BorderIcons = [biSystemMenu, biMaximize]

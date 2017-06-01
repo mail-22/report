@@ -90,6 +90,13 @@ type
     strngfldReport2basis_N: TStringField;
     strngfldReport2type_task_i: TStringField;
     strngfldReport2type_task_str: TStringField;
+    strngfldReport2emty: TStringField;
+    strngfldReport2mail_Num_In: TStringField;
+    strngfldReport2mail_Correspondent: TStringField;
+    strngfldReport2mail_Soderganie: TStringField;
+    strngfldReport2mail_Ispolnitel: TStringField;
+    strngfldReport2mail_Resoluzia: TStringField;
+    dtmfldReport2mail_Data_In: TDateTimeField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);
@@ -277,8 +284,9 @@ begin
      //strConnection_Set(strTmp) );
   end;  ;
 
-  strConnection   := '\\SRV-NIIPIIT\r\bin\r1.mdb'; 
+  strConnection   := '\\SRV-NIIPIIT\r\bin\r1.mdb';
   strConnection   := '\\192.168.80.10\r\bin\r1.mdb';
+  strConnection   := 'C:\github\report\report\bin\r1.mdb';
 
   UniConnection1.Database := strConnection;
   tmpB := UniConnection1.Connected;

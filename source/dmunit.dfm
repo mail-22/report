@@ -1,8 +1,8 @@
 object DM: TDM
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 451
-  Top = 318
+  Left = 510
+  Top = 292
   Height = 458
   Width = 760
   object OpenDialog1: TOpenDialog
@@ -21,7 +21,7 @@ object DM: TDM
   end
   object UniConnection1: TUniConnection
     ProviderName = 'Access'
-    Database = '\\192.168.80.10\r\bin\r1.mdb'
+    Database = 'C:\github\report\report\bin\r1.mdb'
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
@@ -439,6 +439,39 @@ object DM: TDM
         #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1076#1086#1075#1086#1074#1086#1088#1072' - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080' '#1076#1086#1082#1091#1084#1077#1085#1090') - '#1092#1072#1081 +
         #1083' !'
       FieldName = 'contract_execution_file'
+    end
+    object strngfldReport2emty: TStringField
+      FieldName = 'emty'
+      Size = 255
+    end
+    object strngfldReport2mail_Num_In: TStringField
+      DisplayLabel = #1074#1093#1086#1076#1103#1097#1080#1081' '#1085#1086#1084#1077#1088
+      FieldName = 'mail_Num_In'
+      Size = 255
+    end
+    object strngfldReport2mail_Correspondent: TStringField
+      DisplayLabel = #1082#1086#1088#1088#1077#1089#1087#1086#1085#1076#1077#1085#1090' '
+      FieldName = 'mail_Correspondent'
+      Size = 255
+    end
+    object strngfldReport2mail_Soderganie: TStringField
+      DisplayLabel = #1082#1088#1072#1090#1082#1086#1077' '#1089#1086#1076#1077#1088#1078#1072#1085#1080#1077
+      FieldName = 'mail_Soderganie'
+      Size = 255
+    end
+    object strngfldReport2mail_Ispolnitel: TStringField
+      DisplayLabel = #1054#1090#1074'.'#1080#1089#1087#1086#1083#1085#1080#1090#1077#1083#1100
+      FieldName = 'mail_Ispolnitel'
+      Size = 255
+    end
+    object strngfldReport2mail_Resoluzia: TStringField
+      DisplayLabel = #1056#1077#1079#1086#1083#1102#1094#1080#1103
+      FieldName = 'mail_Resoluzia'
+      Size = 255
+    end
+    object dtmfldReport2mail_Data_In: TDateTimeField
+      DisplayLabel = #1076#1072#1090#1072' '#1087#1086#1089#1090#1091#1087#1083#1077#1085#1080#1103
+      FieldName = 'mail_Data_In'
     end
   end
   object tblReportFiltr2: TUniQuery

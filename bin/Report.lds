@@ -25,6 +25,13 @@ type_task=тип задачи
 basis_N=основание для договора - письмо №
 type_task_i=тип задачи
 type_task_str=тип задачи
+emty=emty
+mail_Num_In=входящий номер
+mail_Correspondent=корреспондент
+mail_Soderganie=краткое содержание
+mail_Ispolnitel=Отв.исполнитель
+mail_Resoluzia=Резолюция
+mail_Data_In=дата поступления
 [tblDepart]
 id=№
 depart=Отдел

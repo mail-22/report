@@ -255,15 +255,14 @@ var
   IniFileName: string; //CommonUnit
   tmpB: Boolean;
 begin
-
   IniFileName := ChangeFileExt(Forms.Application.ExeName, '.ini');
   IniFile := TIniFile.Create(IniFileName);
 
-  
+
   UniConnection1.Disconnect;
   strTmp := ExtractFilePath(Application.ExeName) + 'r1.mdb';
 
-{
+
   if ( FileExists(strTmp)) then
   begin
     strConnection_Set(strTmp);
@@ -271,8 +270,8 @@ begin
   begin
      strConnection_Set(IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp) );
   end;  ;
-}
 
+{
 // приоритет НЕ локальной БД !!!     // \\Fds7\r\bin\r1.mdb  // R:\bin\r1.mdb   // \\SRV-NIIPIIT\r\bin\r1.mdb  ///\\192.168.80.10\r\bin\r1.mdb
   strTmp := IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp);
   if ( FileExists(strTmp)) then
@@ -287,7 +286,7 @@ begin
   strConnection   := '\\SRV-NIIPIIT\r\bin\r1.mdb';
   strConnection   := '\\192.168.80.10\r\bin\r1.mdb';
   strConnection   := 'C:\github\report\report\bin\r1.mdb';
-
+}
   UniConnection1.Database := strConnection;
   tmpB := UniConnection1.Connected;
   UniConnection1.Connect;

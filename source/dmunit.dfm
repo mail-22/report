@@ -21,9 +21,11 @@ object DM: TDM
   end
   object UniConnection1: TUniConnection
     ProviderName = 'Access'
+    Database = 'C:\github\report\report\bin\r1.mdb'
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
+    Connected = True
     Left = 38
     Top = 72
   end
@@ -59,6 +61,7 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from depart;')
+    Active = True
     Left = 466
     Top = 272
     object intgrfld1: TIntegerField
@@ -248,21 +251,25 @@ object DM: TDM
     SQLInsert.Strings = (
       'INSERT INTO r1'
       
-        '  (department, basis, basis_N, basis_ffile, contract_name, contr' +
-        'act_number, contract_file, deadline, costofwork, responsible, in' +
-        'voice, invoice_file, payment_note, payment_date, performance_of_' +
-        'work_note, performance_of_work_file, performance_of_work_date, a' +
-        'ct_acceptance, act_acceptance_file, contract_execution_note, con' +
-        'tract_execution_file, type_task_i, type_task_str)'
+        '  (type_task_i, type_task_str, department, responsible, deadline' +
+        ', basis, basis_N, basis_ffile, contract_name, contract_number, c' +
+        'ontract_file, costofwork_F, costofwork, invoice, invoice_file, p' +
+        'ayment_note, payment_date, performance_of_work_note, performance' +
+        '_of_work_file, performance_of_work_date, act_acceptance, act_acc' +
+        'eptance_file, contract_execution_note, contract_execution_file, ' +
+        'emty, mail_Num_In, mail_Correspondent, mail_Data_In, mail_Soderg' +
+        'anie, mail_Ispolnitel, mail_Resoluzia)'
       'VALUES'
       
-        '  (:department, :basis, :basis_N, :basis_ffile, :contract_name, ' +
-        ':contract_number, :contract_file, :deadline, :costofwork, :respo' +
-        'nsible, :invoice, :invoice_file, :payment_note, :payment_date, :' +
-        'performance_of_work_note, :performance_of_work_file, :performanc' +
-        'e_of_work_date, :act_acceptance, :act_acceptance_file, :contract' +
-        '_execution_note, :contract_execution_file, :type_task_i, :type_t' +
-        'ask_str)')
+        '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
+        'dline, :basis, :basis_N, :basis_ffile, :contract_name, :contract' +
+        '_number, :contract_file, :costofwork_F, :costofwork, :invoice, :' +
+        'invoice_file, :payment_note, :payment_date, :performance_of_work' +
+        '_note, :performance_of_work_file, :performance_of_work_date, :ac' +
+        't_acceptance, :act_acceptance_file, :contract_execution_note, :c' +
+        'ontract_execution_file, :emty, :mail_Num_In, :mail_Correspondent' +
+        ', :mail_Data_In, :mail_Soderganie, :mail_Ispolnitel, :mail_Resol' +
+        'uzia)')
     SQLDelete.Strings = (
       'DELETE FROM r1'
       'WHERE'
@@ -271,40 +278,47 @@ object DM: TDM
       'UPDATE r1'
       'SET'
       
-        '  department = :department, basis = :basis, basis_N = :basis_N, ' +
-        'basis_ffile = :basis_ffile, contract_name = :contract_name, cont' +
-        'ract_number = :contract_number, contract_file = :contract_file, ' +
-        'deadline = :deadline, costofwork = :costofwork, responsible = :r' +
-        'esponsible, invoice = :invoice, invoice_file = :invoice_file, pa' +
-        'yment_note = :payment_note, payment_date = :payment_date, perfor' +
-        'mance_of_work_note = :performance_of_work_note, performance_of_w' +
-        'ork_file = :performance_of_work_file, performance_of_work_date =' +
-        ' :performance_of_work_date, act_acceptance = :act_acceptance, ac' +
-        't_acceptance_file = :act_acceptance_file, contract_execution_not' +
-        'e = :contract_execution_note, contract_execution_file = :contrac' +
-        't_execution_file, type_task_i = :type_task_i, type_task_str = :t' +
-        'ype_task_str'
+        '  type_task_i = :type_task_i, type_task_str = :type_task_str, de' +
+        'partment = :department, responsible = :responsible, deadline = :' +
+        'deadline, basis = :basis, basis_N = :basis_N, basis_ffile = :bas' +
+        'is_ffile, contract_name = :contract_name, contract_number = :con' +
+        'tract_number, contract_file = :contract_file, costofwork_F = :co' +
+        'stofwork_F, costofwork = :costofwork, invoice = :invoice, invoic' +
+        'e_file = :invoice_file, payment_note = :payment_note, payment_da' +
+        'te = :payment_date, performance_of_work_note = :performance_of_w' +
+        'ork_note, performance_of_work_file = :performance_of_work_file, ' +
+        'performance_of_work_date = :performance_of_work_date, act_accept' +
+        'ance = :act_acceptance, act_acceptance_file = :act_acceptance_fi' +
+        'le, contract_execution_note = :contract_execution_note, contract' +
+        '_execution_file = :contract_execution_file, emty = :emty, mail_N' +
+        'um_In = :mail_Num_In, mail_Correspondent = :mail_Correspondent, ' +
+        'mail_Data_In = :mail_Data_In, mail_Soderganie = :mail_Soderganie' +
+        ', mail_Ispolnitel = :mail_Ispolnitel, mail_Resoluzia = :mail_Res' +
+        'oluzia'
       'WHERE'
       '  id = :Old_id')
     SQLLock.Strings = (
       'UPDATE r1'
       'SET'
-      '  department = :department'
+      '  type_task_i = :type_task_i'
       'WHERE'
       '  id = :Old_id')
     SQLRefresh.Strings = (
       
-        'SELECT department, basis, basis_N, basis_ffile, contract_name, c' +
-        'ontract_number, contract_file, deadline, costofwork, responsible' +
-        ', invoice, invoice_file, payment_note, payment_date, performance' +
-        '_of_work_note, performance_of_work_file, performance_of_work_dat' +
-        'e, act_acceptance, act_acceptance_file, contract_execution_note,' +
-        ' contract_execution_file, type_task_i, type_task_str FROM r1'
+        'SELECT type_task_i, type_task_str, department, responsible, dead' +
+        'line, basis, basis_N, basis_ffile, contract_name, contract_numbe' +
+        'r, contract_file, costofwork_F, costofwork, invoice, invoice_fil' +
+        'e, payment_note, payment_date, performance_of_work_note, perform' +
+        'ance_of_work_file, performance_of_work_date, act_acceptance, act' +
+        '_acceptance_file, contract_execution_note, contract_execution_fi' +
+        'le, emty, mail_Num_In, mail_Correspondent, mail_Data_In, mail_So' +
+        'derganie, mail_Ispolnitel, mail_Resoluzia FROM r1'
       'WHERE'
       '  id = :id')
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
+    Active = True
     Left = 224
     Top = 40
     object tblReport2id: TIntegerField
@@ -470,6 +484,10 @@ object DM: TDM
     object dtmfldReport2mail_Data_In: TDateTimeField
       DisplayLabel = #1076#1072#1090#1072' '#1087#1086#1089#1090#1091#1087#1083#1077#1085#1080#1103
       FieldName = 'mail_Data_In'
+    end
+    object tblReport2costofwork_F: TFloatField
+      DisplayLabel = 'costofwork_F '#1057#1090#1086#1080#1084#1086#1089#1090#1100' '#1088#1072#1073#1086#1090#1099' -'#1074#1077#1097#1077#1089#1090#1074#1077#1085#1085#1086#1077
+      FieldName = 'costofwork_F'
     end
   end
   object tblReportFiltr2: TUniQuery

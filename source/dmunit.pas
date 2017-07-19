@@ -97,6 +97,7 @@ type
     strngfldReport2mail_Ispolnitel: TStringField;
     strngfldReport2mail_Resoluzia: TStringField;
     dtmfldReport2mail_Data_In: TDateTimeField;
+    tblReport2costofwork_F: TFloatField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);

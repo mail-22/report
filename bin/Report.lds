@@ -32,6 +32,7 @@ mail_Soderganie=краткое содержание
 mail_Ispolnitel=Отв.исполнитель
 mail_Resoluzia=Резолюция
 mail_Data_In=дата поступления
+costofwork_F=costofwork_F Стоимость работы -вещественное
 [tblDepart]
 id=№
 depart=Отдел

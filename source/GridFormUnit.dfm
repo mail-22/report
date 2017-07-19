@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = -703
-  Top = 272
+  Left = 113
+  Top = 195
   Width = 1811
   Height = 783
   Caption = 'GridForm'
@@ -552,14 +552,14 @@ inherited GridForm: TGridForm
               DataBinding.FieldName = 'contract_execution_note'
               Width = 43
               Position.BandIndex = 2
-              Position.ColIndex = 5
+              Position.ColIndex = 6
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn
               DataBinding.FieldName = 'contract_file'
               Width = 43
               Position.BandIndex = 2
-              Position.ColIndex = 4
+              Position.ColIndex = 5
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn
@@ -581,7 +581,7 @@ inherited GridForm: TGridForm
               DataBinding.FieldName = 'contract_execution_file'
               Width = 44
               Position.BandIndex = 2
-              Position.ColIndex = 6
+              Position.ColIndex = 7
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn
@@ -612,8 +612,17 @@ inherited GridForm: TGridForm
               Position.ColIndex = 2
               Position.RowIndex = 0
             end
-            object cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn
+            object cxgrdbndclmncxgrd1DBBandedTableView1Column10: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'costofwork_F'
+              PropertiesClassName = 'TcxCurrencyEditProperties'
+              Properties.DisplayFormat = ',0.00 ;-,0.00 '
+              Position.BandIndex = 2
+              Position.ColIndex = 3
+              Position.RowIndex = 0
+            end
+            object cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible: TcxGridDBBandedColumn
               DataBinding.FieldName = 'responsible'
+              PropertiesClassName = 'TcxMRUEditProperties'
               Width = 55
               Position.BandIndex = 0
               Position.ColIndex = 1
@@ -637,7 +646,7 @@ inherited GridForm: TGridForm
               DataBinding.FieldName = 'payment_note'
               Width = 55
               Position.BandIndex = 2
-              Position.ColIndex = 3
+              Position.ColIndex = 4
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1payment_date: TcxGridDBBandedColumn
@@ -1740,7 +1749,7 @@ inherited GridForm: TGridForm
           'Width')
       end
       item
-        Component = cxgrdbndclmncxgrd1DBBandedTableView1responsible
+        Component = cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
         Properties.Strings = (
           'AlternateCaption'
           'BestFitMaxWidth'

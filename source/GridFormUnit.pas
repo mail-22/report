@@ -25,7 +25,7 @@ uses
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue,
   dxSkinscxPCPainter, cxGridBandedTableView, cxGridDBBandedTableView,
   dxSkinsdxStatusBarPainter, dxStatusBar, JvAppEvent, ComCtrls,
-  JvExComCtrls, JvStatusBar, cxPropertiesStore, CommonUnit
+  JvExComCtrls, JvStatusBar, cxPropertiesStore, CommonUnit, cxCurrencyEdit
   ;
 
 type
@@ -126,7 +126,7 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1contract_number: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1costofwork: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1invoice: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1invoice_file: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1payment_note: TcxGridDBBandedColumn;
@@ -137,6 +137,7 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file: TcxGridDBBandedColumn;
     cxprprtstr2cxgrdbtblvw1: TcxPropertiesStore;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column10: TcxGridDBBandedColumn;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -149,7 +150,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure jvpvnts1Hint(Sender: TObject);
   private
-    { Private declarations }
+  protected
+    MRUEdit_responsible :string;
   public
     procedure AddMethod;
     procedure DepMethod;
@@ -387,6 +389,22 @@ begin
   cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
   cxprprtstr1.RestoreFrom;
 
+
+  //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name + '.' +
+    'MRUEdit.responsible.txt';
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) +
+    'MRUEdit.responsible.txt';
+  //
+  if FileExists(MRUEdit_responsible) then
+  begin // проверить на наличие свойства MRU у поля !!!
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.LoadFromFile(MRUEdit_responsible);
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.Text; //
+  end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
+  else
+  begin
+  end;
+
 end;
 
 procedure TGridForm.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -398,6 +416,23 @@ begin
   cxgrd1DBBandedTableView1.StoreToIniFile(FileName_cxgrd1DBBandedTableView1, true);
 
   cxprprtstr1.StoreTo(True);
+
+  //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name + '.' +
+    'MRUEdit.responsible.txt';
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) +
+    'MRUEdit.responsible.txt';
+  //
+//if FileExists(MRUEdit_responsible) then
+if True then
+  begin // проверить на наличие свойства MRU у поля !!!
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.SaveToFile(MRUEdit_responsible);
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.Text; //
+  end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
+  else
+  begin
+  end;
+
 end;
 
 procedure TGridForm.jvpvnts1Hint(Sender: TObject);

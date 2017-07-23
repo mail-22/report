@@ -185,10 +185,10 @@ begin
 
   // Разрешено выбрать только .dpr и .pas файлы
   openDialog.Filter :=
-    '  files|*.doc*|  files|*.pdf  files|*.jpg';
+    '*.doc*|*.doc*|*.pdf|*.pdf|*.jpg|*.jpg';
 
   // Выбор файлов Паскаля как стартовый тип фильтра
-  //openDialog.FilterIndex := 2;
+  //openDialog.FilterIndex := 1;
 
   // Показ диалог открытия файла
   if openDialog.Execute then
@@ -535,6 +535,7 @@ begin
     //strTmp := SysErrorMessage(GetLastError);
     MessageDlg(FileNamePathSource + ' ' + FileNamePathUniq + ' '
       + SysErrorMessage(GetLastError), mtWarning, [mbOK], 0);
+    exit;
   end;
 
   DataSet.Append; //!!!

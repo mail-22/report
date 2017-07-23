@@ -1,23 +1,23 @@
 inherited EditGridJOleForm: TEditGridJOleForm
-  Left = 385
-  Top = 267
+  Left = 209
+  Top = 135
   Width = 828
-  Height = 640
+  Height = 626
   Caption = 'EditGridJOleForm'
   PixelsPerInch = 96
   TextHeight = 17
   object lbl1: TLabel [0]
     Left = 0
     Top = 42
-    Width = 820
+    Width = 812
     Height = 17
     Align = alTop
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090#1099' '#1074#1080#1076#1072' :'
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 519
-    Width = 820
+    Top = 494
+    Width = 812
     Height = 41
     Align = alBottom
     BevelInner = bvLowered
@@ -27,8 +27,9 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object cxdbnvgtr1: TcxDBNavigator
       Left = 324
       Top = 2
-      Width = 480
+      Width = 482
       Height = 33
+      Buttons.CustomButtons = <>
       DataSource = DM.dsJpg
       Align = alClient
       TabOrder = 0
@@ -77,8 +78,8 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object pnl1: TPanel [2]
     Left = 0
-    Top = 560
-    Width = 820
+    Top = 535
+    Width = 812
     Height = 53
     Align = alBottom
     TabOrder = 1
@@ -106,25 +107,25 @@ inherited EditGridJOleForm: TEditGridJOleForm
     Left = 0
     Top = 115
     Width = 10
-    Height = 404
+    Height = 379
   end
   object pnlL: TPanel [4]
     Left = 10
     Top = 115
-    Width = 810
-    Height = 404
+    Width = 802
+    Height = 379
     Align = alClient
     Caption = 'pnlL'
     TabOrder = 3
     object cxgrd1: TcxGrid
       Left = 1
       Top = 71
-      Width = 808
-      Height = 332
+      Width = 800
+      Height = 307
       Align = alClient
       TabOrder = 0
       object cxgrdbtblvwGrid1DBTableView1: TcxGridDBTableView
-        NavigatorButtons.ConfirmDelete = False
+        Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = DM.dsJpg
         DataController.Summary.DefaultGroupSummaryItems = <>
         DataController.Summary.FooterSummaryItems = <>
@@ -182,7 +183,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object actmmb2: TActionMainMenuBar
       Left = 1
       Top = 39
-      Width = 808
+      Width = 800
       Height = 32
       UseSystemFont = False
       ActionManager = actmgr1
@@ -198,7 +199,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object acttb1: TActionToolBar
       Left = 1
       Top = 1
-      Width = 808
+      Width = 800
       Height = 38
       Caption = 'acttb1'
       ColorMap.HighlightColor = clWhite
@@ -210,19 +211,19 @@ inherited EditGridJOleForm: TEditGridJOleForm
   object acttb2: TActionToolBar [5]
     Left = 0
     Top = 59
-    Width = 820
+    Width = 812
     Height = 56
     ActionManager = actmgr1
     Caption = 'acttb2'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Spacing = 0
   end
   object Memo1: TMemo [6]
     Left = 0
     Top = 0
-    Width = 820
+    Width = 812
     Height = 42
     Align = alTop
     Alignment = taCenter
@@ -235,6 +236,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     Top = 12
   end
   object openDialog: TOpenDialog
+    Filter = '*.doc*|*.doc*|*.pdf|*.pdf|*.jpg|*.jpg'
     Left = 581
     Top = 250
   end

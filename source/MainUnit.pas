@@ -8,7 +8,7 @@ uses
   JvAppIniStorage, JvComponentBase, JvFormPlacement, ImgList, StdActns,
   ActnList, XPStyleActnCtrls, ActnMan, JvAppHotKey, ToolWin, ActnCtrls,
   ActnMenus, JvExControls, JvStaticText, dxGDIPlusClasses, ExtCtrls,
-  JvExExtCtrls, JvImage, UBusyRtl, cxPropertiesStore;
+  JvExExtCtrls, JvImage, UBusyRtl, cxPropertiesStore, cxClasses;
 
 type
   TFormMain = class(TBaseForm)

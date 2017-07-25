@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = -144
-  Top = 221
+  Left = -511
+  Top = 195
   Width = 1811
   Height = 783
   Caption = 'GridForm'
@@ -522,6 +522,8 @@ inherited GridForm: TGridForm
               end>
             object cxgrdbndclmncxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn
               DataBinding.FieldName = 'basis'
+              PropertiesClassName = 'TcxMRUEditProperties'
+              Properties.ShowEllipsis = False
               Width = 85
               Position.BandIndex = 1
               Position.ColIndex = 0
@@ -529,6 +531,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn
               DataBinding.FieldName = 'basis_ffile'
+              PropertiesClassName = 'TcxMRUEditProperties'
               Width = 46
               Position.BandIndex = 1
               Position.ColIndex = 3
@@ -565,6 +568,7 @@ inherited GridForm: TGridForm
             object cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn
               Caption = #1076#1086#1075#1086#1074#1086#1088' - ( '#1088#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072')- '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077'  '
               DataBinding.FieldName = 'contract_name'
+              PropertiesClassName = 'TcxMRUEditProperties'
               Width = 70
               Position.BandIndex = 2
               Position.ColIndex = 0
@@ -572,6 +576,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn
               DataBinding.FieldName = 'deadline'
+              PropertiesClassName = 'TcxDateEditProperties'
               Width = 71
               Position.BandIndex = 1
               Position.ColIndex = 2
@@ -600,6 +605,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1contract_number: TcxGridDBBandedColumn
               DataBinding.FieldName = 'contract_number'
+              PropertiesClassName = 'TcxMRUEditProperties'
               Width = 68
               Position.BandIndex = 2
               Position.ColIndex = 1
@@ -607,6 +613,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1costofwork: TcxGridDBBandedColumn
               DataBinding.FieldName = 'costofwork'
+              PropertiesClassName = 'TcxMRUEditProperties'
               Width = 55
               Position.BandIndex = 2
               Position.ColIndex = 2
@@ -630,6 +637,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1invoice: TcxGridDBBandedColumn
               DataBinding.FieldName = 'invoice'
+              PropertiesClassName = 'TcxMRUEditProperties'
               Width = 55
               Position.BandIndex = 4
               Position.ColIndex = 1
@@ -651,6 +659,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1payment_date: TcxGridDBBandedColumn
               DataBinding.FieldName = 'payment_date'
+              PropertiesClassName = 'TcxDateEditProperties'
               Width = 55
               Position.BandIndex = 1
               Position.ColIndex = 1
@@ -672,6 +681,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_date: TcxGridDBBandedColumn
               DataBinding.FieldName = 'performance_of_work_date'
+              PropertiesClassName = 'TcxDateEditProperties'
               Width = 55
               Position.BandIndex = 5
               Position.ColIndex = 1
@@ -679,6 +689,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn
               DataBinding.FieldName = 'act_acceptance'
+              PropertiesClassName = 'TcxMRUEditProperties'
               Width = 55
               Position.BandIndex = 3
               Position.ColIndex = 1

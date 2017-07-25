@@ -32,7 +32,8 @@ uses
   DisplayLabel in 'DisplayLabel.pas',
   MailFormUnit in 'MailFormUnit.pas' {MailForm},
   MailEditFormUnit in 'MailEditFormUnit.pas' {MailEditForm},
-  SystemDirs in 'SystemDirs.pas';
+  SystemDirs in 'SystemDirs.pas',
+  VCLFixPack in 'VCLFixPack.pas';
 
 {$R *.res}
 
@@ -59,3 +60,4 @@ begin
   Application.CreateForm(TMailEditForm, MailEditForm);
   Application.Run;
 end.
+

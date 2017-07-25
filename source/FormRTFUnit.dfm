@@ -16,8 +16,8 @@ object FormRTF: TFormRTF
   object pgc1: TPageControl
     Left = 0
     Top = 25
-    Width = 332
-    Height = 268
+    Width = 340
+    Height = 279
     ActivePage = ts1
     Align = alClient
     TabOrder = 0
@@ -26,8 +26,8 @@ object FormRTF: TFormRTF
       object dbrchvwdtole: TDBMemo
         Left = 0
         Top = 0
-        Width = 324
-        Height = 240
+        Width = 332
+        Height = 251
         Cursor = crIBeam
         Align = alClient
         Color = clNone
@@ -46,8 +46,8 @@ object FormRTF: TFormRTF
         DataBinding.DataField = 'rtf'
         DataBinding.DataSource = ds1
         TabOrder = 0
-        Height = 240
-        Width = 324
+        Height = 251
+        Width = 332
       end
     end
     object ts3: TTabSheet
@@ -56,8 +56,8 @@ object FormRTF: TFormRTF
       object edtole2: TJvDBRichEdit
         Left = 0
         Top = 0
-        Width = 324
-        Height = 240
+        Width = 332
+        Height = 251
         DataField = 'rtf'
         DataSource = ds1
         Align = alClient
@@ -68,7 +68,7 @@ object FormRTF: TFormRTF
   object mmo1: TMemo
     Left = 0
     Top = 0
-    Width = 332
+    Width = 340
     Height = 25
     Align = alTop
     Lines.Strings = (

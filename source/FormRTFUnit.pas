@@ -7,7 +7,8 @@ uses
   Dialogs, cxGraphics,
   cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit,
   cxTextEdit, cxMemo, cxRichEdit, cxDBRichEdit, StdCtrls, JvExStdCtrls,
-  JvRichEdit, JvDBRichEdit, ComCtrls, DBCtrls, DB;
+  JvRichEdit, JvDBRichEdit, ComCtrls, DBCtrls, DB, dxSkinsCore,
+  dxSkinOffice2007Blue;
 
 type
   TFormRTF = class(TForm)

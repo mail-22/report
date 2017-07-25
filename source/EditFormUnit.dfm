@@ -1,6 +1,6 @@
 inherited EditForm: TEditForm
-  Left = -813
-  Top = 181
+  Left = 305
+  Top = 259
   Height = 782
   Caption = 'EditForm'
   PixelsPerInch = 96

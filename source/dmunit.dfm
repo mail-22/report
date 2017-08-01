@@ -1,9 +1,9 @@
 object DM: TDM
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 510
-  Top = 292
-  Height = 458
+  Left = 207
+  Top = 271
+  Height = 477
   Width = 760
   object OpenDialog1: TOpenDialog
     DefaultExt = '*.mdb'
@@ -25,7 +25,6 @@ object DM: TDM
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
-    Connected = True
     Left = 38
     Top = 72
   end
@@ -61,7 +60,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from depart;')
-    Active = True
     Left = 466
     Top = 272
     object intgrfld1: TIntegerField
@@ -318,7 +316,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
-    Active = True
     Left = 224
     Top = 40
     object tblReport2id: TIntegerField

@@ -10,7 +10,7 @@ inherited FormMain: TFormMain
   object img1: TJvImage [0]
     Left = 0
     Top = 198
-    Width = 784
+    Width = 792
     Height = 158
     Align = alTop
     AutoSize = True
@@ -1621,14 +1621,14 @@ inherited FormMain: TFormMain
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 27
-    Width = 784
+    Width = 792
     Height = 27
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -1639,7 +1639,7 @@ inherited FormMain: TFormMain
   object jvstctxt1: TJvStaticText [2]
     Left = 0
     Top = 54
-    Width = 784
+    Width = 792
     Height = 33
     Align = alTop
     Alignment = taCenter
@@ -1663,7 +1663,7 @@ inherited FormMain: TFormMain
   object jvstctxt2: TJvStaticText [3]
     Left = 0
     Top = 87
-    Width = 784
+    Width = 792
     Height = 80
     Align = alTop
     Alignment = taCenter
@@ -1692,7 +1692,7 @@ inherited FormMain: TFormMain
   object jvstctxt3: TJvStaticText [4]
     Left = 0
     Top = 384
-    Width = 784
+    Width = 792
     Height = 48
     Align = alTop
     Alignment = taCenter
@@ -1718,7 +1718,7 @@ inherited FormMain: TFormMain
   object jvstctxt4: TJvStaticText [5]
     Left = 0
     Top = 167
-    Width = 784
+    Width = 792
     Height = 31
     Align = alTop
     Alignment = taCenter
@@ -1742,7 +1742,7 @@ inherited FormMain: TFormMain
   object jvstctxt5: TJvStaticText [6]
     Left = 0
     Top = 356
-    Width = 784
+    Width = 792
     Height = 28
     Align = alTop
     Alignment = taCenter
@@ -1766,13 +1766,13 @@ inherited FormMain: TFormMain
   object acttb1: TActionToolBar [7]
     Left = 0
     Top = 0
-    Width = 784
+    Width = 792
     Height = 27
     ActionManager = actmgr1
     Caption = 'acttb1'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Spacing = 0
   end
   inherited jvfrmstrg1: TJvFormStorage

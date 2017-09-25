@@ -9,8 +9,8 @@ inherited GridForm: TGridForm
   object pnlT: TPanel [0]
     Left = 0
     Top = 26
-    Width = 1444
-    Height = 680
+    Width = 1452
+    Height = 691
     Align = alClient
     BevelOuter = bvLowered
     Caption = 'pnlT'
@@ -18,15 +18,15 @@ inherited GridForm: TGridForm
     object pnlGrid: TPanel
       Left = 1
       Top = 1
-      Width = 1442
-      Height = 678
+      Width = 1450
+      Height = 689
       Align = alClient
       AutoSize = True
       TabOrder = 0
       object lbl2: TLabel
         Left = 1
         Top = 1
-        Width = 1440
+        Width = 1448
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -39,27 +39,27 @@ inherited GridForm: TGridForm
       end
       object pnlBBB: TPanel
         Left = 1
-        Top = 666
-        Width = 1440
+        Top = 677
+        Width = 1448
         Height = 11
         Align = alBottom
         TabOrder = 0
         Visible = False
       end
       object cxspltr1: TcxSplitter
-        Left = 1263
+        Left = 1271
         Top = 14
         Width = 8
-        Height = 652
+        Height = 663
         HotZoneClassName = 'TcxMediaPlayer8Style'
         AlignSplitter = salRight
         Control = pnlR
       end
       object pnlR: TPanel
-        Left = 1271
+        Left = 1279
         Top = 14
         Width = 170
-        Height = 652
+        Height = 663
         Align = alRight
         TabOrder = 2
         Visible = False
@@ -82,7 +82,7 @@ inherited GridForm: TGridForm
           Left = 1
           Top = 14
           Width = 168
-          Height = 637
+          Height = 648
           Align = alClient
           DragCursor = crDrag
           Font.Charset = DEFAULT_CHARSET
@@ -98,7 +98,6 @@ inherited GridForm: TGridForm
           OptionsView.RowHeaderWidth = 124
           OptionsBehavior.AlwaysShowEditor = True
           OptionsBehavior.RowSizing = True
-          Navigator.Buttons.CustomButtons = <>
           ParentFont = False
           TabOrder = 0
           Visible = False
@@ -311,15 +310,15 @@ inherited GridForm: TGridForm
       object pnlL: TPanel
         Left = 1
         Top = 14
-        Width = 1262
-        Height = 652
+        Width = 1270
+        Height = 663
         Align = alClient
         Caption = 'pnlL'
         TabOrder = 3
         object lbl1: TLabel
           Left = 1
           Top = 1
-          Width = 1260
+          Width = 1268
           Height = 13
           Align = alTop
           Alignment = taCenter
@@ -334,8 +333,8 @@ inherited GridForm: TGridForm
         object cxgrd1: TcxGrid
           Left = 1
           Top = 14
-          Width = 1260
-          Height = 606
+          Width = 1268
+          Height = 617
           Align = alClient
           BevelInner = bvLowered
           BevelKind = bkSoft
@@ -352,7 +351,7 @@ inherited GridForm: TGridForm
           RootLevelOptions.DetailTabsPosition = dtpTop
           object cxgrdbtblvw1: TcxGridDBTableView
             DragMode = dmAutomatic
-            Navigator.Buttons.CustomButtons = <>
+            NavigatorButtons.ConfirmDelete = False
             DataController.DataModeController.DetailInSQLMode = True
             DataController.DataModeController.GridMode = True
             DataController.DataModeController.SmartRefresh = True
@@ -479,7 +478,7 @@ inherited GridForm: TGridForm
             end
           end
           object cxgrd1DBBandedTableView1: TcxGridDBBandedTableView
-            Navigator.Buttons.CustomButtons = <>
+            NavigatorButtons.ConfirmDelete = False
             DataController.DataSource = DM.dsReport
             DataController.Summary.DefaultGroupSummaryItems = <>
             DataController.Summary.FooterSummaryItems = <>
@@ -715,8 +714,8 @@ inherited GridForm: TGridForm
         end
         object pnl_Navigator1: TPanel
           Left = 1
-          Top = 620
-          Width = 1260
+          Top = 631
+          Width = 1268
           Height = 31
           Align = alBottom
           BevelInner = bvLowered
@@ -726,9 +725,8 @@ inherited GridForm: TGridForm
           object cxDBNavigator3: TcxDBNavigator
             Left = 206
             Top = 2
-            Width = 1037
+            Width = 1050
             Height = 23
-            Buttons.CustomButtons = <>
             DataSource = DM.dsReport
             Align = alClient
             TabOrder = 0
@@ -781,14 +779,14 @@ inherited GridForm: TGridForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1444
+    Width = 1452
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -798,16 +796,16 @@ inherited GridForm: TGridForm
   end
   object jvstsbr1: TJvStatusBar [2]
     Left = 0
-    Top = 726
-    Width = 1444
+    Top = 737
+    Width = 1452
     Height = 19
     Panels = <>
     SimplePanel = True
   end
   object dxstsbr1: TdxStatusBar [3]
     Left = 0
-    Top = 706
-    Width = 1444
+    Top = 717
+    Width = 1452
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET

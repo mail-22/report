@@ -1,4 +1,4 @@
-unit MailFormUnit;
+unit NirFormUnit;
 
 interface
 
@@ -18,7 +18,7 @@ uses
   cxPropertiesStore,GridFormUnit, CommonUnit;
 
 type
-  TMailForm = class(TBaseForm)
+  TNirForm = class(TBaseForm)
     cxprprtstr1: TcxPropertiesStore;
     actmgr1: TActionManager;
     dxstsbr1: TdxStatusBar;
@@ -124,19 +124,18 @@ type
     procedure FormCreate(Sender: TObject);
     procedure GridFormactAddExecute(Sender: TObject);
   private
-    procedure AddMailMethod;
+    procedure AddNirMethod;
     { Private declarations }
   public
-    procedure EditMailMethod;
+    procedure EditNirMethod;
     { Public declarations }
   end;
 
-  procedure MailForm_Show;
   procedure NirForm_Show;
 
 /////////////////////////////
 var
-  MailForm: TMailForm;
+  NirForm: TNirForm;
 
   FileName_cxgrd21View : string;
   FileName_cxgrd22View : string;
@@ -144,18 +143,11 @@ var
 
 implementation
 
-uses DMUnit, MailEditFormUnit, SelDepUnit, NirFormUnit;
+uses DMUnit, NirEditFormUnit, SelDepUnit;
 
 {$R *.dfm}
 
 //
-procedure MailForm_Show;
-begin
-  if (MailForm = nil) then
-     Application.CreateForm(TMailForm, MailForm);
-  MailForm.ShowModal;
-end;
-
 procedure NirForm_Show;
 begin
   if (NirForm = nil) then
@@ -163,25 +155,25 @@ begin
   NirForm.ShowModal;
 end;
 
-procedure TMailForm.actAddExecute(Sender: TObject);
+procedure TNirForm.actAddExecute(Sender: TObject);
 begin
   inherited;
-  AddMailMethod;
+  AddNirMethod;
 end;
 
-procedure TMailForm.actEditExecute(Sender: TObject);
+procedure TNirForm.actEditExecute(Sender: TObject);
 begin
   inherited;
-  EditMailMethod;
+  EditNirMethod;
 end;
 
-procedure TMailForm.btn1Click(Sender: TObject);
+procedure TNirForm.btn1Click(Sender: TObject);
 begin
   inherited;
-  EditMailMethod;
+  EditNirMethod;
 end;
 
-procedure TMailForm.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TNirForm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
   cxgrd21View.StoreToIniFile(FileName_cxgrd21View, true);
@@ -190,7 +182,7 @@ begin
   cxprprtstr1.StoreTo(True);
 end;
 
-procedure TMailForm.FormCreate(Sender: TObject);
+procedure TNirForm.FormCreate(Sender: TObject);
 var i:Integer;
 begin
   inherited;
@@ -212,7 +204,7 @@ begin
 end;
 
 ///////////////////////////////////////////////////////////////////////////////
-procedure TMailForm.EditMailMethod;
+procedure TNirForm.EditNirMethod;
 //var  Form: TForm;
 begin
   //Form := EditForm;
@@ -227,7 +219,7 @@ begin
     dm.tblReport2.Edit;
     //DM.tblReport.FieldByName('department').AsInteger := Year;   //department
 
-    MailEditForm_Show;//!!!
+    NirEditForm_Show;//!!!
 
     if (AddBildFormResult = -1) then
     begin
@@ -259,10 +251,10 @@ begin
     //dm.UniTransaction1.Commit;   // ?
     Screen.Cursor := crDefault;
   end;
-end;  //EditMailMethod
+end;  //EditNirMethod
 
 
-procedure TMailForm.AddMailMethod;
+procedure TNirForm.AddNirMethod;
 begin
   inherited;
   try
@@ -284,13 +276,13 @@ begin
     IncMethod(dm.tblReport2, dm.tblReport2contract_file);
     SetTypeOfDoc(dm.tblJpg , dm.tblTypeOfDoc ,  cDoc[Contract]);}
 
-    dm.strngfldReport2type_task_str.AsString := cTask[Mail].strTypeOfTask;
-    dm.strngfldReport2type_task_i.AsInteger := Integer(cTask[Mail].TypeOfTask);
+    dm.strngfldReport2type_task_str.AsString := cTask[Nir].strTypeOfTask;
+    dm.strngfldReport2type_task_i.AsInteger := Integer(cTask[Nir].TypeOfTask);
 
     dm.tblReport2.Post; // !!!
     dm.tblReport2.Edit;
 
-    MailEditForm_Show;
+    NirEditForm_Show;
     if (AddBildFormResult = -1) then
     begin
       dm.UniTransaction1.Rollback;
@@ -318,10 +310,10 @@ begin
   end;
 end;
 
-procedure TMailForm.GridFormactAddExecute(Sender: TObject);
+procedure TNirForm.GridFormactAddExecute(Sender: TObject);
 begin
   inherited;
-  AddMailMethod;
+  AddNirMethod;
 end;
 
 end.

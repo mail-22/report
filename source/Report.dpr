@@ -33,7 +33,9 @@ uses
   MailFormUnit in 'MailFormUnit.pas' {MailForm},
   MailEditFormUnit in 'MailEditFormUnit.pas' {MailEditForm},
   SystemDirs in 'SystemDirs.pas',
-  VCLFixPack in 'VCLFixPack.pas';
+  VCLFixPack in 'VCLFixPack.pas',
+  NirFormUnit in 'NirFormUnit.pas' {NirForm},
+  NirEditFormUnit in 'NirEditFormUnit.pas' {NirEditForm};
 
 {$R *.res}
 
@@ -58,6 +60,8 @@ begin
   Application.CreateForm(TExportXLSForm, ExportXLSForm);
   Application.CreateForm(TMailForm, MailForm);
   Application.CreateForm(TMailEditForm, MailEditForm);
+  Application.CreateForm(TNirForm, NirForm);
+  Application.CreateForm(TNirEditForm, NirEditForm);
   Application.Run;
 end.
 

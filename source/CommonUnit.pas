@@ -54,7 +54,7 @@ var
 
   Common: TCommon;
 
-  strTX :string;
+strTX :string;
 strTY :string;
 strTZ :string;
 
@@ -107,7 +107,7 @@ begin
   i := Length(vTask);
 
   SetLength(vTask, Length(vTask) + 1);
-  vTask[High(vTask)].TypeOfTask := Mail;  
+  vTask[High(vTask)].TypeOfTask := Mail;
   cTask[Mail].TypeOfTask := Mail;
   cTask[Mail].strTypeOfTask := 'письмо';
 
@@ -115,6 +115,13 @@ begin
   vTask[High(vTask)].TypeOfTask := Dogovor;
   cTask[Dogovor].TypeOfTask := Dogovor;
   cTask[Dogovor].strTypeOfTask := 'договор';
+
+  SetLength(vTask, Length(vTask) + 1);
+  vTask[High(vTask)].TypeOfTask := Nir;
+  cTask[Nir].TypeOfTask := Nir;
+  cTask[Nir].strTypeOfTask : 'НИР';
+
+
 end;
 
 procedure TCommon.DataModuleCreate(Sender: TObject);

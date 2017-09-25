@@ -236,7 +236,7 @@ end;
 procedure TFormMain.actNirExecute(Sender: TObject);
 begin
   inherited;
-  ;
+  NirForm_Show;
 end;
 
 procedure TFormMain.cxPropertiesStoreMethod(Sender: TObject);

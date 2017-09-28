@@ -76,6 +76,9 @@ ChartBMPFileName: string;
 
   Vers: string;
 
+  cur_type_task_str :string;
+  cur_type_task_i :integer;
+
 implementation
 
 uses Dialogs
@@ -119,7 +122,7 @@ begin
   SetLength(vTask, Length(vTask) + 1);
   vTask[High(vTask)].TypeOfTask := Nir;
   cTask[Nir].TypeOfTask := Nir;
-  cTask[Nir].strTypeOfTask : 'Õ»–';
+  cTask[Nir].strTypeOfTask := 'Õ»–';
 
 
 end;

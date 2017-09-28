@@ -39,13 +39,18 @@ type
     cxprprtstr2: TcxPropertiesStore;
     actNir: TAction;
     actMail: TAction;
+    actListOfDep: TAction;
+    actListOfEmpl: TAction;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
     procedure actHELP2Execute(Sender: TObject);
     procedure actListOfBildingExecute(Sender: TObject);
+    procedure actListOfDepExecute(Sender: TObject);
+    procedure actListOfEmplExecute(Sender: TObject);
     procedure actMailExecute(Sender: TObject);
     procedure actNirExecute(Sender: TObject);
+    procedure actTuning2Execute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -57,6 +62,8 @@ type
     procedure jvstctxt3Click(Sender: TObject);
   private
     procedure cxPropertiesStoreMethod(Sender: TObject);
+    procedure EmplMethod;
+    procedure TunMethod;
 
   public
     procedure FormTuning_Show;
@@ -64,6 +71,8 @@ type
   end;
 
 procedure Help2;
+
+procedure DepMethod;
 
 var
   FormMain: TFormMain;
@@ -74,7 +83,7 @@ implementation
 
 uses
     FormTuningUnit,  CommonUnit,
-   ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit;
+   ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit, SelDepUnit, EditForm2Unit, EditEmplFormUnit;
 
 {$R *.dfm}
 
@@ -227,6 +236,28 @@ begin
   GridForm_Show;
 end;
 
+procedure TFormMain.actListOfDepExecute(Sender: TObject);
+begin
+  inherited;
+  DepMethod;
+end;
+
+procedure DepMethod;
+begin
+   EditForm2_Show;
+end;
+
+procedure TFormMain.actListOfEmplExecute(Sender: TObject);
+begin
+  inherited;
+  EmplMethod;
+end;
+
+procedure TFormMain.EmplMethod;
+begin
+EditEmplForm_Show;
+end;
+
 procedure TFormMain.actMailExecute(Sender: TObject);
 begin
   inherited;
@@ -237,6 +268,17 @@ procedure TFormMain.actNirExecute(Sender: TObject);
 begin
   inherited;
   NirForm_Show;
+end;
+
+procedure TFormMain.actTuning2Execute(Sender: TObject);
+begin
+  inherited;
+  TunMethod;
+end;
+
+procedure TFormMain.TunMethod;
+begin
+    SelDepForm_Show;
 end;
 
 procedure TFormMain.cxPropertiesStoreMethod(Sender: TObject);
@@ -256,7 +298,6 @@ begin
   inherited;
   cxprprtstr2.StoreTo(True); // cxprprtstr1.StorageName
 end;
-
 
 procedure TFormMain.jvstctxt3Click(Sender: TObject);
 begin

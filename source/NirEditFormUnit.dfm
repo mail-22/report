@@ -1,6 +1,7 @@
 inherited NirEditForm: TNirEditForm
-  Left = 459
-  Top = 317
+  Left = 239
+  Top = 125
+  Height = 712
   Caption = 'NirEditForm'
   PixelsPerInch = 96
   TextHeight = 17
@@ -8,13 +9,13 @@ inherited NirEditForm: TNirEditForm
     Left = 0
     Top = 0
     Width = 792
-    Height = 573
+    Height = 685
     Align = alClient
     Caption = 'pnlMain'
     TabOrder = 0
     object pnl1: TPanel
       Left = 1
-      Top = 518
+      Top = 630
       Width = 790
       Height = 54
       Align = alBottom
@@ -64,7 +65,7 @@ inherited NirEditForm: TNirEditForm
       Left = 1
       Top = 61
       Width = 790
-      Height = 457
+      Height = 569
       Align = alClient
       DragCursor = crDrag
       Font.Charset = DEFAULT_CHARSET
@@ -103,142 +104,66 @@ inherited NirEditForm: TNirEditForm
         Index = 2
         Version = 1
       end
-      object cxdbdtrwcxdbvrtclgrd1basis: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'basis'
-        ID = 3
-        ParentID = -1
-        Index = 3
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1basis_ffile: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'basis_ffile'
-        ID = 4
-        ParentID = -1
-        Index = 4
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1contract_name: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'contract_name'
-        ID = 5
-        ParentID = -1
-        Index = 5
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1contract_number: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'contract_number'
-        ID = 6
-        ParentID = -1
-        Index = 6
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1contract_file: TcxDBEditorRow
-        Properties.Caption = #1076#1086#1075#1086#1074#1086#1088'_file'
-        Properties.DataBinding.FieldName = 'contract_file'
-        ID = 7
-        ParentID = -1
-        Index = 7
-        Version = 1
-      end
       object cxdbdtrwcxdbvrtclgrd1deadline: TcxDBEditorRow
         Properties.DataBinding.FieldName = 'deadline'
         ID = 8
         ParentID = -1
-        Index = 8
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1costofwork: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'costofwork'
-        ID = 9
-        ParentID = -1
-        Index = 9
+        Index = 3
         Version = 1
       end
       object cxdbdtrwcxdbvrtclgrd1responsible: TcxDBEditorRow
         Properties.DataBinding.FieldName = 'responsible'
         ID = 10
         ParentID = -1
-        Index = 10
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1invoice: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'invoice'
-        ID = 11
-        ParentID = -1
-        Index = 11
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1invoice_file: TcxDBEditorRow
-        Properties.Caption = #1057#1095#1077#1090' '#1085#1072' '#1086#1087#1083#1072#1090#1091', '#1092#1072#1081#1083
-        Properties.DataBinding.FieldName = 'invoice_file'
-        ID = 12
-        ParentID = -1
-        Index = 12
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1payment_note: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'payment_note'
-        ID = 13
-        ParentID = -1
-        Index = 13
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1payment_date: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'payment_date'
-        ID = 14
-        ParentID = -1
-        Index = 14
-        Version = 1
-      end
-      object cxdbdtrwcxdbvrtclgrd1performance_of_work_note: TcxDBEditorRow
-        Properties.DataBinding.FieldName = 'performance_of_work_note'
-        ID = 15
-        ParentID = -1
-        Index = 15
+        Index = 4
         Version = 1
       end
       object cxdbdtrwcxdbvrtclgrd1performance_of_work_file: TcxDBEditorRow
         Properties.Caption = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1088#1072#1073#1086#1090#1099'  '#1092#1072#1081#1083
         Properties.DataBinding.FieldName = 'performance_of_work_file'
+        Visible = False
         ID = 16
         ParentID = -1
-        Index = 16
+        Index = 5
         Version = 1
       end
       object cxdbdtrwcxdbvrtclgrd1performance_of_work_date: TcxDBEditorRow
         Properties.DataBinding.FieldName = 'performance_of_work_date'
         ID = 17
         ParentID = -1
-        Index = 17
+        Index = 6
         Version = 1
       end
       object cxdbdtrwcxdbvrtclgrd1act_acceptance: TcxDBEditorRow
         Properties.DataBinding.FieldName = 'act_acceptance'
         ID = 18
         ParentID = -1
-        Index = 18
+        Index = 7
         Version = 1
       end
       object cxdbdtrwcxdbvrtclgrd1act_acceptance_file: TcxDBEditorRow
         Properties.Caption = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080' - '#1092#1072#1081#1083
         Properties.DataBinding.FieldName = 'act_acceptance_file'
+        Visible = False
         ID = 19
         ParentID = -1
-        Index = 19
+        Index = 8
         Version = 1
       end
       object cxdbdtrwcxdbvrtclgrd1contract_execution_note: TcxDBEditorRow
         Properties.DataBinding.FieldName = 'contract_execution_note'
         ID = 20
         ParentID = -1
-        Index = 20
+        Index = 9
         Version = 1
       end
       object cxdbdtrwcxdbvrtclgrd1contract_execution_file: TcxDBEditorRow
         Properties.Caption = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072' - '#1092#1072#1081#1083
         Properties.DataBinding.FieldName = 'contract_execution_file'
+        Visible = False
         ID = 21
         ParentID = -1
-        Index = 21
+        Index = 10
         Version = 1
       end
     end

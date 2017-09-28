@@ -117,7 +117,6 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn;
@@ -125,19 +124,24 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1contract_number: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1costofwork: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1invoice: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1invoice_file: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1payment_note: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1payment_date: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_note: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_file: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_date: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1performance_of_work_date:
+    TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file:
+    TcxGridDBBandedColumn;
     cxprprtstr2cxgrdbtblvw1: TcxPropertiesStore;
     cxgrdbndclmncxgrd1DBBandedTableView1Column10: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column11: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column12: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
+    cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -148,10 +152,11 @@ type
     procedure actTunExecute(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure jvpvnts1Hint(Sender: TObject);
   private
   protected
-    MRUEdit_responsible :string;
+    MRUEdit_responsible: string;
   public
     procedure AddMethod;
     procedure DepMethod;
@@ -172,15 +177,16 @@ var
 
 implementation
 
-uses MainUnit, EditForm2Unit, LogicUnit, SelDepUnit, EditGridJpgFormUnit, EditGridOleFormUnit,  EditEmplFormUnit, SpisokUnit, ExportXLSFormUnit, EditFormUnit;
+uses MainUnit, EditForm2Unit, LogicUnit, SelDepUnit, EditGridJpgFormUnit,
+  EditGridOleFormUnit, EditEmplFormUnit, SpisokUnit, ExportXLSFormUnit,
+  EditFormUnit;
 
 {$R *.dfm}
 
 var
-  FileName_cxgrdbtblvw1 :string;
-  FileName_cxdbvrtclgrd1 :string;
-  FileName_cxgrd1DBBandedTableView1 :string;
-
+  FileName_cxgrdbtblvw1: string;
+  FileName_cxdbvrtclgrd1: string;
+  FileName_cxgrd1DBBandedTableView1: string;
 
 procedure TGridForm.actOleExecute(Sender: TObject);
 begin
@@ -215,7 +221,7 @@ end;
 
 procedure TGridForm.SpisokMethod;
 begin
-   SpisokForm_Show;
+  SpisokForm_Show;
 end;
 
 procedure TGridForm.actSpisokExecute(Sender: TObject);
@@ -226,17 +232,17 @@ end;
 
 procedure TGridForm.actTunExecute(Sender: TObject);
 begin
-   TunMethod;
+  TunMethod;
 end;
 
 procedure TGridForm.DepMethod;
 begin
-   EditForm2_Show;
+  EditForm2_Show;
 end;
 
 procedure TGridForm.EmplMethod;
 begin
-   EditEmplForm_Show;
+  EditEmplForm_Show;
 end;
 
 procedure TGridForm.JpgMethod;
@@ -249,70 +255,68 @@ begin
   EditGridJOleForm_Show;
 end;
 
-procedure TGridForm.TunMethod;
-begin
-    SelDepForm_Show;
-end;
-
 procedure TGridForm.ExportXLSMethod;
 begin
-    ExportXLSForm_Show;
+  ExportXLSForm_Show;
 end;
 
-
 ///////////////////////////////////////////////////////////////////////////////
+
 procedure TGridForm.AddMethod;
 begin
   inherited;
   try
-     Screen.Cursor := crHourGlass;
-   try
-    dm.UniTransaction1.Active;
-    dm.UniTransaction1.StartTransaction;
+    Screen.Cursor := crHourGlass;
+    try
+      dm.UniTransaction1.Active;
+      //dm.UniTransaction1.StartTransaction;
 
-    dm.tblReport2.Append;
-    // lookup field
-    DM.tblReport2department.AsInteger := DepDefaultID;   //department strngfldunqry1DSDesigner   strngfldReportDepartName
-    DM.DepartL.AsInteger := DepDefaultID;
+      dm.tblReport2.Append;
+      // lookup field
+      DM.tblReport2department.AsInteger := DepDefaultID;
+      //department strngfldunqry1DSDesigner   strngfldReportDepartName
+      DM.DepartL.AsInteger := DepDefaultID;
 
-    DM.DepartL.AsInteger := DepDefaultID;
-    DM.DepartL.AsInteger := DepDefaultID;
+      DM.DepartL.AsInteger := DepDefaultID;
+      DM.DepartL.AsInteger := DepDefaultID;
 
-    dm.strngfldReport2type_task_str.AsString := cTask[Dogovor].strTypeOfTask;
-    dm.strngfldReport2type_task_i.AsInteger := Integer(cTask[Dogovor].TypeOfTask);
+      dm.strngfldReport2type_task_str.AsString := cTask[Dogovor].strTypeOfTask;
+      dm.strngfldReport2type_task_i.AsInteger :=
+        Integer(cTask[Dogovor].TypeOfTask);
 
-    dm.tblReport2.Post; // !!!
-    dm.tblReport2.Edit;
-
-    EditForm_Show;
-    if (AddBildFormResult = -1) then
-    begin
-      dm.UniTransaction1.Rollback;
-      Beep;
-      dm.RefreshDB(dm.tblReport2);
-      Exit;
-    end;
-    if (AddBildFormResult = +1) then
-    begin ;
       dm.tblReport2.Post; // !!!
-      dm.UniTransaction1.Commit;
+      dm.tblReport2.Edit;
+{
+      EditForm_Show;
+      if (AddBildFormResult = -1) then
+      begin
+        dm.UniTransaction1.Rollback;
+        Beep;
+        dm.RefreshDB(dm.tblReport2);
+        Exit;
+      end;
+      if (AddBildFormResult = +1) then
+      begin
+        ;
+        dm.tblReport2.Post; // !!!
+        dm.UniTransaction1.Commit;
+      end;
+}
+    except on E: Exception do
+        // откатываем транзакцию в случае ошибки
+      begin
+        dm.UniTransaction1.Rollback;
+        // dm.ADOConnection1.RollbackTrans();  !!!
+        ShowMessage(E.ClassName + ' db error: ' + E.Message);
+      end;
     end;
-
-
-  except on E: Exception do
-    // откатываем транзакцию в случае ошибки
-    begin
-      dm.UniTransaction1.Rollback;
-     // dm.ADOConnection1.RollbackTrans();  !!!
-      ShowMessage(E.ClassName + ' db error: ' + E.Message);
-    end;
-  end;
   finally
     Screen.Cursor := crDefault;
   end;
 end;
 
 ///////////////////////////////////////////////////////////////////////////////
+
 procedure TGridForm.EditMethod;
 var
   Form: TForm;
@@ -320,43 +324,44 @@ begin
   //Form := EditForm;
 
   try
-     Screen.Cursor := crHourGlass;
-   try
-    dm.UniTransaction1.Active;
-    dm.UniTransaction1.StartTransaction;
+    Screen.Cursor := crHourGlass;
+    try
+      dm.UniTransaction1.Active;
+      dm.UniTransaction1.StartTransaction;
 
+      dm.tblReport2.Edit;
+      //DM.tblReport.FieldByName('department').AsInteger := Year;   //department
 
-    dm.tblReport2.Edit;
-    //DM.tblReport.FieldByName('department').AsInteger := Year;   //department
+      EditForm_Show; //!!!
 
-    EditForm_Show;//!!!
+      if (AddBildFormResult = -1) then
+      begin
+        dm.UniTransaction1.Rollback;
+        Beep;
+        dm.RefreshDB(dm.tblReport2);
+        Exit;
+      end;
+      if (AddBildFormResult = +1) then
+      begin
+        ;
+        dm.tblReport2.Post; // !!!
+        dm.UniTransaction1.Commit;
+      end;
+      if (AddBildFormResult = 0) then
+      begin
+        ;
+        dm.tblReport2.Post; // ???
+        dm.UniTransaction1.Commit; //?
+      end;
 
-    if (AddBildFormResult = -1) then
-    begin
-      dm.UniTransaction1.Rollback;
-      Beep;
-      dm.RefreshDB(dm.tblReport2);
-      Exit;
+    except on E: Exception do
+        // откатываем транзакцию в случае ошибки
+      begin
+        dm.UniTransaction1.Rollback;
+        // dm.ADOConnection1.RollbackTrans();  !!!
+        ShowMessage(E.ClassName + ' db error: ' + E.Message);
+      end;
     end;
-    if (AddBildFormResult = +1) then
-    begin ;
-      dm.tblReport2.Post; // !!!
-      dm.UniTransaction1.Commit;
-     end;
-    if (AddBildFormResult = 0) then
-    begin ;
-      dm.tblReport2.Post; // ???
-      dm.UniTransaction1.Commit; //?
-     end;
-
-  except on E: Exception do
-    // откатываем транзакцию в случае ошибки
-    begin
-      dm.UniTransaction1.Rollback;
-     // dm.ADOConnection1.RollbackTrans();  !!!
-      ShowMessage(E.ClassName + ' db error: ' + E.Message);
-    end;
-  end;
   finally
     //dm.UniTransaction1.Commit;   // ?
     Screen.Cursor := crDefault;
@@ -366,32 +371,35 @@ end;
 procedure TGridForm.FormCreate(Sender: TObject);
 begin
   inherited;
-    // ???
+  // ???
 {
-  DM.tblReport2.FindLast;
-  DM.tblReport2.FindFirst;
-  DM.tblReport2.FindLast;
+DM.tblReport2.FindLast;
+DM.tblReport2.FindFirst;
+DM.tblReport2.FindLast;
 }
 
 // cxgrd1
-  FileName_cxgrdbtblvw1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrdbtblvw1' +'.ini';
+  FileName_cxgrdbtblvw1 := ExtractFilePath(Application.ExeName) + '_' + Self.Name
+    + '_' + 'cxgrdbtblvw1' + '.ini';
   cxgrdbtblvw1.RestoreFromIniFile(FileName_cxgrdbtblvw1);
 
-  FileName_cxdbvrtclgrd1:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxdbvrtclgrd1' +'.ini';
+  FileName_cxdbvrtclgrd1 := ExtractFilePath(Application.ExeName) + '_' +
+    Self.Name + '_' + 'cxdbvrtclgrd1' + '.ini';
   cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
 
-//cxgrd1DBBandedTableView1
-  FileName_cxgrd1DBBandedTableView1 := ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd1DBBandedTableView1' +'.ini';
+  //cxgrd1DBBandedTableView1
+  FileName_cxgrd1DBBandedTableView1 := ExtractFilePath(Application.ExeName) + '_'
+    + Self.Name + '_' + 'cxgrd1DBBandedTableView1' + '.ini';
   cxgrd1DBBandedTableView1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
 
-
-  cxprprtstr1.Active:=true;
-  cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
+  cxprprtstr1.Active := true;
+  cxprprtstr1.StorageName := ExtractFilePath(Application.ExeName) + '_' +
+    Self.Name + '_' + 'cxprprtstr1' + '.ini';
   cxprprtstr1.RestoreFrom;
 
-
   //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
-  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name + '.' +
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name + '.'
+    +
     'MRUEdit.responsible.txt';
   MRUEdit_responsible := ExtractFilePath(Application.ExeName) +
     'MRUEdit.responsible.txt';
@@ -413,18 +421,20 @@ begin
 
   cxgrdbtblvw1.StoreToIniFile(FileName_cxgrdbtblvw1, true);
   cxdbvrtclgrd1.StoreToIniFile(FileName_cxdbvrtclgrd1, true);
-  cxgrd1DBBandedTableView1.StoreToIniFile(FileName_cxgrd1DBBandedTableView1, true);
+  cxgrd1DBBandedTableView1.StoreToIniFile(FileName_cxgrd1DBBandedTableView1,
+    true);
 
   cxprprtstr1.StoreTo(True);
 
   //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
-  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name + '.' +
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name + '.'
+    +
     'MRUEdit.responsible.txt';
   MRUEdit_responsible := ExtractFilePath(Application.ExeName) +
     'MRUEdit.responsible.txt';
   //
 //if FileExists(MRUEdit_responsible) then
-if True then
+  if True then
   begin // проверить на наличие свойства MRU у поля !!!
     TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.SaveToFile(MRUEdit_responsible);
     TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.Text; //
@@ -435,20 +445,70 @@ if True then
 
 end;
 
+procedure TGridForm.FormShow(Sender: TObject);
+
+var
+  filtr, // формируемая строка фильтра
+  add: string;
+
+begin
+  inherited;
+
+  cur_type_task_str := cTask[Dogovor].strTypeOfTask;
+  cur_type_task_i := Integer(cTask[Dogovor].TypeOfTask);
+
+  //dm.tblReport2.FieldByName('department').AsInteger = DepDefaultID;
+  //dm.tblReport2.ParamByName('department').AsInteger := DepDefaultID;
+//Exit;
+  //DepDefaultName := IntToStr(DepDefaultID);
+
+  dm.tblReport2.filtered := false;
+  dm.tblReport2.Filter := '';
+  filtr := '';
+  if length(DepDefaultName) > 0 then
+    filtr := filtr+  'department = ' +#39+ IntToStr(DepDefaultID) +#39;
+
+  if length(cur_type_task_str) > 0 then
+  begin
+    if length(filtr) > 0 then
+      add := ' and '
+    else
+      add := '';
+    filtr := filtr + add + 'type_task_i = ' +#39+ IntToStr(cur_type_task_i) + #39;
+  end;
+
+  if length(filtr) > 0 then
+  begin
+    dm.tblReport2.Filter := filtr;
+    dm.tblReport2.filtered := true;
+  end
+  else
+    Showmessage('Все поля пусты!');
+
+end;
+
 procedure TGridForm.jvpvnts1Hint(Sender: TObject);
 begin
   inherited;
   jvstsbr1.SimpleText := Application.Hint;
 end;
 
+procedure TGridForm.TunMethod;
+begin
+  SelDepForm_Show;
+  ;
+end;
+
 ///////////////////////////////////////////////////////////////////////////////
 
 //-
+
 procedure GridForm_Show;
 begin
   if (GridForm = nil) then
-     Application.CreateForm(TGridForm, GridForm);
+    Application.CreateForm(TGridForm, GridForm);
   GridForm.ShowModal;
 end;
 
 end.
+

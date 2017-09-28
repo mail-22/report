@@ -43,7 +43,6 @@ type
     tblReport2contract_name: TStringField;
     tblReport2contract_number: TStringField;
     tblReport2deadline: TDateTimeField;
-    tblReport2costofwork: TIntegerField;
     tblReport2responsible: TStringField;
     tblReport2invoice: TStringField;
     tblReport2payment_note: TBooleanField;
@@ -72,7 +71,6 @@ type
     StringField5: TStringField;
     IntegerField3: TIntegerField;
     DateTimeField1: TDateTimeField;
-    IntegerField4: TIntegerField;
     StringField6: TStringField;
     StringField7: TStringField;
     IntegerField5: TIntegerField;
@@ -98,6 +96,22 @@ type
     strngfldReport2mail_Resoluzia: TStringField;
     dtmfldReport2mail_Data_In: TDateTimeField;
     tblReport2costofwork_F: TFloatField;
+    tblReport2nir_zayvka: TStringField;
+    tblReport2nir_zayvka_otpravleno: TDateTimeField;
+    tblReport2nir_plan: TStringField;
+    tblReport2nir_tz: TIntegerField;
+    tblReport2nir_etap_srok: TDateTimeField;
+    tblReport2nir_otchet: TIntegerField;
+    tblReport2nir_act: TIntegerField;
+    tblReport2nir_vnedrenie: TIntegerField;
+    tblReport2nir_zayvka_file: TIntegerField;
+    tblReport2mail_F: TIntegerField;
+    tblReport2dog_Primech: TStringField;
+    tblReport2nir_teh_zad: TStringField;
+    tblReport2dog_Zakazchik: TStringField;
+    tblReport2dog_Predmet: TStringField;
+    tblReport2dog_Napravleniy: TDateTimeField;
+    tblReport2dog_Podpisan: TDateTimeField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);
@@ -112,6 +126,7 @@ type
     procedure tblBildingAfterInsert(DataSet: TDataSet);
     procedure tblJpgAfterInsert(DataSet: TDataSet);
     procedure tblJpgAfterPost(DataSet: TDataSet);
+    procedure tblReport2NewRecord(DataSet: TDataSet);
     procedure tblReportFiltr2FilterRecord(DataSet: TDataSet; var Accept: Boolean);
 
   private
@@ -187,7 +202,7 @@ implementation
 
 
 uses
-  CommonUnit;
+  CommonUnit, SelDepUnit;
 
 {$R *.dfm}
 
@@ -809,6 +824,17 @@ begin
 
   //DM.tblVypoln.Parameters[1].Value := '*' ;
 end; //Init
+
+procedure TDM.tblReport2NewRecord(DataSet: TDataSet);
+begin
+  //EXIT;
+  tblReport2.FieldByName('type_task_str').AsString :=  cur_type_task_str;
+  tblReport2.FieldByName('type_task_i').AsInteger :=  cur_type_task_i;
+
+  DM.DepartL.AsInteger := DepDefaultID;
+
+
+end;
 
 procedure TDM.tblReportFiltr2FilterRecord(DataSet: TDataSet; var Accept:
     Boolean);

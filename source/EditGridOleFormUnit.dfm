@@ -1,23 +1,23 @@
 inherited EditGridJOleForm: TEditGridJOleForm
-  Left = 385
-  Top = 267
-  Width = 828
-  Height = 640
+  Left = 305
+  Top = 247
+  Width = 1024
+  Height = 756
   Caption = 'EditGridJOleForm'
   PixelsPerInch = 96
   TextHeight = 17
   object lbl1: TLabel [0]
     Left = 0
     Top = 42
-    Width = 820
+    Width = 1016
     Height = 17
     Align = alTop
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090#1099' '#1074#1080#1076#1072' :'
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 519
-    Width = 820
+    Top = 635
+    Width = 1016
     Height = 41
     Align = alBottom
     BevelInner = bvLowered
@@ -27,7 +27,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object cxdbnvgtr1: TcxDBNavigator
       Left = 324
       Top = 2
-      Width = 480
+      Width = 675
       Height = 33
       DataSource = DM.dsJpg
       Align = alClient
@@ -77,8 +77,8 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object pnl1: TPanel [2]
     Left = 0
-    Top = 560
-    Width = 820
+    Top = 676
+    Width = 1016
     Height = 53
     Align = alBottom
     TabOrder = 1
@@ -104,23 +104,23 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object cxSplitter1: TcxSplitter [3]
     Left = 0
-    Top = 115
+    Top = 86
     Width = 10
-    Height = 404
+    Height = 549
   end
   object pnlL: TPanel [4]
     Left = 10
-    Top = 115
-    Width = 810
-    Height = 404
+    Top = 86
+    Width = 1006
+    Height = 549
     Align = alClient
     Caption = 'pnlL'
     TabOrder = 3
     object cxgrd1: TcxGrid
       Left = 1
-      Top = 71
-      Width = 808
-      Height = 332
+      Top = 87
+      Width = 1004
+      Height = 461
       Align = alClient
       TabOrder = 0
       object cxgrdbtblvwGrid1DBTableView1: TcxGridDBTableView
@@ -181,8 +181,8 @@ inherited EditGridJOleForm: TEditGridJOleForm
     end
     object actmmb2: TActionMainMenuBar
       Left = 1
-      Top = 39
-      Width = 808
+      Top = 55
+      Width = 1004
       Height = 32
       UseSystemFont = False
       ActionManager = actmgr1
@@ -198,20 +198,33 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object acttb1: TActionToolBar
       Left = 1
       Top = 1
-      Width = 808
-      Height = 38
+      Width = 1004
+      Height = 27
+      ActionManager = actmgr1
       Caption = 'acttb1'
-      ColorMap.HighlightColor = clWhite
+      ColorMap.HighlightColor = 14410210
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = clWhite
+      ColorMap.UnusedColor = 14410210
+      Spacing = 0
+    end
+    object acttb3: TActionToolBar
+      Left = 1
+      Top = 28
+      Width = 1004
+      Height = 27
+      ActionManager = actmgr1
+      Caption = 'acttb3'
+      ColorMap.HighlightColor = 14410210
+      ColorMap.BtnSelectedColor = clBtnFace
+      ColorMap.UnusedColor = 14410210
       Spacing = 0
     end
   end
   object acttb2: TActionToolBar [5]
     Left = 0
     Top = 59
-    Width = 820
-    Height = 56
+    Width = 1016
+    Height = 27
     ActionManager = actmgr1
     Caption = 'acttb2'
     ColorMap.HighlightColor = 14410210
@@ -222,7 +235,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
   object Memo1: TMemo [6]
     Left = 0
     Top = 0
-    Width = 820
+    Width = 1016
     Height = 42
     Align = alTop
     Alignment = taCenter
@@ -319,6 +332,26 @@ inherited EditGridJOleForm: TEditGridJOleForm
             Action = actAdd
           end>
         ActionBar = acttb2
+      end
+      item
+        Items = <
+          item
+            Action = actMail
+          end>
+        ActionBar = acttb1
+      end
+      item
+        Items = <
+          item
+            Action = act_nir_otchet
+          end
+          item
+            Action = act_nir_tz
+          end
+          item
+            Action = act_nir_act
+          end>
+        ActionBar = acttb3
       end>
     LinkedActionLists = <
       item
@@ -328,6 +361,25 @@ inherited EditGridJOleForm: TEditGridJOleForm
     Left = 336
     Top = 104
     StyleName = 'XP Style'
+    object actMail: TAction
+      Category = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090
+      Caption = #1042#1093#1086#1076#1103#1097#1077#1077' '#1087#1080#1089#1100#1084#1086
+      OnExecute = actMailExecute
+    end
+    object act_nir_tz: TAction
+      Category = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090
+      Caption = #1053#1048#1056' '#1058#1047
+      OnExecute = act_nir_tzExecute
+    end
+    object act_nir_otchet: TAction
+      Category = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090
+      Caption = #1053#1048#1056' '#1086#1090#1095#1077#1090#1099
+      OnExecute = act_nir_otchetExecute
+    end
+    object act_nir_act: TAction
+      Caption = #1053#1048#1056' '#1040#1082#1090
+      OnExecute = act_nir_actExecute
+    end
   end
   object actlst1: TActionList
     Left = 408

@@ -1,8 +1,9 @@
 inherited MailForm: TMailForm
-  Left = 191
-  Top = 317
+  Left = 234
+  Top = 269
   Width = 1487
   Caption = 'MailForm'
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
   object dxstsbr1: TdxStatusBar [0]
@@ -33,6 +34,7 @@ inherited MailForm: TMailForm
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
+    PersistentHotKeys = True
     Spacing = 0
   end
   object pnlGrid: TPanel [2]
@@ -570,14 +572,6 @@ inherited MailForm: TMailForm
             Position.ColIndex = 2
             Position.RowIndex = 0
           end
-          object cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'contract_execution_note'
-            Visible = False
-            Width = 75
-            Position.BandIndex = 2
-            Position.ColIndex = 0
-            Position.RowIndex = 1
-          end
           object cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn
             DataBinding.FieldName = 'responsible'
             Width = 58
@@ -645,6 +639,12 @@ inherited MailForm: TMailForm
             Width = 63
             Position.BandIndex = 0
             Position.ColIndex = 6
+            Position.RowIndex = 0
+          end
+          object cxgrd21ViewColumn1: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'basis_ffile'
+            Position.BandIndex = 0
+            Position.ColIndex = 7
             Position.RowIndex = 0
           end
         end
@@ -735,6 +735,9 @@ inherited MailForm: TMailForm
           end
           item
             Action = actEdit
+          end
+          item
+            Action = acOle
           end>
         ActionBar = actmmb1
       end>
@@ -752,8 +755,8 @@ inherited MailForm: TMailForm
     StyleName = 'XP Style'
   end
   object actlst1: TActionList
-    Left = 698
-    Top = 16
+    Left = 722
+    Top = 8
     object actAdd: TAction
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1079#1072#1087#1080#1089#1100' ('#1087#1086' '#1087#1080#1089#1100#1084#1091')'
       OnExecute = actAddExecute
@@ -765,6 +768,7 @@ inherited MailForm: TMailForm
     object acOle: TAction
       Caption = #1057#1087#1080#1089#1086#1082' '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1093' '#1076#1086#1082'-'#1086#1074
       Hint = #1088#1072#1073#1086#1090#1072' '#1089'  '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1084#1080' '#1076#1086#1082'-'#1084#1080
+      OnExecute = acOleExecute
     end
     object actJpg: TAction
       Caption = #1057#1087#1080#1089#1086#1082' '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1093' '#1080#1079#1086#1073#1088#1072#1078#1077#1085#1080#1081' '

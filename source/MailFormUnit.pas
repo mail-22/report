@@ -84,7 +84,6 @@ type
     cxgrd21View: TcxGridDBBandedTableView;
     cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn;
     cxgrdlvl21: TcxGridLevel;
@@ -117,11 +116,14 @@ type
     cxgrdbndclmncxgrd21ViewColumn5: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd21ViewColumn6: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd21ViewColumn7: TcxGridDBBandedColumn;
+    cxgrd21ViewColumn1: TcxGridDBBandedColumn;
+    procedure acOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actEditExecute(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure GridFormactAddExecute(Sender: TObject);
   private
     procedure AddMailMethod;
@@ -144,7 +146,7 @@ var
 
 implementation
 
-uses DMUnit, MailEditFormUnit, SelDepUnit, NirFormUnit;
+uses DMUnit, MailEditFormUnit, SelDepUnit, NirFormUnit, EditGridOleFormUnit;
 
 {$R *.dfm}
 
@@ -161,6 +163,13 @@ begin
   if (NirForm = nil) then
      Application.CreateForm(TNirForm, NirForm);
   NirForm.ShowModal;
+end;
+
+procedure TMailForm.acOleExecute(Sender: TObject);
+begin
+  inherited;
+    EditGridJOleForm_Show;
+
 end;
 
 procedure TMailForm.actAddExecute(Sender: TObject);
@@ -269,7 +278,7 @@ begin
      Screen.Cursor := crHourGlass;
    try
     dm.UniTransaction1.Active;
-    dm.UniTransaction1.StartTransaction;
+    //dm.UniTransaction1.StartTransaction;
 
     dm.tblReport2.Append;
     // lookup field
@@ -290,6 +299,7 @@ begin
     dm.tblReport2.Post; // !!!
     dm.tblReport2.Edit;
 
+{   
     MailEditForm_Show;
     if (AddBildFormResult = -1) then
     begin
@@ -303,7 +313,7 @@ begin
       dm.tblReport2.Post; // !!!
       dm.UniTransaction1.Commit;
     end;
-
+}
 
   except on E: Exception do
     // откатываем транзакцию в случае ошибки
@@ -316,6 +326,48 @@ begin
   finally
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TMailForm.FormShow(Sender: TObject);
+
+var
+  filtr, // формируемая строка фильтра
+  add: string;
+
+begin
+  inherited;
+
+  cur_type_task_str := cTask[Mail].strTypeOfTask;
+  cur_type_task_i := Integer(cTask[Mail].TypeOfTask);
+
+  //dm.tblReport2.FieldByName('department').AsInteger = DepDefaultID;
+  //dm.tblReport2.ParamByName('department').AsInteger := DepDefaultID;
+//Exit;
+  //DepDefaultName := IntToStr(DepDefaultID);
+
+  dm.tblReport2.filtered := false;
+  dm.tblReport2.Filter := '';
+  filtr := '';
+  if length(DepDefaultName) > 0 then
+    filtr :=  'department = ' +#39+ IntToStr(DepDefaultID) +#39;
+
+  if length(cur_type_task_str) > 0 then
+  begin
+    if length(filtr) > 0 then
+      add := ' and '
+    else
+      add := '';
+    filtr := filtr + add + 'type_task_i = ' +#39+ IntToStr(cur_type_task_i) + #39;
+  end;
+
+  if length(filtr) > 0 then
+  begin
+    dm.tblReport2.Filter := filtr;
+    dm.tblReport2.filtered := true;
+  end
+  else
+    Showmessage('Все поля пусты!');
+
 end;
 
 procedure TMailForm.GridFormactAddExecute(Sender: TObject);

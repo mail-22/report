@@ -24,8 +24,9 @@ uses
   dxSkinXmas2008Blue, dxSkinscxPCPainter, cxMRUEdit;
 
 type
-  tTypeOfDoc = (Basic = 1, Contract, Invoice, Performance, Act,
-    Contract_Execution);
+  tTypeOfDoc = (Basic = 1, Contract, Invoice, Performance, Act, Contract_Execution,
+    MailIn,
+    nir_tz, nir_otchet, nir_act);
 
   tDoc = record
     strTypeOfDoc: string;
@@ -77,6 +78,11 @@ type
     xpclrmp1: TXPColorMap;
     cxgrdbclmn_Type_MRU: TcxGridDBColumn;
     lbl1: TLabel;
+    actMail: TAction;
+    acttb3: TActionToolBar;
+    act_nir_tz: TAction;
+    act_nir_otchet: TAction;
+    act_nir_act: TAction;
     procedure acAddContractExecute(Sender: TObject);
     procedure actAddActExecute(Sender: TObject);
     procedure actAddBasisExecute(Sender: TObject);
@@ -86,6 +92,10 @@ type
     procedure actAddInvoiceExecute(Sender: TObject);
     procedure actAddPerfExecute(Sender: TObject);
     procedure actExtractExecute(Sender: TObject);
+    procedure actMailExecute(Sender: TObject);
+    procedure act_nir_actExecute(Sender: TObject);
+    procedure act_nir_otchetExecute(Sender: TObject);
+    procedure act_nir_tzExecute(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
   private
@@ -318,6 +328,30 @@ begin
   AddAnyDocMethod(Sender);
 end;
 
+procedure TEditGridJOleForm.actMailExecute(Sender: TObject);
+begin
+  inherited;  //входящее письмо
+  AddAnyDocMethod(Sender);
+end;
+
+procedure TEditGridJOleForm.act_nir_actExecute(Sender: TObject);
+begin      // nir_act
+  inherited;
+  AddAnyDocMethod(Sender);
+end;
+
+procedure TEditGridJOleForm.act_nir_otchetExecute(Sender: TObject);
+begin
+  inherited;  //act_nir_otchet
+  AddAnyDocMethod(Sender);
+end;
+
+procedure TEditGridJOleForm.act_nir_tzExecute(Sender: TObject);
+begin
+  inherited;  // nir_tz
+  AddAnyDocMethod(Sender);
+end;
+
 procedure TEditGridJOleForm.AddAnyDocMethod(Sender: TObject);
 begin
 
@@ -327,6 +361,30 @@ begin
 
   AddMethod;
 
+  if (TComponent(Sender).Name = act_nir_act.Name) then  // nir_tz
+  begin
+    IncMethod(dm.tblReport2 , dm.tblReport2nir_act);
+    SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[nir_act]);
+  end
+  else
+  if (TComponent(Sender).Name = act_nir_otchet.Name) then  // nir_tz
+  begin
+    IncMethod(dm.tblReport2 , dm.tblReport2nir_otchet);
+    SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[nir_otchet]);
+  end
+  else
+  if (TComponent(Sender).Name = act_nir_tz.Name) then  // nir_tz
+  begin
+    IncMethod(dm.tblReport2 , dm.tblReport2nir_tz);
+    SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[nir_tz]);
+  end
+  else
+  if (TComponent(Sender).Name = actMail.Name) then  // Письмо входящее
+  begin
+    IncMethod(dm.tblReport2 , dm.tblReport2mail_F);
+    SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[MailIn]);
+  end
+  else
   if (TComponent(Sender).Name = actAddBasis.Name) then  // Основание для договора
   begin
     IncMethod(dm.tblReport2 , dm.tblReport2basis_ffile);
@@ -365,7 +423,7 @@ begin
           mtWarning, [mbOK], 0)
    end;
 
-end;  //  AddAnyDocMethod 
+end;  //  AddAnyDocMethod
 
 procedure TEditGridJOleForm.btnCancelClick(Sender: TObject);
 begin
@@ -450,6 +508,20 @@ begin
 
   cDoc[Contract_Execution].TypeOfDoc := Contract_Execution;
   cDoc[Contract_Execution].strTypeOfDoc := 'Отметка о выполнении договора';
+
+  cDoc[MailIn].TypeOfDoc := MailIn;
+  cDoc[MailIn].strTypeOfDoc := 'Письмо';
+
+  cDoc[nir_tz].TypeOfDoc :=  nir_tz;
+  cDoc[nir_tz].strTypeOfDoc := 'НИР ТЗ';
+
+  cDoc[nir_otchet].TypeOfDoc :=  nir_otchet;
+  cDoc[nir_otchet].strTypeOfDoc := 'НИР Отчет';
+
+  cDoc[nir_act].TypeOfDoc :=  nir_act;
+  cDoc[nir_act].strTypeOfDoc := 'НИР Акты';
+
+
 end;
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -84,7 +84,6 @@ type
     cxgrd21View: TcxGridDBBandedTableView;
     cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn;
     cxgrdlvl21: TcxGridLevel;
@@ -110,18 +109,22 @@ type
     cxgrdbclmncxgrd22Viewbasis_ffile: TcxGridDBColumn;
     cxgrdbclmncxgrd22Viewtype_task_i: TcxGridDBColumn;
     cxgrdbclmncxgrd22Viewtype_task_str: TcxGridDBColumn;
-    cxgrdbndclmncxgrd21ViewColumn1: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd21ViewColumn2: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd21ViewColumn3: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd21ViewColumn4: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd21ViewColumn5: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd21ViewColumn6: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd21ViewColumn7: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_zayvka: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_zayvka_otpravleno: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_plan: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_tz: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_etap_srok: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_otchet: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_act: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_vnedrenie: TcxGridDBBandedColumn;
+    cxgrd21Viewnir_zayvka_file: TcxGridDBBandedColumn;
+    procedure acOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actEditExecute(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure GridFormactAddExecute(Sender: TObject);
   private
     procedure AddNirMethod;
@@ -143,7 +146,7 @@ var
 
 implementation
 
-uses DMUnit, NirEditFormUnit, SelDepUnit;
+uses DMUnit, NirEditFormUnit, SelDepUnit, EditGridOleFormUnit;
 
 {$R *.dfm}
 
@@ -153,6 +156,12 @@ begin
   if (NirForm = nil) then
      Application.CreateForm(TNirForm, NirForm);
   NirForm.ShowModal;
+end;
+
+procedure TNirForm.acOleExecute(Sender: TObject);
+begin
+  inherited;
+  EditGridJOleForm_Show;
 end;
 
 procedure TNirForm.actAddExecute(Sender: TObject);
@@ -261,7 +270,7 @@ begin
      Screen.Cursor := crHourGlass;
    try
     dm.UniTransaction1.Active;
-    dm.UniTransaction1.StartTransaction;
+    //dm.UniTransaction1.StartTransaction;
 
     dm.tblReport2.Append;
     // lookup field
@@ -270,18 +279,13 @@ begin
 
     DM.DepartL.AsInteger := DepDefaultID;
     DM.DepartL.AsInteger := DepDefaultID;
-{
-  if (TComponent(Sender).Name = acAddContract.Name) then   //Договор
-  begin
-    IncMethod(dm.tblReport2, dm.tblReport2contract_file);
-    SetTypeOfDoc(dm.tblJpg , dm.tblTypeOfDoc ,  cDoc[Contract]);}
 
     dm.strngfldReport2type_task_str.AsString := cTask[Nir].strTypeOfTask;
     dm.strngfldReport2type_task_i.AsInteger := Integer(cTask[Nir].TypeOfTask);
 
     dm.tblReport2.Post; // !!!
     dm.tblReport2.Edit;
-
+{
     NirEditForm_Show;
     if (AddBildFormResult = -1) then
     begin
@@ -295,7 +299,7 @@ begin
       dm.tblReport2.Post; // !!!
       dm.UniTransaction1.Commit;
     end;
-
+}
 
   except on E: Exception do
     // откатываем транзакцию в случае ошибки
@@ -308,6 +312,47 @@ begin
   finally
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TNirForm.FormShow(Sender: TObject);
+var
+  filtr, // формируемая строка фильтра
+  add: string;
+
+begin
+  inherited;
+
+  cur_type_task_str := cTask[Nir].strTypeOfTask;
+  cur_type_task_i := Integer(cTask[Nir].TypeOfTask);
+
+  //dm.tblReport2.FieldByName('department').AsInteger = DepDefaultID;
+  //dm.tblReport2.ParamByName('department').AsInteger := DepDefaultID;
+//Exit;
+  //DepDefaultName := IntToStr(DepDefaultID);
+
+  dm.tblReport2.filtered := false;
+  dm.tblReport2.Filter := '';
+  filtr := '';
+  if length(DepDefaultName) > 0 then
+    filtr :=   'department = ' +#39+ IntToStr(DepDefaultID) +#39;
+
+  if length(cur_type_task_str) > 0 then
+  begin
+    if length(filtr) > 0 then
+      add := ' and '
+    else
+      add := '';
+    filtr := filtr + add + 'type_task_i = ' +#39+ IntToStr(cur_type_task_i) + #39;
+  end;
+
+  if length(filtr) > 0 then
+  begin
+    dm.tblReport2.Filter := filtr;
+    dm.tblReport2.filtered := true;
+  end
+  else
+    Showmessage('Все поля пусты!');
+
 end;
 
 procedure TNirForm.GridFormactAddExecute(Sender: TObject);

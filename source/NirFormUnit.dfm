@@ -1,8 +1,9 @@
 inherited NirForm: TNirForm
-  Left = 191
-  Top = 317
+  Left = 148
+  Top = 349
   Width = 1487
   Caption = 'NirForm'
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
   object dxstsbr1: TdxStatusBar [0]
@@ -342,7 +343,7 @@ inherited NirForm: TNirForm
         Height = 13
         Align = alTop
         Alignment = taCenter
-        Caption = #1089#1087#1080#1089#1086#1082' '#1074#1089#1077#1093' '#1079#1072#1087#1080#1089#1077#1081' '#1086' '#1087#1080#1089#1100#1084#1072#1093
+        Caption = #1089#1087#1080#1089#1086#1082' '#1074#1089#1077#1093' '#1079#1072#1087#1080#1089#1077#1081' '#1086' '#1088#1072#1073#1086#1090#1072#1093' '#1087' '#1053#1048#1056
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
@@ -530,121 +531,130 @@ inherited NirForm: TNirForm
           OptionsView.ColumnAutoWidth = True
           OptionsView.GroupByBox = False
           OptionsView.HeaderAutoHeight = True
+          OptionsView.HeaderEndEllipsis = True
           OptionsView.BandHeaderEndEllipsis = True
           Bands = <
             item
-              Caption = #1055#1080#1089#1100#1084#1086
-              Width = 396
-            end
-            item
               Caption = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077' , '#1086#1090#1076#1077#1083
-              Width = 414
+              Width = 153
             end
             item
-              Caption = #1042#1099#1087#1086#1083#1085#1077#1085#1080#1077
-              Width = 340
+              Caption = #1053#1048#1056
+              Width = 1045
             end
             item
               Caption = #1055#1088#1086#1095#1077#1077
-              Width = 129
+              Width = 42
+            end
+            item
+              Caption = #1042#1099#1087#1086#1083#1085#1077#1085#1080#1077
+              Width = 39
             end>
           object cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn
             DataBinding.FieldName = 'id'
             Width = 20
-            Position.BandIndex = 0
-            Position.ColIndex = 0
-            Position.RowIndex = 0
+            Position.BandIndex = -1
+            Position.ColIndex = -1
+            Position.RowIndex = -1
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn
             DataBinding.FieldName = 'department'
             Visible = False
             Width = 60
-            Position.BandIndex = 1
+            Position.BandIndex = 0
             Position.ColIndex = 0
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn
             DataBinding.FieldName = 'DepartL'
-            Width = 60
-            Position.BandIndex = 1
-            Position.ColIndex = 2
+            Width = 108
+            Position.BandIndex = 0
+            Position.ColIndex = 1
             Position.RowIndex = 0
-          end
-          object cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'contract_execution_note'
-            Visible = False
-            Width = 75
-            Position.BandIndex = 2
-            Position.ColIndex = 0
-            Position.RowIndex = 1
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn
             DataBinding.FieldName = 'responsible'
-            Width = 58
-            Position.BandIndex = 1
-            Position.ColIndex = 1
+            Width = 115
+            Position.BandIndex = 0
+            Position.ColIndex = 2
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21Viewtype_task_i: TcxGridDBBandedColumn
             DataBinding.FieldName = 'type_task_i'
             Visible = False
             Width = 43
-            Position.BandIndex = 1
+            Position.BandIndex = 0
             Position.ColIndex = 3
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21Viewtype_task_str: TcxGridDBBandedColumn
             DataBinding.FieldName = 'type_task_str'
             Width = 20
-            Position.BandIndex = 0
+            Position.BandIndex = -1
+            Position.ColIndex = -1
+            Position.RowIndex = -1
+          end
+          object cxgrd21Viewnir_zayvka: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_zayvka'
+            Width = 62
+            Position.BandIndex = 1
             Position.ColIndex = 1
             Position.RowIndex = 0
           end
-          object cxgrdbndclmncxgrd21ViewColumn1: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'Nir_Correspondent'
-            Width = 62
-            Position.BandIndex = 0
-            Position.ColIndex = 5
-            Position.RowIndex = 0
-          end
-          object cxgrdbndclmncxgrd21ViewColumn2: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'Nir_Data_In'
-            Width = 20
-            Position.BandIndex = 0
+          object cxgrd21Viewnir_zayvka_otpravleno: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_zayvka_otpravleno'
+            Width = 90
+            Position.BandIndex = 1
             Position.ColIndex = 2
             Position.RowIndex = 0
           end
-          object cxgrdbndclmncxgrd21ViewColumn3: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'Nir_Ispolnitel'
-            Position.BandIndex = 2
-            Position.ColIndex = 1
-            Position.RowIndex = 0
-          end
-          object cxgrdbndclmncxgrd21ViewColumn4: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'Nir_Num_In'
-            Position.BandIndex = 2
+          object cxgrd21Viewnir_plan: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_plan'
+            Width = 101
+            Position.BandIndex = 1
             Position.ColIndex = 0
             Position.RowIndex = 0
           end
-          object cxgrdbndclmncxgrd21ViewColumn5: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'Nir_Resoluzia'
-            Width = 105
-            Position.BandIndex = 0
+          object cxgrd21Viewnir_tz: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_tz'
+            Width = 65
+            Position.BandIndex = 1
             Position.ColIndex = 3
             Position.RowIndex = 0
           end
-          object cxgrdbndclmncxgrd21ViewColumn6: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'Nir_Soderganie'
-            Width = 106
-            Position.BandIndex = 0
+          object cxgrd21Viewnir_etap_srok: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_etap_srok'
+            Width = 60
+            Position.BandIndex = 1
             Position.ColIndex = 4
             Position.RowIndex = 0
           end
-          object cxgrdbndclmncxgrd21ViewColumn7: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'Nir_Data_In'
-            Width = 63
-            Position.BandIndex = 0
+          object cxgrd21Viewnir_otchet: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_otchet'
+            Width = 58
+            Position.BandIndex = 1
+            Position.ColIndex = 5
+            Position.RowIndex = 0
+          end
+          object cxgrd21Viewnir_act: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_act'
+            Width = 68
+            Position.BandIndex = 1
             Position.ColIndex = 6
+            Position.RowIndex = 0
+          end
+          object cxgrd21Viewnir_vnedrenie: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_vnedrenie'
+            Width = 65
+            Position.BandIndex = 1
+            Position.ColIndex = 7
+            Position.RowIndex = 0
+          end
+          object cxgrd21Viewnir_zayvka_file: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_zayvka_file'
+            Width = 69
+            Position.BandIndex = 1
+            Position.ColIndex = 8
             Position.RowIndex = 0
           end
         end
@@ -723,7 +733,7 @@ inherited NirForm: TNirForm
   object cxprprtstr1: TcxPropertiesStore
     Components = <>
     StorageName = 'cxprprtstr1'
-    Left = 760
+    Left = 856
     Top = 16
   end
   object actmgr1: TActionManager
@@ -735,6 +745,9 @@ inherited NirForm: TNirForm
           end
           item
             Action = actEdit
+          end
+          item
+            Action = acOle
           end>
         ActionBar = actmmb1
       end>
@@ -752,7 +765,7 @@ inherited NirForm: TNirForm
     StyleName = 'XP Style'
   end
   object actlst1: TActionList
-    Left = 698
+    Left = 786
     Top = 16
     object actAdd: TAction
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1079#1072#1087#1080#1089#1100' ('#1087#1086' '#1053#1048#1056')'
@@ -765,6 +778,7 @@ inherited NirForm: TNirForm
     object acOle: TAction
       Caption = #1057#1087#1080#1089#1086#1082' '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1093' '#1076#1086#1082'-'#1086#1074
       Hint = #1088#1072#1073#1086#1090#1072' '#1089'  '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1084#1080' '#1076#1086#1082'-'#1084#1080
+      OnExecute = acOleExecute
     end
     object actJpg: TAction
       Caption = #1057#1087#1080#1089#1086#1082' '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1093' '#1080#1079#1086#1073#1088#1072#1078#1077#1085#1080#1081' '

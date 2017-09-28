@@ -9,7 +9,7 @@ inherited FormMain: TFormMain
   TextHeight = 17
   object img1: TJvImage [0]
     Left = 0
-    Top = 198
+    Top = 190
     Width = 792
     Height = 158
     Align = alTop
@@ -1664,14 +1664,14 @@ inherited FormMain: TFormMain
     Left = 0
     Top = 87
     Width = 792
-    Height = 80
+    Height = 98
     Align = alTop
     Alignment = taCenter
+    AutoSize = False
     Caption = 
-      #1053#1072#1091#1095#1085#1086'-'#1080#1089#1089#1083#1077#1076#1086#1074#1072#1090#1077#1083#1100#1089#1082#1080#1081' '#1080#1085#1089#1090#1080#1090#1091#1090' '#1087#1077#1088#1089#1087#1077#1082#1090#1080#1074#1085#1099#1093' '#1080#1089#1089#1083#1077#1076#1086#1074#1072#1085#1080#1081' '#13#10#1080 +
-      ' '#1080#1085#1085#1086#1074#1072#1094#1080#1086#1085#1085#1099#1093' '#1090#1077#1093#1085#1086#1083#1086#1075#1080#1081' '#1074' '#1086#1073#1083#1072#1089#1090#1080' '#1073#1077#1079#1086#1087#1072#1089#1085#1086#1089#1090#1080' '#1078#1080#1079#1085#1077#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089 +
-      #1090#1080' '#13#10#1060#1043#1041#1054#1059' '#1042#1054' '#171#1057#1072#1085#1082#1090'-'#1055#1077#1090#1077#1088#1073#1091#1088#1075#1089#1082#1080#1081' '#1091#1085#1080#1074#1077#1088#1089#1080#1090#1077#1090' '#1075#1086#1089#1091#1076#1072#1088#1089#1090#1074#1077#1085#1085#1086#1081' '#1087 +
-      #1088#1086#1090#1080#1074#1086#1087#1086#1078#1072#1088#1085#1086#1081' '#1089#1083#1091#1078#1073#1099' '#1052#1063#1057' '#1056#1086#1089#1089#1080#1080#187'   '#13#10#13#10' _'
+      #1053#1072#1091#1095#1085#1086'-'#1080#1089#1089#1083#1077#1076#1086#1074#1072#1090#1077#1083#1100#1089#1082#1080#1081' '#1080#1085#1089#1090#1080#1090#1091#1090' '#1087#1077#1088#1089#1087#1077#1082#1090#1080#1074#1085#1099#1093' '#1080#1089#1089#1083#1077#1076#1086#1074#1072#1085#1080#1081' '#1080' '#1080 +
+      #1085#1085#1086#1074#1072#1094#1080#1086#1085#1085#1099#1093' '#1090#1077#1093#1085#1086#1083#1086#1075#1080#1081' '#1074' '#1086#1073#1083#1072#1089#1090#1080' '#1073#1077#1079#1086#1087#1072#1089#1085#1086#1089#1090#1080' '#1078#1080#1079#1085#1077#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089#1090#1080 +
+      ' '#1060#1043#1041#1054#1059' '#1042#1054' '#1057#1072#1085#1082#1090'-'#1055#1077#1090#1077#1088#1073#1091#1088#1075#1089#1082#1080#1081' '#1091#1085#1080#1074#1077#1088#1089#1080#1090#1077#1090' '#1043#1055#1057' '#1052#1063#1057' '#1056#1086#1089#1089#1080#1080' '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
     Font.Height = -24
@@ -1691,21 +1691,22 @@ inherited FormMain: TFormMain
   end
   object jvstctxt3: TJvStaticText [4]
     Left = 0
-    Top = 384
+    Top = 376
     Width = 792
     Height = 48
     Align = alTop
     Alignment = taCenter
+    AutoSize = False
     Caption = #1091#1095#1077#1090' '#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089#1090#1080'   '#13#10#13#10'_'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clMaroon
     Font.Height = -24
-    Font.Name = 'Times New Roman'
+    Font.Name = 'Verdana'
     Font.Style = []
     HotTrackFont.Charset = DEFAULT_CHARSET
     HotTrackFont.Color = clWindowText
     HotTrackFont.Height = -24
-    HotTrackFont.Name = 'Times New Roman'
+    HotTrackFont.Name = 'Verdana'
     HotTrackFont.Style = []
     Layout = tlTop
     ParentFont = False
@@ -1717,9 +1718,9 @@ inherited FormMain: TFormMain
   end
   object jvstctxt4: TJvStaticText [5]
     Left = 0
-    Top = 167
+    Top = 185
     Width = 792
-    Height = 31
+    Height = 5
     Align = alTop
     Alignment = taCenter
     Font.Charset = DEFAULT_CHARSET
@@ -1741,7 +1742,7 @@ inherited FormMain: TFormMain
   end
   object jvstctxt5: TJvStaticText [6]
     Left = 0
-    Top = 356
+    Top = 348
     Width = 792
     Height = 28
     Align = alTop
@@ -2097,6 +2098,12 @@ inherited FormMain: TFormMain
           end
           item
             Action = actTuning2
+          end
+          item
+            Action = actListOfDep
+          end
+          item
+            Action = actListOfEmpl
           end>
         ActionBar = actmmb1
       end
@@ -2152,9 +2159,10 @@ inherited FormMain: TFormMain
     end
     object actTuning2: TAction
       Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
+      OnExecute = actTuning2Execute
     end
     object actListOfBilding: TAction
-      Caption = #1044#1086#1075#1086#1074#1086#1088#1072
+      Caption = #1044#1086#1075#1086#1074#1086#1088#1099
       Hint = #1091#1095#1077#1090' '#1076#1086#1075#1086#1074#1086#1088#1085#1099#1093' '#1088#1072#1073#1086#1090
       OnExecute = actListOfBildingExecute
     end
@@ -2170,6 +2178,14 @@ inherited FormMain: TFormMain
       Caption = #1055#1080#1089#1100#1084#1072
       Hint = #1091#1095#1077#1090' '#1088#1072#1073#1086#1090' '#1089' '#1087#1080#1089#1100#1084#1072#1084#1080
       OnExecute = actMailExecute
+    end
+    object actListOfDep: TAction
+      Caption = #1057#1087#1080#1089#1086#1082' '#1086#1090#1076#1077#1083#1086#1074
+      OnExecute = actListOfDepExecute
+    end
+    object actListOfEmpl: TAction
+      Caption = #1057#1087#1080#1089#1086#1082' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1086#1074
+      OnExecute = actListOfEmplExecute
     end
   end
   object jvplctnhtky1: TJvApplicationHotKey

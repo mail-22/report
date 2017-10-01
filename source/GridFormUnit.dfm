@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = -217
-  Top = 201
+  Left = -876
+  Top = 208
   Width = 1460
   Height = 783
   Caption = 'GridForm'
@@ -489,13 +489,14 @@ inherited GridForm: TGridForm
             OptionsCustomize.ColumnHiding = True
             OptionsCustomize.ColumnsQuickCustomization = True
             OptionsCustomize.DataRowSizing = True
+            OptionsCustomize.GroupBySorting = True
+            OptionsCustomize.GroupRowSizing = True
             OptionsCustomize.BandHiding = True
             OptionsCustomize.BandsQuickCustomization = True
             OptionsCustomize.BandsQuickCustomizationReordering = qcrEnabled
             OptionsView.CellEndEllipsis = True
             OptionsView.CellAutoHeight = True
             OptionsView.GroupByBox = False
-            OptionsView.HeaderAutoHeight = True
             OptionsView.HeaderEndEllipsis = True
             OptionsView.BandHeaderEndEllipsis = True
             Bands = <
@@ -552,7 +553,7 @@ inherited GridForm: TGridForm
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn
               DataBinding.FieldName = 'DepartL'
-              Width = 65
+              Width = 61
               Position.BandIndex = 0
               Position.ColIndex = 1
               Position.RowIndex = 0
@@ -627,7 +628,7 @@ inherited GridForm: TGridForm
             object cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible: TcxGridDBBandedColumn
               DataBinding.FieldName = 'responsible'
               PropertiesClassName = 'TcxMRUEditProperties'
-              Width = 46
+              Width = 108
               Position.BandIndex = 0
               Position.ColIndex = 2
               Position.RowIndex = 0

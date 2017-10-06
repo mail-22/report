@@ -303,7 +303,8 @@ begin
   strConnection   := '\\192.168.80.10\r\bin\r1.mdb';
   strConnection   := 'C:\github\report\report\bin\r1.mdb';
 }
-  UniConnection1.Database := strConnection;
+
+  UniConnection1.Database := strConnection_Get;
   tmpB := UniConnection1.Connected;
   UniConnection1.Connect;
 

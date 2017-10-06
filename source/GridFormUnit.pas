@@ -446,16 +446,16 @@ begin
 end;
 
 procedure TGridForm.FormShow(Sender: TObject);
-
 var
   filtr, // формируемая строка фильтра
   add: string;
-
 begin
   inherited;
 
   cur_type_task_str := cTask[Dogovor].strTypeOfTask;
   cur_type_task_i := Integer(cTask[Dogovor].TypeOfTask);
+DM.filtr_();
+Exit;
 
   //dm.tblReport2.FieldByName('department').AsInteger = DepDefaultID;
   //dm.tblReport2.ParamByName('department').AsInteger := DepDefaultID;
@@ -465,8 +465,15 @@ begin
   dm.tblReport2.filtered := false;
   dm.tblReport2.Filter := '';
   filtr := '';
+  if(DepDefaultName = 'все') then begin
+
+                                  end
+                                  else begin
   if length(DepDefaultName) > 0 then
     filtr := filtr+  'department = ' +#39+ IntToStr(DepDefaultID) +#39;
+                                       end;
+
+
 
   if length(cur_type_task_str) > 0 then
   begin

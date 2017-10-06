@@ -1,15 +1,15 @@
 inherited MailForm: TMailForm
   Left = 234
   Top = 269
-  Width = 1487
+  Width = 1456
   Caption = 'MailForm'
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
   object dxstsbr1: TdxStatusBar [0]
     Left = 0
-    Top = 553
-    Width = 1479
+    Top = 541
+    Width = 1440
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET
@@ -21,14 +21,14 @@ inherited MailForm: TMailForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1479
+    Width = 1440
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -40,15 +40,15 @@ inherited MailForm: TMailForm
   object pnlGrid: TPanel [2]
     Left = 0
     Top = 26
-    Width = 1479
-    Height = 527
+    Width = 1440
+    Height = 515
     Align = alClient
     AutoSize = True
     TabOrder = 2
     object Label1: TLabel
       Left = 1
       Top = 1
-      Width = 1477
+      Width = 1438
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -61,27 +61,27 @@ inherited MailForm: TMailForm
     end
     object pnlBBB: TPanel
       Left = 1
-      Top = 515
-      Width = 1477
+      Top = 503
+      Width = 1438
       Height = 11
       Align = alBottom
       TabOrder = 0
       Visible = False
     end
     object cxspltr1: TcxSplitter
-      Left = 1300
+      Left = 1261
       Top = 14
       Width = 8
-      Height = 501
+      Height = 489
       HotZoneClassName = 'TcxMediaPlayer8Style'
       AlignSplitter = salRight
       Control = pnlR
     end
     object pnlR: TPanel
-      Left = 1308
+      Left = 1269
       Top = 14
       Width = 170
-      Height = 501
+      Height = 489
       Align = alRight
       TabOrder = 2
       Visible = False
@@ -104,7 +104,7 @@ inherited MailForm: TMailForm
         Left = 1
         Top = 14
         Width = 168
-        Height = 486
+        Height = 474
         Align = alClient
         DragCursor = crDrag
         Font.Charset = DEFAULT_CHARSET
@@ -117,9 +117,10 @@ inherited MailForm: TMailForm
         OptionsView.CellEndEllipsis = True
         OptionsView.CategoryExplorerStyle = True
         OptionsView.GridLineColor = clBlue
-        OptionsView.RowHeaderWidth = 108
+        OptionsView.RowHeaderWidth = 107
         OptionsBehavior.AlwaysShowEditor = True
         OptionsBehavior.RowSizing = True
+        Navigator.Buttons.CustomButtons = <>
         ParentFont = False
         TabOrder = 0
         Visible = False
@@ -332,15 +333,15 @@ inherited MailForm: TMailForm
     object pnlL: TPanel
       Left = 1
       Top = 14
-      Width = 1299
-      Height = 501
+      Width = 1260
+      Height = 489
       Align = alClient
       Caption = 'pnlL'
       TabOrder = 3
       object lbl1: TLabel
         Left = 1
         Top = 1
-        Width = 1297
+        Width = 1258
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -355,8 +356,8 @@ inherited MailForm: TMailForm
       object cxgrd2: TcxGrid
         Left = 1
         Top = 14
-        Width = 1297
-        Height = 455
+        Width = 1258
+        Height = 443
         Align = alClient
         BevelInner = bvLowered
         BevelKind = bkSoft
@@ -373,7 +374,7 @@ inherited MailForm: TMailForm
         RootLevelOptions.DetailTabsPosition = dtpTop
         object cxgrd22View: TcxGridDBTableView
           DragMode = dmAutomatic
-          NavigatorButtons.ConfirmDelete = False
+          Navigator.Buttons.CustomButtons = <>
           DataController.DataModeController.DetailInSQLMode = True
           DataController.DataModeController.GridMode = True
           DataController.DataModeController.SmartRefresh = True
@@ -516,7 +517,7 @@ inherited MailForm: TMailForm
           end
         end
         object cxgrd21View: TcxGridDBBandedTableView
-          NavigatorButtons.ConfirmDelete = False
+          Navigator.Buttons.CustomButtons = <>
           DataController.DataSource = DM.dsReport
           DataController.Summary.DefaultGroupSummaryItems = <>
           DataController.Summary.FooterSummaryItems = <>
@@ -659,8 +660,8 @@ inherited MailForm: TMailForm
       end
       object pnl_Navigator1: TPanel
         Left = 1
-        Top = 469
-        Width = 1297
+        Top = 457
+        Width = 1258
         Height = 31
         Align = alBottom
         BevelInner = bvLowered
@@ -670,8 +671,9 @@ inherited MailForm: TMailForm
         object cxDBNavigator3: TcxDBNavigator
           Left = 259
           Top = 2
-          Width = 1020
+          Width = 992
           Height = 23
+          Buttons.CustomButtons = <>
           DataSource = DM.dsReport
           Align = alClient
           TabOrder = 0

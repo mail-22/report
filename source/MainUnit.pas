@@ -8,7 +8,11 @@ uses
   JvAppIniStorage, JvComponentBase, JvFormPlacement, ImgList, StdActns,
   ActnList, XPStyleActnCtrls, ActnMan, JvAppHotKey, ToolWin, ActnCtrls,
   ActnMenus, JvExControls, JvStaticText, dxGDIPlusClasses, ExtCtrls,
-  JvExExtCtrls, JvImage, UBusyRtl, cxPropertiesStore, cxClasses;
+  JvExExtCtrls, JvImage, UBusyRtl, cxPropertiesStore, cxClasses, DBCtrls,
+  cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  dxSkinsCore, dxSkinOffice2007Blue, dxSkinsdxStatusBarPainter, dxStatusBar,
+  cxContainer, cxEdit, cxTextEdit, ComCtrls, AppEvnts, JvBalloonHint,
+  JvExComCtrls, JvStatusBar, JvHint;
 
 type
   TFormMain = class(TBaseForm)
@@ -41,6 +45,15 @@ type
     actMail: TAction;
     actListOfDep: TAction;
     actListOfEmpl: TAction;
+    pnlDep: TPanel;
+    dblkcbbDEP: TDBLookupComboBox;
+    dxstsbr1: TdxStatusBar;
+    stat1: TStatusBar;
+    cxTextEdit1: TcxTextEdit;
+    aplctnvnts1: TApplicationEvents;
+    jvstsbr1: TJvStatusBar;
+    jvblnhnt1: TJvBalloonHint;
+    jvhnt1: TJvHint;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
@@ -60,6 +73,8 @@ type
     procedure hlptpcsrch1Execute(Sender: TObject);
     procedure jvplctnhtky1HotKey(Sender: TObject);
     procedure jvstctxt3Click(Sender: TObject);
+    procedure dblkcbbDEPCloseUp(Sender: TObject);
+    procedure aplctnvnts1Hint(Sender: TObject);
   private
     procedure cxPropertiesStoreMethod(Sender: TObject);
     procedure EmplMethod;
@@ -83,7 +98,8 @@ implementation
 
 uses
     FormTuningUnit,  CommonUnit,
-   ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit, SelDepUnit, EditForm2Unit, EditEmplFormUnit;
+   ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit, SelDepUnit, EditForm2Unit, EditEmplFormUnit,
+  DMUnit;
 
 {$R *.dfm}
 
@@ -305,5 +321,21 @@ begin
 end;
 
 ///////////////////////////////////////////////////////////////////////////////
+
+procedure TFormMain.dblkcbbDEPCloseUp(Sender: TObject);
+begin
+  inherited;
+  DepDefaultID := DM.intgrfld1.AsInteger;
+  DepDefaultName := DM.strngfldunqry1depart.AsString;
+
+  CommonUnit.IniFile.WriteInteger( 'DepDefaultID', 'DepDefaultID', DepDefaultID);
+  CommonUnit.IniFile.WriteString( 'DepDefaultID', 'DepDefaultName', DepDefaultName);
+end;
+
+procedure TFormMain.aplctnvnts1Hint(Sender: TObject);
+begin
+  inherited;
+  stat1.SimpleText := Application.Hint;
+end;
 
 end.

@@ -1,6 +1,6 @@
 inherited FormMain: TFormMain
-  Left = 360
-  Top = 293
+  Left = 141
+  Top = 161
   Caption = #1052#1086#1085#1080#1090#1086#1088#1080#1085#1075
   Color = clGradientInactiveCaption
   OnHelp = FormHelp
@@ -10,7 +10,7 @@ inherited FormMain: TFormMain
   object img1: TJvImage [0]
     Left = 0
     Top = 190
-    Width = 792
+    Width = 784
     Height = 158
     Align = alTop
     AutoSize = True
@@ -1621,14 +1621,14 @@ inherited FormMain: TFormMain
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 27
-    Width = 792
+    Width = 784
     Height = 27
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -1639,7 +1639,7 @@ inherited FormMain: TFormMain
   object jvstctxt1: TJvStaticText [2]
     Left = 0
     Top = 54
-    Width = 792
+    Width = 784
     Height = 33
     Align = alTop
     Alignment = taCenter
@@ -1663,7 +1663,7 @@ inherited FormMain: TFormMain
   object jvstctxt2: TJvStaticText [3]
     Left = 0
     Top = 87
-    Width = 792
+    Width = 784
     Height = 98
     Align = alTop
     Alignment = taCenter
@@ -1692,7 +1692,7 @@ inherited FormMain: TFormMain
   object jvstctxt3: TJvStaticText [4]
     Left = 0
     Top = 376
-    Width = 792
+    Width = 784
     Height = 48
     Align = alTop
     Alignment = taCenter
@@ -1719,7 +1719,7 @@ inherited FormMain: TFormMain
   object jvstctxt4: TJvStaticText [5]
     Left = 0
     Top = 185
-    Width = 792
+    Width = 784
     Height = 5
     Align = alTop
     Alignment = taCenter
@@ -1743,7 +1743,7 @@ inherited FormMain: TFormMain
   object jvstctxt5: TJvStaticText [6]
     Left = 0
     Top = 348
-    Width = 792
+    Width = 784
     Height = 28
     Align = alTop
     Alignment = taCenter
@@ -1767,14 +1767,80 @@ inherited FormMain: TFormMain
   object acttb1: TActionToolBar [7]
     Left = 0
     Top = 0
-    Width = 792
+    Width = 784
     Height = 27
     ActionManager = actmgr1
     Caption = 'acttb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Spacing = 0
+  end
+  object pnlDep: TPanel [8]
+    Left = 0
+    Top = 506
+    Width = 784
+    Height = 35
+    Hint = #1074#1099#1073#1086#1088' '#1090#1077#1082#1091#1097#1077#1075#1086' '#1086#1090#1076#1077#1083#1072' | '#1074#1099#1073#1086#1088' '#1090#1077#1082#1091#1097#1077#1075#1086' '#1086#1090#1076#1077#1083#1072
+    Align = alBottom
+    AutoSize = True
+    TabOrder = 7
+    object dblkcbbDEP: TDBLookupComboBox
+      Left = 179
+      Top = 3
+      Width = 555
+      Height = 25
+      Hint = #1074#1099#1073#1086#1088' '#1090#1077#1082#1091#1097#1077#1075#1086' '#1086#1090#1076#1077#1083#1072
+      Ctl3D = True
+      KeyField = 'id'
+      ListField = 'depart'
+      ListSource = DM.dsDepart
+      ParentCtl3D = False
+      TabOrder = 0
+      OnCloseUp = dblkcbbDEPCloseUp
+    end
+    object cxTextEdit1: TcxTextEdit
+      Left = 1
+      Top = 1
+      Align = alLeft
+      AutoSize = False
+      TabOrder = 1
+      Text = #1074#1099#1073#1086#1088' '#1090#1077#1082#1091#1097#1077#1075#1086' '#1086#1090#1076#1077#1083#1072':'
+      Height = 33
+      Width = 168
+    end
+  end
+  object dxstsbr1: TdxStatusBar [9]
+    Left = 0
+    Top = 541
+    Width = 784
+    Height = 20
+    Panels = <>
+    SimplePanelStyle.Active = True
+    SimplePanelStyle.AutoHint = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+  end
+  object stat1: TStatusBar [10]
+    Left = 0
+    Top = 487
+    Width = 784
+    Height = 19
+    AutoHint = True
+    Panels = <>
+    SimplePanel = True
+  end
+  object jvstsbr1: TJvStatusBar [11]
+    Left = 0
+    Top = 468
+    Width = 784
+    Height = 19
+    AutoHint = True
+    Panels = <>
+    SimplePanel = True
   end
   inherited jvfrmstrg1: TJvFormStorage
     Left = 170
@@ -2200,5 +2266,20 @@ inherited FormMain: TFormMain
     StorageName = 'cxprprtstr3'
     Left = 450
     Top = 278
+  end
+  object aplctnvnts1: TApplicationEvents
+    OnHint = aplctnvnts1Hint
+    Left = 616
+    Top = 424
+  end
+  object jvblnhnt1: TJvBalloonHint
+    DefaultIcon = ikNone
+    UseBalloonAsApplicationHint = True
+    Left = 688
+    Top = 424
+  end
+  object jvhnt1: TJvHint
+    Left = 736
+    Top = 424
   end
 end

@@ -324,6 +324,8 @@ begin
 
   cur_type_task_str := cTask[Nir].strTypeOfTask;
   cur_type_task_i := Integer(cTask[Nir].TypeOfTask);
+ DM.filtr_();
+Exit;
 
   //dm.tblReport2.FieldByName('department').AsInteger = DepDefaultID;
   //dm.tblReport2.ParamByName('department').AsInteger := DepDefaultID;

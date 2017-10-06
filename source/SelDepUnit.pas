@@ -10,7 +10,7 @@ uses
   cxLookAndFeelPainters, cxContainer, cxEdit, DBCtrls, cxTextEdit,
   cxMaskEdit, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit,
   cxDBExtLookupComboBox, Grids, DBGrids, StdCtrls, cxListBox, cxDBEdit
-  , ExtCtrls, cxPropertiesStore  , utility     , CommonUnit
+  , ExtCtrls, cxPropertiesStore  , utility     , CommonUnit, cxClasses
    ;
 
 type

@@ -136,8 +136,6 @@ type
     procedure AfterPost(DataSet: TDataSet);
     procedure BeforePost(DataSet: TDataSet);
 
-
-
   protected
     CursorLocation: TCursorLocation;
     ResyncValue: OleVariant;
@@ -170,6 +168,7 @@ type
 
     function  strConnection_Get: string;
     procedure strConnection_Set(astrConnection: string);
+    procedure filtr_;    
   end;
 
   TMethodMakeConnectionString = (
@@ -834,6 +833,51 @@ begin
 
   DM.DepartL.AsInteger := DepDefaultID;
 
+
+end;
+
+procedure TDM.filtr_();
+var
+  filtr, // формируемая строка фильтра
+  add: string;
+begin
+  //cur_type_task_str := cTask[Dogovor].strTypeOfTask;
+  //cur_type_task_i := Integer(cTask[Dogovor].TypeOfTask);
+
+  //dm.tblReport2.FieldByName('department').AsInteger = DepDefaultID;
+  //dm.tblReport2.ParamByName('department').AsInteger := DepDefaultID;
+//Exit;
+  //DepDefaultName := IntToStr(DepDefaultID);
+
+  dm.tblReport2.filtered := false;
+  dm.tblReport2.Filter := '';
+  filtr := '';
+  if(DepDefaultName = 'все') then begin
+
+                                  end
+                                  else begin
+  if length(DepDefaultName) > 0 then
+    filtr := filtr+  'department = ' +#39+ IntToStr(DepDefaultID) +#39;
+                                       end;
+
+
+
+  if length(cur_type_task_str) > 0 then
+  begin
+    if length(filtr) > 0 then
+      add := ' and '
+    else
+      add := '';
+    filtr := filtr + add + 'type_task_i = ' +#39+ IntToStr(cur_type_task_i) + #39;
+  end;
+
+  if length(filtr) > 0 then
+  begin
+    dm.tblReport2.Filter := filtr;
+    dm.tblReport2.filtered := true;
+  end
+  else
+    Showmessage('Все поля пусты!');
 
 end;
 

@@ -1832,6 +1832,7 @@ inherited FormMain: TFormMain
     AutoHint = True
     Panels = <>
     SimplePanel = True
+    Visible = False
   end
   object jvstsbr1: TJvStatusBar [11]
     Left = 0
@@ -1841,6 +1842,7 @@ inherited FormMain: TFormMain
     AutoHint = True
     Panels = <>
     SimplePanel = True
+    Visible = False
   end
   inherited jvfrmstrg1: TJvFormStorage
     Left = 170
@@ -1851,8 +1853,8 @@ inherited FormMain: TFormMain
     Top = 212
   end
   object il1: TImageList
-    Left = 516
-    Top = 222
+    Left = 708
+    Top = 214
     Bitmap = {
       494C010101000500040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
@@ -2126,7 +2128,7 @@ inherited FormMain: TFormMain
       000000000000}
   end
   object actlst1: TActionList
-    Left = 440
+    Left = 544
     Top = 216
     object hlpcntnts1: THelpContents
       Category = 'Help'
@@ -2264,8 +2266,8 @@ inherited FormMain: TFormMain
     Active = False
     Components = <>
     StorageName = 'cxprprtstr3'
-    Left = 450
-    Top = 278
+    Left = 658
+    Top = 222
   end
   object aplctnvnts1: TApplicationEvents
     OnHint = aplctnvnts1Hint

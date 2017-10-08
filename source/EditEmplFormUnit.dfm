@@ -1,13 +1,13 @@
 inherited EditEmplForm: TEditEmplForm
-  Left = 338
-  Top = 273
+  Left = 194
+  Top = 156
   Caption = 'EditEmmplForm - '#1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1089#1087#1080#1089#1082#1072' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1086#1074' '#1086#1090#1076#1077#1083#1072
   PixelsPerInch = 96
   TextHeight = 17
   object pnl1: TPanel [0]
     Left = 0
-    Top = 519
-    Width = 792
+    Top = 507
+    Width = 784
     Height = 54
     Align = alBottom
     TabOrder = 0
@@ -30,8 +30,8 @@ inherited EditEmplForm: TEditEmplForm
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 479
-    Width = 792
+    Top = 467
+    Width = 784
     Height = 40
     Align = alBottom
     BevelInner = bvLowered
@@ -41,8 +41,9 @@ inherited EditEmplForm: TEditEmplForm
     object cxdbnvgtr1: TcxDBNavigator
       Left = 324
       Top = 2
-      Width = 450
+      Width = 452
       Height = 32
+      Buttons.CustomButtons = <>
       DataSource = dsEmpl
       Align = alClient
       TabOrder = 0
@@ -93,17 +94,17 @@ inherited EditEmplForm: TEditEmplForm
     Left = 0
     Top = 41
     Width = 353
-    Height = 438
+    Height = 426
     Align = alLeft
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
-    Font.Height = -21
+    Font.Height = -16
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
     TabOrder = 2
     object cxgrdbtblvwGrid2DBTableView1: TcxGridDBTableView
-      NavigatorButtons.ConfirmDelete = False
+      Navigator.Buttons.CustomButtons = <>
       DataController.DataModeController.GridMode = True
       DataController.DataModeController.SmartRefresh = True
       DataController.DataSource = DM.dsDepart
@@ -131,8 +132,13 @@ inherited EditEmplForm: TEditEmplForm
       OptionsView.Indicator = True
       OptionsView.ShowColumnFilterButtons = sfbAlways
       object cxgrdbclmnGrid2DBTableView1id: TcxGridDBColumn
+        Caption = 'id'
         DataBinding.FieldName = 'id'
-        Width = 55
+        Width = 20
+      end
+      object cxgrdbclmnGrid2DBTableView1Column1: TcxGridDBColumn
+        DataBinding.FieldName = 'n'
+        Width = 33
       end
       object cxgrdbclmnGrid2DBTableView1depart: TcxGridDBColumn
         DataBinding.FieldName = 'depart'
@@ -146,14 +152,14 @@ inherited EditEmplForm: TEditEmplForm
   object PanelTop: TPanel [3]
     Left = 0
     Top = 0
-    Width = 792
+    Width = 784
     Height = 41
     Align = alTop
     TabOrder = 3
     object mmoTop: TMemo
       Left = 1
       Top = 1
-      Width = 790
+      Width = 782
       Height = 39
       Align = alClient
       Lines.Strings = (
@@ -164,18 +170,18 @@ inherited EditEmplForm: TEditEmplForm
   object cxgrdEmpl: TcxGrid [4]
     Left = 361
     Top = 41
-    Width = 431
-    Height = 438
+    Width = 423
+    Height = 426
     Align = alClient
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
-    Font.Height = -21
+    Font.Height = -16
     Font.Name = 'Times New Roman'
     Font.Style = []
     ParentFont = False
     TabOrder = 4
     object cxgrdbtblvw1: TcxGridDBTableView
-      NavigatorButtons.ConfirmDelete = False
+      Navigator.Buttons.CustomButtons = <>
       DataController.DataModeController.GridMode = True
       DataController.DataModeController.SmartRefresh = True
       DataController.DataSource = dsEmpl
@@ -220,7 +226,7 @@ inherited EditEmplForm: TEditEmplForm
     Left = 353
     Top = 41
     Width = 8
-    Height = 438
+    Height = 426
   end
   inherited jvfrmstrg1: TJvFormStorage
     Left = 140

@@ -25,7 +25,8 @@ uses
   dxSkinsDefaultPainters, dxSkinValentine, dxSkinXmas2008Blue,
   dxSkinscxPCPainter, cxGridBandedTableView, cxGridDBBandedTableView,
   dxSkinsdxStatusBarPainter, dxStatusBar, JvAppEvent, ComCtrls,
-  JvExComCtrls, JvStatusBar, cxPropertiesStore, CommonUnit, cxCurrencyEdit
+  JvExComCtrls, JvStatusBar, cxPropertiesStore, CommonUnit, cxCurrencyEdit,
+  JvHint, JvBalloonHint, AppEvnts, cxDBExtLookupComboBox
   ;
 
 type
@@ -142,6 +143,21 @@ type
     cxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn;
     cxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
+    cxdbvrtclgrd1CategoryRow1: TcxCategoryRow;
+    cxdbvrtclgrd1CategoryRow2: TcxCategoryRow;
+    cxdbvrtclgrd1DBEditorRow1: TcxDBEditorRow;
+    cxdbvrtclgrd1DBEditorRow2: TcxDBEditorRow;
+    cxdbdtrwcxdbvrtclgrd1DBEditorRow3: TcxDBEditorRow;
+    cxdbdtrwcxdbvrtclgrd1DBEditorRow4: TcxDBEditorRow;
+    cxdbdtrwcxdbvrtclgrd1DBEditorRow5: TcxDBEditorRow;
+    cxdbdtrwcxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow;
+    cxdbdtrwcxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow;
+    cxctgryrwcxdbvrtclgrd1CategoryRow4: TcxCategoryRow;
+    cxdbdtrwcxdbvrtclgrd1DBEditorRow8: TcxDBEditorRow;
+    cxdbdtrwcxdbvrtclgrd1DBEditorRow9: TcxDBEditorRow;
+    aplctnvnts1: TApplicationEvents;
+    jvblnhnt1: TJvBalloonHint;
+    jvhnt1: TJvHint;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -150,6 +166,7 @@ type
     procedure actJpgExecute(Sender: TObject);
     procedure actSpisokExecute(Sender: TObject);
     procedure actTunExecute(Sender: TObject);
+    procedure aplctnvnts1Hint(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -313,6 +330,12 @@ begin
   finally
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TGridForm.aplctnvnts1Hint(Sender: TObject);
+begin
+  inherited;
+  //jvstsbr1.SimpleText := Application.Hint;
 end;
 
 ///////////////////////////////////////////////////////////////////////////////

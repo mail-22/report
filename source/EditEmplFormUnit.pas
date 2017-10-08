@@ -42,6 +42,7 @@ type
     cxgrdbclmncxgrdbtblvw1id: TcxGridDBColumn;
     cxgrdbclmncxgrdbtblvw1id_depart: TcxGridDBColumn;
     cxgrdbclmncxgrdbtblvw1surname: TcxGridDBColumn;
+    cxgrdbclmnGrid2DBTableView1Column1: TcxGridDBColumn;
   private
     { Private declarations }
   public

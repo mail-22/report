@@ -37,6 +37,8 @@ type
     cxgrdbclmnGrid2DBTableView1id: TcxGridDBColumn;
     cxgrdbclmnGrid2DBTableView1depart: TcxGridDBColumn;
     cxspltr1: TcxSplitter;
+    cxgrdbclmnGrid2DBTableView1Column1: TcxGridDBColumn;
+    cxdbdtrwcxdbvrtclgrd1DBEditorRow1: TcxDBEditorRow;
   private
     { Private declarations }
   public

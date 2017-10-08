@@ -172,6 +172,9 @@ begin
   //OLAPForm_Show;
   //WordForm.ShowModale;
 
+  dm.Get_Dep;
+  dblkcbbDEP.KeyValue := dblkcbbDEP.ListSource.DataSet.FieldByName(dblkcbbDEP.KeyField).Value;
+
   Exit;
   sl := TStringList.Create;
   GetLoadedModulesList(sl);
@@ -325,11 +328,8 @@ end;
 procedure TFormMain.dblkcbbDEPCloseUp(Sender: TObject);
 begin
   inherited;
-  DepDefaultID := DM.intgrfld1.AsInteger;
-  DepDefaultName := DM.strngfldunqry1depart.AsString;
 
-  CommonUnit.IniFile.WriteInteger( 'DepDefaultID', 'DepDefaultID', DepDefaultID);
-  CommonUnit.IniFile.WriteString( 'DepDefaultID', 'DepDefaultName', DepDefaultName);
+  dm.Set_Dep;
 end;
 
 procedure TFormMain.aplctnvnts1Hint(Sender: TObject);

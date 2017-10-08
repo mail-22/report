@@ -21,10 +21,11 @@ object DM: TDM
   end
   object UniConnection1: TUniConnection
     ProviderName = 'Access'
-    Database = 'C:\github\report\report\bin\r1.mdb'
+    Database = 'C:\github\report\bin\r1.mdb'
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
+    Connected = True
     Left = 38
     Top = 72
   end
@@ -72,6 +73,10 @@ object DM: TDM
       DisplayLabel = #1054#1090#1076#1077#1083
       FieldName = 'depart'
       Size = 255
+    end
+    object intgrfldDepartn: TIntegerField
+      DisplayLabel = #1085#1086#1084#1077#1088' '#1086#1090#1076#1077#1083#1072
+      FieldName = 'n'
     end
   end
   object dsDepart: TDataSource
@@ -258,7 +263,8 @@ object DM: TDM
         ' emty, mail_Num_In, mail_Correspondent, mail_Data_In, mail_Soder' +
         'ganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, nir_' +
         'zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, nir_t' +
-        'z, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie)'
+        'z, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Zakazc' +
+        'hik, dog_Predmet, dog_Napravleniy, dog_Podpisan)'
       'VALUES'
       
         '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
@@ -271,7 +277,8 @@ object DM: TDM
         't, :mail_Data_In, :mail_Soderganie, :mail_F, :mail_Ispolnitel, :' +
         'mail_Resoluzia, :nir_zayvka, :nir_zayvka_file, :nir_zayvka_otpra' +
         'vleno, :nir_plan, :nir_teh_zad, :nir_tz, :nir_etap_srok, :nir_ot' +
-        'chet, :nir_act, :nir_vnedrenie)')
+        'chet, :nir_act, :nir_vnedrenie, :dog_Zakazchik, :dog_Predmet, :d' +
+        'og_Napravleniy, :dog_Podpisan)')
     SQLDelete.Strings = (
       'DELETE FROM r1'
       'WHERE'
@@ -300,7 +307,9 @@ object DM: TDM
         '_file = :nir_zayvka_file, nir_zayvka_otpravleno = :nir_zayvka_ot' +
         'pravleno, nir_plan = :nir_plan, nir_teh_zad = :nir_teh_zad, nir_' +
         'tz = :nir_tz, nir_etap_srok = :nir_etap_srok, nir_otchet = :nir_' +
-        'otchet, nir_act = :nir_act, nir_vnedrenie = :nir_vnedrenie'
+        'otchet, nir_act = :nir_act, nir_vnedrenie = :nir_vnedrenie, dog_' +
+        'Zakazchik = :dog_Zakazchik, dog_Predmet = :dog_Predmet, dog_Napr' +
+        'avleniy = :dog_Napravleniy, dog_Podpisan = :dog_Podpisan'
       'WHERE'
       '  id = :Old_id')
     SQLLock.Strings = (
@@ -320,7 +329,8 @@ object DM: TDM
         'ech, emty, mail_Num_In, mail_Correspondent, mail_Data_In, mail_S' +
         'oderganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, ' +
         'nir_zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, n' +
-        'ir_tz, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie FROM r1'
+        'ir_tz, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Za' +
+        'kazchik, dog_Predmet, dog_Napravleniy, dog_Podpisan FROM r1'
       'WHERE'
       '  id = :id')
     Connection = UniConnection1
@@ -388,7 +398,7 @@ object DM: TDM
       FieldName = 'basis_ffile'
     end
     object tblReport2costofwork_F: TFloatField
-      DisplayLabel = 'costofwork_F '#1057#1090#1086#1080#1084#1086#1089#1090#1100' '#1088#1072#1073#1086#1090#1099' -'#1074#1077#1097#1077#1089#1090#1074#1077#1085#1085#1086#1077
+      DisplayLabel = #1062#1077#1085#1072
       FieldName = 'costofwork_F'
     end
     object tblReport2contract_number: TStringField
@@ -397,7 +407,7 @@ object DM: TDM
       Size = 255
     end
     object tblReport2contract_name: TStringField
-      DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' - '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077'  '
+      DisplayLabel = #1088#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
       FieldName = 'contract_name'
       Size = 255
     end
@@ -421,7 +431,7 @@ object DM: TDM
       FieldName = 'payment_note'
     end
     object tblReport2payment_date: TDateTimeField
-      DisplayLabel = #1076#1072#1090#1072' '#1086#1087#1083#1072#1090#1099' - '#1085#1072#1095#1072#1083#1086' '#1088#1072#1073#1086#1090#1099' '#1085#1072#1076' '#1076#1086#1075#1086#1074#1086#1088#1086#1084
+      DisplayLabel = #1076#1072#1090#1072' '#1086#1087#1083#1072#1090#1099
       FieldName = 'payment_date'
     end
     object tblReport2performance_of_work_note: TBooleanField
@@ -440,7 +450,7 @@ object DM: TDM
       FieldName = 'performance_of_work_date'
     end
     object tblReport2act_acceptance: TStringField
-      DisplayLabel = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080' - '#1085#1086#1084#1077#1088
+      DisplayLabel = #1056#1077#1082#1074#1080#1079#1080#1090#1099
       FieldName = 'act_acceptance'
       Size = 255
     end
@@ -450,7 +460,7 @@ object DM: TDM
       FieldName = 'act_acceptance_file'
     end
     object blnfldReport2contract_execution_note: TBooleanField
-      DisplayLabel = #1074#1099#1087#1086#1083#1085#1077#1085#1080#1077' '#1076#1086#1075#1086#1074#1086#1088#1072' -'#1086#1090#1084#1077#1090#1082#1072
+      DisplayLabel = #1055#1086#1076#1090#1074#1077#1088#1078#1076#1077#1085#1080#1077' '#1087#1083#1072#1090#1077#1078#1072
       FieldName = 'contract_execution_note'
     end
     object tblReport2contract_execution_file: TSmallintField
@@ -628,7 +638,6 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from r1;')
-    OnFilterRecord = tblReportFiltr2FilterRecord
     Left = 640
     Top = 96
     object IntegerField1: TIntegerField

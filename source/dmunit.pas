@@ -112,6 +112,7 @@ type
     tblReport2dog_Predmet: TStringField;
     tblReport2dog_Napravleniy: TDateTimeField;
     tblReport2dog_Podpisan: TDateTimeField;
+    intgrfldDepartn: TIntegerField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);
@@ -121,13 +122,13 @@ type
       const Reason: TEventReason; const RecordCount: Integer;
       var EventStatus: TEventStatus);
     procedure qryDescription0BeforeRefresh(DataSet: TDataSet);
+    procedure Set_Dep;
     procedure tblMetroAfterPost(DataSet: TDataSet);
     procedure tblMetroBeforePost(DataSet: TDataSet);
     procedure tblBildingAfterInsert(DataSet: TDataSet);
     procedure tblJpgAfterInsert(DataSet: TDataSet);
     procedure tblJpgAfterPost(DataSet: TDataSet);
     procedure tblReport2NewRecord(DataSet: TDataSet);
-    procedure tblReportFiltr2FilterRecord(DataSet: TDataSet; var Accept: Boolean);
 
   private
     Data_Source: string;
@@ -169,6 +170,7 @@ type
     function  strConnection_Get: string;
     procedure strConnection_Set(astrConnection: string);
     procedure filtr_;    
+    procedure Get_Dep;
   end;
 
   TMethodMakeConnectionString = (
@@ -881,11 +883,35 @@ begin
 
 end;
 
-procedure TDM.tblReportFiltr2FilterRecord(DataSet: TDataSet; var Accept:
-    Boolean);
+procedure TDM.Get_Dep;
+var
+  strTmp:string; res:boolean;
 begin
-//
+  inherited;
+  strTmp := '-1';
+  strTmp := CommonUnit.IniFile.ReadString( 'DepDefaultID', 'DepDefaultID', strTmp); //
+  DepDefaultID:=StrToInt(strTmp);
+
+  DepDefaultName := CommonUnit.IniFile.ReadString( 'DepDefaultID', 'DepDefaultName', DepDefaultName);
+  DepDefaultID := CommonUnit.IniFile.ReadInteger( 'DepDefaultID', 'DepDefaultID', DepDefaultID);
+
+  DM.tblDepart.Locate('id', IntToStr(DepDefaultID), [loCaseInsensitive]);
 end;
+
+procedure TDM.Set_Dep;
+var
+  strTmp:string;
+begin
+  //DBLookupComboBox1.KeyValue := DBLookupComboBox1.ListSource.DataSet.FieldByName(DBLookupComboBox1.KeyField).Value;
+
+  DepDefaultID := DM.intgrfld1.AsInteger;
+  DepDefaultName := DM.strngfldunqry1depart.AsString;
+
+  strTmp := IntToStr(DepDefaultID);
+  CommonUnit.IniFile.WriteInteger( 'DepDefaultID', 'DepDefaultID', DepDefaultID);
+  CommonUnit.IniFile.WriteString( 'DepDefaultID', 'DepDefaultName', DepDefaultName);
+end;
+
 
 initialization
 

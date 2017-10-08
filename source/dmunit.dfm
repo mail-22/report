@@ -345,20 +345,21 @@ object DM: TDM
       ReadOnly = True
     end
     object tblReport2department: TStringField
-      DisplayLabel = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077' ('#1091#1089#1083#1086#1074#1085#1099#1081' '#1085#1086#1084#1077#1088')'
+      DisplayLabel = 'id '#1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077
       FieldName = 'department'
       ProviderFlags = [pfInUpdate, pfInWhere, pfHidden]
       Size = 255
     end
     object DepartL: TStringField
       DisplayLabel = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077
-      DisplayWidth = 50
+      DisplayWidth = 255
       FieldKind = fkLookup
       FieldName = 'DepartL'
       LookupDataSet = tblDepart
       LookupKeyFields = 'id'
       LookupResultField = 'depart'
       KeyFields = 'department'
+      Size = 255
       Lookup = True
     end
     object tblReport2responsible: TStringField

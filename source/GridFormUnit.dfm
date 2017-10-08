@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = -390
-  Top = 66
+  Left = -419
+  Top = 174
   Width = 1456
   Height = 907
   Caption = 'GridForm'
@@ -114,31 +114,30 @@ inherited GridForm: TGridForm
           end
           object cxdbvrtclgrd1CategoryRow1: TcxCategoryRow
             Properties.Caption = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077
-            ID = 25
+            ID = 1
             ParentID = -1
             Index = 1
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1department: TcxDBEditorRow
             Options.Focusing = False
-            Properties.Caption = 'id '#1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077
             Properties.DataBinding.FieldName = 'department'
             Properties.Options.Editing = False
-            ID = 1
-            ParentID = 25
+            ID = 2
+            ParentID = 1
             Index = 0
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DepartL: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'DepartL'
-            ID = 2
-            ParentID = 25
+            ID = 3
+            ParentID = 1
             Index = 1
             Version = 1
           end
           object cxctgryrwcxdbvrtclgrd1CategoryRow4: TcxCategoryRow
             Properties.Caption = #1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072
-            ID = 34
+            ID = 4
             ParentID = -1
             Index = 2
             Version = 1
@@ -147,8 +146,8 @@ inherited GridForm: TGridForm
             Properties.Caption = #1056#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
             Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
             Properties.DataBinding.FieldName = 'basis'
-            ID = 3
-            ParentID = 34
+            ID = 5
+            ParentID = 4
             Index = 0
             Version = 1
           end
@@ -156,14 +155,14 @@ inherited GridForm: TGridForm
             Properties.Caption = ' '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
             Properties.DataBinding.FieldName = 'basis_ffile'
             Properties.Options.Editing = False
-            ID = 4
-            ParentID = 34
+            ID = 6
+            ParentID = 4
             Index = 1
             Version = 1
           end
           object cxctgryrwcxdbvrtclgrd1CategoryRow1: TcxCategoryRow
             Properties.Caption = #1044#1086#1075#1086#1074#1086#1088
-            ID = 5
+            ID = 7
             ParentID = -1
             Index = 3
             Version = 1
@@ -171,44 +170,44 @@ inherited GridForm: TGridForm
           object cxdbdtrwcxdbvrtclgrd1contract_name: TcxDBEditorRow
             Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
             Properties.DataBinding.FieldName = 'contract_name'
-            ID = 10
-            ParentID = 5
+            ID = 8
+            ParentID = 7
             Index = 0
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow4: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'dog_Zakazchik'
-            ID = 30
-            ParentID = 5
+            ID = 9
+            ParentID = 7
             Index = 1
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow5: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'dog_Predmet'
-            ID = 31
-            ParentID = 5
+            ID = 10
+            ParentID = 7
             Index = 2
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'costofwork_F'
-            ID = 33
-            ParentID = 5
+            ID = 11
+            ParentID = 7
             Index = 3
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1deadline: TcxDBEditorRow
             Properties.EditPropertiesClassName = 'TcxDateEditProperties'
             Properties.DataBinding.FieldName = 'deadline'
-            ID = 11
-            ParentID = 5
+            ID = 12
+            ParentID = 7
             Index = 4
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow
             Visible = False
-            ID = 32
-            ParentID = 5
+            ID = 13
+            ParentID = 7
             Index = 5
             Version = 1
           end
@@ -216,8 +215,8 @@ inherited GridForm: TGridForm
             Properties.EditPropertiesClassName = 'TcxCheckBoxProperties'
             Properties.DataBinding.FieldName = 'contract_execution_note'
             Visible = False
-            ID = 6
-            ParentID = 5
+            ID = 14
+            ParentID = 7
             Index = 6
             Version = 1
           end
@@ -226,8 +225,8 @@ inherited GridForm: TGridForm
             Properties.DataBinding.FieldName = 'contract_execution_file'
             Properties.Options.Editing = False
             Visible = False
-            ID = 7
-            ParentID = 6
+            ID = 15
+            ParentID = 14
             Index = 0
             Version = 1
           end
@@ -235,29 +234,29 @@ inherited GridForm: TGridForm
             Properties.Caption = #1076#1086#1075#1086#1074#1086#1088' -'#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
             Properties.DataBinding.FieldName = 'contract_file'
             Properties.Options.Editing = False
-            ID = 8
-            ParentID = 5
+            ID = 16
+            ParentID = 7
             Index = 7
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow8: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'dog_Primech'
-            ID = 35
-            ParentID = 5
+            ID = 17
+            ParentID = 7
             Index = 8
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1contract_number: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'contract_number'
             Visible = False
-            ID = 9
-            ParentID = 5
+            ID = 18
+            ParentID = 7
             Index = 9
             Version = 1
           end
           object cxctgryrwcxdbvrtclgrd1CategoryRow2: TcxCategoryRow
             Properties.Caption = #1057#1095#1077#1090
-            ID = 14
+            ID = 19
             ParentID = -1
             Index = 4
             Version = 1
@@ -266,8 +265,8 @@ inherited GridForm: TGridForm
             Properties.Caption = #1056#1077#1082#1074#1080#1079#1080#1090#1099
             Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
             Properties.DataBinding.FieldName = 'invoice'
-            ID = 18
-            ParentID = 14
+            ID = 20
+            ParentID = 19
             Index = 0
             Version = 1
           end
@@ -275,8 +274,8 @@ inherited GridForm: TGridForm
             Properties.Caption = ' '#1089#1095#1077#1090' -'#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
             Properties.DataBinding.FieldName = 'invoice_file'
             Properties.Options.Editing = False
-            ID = 19
-            ParentID = 14
+            ID = 21
+            ParentID = 19
             Index = 1
             Version = 1
           end
@@ -284,15 +283,15 @@ inherited GridForm: TGridForm
             Properties.Caption = #1054#1087#1083#1072#1090#1072' '
             Properties.EditPropertiesClassName = 'TcxDateEditProperties'
             Properties.DataBinding.FieldName = 'payment_date'
-            ID = 15
-            ParentID = 14
+            ID = 22
+            ParentID = 19
             Index = 2
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow3: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'contract_execution_note'
-            ID = 29
-            ParentID = 14
+            ID = 23
+            ParentID = 19
             Index = 3
             Version = 1
           end
@@ -301,30 +300,30 @@ inherited GridForm: TGridForm
             Properties.EditPropertiesClassName = 'TcxCheckBoxProperties'
             Properties.DataBinding.FieldName = 'payment_note'
             Visible = False
-            ID = 16
-            ParentID = 14
+            ID = 24
+            ParentID = 19
             Index = 4
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1costofwork: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'costofwork'
             Visible = False
-            ID = 17
-            ParentID = 14
+            ID = 25
+            ParentID = 19
             Index = 5
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1responsible: TcxDBEditorRow
             Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
             Properties.DataBinding.FieldName = 'responsible'
-            ID = 20
+            ID = 26
             ParentID = -1
             Index = 5
             Version = 1
           end
           object cxctgryrwcxdbvrtclgrd1CategoryRow3: TcxCategoryRow
             Properties.Caption = #1042#1099#1087#1086#1083#1085#1077#1085#1080#1077
-            ID = 21
+            ID = 27
             ParentID = -1
             Index = 6
             Version = 1
@@ -333,8 +332,8 @@ inherited GridForm: TGridForm
             Properties.Caption = #1092#1072#1081#1083
             Properties.DataBinding.FieldName = 'performance_of_work_file'
             Properties.Options.Editing = False
-            ID = 22
-            ParentID = 21
+            ID = 28
+            ParentID = 27
             Index = 0
             Version = 1
           end
@@ -343,8 +342,8 @@ inherited GridForm: TGridForm
             Properties.EditPropertiesClassName = 'TcxDateEditProperties'
             Properties.EditProperties.DateButtons = [btnClear, btnNow, btnToday]
             Properties.DataBinding.FieldName = 'performance_of_work_date'
-            ID = 23
-            ParentID = 21
+            ID = 29
+            ParentID = 27
             Index = 1
             Version = 1
           end
@@ -352,29 +351,29 @@ inherited GridForm: TGridForm
             Properties.EditPropertiesClassName = 'TcxCheckBoxProperties'
             Properties.DataBinding.FieldName = 'performance_of_work_note'
             Visible = False
-            ID = 24
-            ParentID = 21
+            ID = 30
+            ParentID = 27
             Index = 2
             Version = 1
           end
           object cxdbvrtclgrd1CategoryRow2: TcxCategoryRow
             Properties.Caption = #1040#1082#1090' '#1074#1099#1087#1086#1083#1085#1077#1085#1085#1099#1093' '#1088#1072#1073#1086#1090
-            ID = 26
+            ID = 31
             ParentID = -1
             Index = 7
             Version = 1
           end
           object cxdbvrtclgrd1DBEditorRow1: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'act_acceptance'
-            ID = 27
-            ParentID = 26
+            ID = 32
+            ParentID = 31
             Index = 0
             Version = 1
           end
           object cxdbvrtclgrd1DBEditorRow2: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'act_acceptance_file'
-            ID = 28
-            ParentID = 26
+            ID = 33
+            ParentID = 31
             Index = 1
             Version = 1
           end
@@ -382,7 +381,7 @@ inherited GridForm: TGridForm
             Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
             Properties.DataBinding.FieldName = 'act_acceptance'
             Visible = False
-            ID = 12
+            ID = 34
             ParentID = -1
             Index = 8
             Version = 1
@@ -391,8 +390,8 @@ inherited GridForm: TGridForm
             Properties.Caption = #1040#1082#1090' '#1089#1076#1072#1095#1080' '#1087#1088#1080#1077#1084#1082#1080' -'#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
             Properties.DataBinding.FieldName = 'act_acceptance_file'
             Properties.Options.Editing = False
-            ID = 13
-            ParentID = 12
+            ID = 35
+            ParentID = 34
             Index = 0
             Version = 1
           end
@@ -1038,8 +1037,8 @@ inherited GridForm: TGridForm
           'Width')
       end>
     StorageName = 'cxprprtstr1'
-    Left = 410
-    Top = 33
+    Left = 698
+    Top = 161
   end
   object cxprprtstr2cxgrdbtblvw1: TcxPropertiesStore
     Active = False
@@ -2586,8 +2585,8 @@ inherited GridForm: TGridForm
           'Visible')
       end>
     StorageName = 'cxprprtstr2cxgrdbtblvw1'
-    Left = 506
-    Top = 33
+    Left = 626
+    Top = 209
   end
   object aplctnvnts1: TApplicationEvents
     OnHint = aplctnvnts1Hint

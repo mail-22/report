@@ -253,8 +253,8 @@ var
 begin
     sMyDocAppPath := ExtractFilePath(Application.ExeName)+'\';
     cxLocalizer1.FileName:='DevExRus100Proc.ini';
-   cxLocalizer1.Active:=true;
-   cxLocalizer1.Locale:=1049;
+   //cxLocalizer1.Active:=true;
+   //cxLocalizer1.Locale:=1049;
 
   if FileExists(sMyDocAppPath + 'DevExRus100Proc.ini') then
     begin

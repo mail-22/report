@@ -9,7 +9,7 @@ uses Forms, ADOint, IniFiles, DbUtil
   , JvJCLUtils, JvComponentBase, JvBDEFilter, Windows,
   JvDSADialogs, cxClasses, DAAlerter, UniAlerter, DASQLMonitor,
   UniSQLMonitor, DBAccess, Uni, UniProvider, ODBCUniProvider,
-  AccessUniProvider, MemDS;
+  AccessUniProvider, MemDS, Registry;
 
 type
   TDM = class(TDataModule)
@@ -184,6 +184,8 @@ type
     const Reason: TEventReason; const RecordCount: Integer;
     var EventStatus: TEventStatus);
 
+Function GetApplicationDataFolder :string;
+Function ChangeFileExt2(Patch: string):string;
 
 var
   DM: TDM;
@@ -208,6 +210,37 @@ uses
 {$R *.dfm}
 
 //var  strConnection:string;
+
+Function ChangeFileExt2(Patch: string): String;
+var inistr:string ;
+begin
+
+inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + SysUtils.ChangeFileExt(Application.ExeName,'')
+  +'_Profile\';
+
+inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)
+  +'_Profile\';  
+
+If NOT DirectoryExists(inistr) Then ForceDirectories(inistr);
+inistr := inistr +Patch+ ChangeFileExt(ExtractFileName(Application.ExeName), '.ini');
+result := inistr;
+end;
+
+// Возвращает путь "Document and Settings" для текущего пользователя
+Function GetApplicationDataFolder: String;
+Var
+  RegIniFile : TRegIniFile;  strTmp:string ;
+Begin
+  Result := '';
+  Try
+    RegIniFile := TRegIniFile.Create;
+    strTmp:=  RegIniFile.ReadString('Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders',
+                                    'Local AppData', '');
+    Result := strTmp;
+  finally
+    FreeAndNil(RegIniFile);
+  end;
+End;
 
 procedure TDM.tblBildingAfterInsert(DataSet: TDataSet);
 begin
@@ -279,27 +312,23 @@ begin
   UniConnection1.Disconnect;
   strTmp := ExtractFilePath(Application.ExeName) + 'r1.mdb';
 
-
-  if ( FileExists(strTmp)) then
-  begin
-    strConnection_Set(strTmp);
-  end else
-  begin
-     strConnection_Set(IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp) );
-  end;  ;
+/// <author>.</author>
+  strTmp:=IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp);
+  strConnection_Set(IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp) );
+  if ( FileExists(strTmp)) then  begin
+     strConnection_Set(strTmp);
+  end
+  else begin
+     strTmp := ExtractFilePath(Application.ExeName) + 'r1.mdb';
+     if ( FileExists(strTmp)) then  begin
+        strConnection_Set(strTmp);
+     end
+     else begin
+            MessageDlg('Не определена строка ConnectionString', mtWarning, [mbOK], 0);
+          end
+  end;
 
 {
-// приоритет НЕ локальной БД !!!     // \\Fds7\r\bin\r1.mdb  // R:\bin\r1.mdb   // \\SRV-NIIPIIT\r\bin\r1.mdb  ///\\192.168.80.10\r\bin\r1.mdb
-  strTmp := IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp);
-  if ( FileExists(strTmp)) then
-  begin
-    strConnection_Set(strTmp);
-  end else
-  begin
-     //strTmp := ExtractFilePath(Application.ExeName) + 'r1.mdb';
-     //strConnection_Set(strTmp) );
-  end;  ;
-
   strConnection   := '\\SRV-NIIPIIT\r\bin\r1.mdb';
   strConnection   := '\\192.168.80.10\r\bin\r1.mdb';
   strConnection   := 'C:\github\report\report\bin\r1.mdb';
@@ -309,6 +338,7 @@ begin
   tmpB := UniConnection1.Connected;
   UniConnection1.Connect;
 
+exit;
   TestADO();
   //GetDBPath;
   Data_Source := DBFileName;

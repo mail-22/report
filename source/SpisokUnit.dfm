@@ -1,6 +1,6 @@
 inherited SpisokForm: TSpisokForm
-  Left = 192
-  Top = 135
+  Left = -488
+  Top = 222
   Width = 1280
   Height = 768
   HorzScrollBar.Visible = False
@@ -54,14 +54,14 @@ inherited SpisokForm: TSpisokForm
     Left = 0
     Top = 68
     Width = 1264
-    Height = 662
+    Height = 661
     Align = alClient
     Caption = 'pnl_LR'
     TabOrder = 2
     object jvntscpspltr1: TJvNetscapeSplitter
       Left = 369
       Top = 1
-      Height = 629
+      Height = 628
       Align = alLeft
       Maximized = False
       Minimized = False
@@ -71,7 +71,7 @@ inherited SpisokForm: TSpisokForm
       Left = 1
       Top = 1
       Width = 368
-      Height = 629
+      Height = 628
       Align = alLeft
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -90,7 +90,7 @@ inherited SpisokForm: TSpisokForm
         Left = 2
         Top = 43
         Width = 364
-        Height = 584
+        Height = 583
         Align = alClient
         TabOrder = 1
         object pnlData1: TPanel
@@ -267,7 +267,7 @@ inherited SpisokForm: TSpisokForm
       Left = 379
       Top = 1
       Width = 884
-      Height = 629
+      Height = 628
       Align = alClient
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -292,7 +292,7 @@ inherited SpisokForm: TSpisokForm
         Left = 2
         Top = 20
         Width = 880
-        Height = 607
+        Height = 606
         Align = alClient
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
@@ -302,7 +302,8 @@ inherited SpisokForm: TSpisokForm
         ParentFont = False
         TabOrder = 0
         object cxGrid2DBTableView1: TcxGridDBTableView
-          NavigatorButtons.ConfirmDelete = False
+          Navigator.Buttons.CustomButtons = <>
+          Navigator.Visible = True
           FilterBox.Visible = fvAlways
           DataController.DataModeController.GridMode = True
           DataController.DataModeController.SmartRefresh = True
@@ -324,7 +325,6 @@ inherited SpisokForm: TSpisokForm
           OptionsBehavior.IncSearch = True
           OptionsBehavior.NavigatorHints = True
           OptionsView.CellEndEllipsis = True
-          OptionsView.Navigator = True
           OptionsView.ColumnAutoWidth = True
           OptionsView.Footer = True
           OptionsView.FooterAutoHeight = True
@@ -422,7 +422,7 @@ inherited SpisokForm: TSpisokForm
     end
     object pnl_Navigator1: TPanel
       Left = 1
-      Top = 630
+      Top = 629
       Width = 1262
       Height = 31
       Align = alBottom
@@ -433,8 +433,9 @@ inherited SpisokForm: TSpisokForm
       object cxdbnvgtr1: TcxDBNavigator
         Left = 261
         Top = 2
-        Width = 885
+        Width = 872
         Height = 23
+        Buttons.CustomButtons = <>
         DataSource = dsReportFiltr
         Align = alLeft
         TabOrder = 0
@@ -523,7 +524,6 @@ inherited SpisokForm: TSpisokForm
     Top = 476
   end
   object cxLocalizer1: TcxLocalizer
-    FileName = 'D:\Dropbox\Share5\Work\Monitoring_2017\DevExRus100Proc.ini'
     Left = 436
     Top = 495
   end

@@ -1,7 +1,7 @@
 inherited FormMain: TFormMain
   Left = 141
   Top = 161
-  Caption = #1052#1086#1085#1080#1090#1086#1088#1080#1085#1075
+  Caption = #1091#1095#1077#1090' '#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089#1090#1080'   '
   Color = clGradientInactiveCaption
   OnHelp = FormHelp
   OnShow = FormShow

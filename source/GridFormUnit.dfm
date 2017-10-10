@@ -594,7 +594,6 @@ inherited GridForm: TGridForm
             OptionsCustomize.BandsQuickCustomization = True
             OptionsCustomize.BandsQuickCustomizationReordering = qcrEnabled
             OptionsView.CellEndEllipsis = True
-            OptionsView.CellAutoHeight = True
             OptionsView.GroupByBox = False
             OptionsView.HeaderEndEllipsis = True
             OptionsView.BandHeaderEndEllipsis = True
@@ -873,7 +872,7 @@ inherited GridForm: TGridForm
             object jvdbstslbl1: TJvDBStatusLabel
               Left = 0
               Top = 3
-              Width = 26
+              Width = 72
               Height = 17
               DataSource = DM.dsReport
               Style = lsRecordNo
@@ -2595,7 +2594,6 @@ inherited GridForm: TGridForm
   end
   object jvblnhnt1: TJvBalloonHint
     DefaultIcon = ikNone
-    UseBalloonAsApplicationHint = True
     Left = 832
     Top = 352
   end

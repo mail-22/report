@@ -54,9 +54,11 @@ type
     jvstsbr1: TJvStatusBar;
     jvblnhnt1: TJvBalloonHint;
     jvhnt1: TJvHint;
+    act3: TAction;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
+    procedure act3Execute(Sender: TObject);
     procedure actHELP2Execute(Sender: TObject);
     procedure actListOfBildingExecute(Sender: TObject);
     procedure actListOfDepExecute(Sender: TObject);
@@ -99,7 +101,7 @@ implementation
 uses
     FormTuningUnit,  CommonUnit,
    ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit, SelDepUnit, EditForm2Unit, EditEmplFormUnit,
-  DMUnit;
+  DMUnit, DBDemoMainUnit;
 
 {$R *.dfm}
 
@@ -266,6 +268,12 @@ begin
    EditForm2_Show;
 end;
 
+procedure TFormMain.act3Execute(Sender: TObject);
+begin
+  inherited;
+  DBDemoMainForm_Show;
+end;
+
 procedure TFormMain.actListOfEmplExecute(Sender: TObject);
 begin
   inherited;
@@ -274,7 +282,7 @@ end;
 
 procedure TFormMain.EmplMethod;
 begin
-EditEmplForm_Show;
+  EditEmplForm_Show;
 end;
 
 procedure TFormMain.actMailExecute(Sender: TObject);

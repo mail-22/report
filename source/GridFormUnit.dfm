@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = -419
-  Top = 174
+  Left = 46
+  Top = 136
   Width = 1456
   Height = 907
   Caption = 'GridForm'
@@ -873,7 +873,7 @@ inherited GridForm: TGridForm
             object jvdbstslbl1: TJvDBStatusLabel
               Left = 0
               Top = 3
-              Width = 72
+              Width = 26
               Height = 17
               DataSource = DM.dsReport
               Style = lsRecordNo

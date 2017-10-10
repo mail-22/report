@@ -35,7 +35,8 @@ uses
   SystemDirs in 'SystemDirs.pas',
   VCLFixPack in 'VCLFixPack.pas',
   NirFormUnit in 'NirFormUnit.pas' {NirForm},
-  NirEditFormUnit in 'NirEditFormUnit.pas' {NirEditForm};
+  NirEditFormUnit in 'NirEditFormUnit.pas' {NirEditForm},
+  DBDemoMainUnit in 'DBDemoMainUnit.pas' {DBDemoMainForm};
 
 {$R *.res}
 
@@ -62,6 +63,7 @@ begin
   Application.CreateForm(TMailEditForm, MailEditForm);
   Application.CreateForm(TNirForm, NirForm);
   Application.CreateForm(TNirEditForm, NirEditForm);
+  Application.CreateForm(TDBDemoMainForm, DBDemoMainForm);
   Application.Run;
 end.
 

@@ -9,15 +9,21 @@ MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
 DCC = $(ROOT)\bin\dcc32.exe $**
 BRCC = $(ROOT)\bin\brcc32.exe $**
 #------------------------------------------------------------------------------
-PROJECTS = DBDemo.exe Report.exe
+PROJECTS = Report.exe DBDemo.exe Project1.exe Project3.exe
 #------------------------------------------------------------------------------
 default: $(PROJECTS)
 #------------------------------------------------------------------------------
 
-DBDemo.exe: ..\..\..\Program Files (x86)\Developer Express Inc\ExpressScheduler 3\Demos\Delphi\DBDemo\DBDemo.dpr
+Report.exe: Report.dpr
   $(DCC)
 
-Report.exe: Report.dpr
+DBDemo.exe: ..\..\..\VCL\DevExpr !\DevExpr_2014.1.4\1414dms\ExpressScheduler\Demos\Delphi\DBDemo\DBDemo.dpr
+  $(DCC)
+
+Project1.exe: D:\Download\Progr\Progr\Project1.dpr
+  $(DCC)
+
+Project3.exe: ..\..\Scheduler\dxSample (2)\Project3.dpr
   $(DCC)
 
 

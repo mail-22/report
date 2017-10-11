@@ -139,6 +139,7 @@ type
     procedure miAllDayScrollClick(Sender: TObject);
     procedure miDayHeaderAreaClick(Sender: TObject);
     procedure AllDayAreaHeightClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     procedure AdjustStorage(var AStorage: TcxCustomSchedulerStorage);
   protected
@@ -908,6 +909,12 @@ begin
   cxSchedulerAllDayEventContainerMaxLineCount := TMenuItem(Sender).Tag;
   TMenuItem(Sender).Checked := True;
   Scheduler.CurrentView.Refresh;
+end;
+
+procedure TDemoBasicMainForm.FormClose(Sender: TObject; var Action:
+    TCloseAction);
+begin
+; //
 end;
 
 end.

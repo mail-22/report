@@ -1,15 +1,15 @@
 inherited NirForm: TNirForm
-  Left = -186
-  Top = 389
-  Width = 1456
+  Left = -1841
+  Top = 167
+  Width = 1754
   Caption = 'NirForm'
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
   object dxstsbr1: TdxStatusBar [0]
     Left = 0
-    Top = 541
-    Width = 1440
+    Top = 553
+    Width = 1746
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET
@@ -21,14 +21,14 @@ inherited NirForm: TNirForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1440
+    Width = 1746
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -39,15 +39,15 @@ inherited NirForm: TNirForm
   object pnlGrid: TPanel [2]
     Left = 0
     Top = 26
-    Width = 1440
-    Height = 515
+    Width = 1746
+    Height = 527
     Align = alClient
     AutoSize = True
     TabOrder = 2
     object Label1: TLabel
       Left = 1
       Top = 1
-      Width = 1438
+      Width = 1744
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -60,27 +60,27 @@ inherited NirForm: TNirForm
     end
     object pnlBBB: TPanel
       Left = 1
-      Top = 503
-      Width = 1438
+      Top = 515
+      Width = 1744
       Height = 11
       Align = alBottom
       TabOrder = 0
       Visible = False
     end
     object cxspltr1: TcxSplitter
-      Left = 1261
+      Left = 1567
       Top = 14
       Width = 8
-      Height = 489
+      Height = 501
       HotZoneClassName = 'TcxMediaPlayer8Style'
       AlignSplitter = salRight
       Control = pnlR
     end
     object pnlR: TPanel
-      Left = 1269
+      Left = 1575
       Top = 14
       Width = 170
-      Height = 489
+      Height = 501
       Align = alRight
       TabOrder = 2
       Visible = False
@@ -103,7 +103,7 @@ inherited NirForm: TNirForm
         Left = 1
         Top = 14
         Width = 168
-        Height = 474
+        Height = 486
         Align = alClient
         DragCursor = crDrag
         Font.Charset = DEFAULT_CHARSET
@@ -332,15 +332,15 @@ inherited NirForm: TNirForm
     object pnlL: TPanel
       Left = 1
       Top = 14
-      Width = 1260
-      Height = 489
+      Width = 1566
+      Height = 501
       Align = alClient
       Caption = 'pnlL'
       TabOrder = 3
       object lbl1: TLabel
         Left = 1
         Top = 1
-        Width = 1258
+        Width = 1564
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -355,8 +355,8 @@ inherited NirForm: TNirForm
       object cxgrd2: TcxGrid
         Left = 1
         Top = 14
-        Width = 1258
-        Height = 443
+        Width = 1564
+        Height = 455
         Align = alClient
         BevelInner = bvLowered
         BevelKind = bkSoft
@@ -528,8 +528,6 @@ inherited NirForm: TNirForm
           OptionsCustomize.BandsQuickCustomization = True
           OptionsCustomize.BandsQuickCustomizationReordering = qcrEnabled
           OptionsView.CellEndEllipsis = True
-          OptionsView.CellAutoHeight = True
-          OptionsView.ColumnAutoWidth = True
           OptionsView.GroupByBox = False
           OptionsView.HeaderAutoHeight = True
           OptionsView.HeaderEndEllipsis = True
@@ -541,7 +539,7 @@ inherited NirForm: TNirForm
             end
             item
               Caption = #1053#1048#1056
-              Width = 1045
+              Width = 1292
             end
             item
               Caption = #1055#1088#1086#1095#1077#1077
@@ -575,6 +573,7 @@ inherited NirForm: TNirForm
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn
             DataBinding.FieldName = 'responsible'
+            PropertiesClassName = 'TcxMRUEditProperties'
             Width = 115
             Position.BandIndex = 0
             Position.ColIndex = 2
@@ -597,63 +596,63 @@ inherited NirForm: TNirForm
           end
           object cxgrd21Viewnir_zayvka: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_zayvka'
-            Width = 62
+            Width = 85
             Position.BandIndex = 1
             Position.ColIndex = 1
             Position.RowIndex = 0
           end
           object cxgrd21Viewnir_zayvka_otpravleno: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_zayvka_otpravleno'
-            Width = 90
+            Width = 159
             Position.BandIndex = 1
             Position.ColIndex = 2
             Position.RowIndex = 0
           end
           object cxgrd21Viewnir_plan: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_plan'
-            Width = 101
+            Width = 150
             Position.BandIndex = 1
             Position.ColIndex = 0
             Position.RowIndex = 0
           end
           object cxgrd21Viewnir_tz: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_tz'
-            Width = 65
+            Width = 132
             Position.BandIndex = 1
             Position.ColIndex = 3
             Position.RowIndex = 0
           end
           object cxgrd21Viewnir_etap_srok: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_etap_srok'
-            Width = 60
+            Width = 79
             Position.BandIndex = 1
             Position.ColIndex = 4
             Position.RowIndex = 0
           end
           object cxgrd21Viewnir_otchet: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_otchet'
-            Width = 58
+            Width = 158
             Position.BandIndex = 1
             Position.ColIndex = 5
             Position.RowIndex = 0
           end
           object cxgrd21Viewnir_act: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_act'
-            Width = 68
+            Width = 172
             Position.BandIndex = 1
             Position.ColIndex = 6
             Position.RowIndex = 0
           end
           object cxgrd21Viewnir_vnedrenie: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_vnedrenie'
-            Width = 65
+            Width = 167
             Position.BandIndex = 1
             Position.ColIndex = 7
             Position.RowIndex = 0
           end
           object cxgrd21Viewnir_zayvka_file: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_zayvka_file'
-            Width = 69
+            Width = 190
             Position.BandIndex = 1
             Position.ColIndex = 8
             Position.RowIndex = 0
@@ -670,8 +669,8 @@ inherited NirForm: TNirForm
       end
       object pnl_Navigator1: TPanel
         Left = 1
-        Top = 457
-        Width = 1258
+        Top = 469
+        Width = 1564
         Height = 31
         Align = alBottom
         BevelInner = bvLowered
@@ -681,7 +680,7 @@ inherited NirForm: TNirForm
         object cxDBNavigator3: TcxDBNavigator
           Left = 259
           Top = 2
-          Width = 992
+          Width = 1292
           Height = 23
           Buttons.CustomButtons = <>
           DataSource = DM.dsReport
@@ -775,6 +774,7 @@ inherited NirForm: TNirForm
     end
     object actEdit: TAction
       Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1079#1072#1087#1080#1089#1100'  ('#1087#1086' '#1053#1048#1056')'
+      Enabled = False
       OnExecute = actEditExecute
     end
     object acOle: TAction

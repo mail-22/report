@@ -1,15 +1,15 @@
 inherited MailForm: TMailForm
-  Left = 234
-  Top = 269
-  Width = 1456
+  Left = -1892
+  Top = 228
+  Width = 1740
   Caption = 'MailForm'
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
   object dxstsbr1: TdxStatusBar [0]
     Left = 0
-    Top = 541
-    Width = 1440
+    Top = 553
+    Width = 1732
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET
@@ -21,34 +21,33 @@ inherited MailForm: TMailForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1440
+    Width = 1732
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
-    PersistentHotKeys = True
     Spacing = 0
   end
   object pnlGrid: TPanel [2]
     Left = 0
     Top = 26
-    Width = 1440
-    Height = 515
+    Width = 1732
+    Height = 527
     Align = alClient
     AutoSize = True
     TabOrder = 2
     object Label1: TLabel
       Left = 1
       Top = 1
-      Width = 1438
+      Width = 1730
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -61,27 +60,27 @@ inherited MailForm: TMailForm
     end
     object pnlBBB: TPanel
       Left = 1
-      Top = 503
-      Width = 1438
+      Top = 515
+      Width = 1730
       Height = 11
       Align = alBottom
       TabOrder = 0
       Visible = False
     end
     object cxspltr1: TcxSplitter
-      Left = 1261
+      Left = 1553
       Top = 14
       Width = 8
-      Height = 489
+      Height = 501
       HotZoneClassName = 'TcxMediaPlayer8Style'
       AlignSplitter = salRight
       Control = pnlR
     end
     object pnlR: TPanel
-      Left = 1269
+      Left = 1561
       Top = 14
       Width = 170
-      Height = 489
+      Height = 501
       Align = alRight
       TabOrder = 2
       Visible = False
@@ -104,7 +103,7 @@ inherited MailForm: TMailForm
         Left = 1
         Top = 14
         Width = 168
-        Height = 474
+        Height = 486
         Align = alClient
         DragCursor = crDrag
         Font.Charset = DEFAULT_CHARSET
@@ -333,15 +332,15 @@ inherited MailForm: TMailForm
     object pnlL: TPanel
       Left = 1
       Top = 14
-      Width = 1260
-      Height = 489
+      Width = 1552
+      Height = 501
       Align = alClient
       Caption = 'pnlL'
       TabOrder = 3
       object lbl1: TLabel
         Left = 1
         Top = 1
-        Width = 1258
+        Width = 1550
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -356,8 +355,8 @@ inherited MailForm: TMailForm
       object cxgrd2: TcxGrid
         Left = 1
         Top = 14
-        Width = 1258
-        Height = 443
+        Width = 1550
+        Height = 455
         Align = alClient
         BevelInner = bvLowered
         BevelKind = bkSoft
@@ -522,6 +521,7 @@ inherited MailForm: TMailForm
           DataController.Summary.DefaultGroupSummaryItems = <>
           DataController.Summary.FooterSummaryItems = <>
           DataController.Summary.SummaryGroups = <>
+          OptionsBehavior.CellHints = True
           OptionsCustomize.ColumnHiding = True
           OptionsCustomize.ColumnsQuickCustomization = True
           OptionsCustomize.DataRowSizing = True
@@ -529,23 +529,21 @@ inherited MailForm: TMailForm
           OptionsCustomize.BandsQuickCustomization = True
           OptionsCustomize.BandsQuickCustomizationReordering = qcrEnabled
           OptionsView.CellEndEllipsis = True
-          OptionsView.CellAutoHeight = True
-          OptionsView.ColumnAutoWidth = True
           OptionsView.GroupByBox = False
           OptionsView.HeaderAutoHeight = True
           OptionsView.BandHeaderEndEllipsis = True
           Bands = <
             item
               Caption = #1055#1080#1089#1100#1084#1086
-              Width = 396
+              Width = 871
             end
             item
               Caption = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077' , '#1086#1090#1076#1077#1083
-              Width = 414
+              Width = 243
             end
             item
               Caption = #1042#1099#1087#1086#1083#1085#1077#1085#1080#1077
-              Width = 340
+              Width = 228
             end
             item
               Caption = #1055#1088#1086#1095#1077#1077
@@ -553,7 +551,7 @@ inherited MailForm: TMailForm
             end>
           object cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn
             DataBinding.FieldName = 'id'
-            Width = 20
+            Width = 33
             Position.BandIndex = 0
             Position.ColIndex = 0
             Position.RowIndex = 0
@@ -575,6 +573,7 @@ inherited MailForm: TMailForm
           end
           object cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn
             DataBinding.FieldName = 'responsible'
+            PropertiesClassName = 'TcxMRUEditProperties'
             Width = 58
             Position.BandIndex = 1
             Position.ColIndex = 1
@@ -590,21 +589,22 @@ inherited MailForm: TMailForm
           end
           object cxgrdbndclmncxgrd21Viewtype_task_str: TcxGridDBBandedColumn
             DataBinding.FieldName = 'type_task_str'
-            Width = 20
+            Visible = False
+            Width = 51
             Position.BandIndex = 0
             Position.ColIndex = 1
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21ViewColumn1: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Correspondent'
-            Width = 62
+            Width = 76
             Position.BandIndex = 0
             Position.ColIndex = 5
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21ViewColumn2: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Data_In'
-            Width = 20
+            Width = 95
             Position.BandIndex = 0
             Position.ColIndex = 2
             Position.RowIndex = 0
@@ -623,27 +623,28 @@ inherited MailForm: TMailForm
           end
           object cxgrdbndclmncxgrd21ViewColumn5: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Resoluzia'
-            Width = 105
+            Width = 127
             Position.BandIndex = 0
             Position.ColIndex = 3
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21ViewColumn6: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Soderganie'
-            Width = 106
+            Width = 131
             Position.BandIndex = 0
             Position.ColIndex = 4
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21ViewColumn7: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Data_In'
-            Width = 63
+            Width = 127
             Position.BandIndex = 0
             Position.ColIndex = 6
             Position.RowIndex = 0
           end
           object cxgrd21ViewColumn1: TcxGridDBBandedColumn
             DataBinding.FieldName = 'basis_ffile'
+            Width = 282
             Position.BandIndex = 0
             Position.ColIndex = 7
             Position.RowIndex = 0
@@ -660,8 +661,8 @@ inherited MailForm: TMailForm
       end
       object pnl_Navigator1: TPanel
         Left = 1
-        Top = 457
-        Width = 1258
+        Top = 469
+        Width = 1550
         Height = 31
         Align = alBottom
         BevelInner = bvLowered
@@ -671,7 +672,7 @@ inherited MailForm: TMailForm
         object cxDBNavigator3: TcxDBNavigator
           Left = 259
           Top = 2
-          Width = 992
+          Width = 1277
           Height = 23
           Buttons.CustomButtons = <>
           DataSource = DM.dsReport
@@ -765,6 +766,7 @@ inherited MailForm: TMailForm
     end
     object actEdit: TAction
       Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1079#1072#1087#1080#1089#1100'  ('#1087#1086' '#1087#1080#1089#1100#1084#1091')'
+      Enabled = False
       OnExecute = actEditExecute
     end
     object acOle: TAction

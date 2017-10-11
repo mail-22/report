@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = 46
-  Top = 136
+  Left = -1467
+  Top = 76
   Width = 1456
   Height = 907
   Caption = 'GridForm'
@@ -10,8 +10,8 @@ inherited GridForm: TGridForm
   object pnlT: TPanel [0]
     Left = 0
     Top = 24
-    Width = 1440
-    Height = 805
+    Width = 1448
+    Height = 817
     Align = alClient
     BevelOuter = bvLowered
     Caption = 'pnlT'
@@ -19,15 +19,15 @@ inherited GridForm: TGridForm
     object pnlGrid: TPanel
       Left = 1
       Top = 1
-      Width = 1438
-      Height = 803
+      Width = 1446
+      Height = 815
       Align = alClient
       AutoSize = True
       TabOrder = 0
       object lbl2: TLabel
         Left = 1
         Top = 1
-        Width = 1436
+        Width = 1444
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -40,27 +40,27 @@ inherited GridForm: TGridForm
       end
       object pnlBBB: TPanel
         Left = 1
-        Top = 791
-        Width = 1436
+        Top = 803
+        Width = 1444
         Height = 11
         Align = alBottom
         TabOrder = 0
         Visible = False
       end
       object cxspltr1: TcxSplitter
-        Left = 1120
+        Left = 1128
         Top = 14
         Width = 8
-        Height = 777
+        Height = 789
         HotZoneClassName = 'TcxMediaPlayer8Style'
         AlignSplitter = salRight
         Control = pnlR
       end
       object pnlR: TPanel
-        Left = 1128
+        Left = 1136
         Top = 14
         Width = 309
-        Height = 777
+        Height = 789
         Align = alRight
         TabOrder = 2
         object lbl3: TLabel
@@ -82,7 +82,7 @@ inherited GridForm: TGridForm
           Left = 1
           Top = 14
           Width = 307
-          Height = 762
+          Height = 774
           Align = alClient
           DragCursor = crDrag
           Font.Charset = DEFAULT_CHARSET
@@ -409,15 +409,15 @@ inherited GridForm: TGridForm
       object pnlL: TPanel
         Left = 1
         Top = 14
-        Width = 1119
-        Height = 777
+        Width = 1127
+        Height = 789
         Align = alClient
         Caption = 'pnlL'
         TabOrder = 3
         object lbl1: TLabel
           Left = 1
           Top = 1
-          Width = 1117
+          Width = 1125
           Height = 13
           Align = alTop
           Alignment = taCenter
@@ -432,8 +432,8 @@ inherited GridForm: TGridForm
         object cxgrd1: TcxGrid
           Left = 1
           Top = 14
-          Width = 1117
-          Height = 731
+          Width = 1125
+          Height = 743
           Align = alClient
           BevelInner = bvLowered
           BevelKind = bkSoft
@@ -842,8 +842,8 @@ inherited GridForm: TGridForm
         end
         object pnl_Navigator1: TPanel
           Left = 1
-          Top = 745
-          Width = 1117
+          Top = 757
+          Width = 1125
           Height = 31
           Align = alBottom
           BevelInner = bvLowered
@@ -853,7 +853,7 @@ inherited GridForm: TGridForm
           object cxDBNavigator3: TcxDBNavigator
             Left = 259
             Top = 2
-            Width = 842
+            Width = 857
             Height = 23
             Buttons.CustomButtons = <>
             DataSource = DM.dsReport
@@ -908,14 +908,14 @@ inherited GridForm: TGridForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1440
+    Width = 1448
     Height = 24
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -925,16 +925,16 @@ inherited GridForm: TGridForm
   end
   object jvstsbr1: TJvStatusBar [2]
     Left = 0
-    Top = 849
-    Width = 1440
+    Top = 861
+    Width = 1448
     Height = 19
     Panels = <>
     SimplePanel = True
   end
   object dxstsbr1: TdxStatusBar [3]
     Left = 0
-    Top = 829
-    Width = 1440
+    Top = 841
+    Width = 1448
     Height = 20
     Panels = <>
     SimplePanelStyle.Active = True
@@ -963,9 +963,6 @@ inherited GridForm: TGridForm
             Action = acOle
           end
           item
-            Action = actJpg
-          end
-          item
             Action = actSpisok
           end>
         ActionBar = actmmb1
@@ -988,6 +985,7 @@ inherited GridForm: TGridForm
     end
     object actEdit: TAction
       Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1079#1072#1087#1080#1089#1100' '
+      Enabled = False
       OnExecute = actEditExecute
     end
     object acOle: TAction
@@ -2594,6 +2592,7 @@ inherited GridForm: TGridForm
   end
   object jvblnhnt1: TJvBalloonHint
     DefaultIcon = ikNone
+    UseBalloonAsApplicationHint = True
     Left = 832
     Top = 352
   end

@@ -125,6 +125,9 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure GridFormactAddExecute(Sender: TObject);
+  protected
+    MRUEdit_responsible  : string;
+    FileName_cxprprtstr1  : string;
   private
     procedure AddMailMethod;
     { Private declarations }
@@ -197,24 +200,67 @@ begin
   cxgrd22View.StoreToIniFile(FileName_cxgrd22View, true);
   cxdbVertgrd2.StoreToIniFile(FileName_cxdbVertgrd2, true);
   cxprprtstr1.StoreTo(True);
+
+//MRU      cxgrdbndclmncxgrd1DBBandedTableView1responsible
+  //MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name + '.' + 'MRUEdit.responsible.txt';
+  //MRUEdit_responsible := ExtractFilePath(Application.ExeName) +  'MRUEdit.responsible.txt';
+  //
+//if FileExists(MRUEdit_responsible) then
+  if True then
+  begin // проверить на наличие свойства MRU у поля !!!
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1responsible.Properties).LookupItems.SaveToFile(MRUEdit_responsible);
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1responsible.Properties).LookupItems.Text; //
+  end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
+  else
+  begin
+  end;
+
 end;
 
 procedure TMailForm.FormCreate(Sender: TObject);
-var i:Integer;
+var i:Integer;   tmpStr :string;
 begin
   inherited;
 // cxgrd21View
   FileName_cxgrd21View:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd21View' +'.ini';
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrd21View'+ '_';
+  FileName_cxgrd21View :=  ChangeFileExt2(tmpStr);
   cxgrd21View.RestoreFromIniFile(FileName_cxgrd21View);
+
   FileName_cxgrd22View:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxgrd22View' +'.ini';
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrd22View'+ '_';
+  FileName_cxgrd22View :=  ChangeFileExt2(tmpStr);
   cxgrd22View.RestoreFromIniFile(FileName_cxgrd22View);
+
+
 //cxdbVertgrd2
   FileName_cxdbVertgrd2 := ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxdbVertgrd2' +'.ini';
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxdbVertgrd2'+ '_';
+  FileName_cxdbVertgrd2 :=  ChangeFileExt2(tmpStr);
   cxdbVertgrd2.RestoreFromIniFile(FileName_cxdbVertgrd2);
 
   cxprprtstr1.Active:=true;
   cxprprtstr1.StorageName:=ExtractFilePath(Application.ExeName) +'_'+  Self.Name +'_'+ 'cxprprtstr1' +'.ini';
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxprprtstr1'+ '_';
+  FileName_cxprprtstr1 :=  ChangeFileExt2(tmpStr);
+  cxprprtstr1.StorageName := FileName_cxprprtstr1;
   cxprprtstr1.RestoreFrom;
+
+
+  //MRU     cxgrdbndclmncxgrd1DBBandedTableView1responsible
+  //tmpStr :=
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name+ '.' +  'MRUEdit.responsible.txt';
+  //MRUEdit_responsible := ExtractFilePath(Application.ExeName) + 'MRUEdit.responsible.txt';
+  //
+  if FileExists(MRUEdit_responsible) then
+  begin // проверить на наличие свойства MRU у поля !!!
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1responsible.Properties).LookupItems.LoadFromFile(MRUEdit_responsible);
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1responsible.Properties).LookupItems.Text; //
+  end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
+  else
+  begin
+  end;
+
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -378,5 +424,6 @@ begin
   inherited;
   AddMailMethod;
 end;
+
 
 end.

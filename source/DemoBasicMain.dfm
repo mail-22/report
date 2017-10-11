@@ -14,13 +14,14 @@ object DemoBasicMainForm: TDemoBasicMainForm
   OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
+  OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbDescrip: TLabel
     Left = 0
     Top = 0
-    Width = 684
+    Width = 692
     Height = 32
     Align = alTop
     Caption = 'Brief purpose of the demo'#10#13'That'#39's it'
@@ -37,8 +38,8 @@ object DemoBasicMainForm: TDemoBasicMainForm
   object Scheduler: TcxScheduler
     Left = 0
     Top = 32
-    Width = 684
-    Height = 440
+    Width = 692
+    Height = 453
     DateNavigator.RowCount = 2
     ViewDay.Active = True
     ViewDay.TimeRulerMinutes = True
@@ -52,13 +53,13 @@ object DemoBasicMainForm: TDemoBasicMainForm
     LookAndFeel.Kind = lfOffice11
     TabOrder = 0
     Splitters = {
-      1C020000FC000000AB0200000101000017020000010000001C020000B7010000}
-    StoredClientBounds = {0100000001000000AB020000B7010000}
+      24020000FC000000B3020000010100001F0200000100000024020000C4010000}
+    StoredClientBounds = {0100000001000000B3020000C4010000}
     object pnlControls: TPanel
       Left = 0
       Top = 0
       Width = 143
-      Height = 182
+      Height = 195
       Align = alClient
       BevelOuter = bvNone
       Color = clWindow
@@ -67,7 +68,7 @@ object DemoBasicMainForm: TDemoBasicMainForm
         Left = 0
         Top = 0
         Width = 143
-        Height = 182
+        Height = 195
         Align = alClient
         BorderStyle = bsNone
         Lines.Strings = (
@@ -79,8 +80,8 @@ object DemoBasicMainForm: TDemoBasicMainForm
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 472
-    Width = 684
+    Top = 485
+    Width = 692
     Height = 19
     Panels = <>
     SimplePanel = True

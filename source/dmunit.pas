@@ -113,6 +113,27 @@ type
     tblReport2dog_Napravleniy: TDateTimeField;
     tblReport2dog_Podpisan: TDateTimeField;
     intgrfldDepartn: TIntegerField;
+    tblReport2_SchedulerDBStorage_START: TStringField;
+    tblReport2_ID: TIntegerField;
+    tblReport2ParentID: TIntegerField;
+    tblReport2Type: TIntegerField;
+    tblReport2Start: TDateTimeField;
+    tblReport2Finish: TDateTimeField;
+    tblReport2Options: TIntegerField;
+    tblReport2Caption: TStringField;
+    tblReport2RecurrenceIndex: TIntegerField;
+    tblReport2RecurrenceInfo: TBlobField;
+    tblReport2ResourceID: TBlobField;
+    tblReport2Location: TStringField;
+    tblReport2Message: TStringField;
+    tblReport2ReminderDate: TDateTimeField;
+    tblReport2ReminderMinutes: TIntegerField;
+    tblReport2State: TIntegerField;
+    tblReport2LabelColor: TIntegerField;
+    tblReport2ActualStart: TDateTimeField;
+    tblReport2ActualFinish: TDateTimeField;
+    tblReport2SyncIDField: TStringField;
+    tblReport2__SchedulerDBStorage_END: TIntegerField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);
@@ -131,13 +152,14 @@ type
     procedure tblReport2NewRecord(DataSet: TDataSet);
 
   private
-    Data_Source: string;
+
     ProcessDL: boolean;
     DL: TDL;
+
     procedure AfterPost(DataSet: TDataSet);
     procedure BeforePost(DataSet: TDataSet);
 
-  protected
+  protected   
     CursorLocation: TCursorLocation;
     ResyncValue: OleVariant;
     CursorType: TCursorType;
@@ -151,9 +173,11 @@ type
 
     strConnection:string;  //ConnectionString - путь к БД
   public
+    Data_Source: string;
     //DbFileName: string;
     TOP: Integer;
     A: array of TDataSet; //TDataSet //TAdoDataset;
+
     procedure Init;
     procedure SetConnection;
     procedure OpenDB(DataSet: TDataSet);
@@ -327,6 +351,7 @@ begin
             MessageDlg('Не определена строка ConnectionString', mtWarning, [mbOK], 0);
           end
   end;
+  Data_Source :=  ExtractFilePath(strTmp);
 
 {
   strConnection   := '\\SRV-NIIPIIT\r\bin\r1.mdb';

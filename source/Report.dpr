@@ -36,7 +36,8 @@ uses
   VCLFixPack in 'VCLFixPack.pas',
   NirFormUnit in 'NirFormUnit.pas' {NirForm},
   NirEditFormUnit in 'NirEditFormUnit.pas' {NirEditForm},
-  DBDemoMainUnit in 'DBDemoMainUnit.pas' {DBDemoMainForm};
+  DBDemoMainUnit in 'DBDemoMainUnit.pas' {DBDemoMainForm},
+  DemoBasicMain in 'DemoBasicMain.pas' {DemoBasicMainForm};
 
 {$R *.res}
 
@@ -64,6 +65,7 @@ begin
   Application.CreateForm(TNirForm, NirForm);
   Application.CreateForm(TNirEditForm, NirEditForm);
   Application.CreateForm(TDBDemoMainForm, DBDemoMainForm);
+  //Application.CreateForm(TDemoBasicMainForm, DemoBasicMainForm);
   Application.Run;
 end.
 

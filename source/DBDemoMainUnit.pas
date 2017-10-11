@@ -16,25 +16,50 @@ uses
   cxSchedulerHolidays, cxSchedulerGanttView, cxGroupBox,
   cxSchedulerRecurrence, cxSchedulerTreeListBrowser,
   cxSchedulerRibbonStyleEventEditor, dxSkinsCore, dxSkinOffice2007Blue,
-  dxSkinscxSchedulerPainter, cxClasses;
+  dxSkinscxSchedulerPainter, cxClasses, dxmdaset;
 
 type
   TDBDemoMainForm = class(TDemoBasicMainForm)
-    SchedulerDataSource: TDataSource;
-    SchedulerDBStorage: TcxSchedulerDBStorage;
     cxButton1: TcxButton;
     cxCheckBox1: TcxCheckBox;
     cxGroupBox1: TcxGroupBox;
+    SchedulerDataSource: TDataSource;
+    mdEvents: TdxMemData;
+    mdEventsID: TAutoIncField;
+    mdEventsParentID: TIntegerField;
+    mdEventsType: TIntegerField;
+    mdEventsStart: TDateTimeField;
+    mdEventsFinish: TDateTimeField;
+    mdEventsOptions: TIntegerField;
+    mdEventsCaption: TStringField;
+    mdEventsRecurrenceIndex: TIntegerField;
+    mdEventsRecurrenceInfo: TBlobField;
+    mdEventsResourceID: TBlobField;
+    mdEventsLocation: TStringField;
+    mdEventsMessage: TStringField;
+    mdEventsReminderDate: TDateTimeField;
+    mdEventsReminderMinutes: TIntegerField;
+    mdEventsState: TIntegerField;
+    mdEventsLabelColor: TIntegerField;
+    mdEventsActualStart: TDateTimeField;
+    mdEventsActualFinish: TDateTimeField;
+    mdEventsSyncIDField: TStringField;
+    SchedulerDBStorage: TcxSchedulerDBStorage;
     cxSchedulerDBStorage1: TcxSchedulerDBStorage;
     procedure FormCreate(Sender: TObject);
     procedure chDataModeClick(Sender: TObject);
     procedure cxButton1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
+    procedure ViewModeClick(Sender: TObject);
   private
     FEventCount: Integer;
     FMaxID: Integer;
+  protected
+     ADate: TDateTime;
+     AMode: TcxSchedulerViewMode;
   public
-    { Public declarations }
+      mdEventsFile :string;
   end;
 
   procedure DBDemoMainForm_Show;
@@ -50,10 +75,41 @@ uses
 
 procedure TDBDemoMainForm.FormCreate(Sender: TObject);
 var
-  ADate: TDateTime;
   I: Integer;
+  tmpStr :string;
+
+
+
 begin
   inherited;
+    ADate := Scheduler.SelectedDays[0];
+    ADate := Now;
+    ADate := Date;
+    AMode := vmMonth	;
+    AnchorDate := Scheduler.SelectedDays[0];
+    Scheduler.SelectDays([ADate - 10, ADate, ADate + 10], True);
+    Scheduler.GoToDate(ADate, AMode);
+  //Scheduler.GoToDate(Scheduler.SelectedDays[0], vmMonth);
+
+{
+  mdEventsFile:= ExtractFilePath(Application.ExeName) +'_'+ Self.Name +'_'+ 'cxSchedulerEvents' +'.ini';
+  tmpStr :=  '_' + Self.Name+ '_' + 'mdEventsFile'+ '_';
+  mdEventsFile :=  IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)
+  +'_Profile\' + cxSchedulerEvents.dat;
+}
+  mdEventsFile :=  dm.Data_Source + 'cxSchedulerEvents.dat';
+
+  if ( FileExists(mdEventsFile)) then  begin
+     mdEvents.LoadFromBinaryFile(mdEventsFile);
+     mdEvents.Open;
+  end
+  else begin
+     MessageDlg('Не определен  mdEventsFile: ' +mdEventsFile, mtWarning, [mbOK], 0);
+  end;
+
+  //mdEvents.LoadFromBinaryFile('..\..\Data\cxSchedulerEvents.dat');
+  mdEvents.Open;
+
   ADate := EncodeDate(2005, 9, 30);
   Scheduler.GotoDate(ADate);
   ADate := ADate + Scheduler.OptionsView.WorkStart;
@@ -98,6 +154,25 @@ begin
       SchedulerDBStorage.EndUpdate;
     end;
   end;
+  mdEvents.SaveToBinaryFile(mdEventsFile);
+end;
+
+procedure TDBDemoMainForm.FormShow(Sender: TObject);
+begin
+  inherited;
+
+    ADate := Scheduler.SelectedDays[0];
+    ADate := Now;
+    ADate := Date;
+    AMode := vmMonth	;
+    AnchorDate := Scheduler.SelectedDays[0];
+    Scheduler.SelectDays([ADate - 10, ADate, ADate + 10], True);
+    Scheduler.GoToDate(ADate, AMode);
+end;
+
+procedure TDBDemoMainForm.ViewModeClick(Sender: TObject);
+begin
+  inherited;
 end;
 
 //-

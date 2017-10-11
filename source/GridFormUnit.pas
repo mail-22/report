@@ -431,12 +431,8 @@ DM.tblReport2.FindLast;
   cxprprtstr1.RestoreFrom;
 
   //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
-  MRUEdit_responsible := ExtractFilePath(Application.ExeName) +Self.Name+ '.'
-    +
-    'MRUEdit.responsible.txt';
-  MRUEdit_responsible := ExtractFilePath(Application.ExeName) +
-    'MRUEdit.responsible.txt';
-  //
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) +Self.Name+ '.' + 'MRUEdit.responsible.txt';
+  //MRUEdit_responsible := ExtractFilePath(Application.ExeName) + 'MRUEdit.responsible.txt';
   if FileExists(MRUEdit_responsible) then
   begin // проверить на наличие свойства MRU у поля !!!
     TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.LoadFromFile(MRUEdit_responsible);

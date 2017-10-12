@@ -23,7 +23,6 @@ inherited DBDemoMainForm: TDBDemoMainForm
     ViewWeek.ShowTimeAsClock = True
     ViewWeeks.ShowEndTime = False
     ViewWeeks.ShowTimeAsClock = True
-    OnCustomDrawEvent = SchedulerCustomDrawEvent
     LookAndFeel.Kind = lfStandard
     Storage = SchedulerDBStorage
     Splitters = {
@@ -176,6 +175,7 @@ inherited DBDemoMainForm: TDBDemoMainForm
     Resources.Items = <>
     Resources.ResourceID = 'ResourceID'
     Resources.ResourceName = 'ResourceName'
+    SmartRefresh = True
     CustomFields = <
       item
         FieldName = 'SyncIDField'
@@ -185,9 +185,11 @@ inherited DBDemoMainForm: TDBDemoMainForm
     FieldNames.EventType = 'Type'
     FieldNames.Finish = 'deadline'
     FieldNames.ID = 'id'
+    FieldNames.LabelColor = 'LabelColor'
     FieldNames.Location = 'DepartL'
     FieldNames.Message = 'type_task_str'
     FieldNames.Options = 'Options'
+    FieldNames.ReminderDate = 'performance_of_work_date'
     FieldNames.ResourceID = 'ResourceID'
     FieldNames.Start = 'deadline'
     Left = 200

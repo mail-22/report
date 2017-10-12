@@ -53,8 +53,6 @@ type
     procedure cxButton1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
-    procedure SchedulerCustomDrawEvent(Sender: TObject; ACanvas: TcxCanvas;
-      AViewInfo: TcxSchedulerEventCellViewInfo; var ADone: Boolean);
     procedure ViewModeClick(Sender: TObject);
   private
     FEventCount: Integer;
@@ -132,6 +130,7 @@ begin
    EventLabels.Add(clRed,   'Просрочено');
    EventLabels.Add(clGreen, 'Выполнено');
    EventLabels.Add(clBlue,  'Выполняется');
+   EventLabels.Add(clAqua,  'Выполняется');
 end; //FormCreate
 
 procedure TDBDemoMainForm.chDataModeClick(Sender: TObject);
@@ -186,56 +185,64 @@ begin
   _EventCount;
 end;
 
-procedure TDBDemoMainForm.SchedulerCustomDrawEvent(Sender: TObject; ACanvas:
-  TcxCanvas; AViewInfo: TcxSchedulerEventCellViewInfo; var ADone: Boolean);
-var
-  bRes: Boolean;
-  dt: TDateTime;
-begin
-  inherited;
-  Exit;
-  //DM.tblReport2.
-  bRes := DM.tblReport2.Locate('id', AViewInfo.Event.ID, []);
-  dt := DM.tblReport2performance_of_work_date.AsDateTime;
-  if (dt > Date) then
-  begin
-    AViewInfo.Color := clRed;
-  end;
-  ADone := True;
-end;
 
 procedure TDBDemoMainForm._EventCount;
 var
   I: Integer;
   bRes: Boolean;
-  dt: TDateTime;
+  dt: TDateTime;      deadline: TDateTime;  dt0 :TDateTime;
   cxSchedulerEvent: TcxSchedulerEvent;
   ID: Integer;
+  OldColor : TColor;
 begin
+  //Exit;
   for I := 0 to SchedulerDBStorage.EventCount - 1 do
   begin
     cxSchedulerEvent := SchedulerDBStorage.Events[I];
     ID := cxSchedulerEvent.ID;
     bRes := DM.tblReport2.Locate('id', cxSchedulerEvent.ID, []);
-    dt := DM.tblReport2performance_of_work_date.AsDateTime;    DM.tblReport2.recNo;
-    if (dt = 0) then
+    dt := DM.tblReport2performance_of_work_date.AsDateTime;
+    deadline := DM.tblReport2deadline.AsDateTime;    dt0:= deadline;
+    DM.tblReport2responsible.AsString;       DM.tblReport2responsible.AsString; DM.tblReport2.recNo; //test
+    if ((dt = 0) OR (dt0 =0) ) then
     begin
+      OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clBlue;
-      DM.tblReport2responsible.AsString;
-      continue;
-    end;    
-    if (dt < Date) then
+      if (OldColor <> cxSchedulerEvent.LabelColor ) then
+      begin
+         cxSchedulerEvent.Post;
+      end;
+      continue; //
+    end;
+    if (dt < dt0) then
     begin
+      OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clGreen;
-      DM.tblReport2responsible.AsString;
+      if (OldColor <> cxSchedulerEvent.LabelColor ) then
+      begin
+         cxSchedulerEvent.Post;
+      end;
     end;
-    if (dt >= Date) then
+    if (dt > dt0) then
     begin
+      OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clRed;
+      if (OldColor <> cxSchedulerEvent.LabelColor ) then
+      begin
+         cxSchedulerEvent.Post;
+      end;
     end;
-
+    if (dt = dt0) then
+    begin
+      OldColor := cxSchedulerEvent.LabelColor;
+      cxSchedulerEvent.LabelColor := clAqua;
+      if (OldColor <> cxSchedulerEvent.LabelColor ) then
+      begin
+         cxSchedulerEvent.Post;
+      end;
+    end;
   end;
-end;  
+end;  //EventCount
 
 procedure TDBDemoMainForm.ViewModeClick(Sender: TObject);
 begin

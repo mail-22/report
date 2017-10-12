@@ -190,10 +190,13 @@ procedure TDBDemoMainForm._EventCount;
 var
   I: Integer;
   bRes: Boolean;
-  dt: TDateTime;      deadline: TDateTime;  dt0 :TDateTime;
+  pd: TDateTime;
+  dt0 :TDateTime;
+  deadline: TDateTime;
   cxSchedulerEvent: TcxSchedulerEvent;
   ID: Integer;
   OldColor : TColor;
+  Year, Month, Day: Word;
 begin
   //Exit;
   for I := 0 to SchedulerDBStorage.EventCount - 1 do
@@ -201,11 +204,12 @@ begin
     cxSchedulerEvent := SchedulerDBStorage.Events[I];
     ID := cxSchedulerEvent.ID;
     bRes := DM.tblReport2.Locate('id', cxSchedulerEvent.ID, []);
-    dt := DM.tblReport2performance_of_work_date.AsDateTime;
-    deadline := DM.tblReport2deadline.AsDateTime;    dt0:= deadline;
+    pd := DM.tblReport2performance_of_work_date.AsDateTime; pd := Trunc(DM.tblReport2performance_of_work_date.AsDateTime);
+    deadline := DM.tblReport2deadline.AsDateTime;  DecodeDate(DM.tblReport2deadline.AsDateTime, Year, Month, Day); deadline := Trunc(DM.tblReport2deadline.AsDateTime);
+    dt0:= Date; dt0 := Trunc(Date);
     DM.tblReport2responsible.AsString;       DM.tblReport2responsible.AsString; DM.tblReport2.recNo; //test
-    if ((dt = 0) OR (dt0 =0) ) then
-    begin
+    if (pd = 0) then
+    begin  /// ???
       OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clBlue;
       if (OldColor <> cxSchedulerEvent.LabelColor ) then
@@ -214,7 +218,17 @@ begin
       end;
       continue; //
     end;
-    if (dt < dt0) then
+    if (dt0 =0) then
+    begin  /// ???
+      OldColor := cxSchedulerEvent.LabelColor;
+      cxSchedulerEvent.LabelColor := clBlue;
+      if (OldColor <> cxSchedulerEvent.LabelColor ) then
+      begin
+         cxSchedulerEvent.Post;
+      end;
+      continue; //
+    end;
+    if (pd < dt0) then
     begin
       OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clGreen;
@@ -223,7 +237,7 @@ begin
          cxSchedulerEvent.Post;
       end;
     end;
-    if (dt > dt0) then
+    if (pd > dt0) then
     begin
       OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clRed;
@@ -232,7 +246,7 @@ begin
          cxSchedulerEvent.Post;
       end;
     end;
-    if (dt = dt0) then
+    if (pd = dt0) then
     begin
       OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clAqua;

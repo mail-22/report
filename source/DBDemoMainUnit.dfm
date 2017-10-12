@@ -3,9 +3,8 @@ inherited DBDemoMainForm: TDBDemoMainForm
   Top = 341
   Width = 692
   Height = 476
-  Caption = 'ExpressScheduler DBDemo '
+  Caption = #1082#1072#1083#1077#1085#1076#1072#1088#1100
   OldCreateOrder = True
-  OnClose = FormClose
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -14,13 +13,18 @@ inherited DBDemoMainForm: TDBDemoMainForm
     Caption = 
       'This demo shows how the scheduler works when it'#39's connected to a' +
       ' DataSource. Click '#39'About this demo'#39' for more information.'
+    Visible = False
   end
   inherited Scheduler: TcxScheduler
     Width = 684
     Height = 379
+    ViewDay.TimeScale = 60
+    ViewWeek.ShowEndTime = False
+    ViewWeek.ShowTimeAsClock = True
+    ViewWeeks.ShowEndTime = False
+    ViewWeeks.ShowTimeAsClock = True
     LookAndFeel.Kind = lfStandard
     Storage = SchedulerDBStorage
-    Selection = 1
     Splitters = {
       1B020000FC000000AA0200000101000016020000020000001B02000079010000}
     StoredClientBounds = {0200000002000000AA02000079010000}
@@ -65,6 +69,11 @@ inherited DBDemoMainForm: TDBDemoMainForm
     Top = 411
     Width = 684
     SimplePanel = False
+  end
+  inherited mmMain: TMainMenu
+    inherited miAbout: TMenuItem
+      Caption = '&About'
+    end
   end
   object SchedulerDataSource: TDataSource
     DataSet = mdEvents

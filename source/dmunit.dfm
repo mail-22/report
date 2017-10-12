@@ -674,20 +674,39 @@ object DM: TDM
     SQLInsert.Strings = (
       'INSERT INTO r1'
       
-        '  (department, basis, basis_ffile, contract_name, contract_numbe' +
-        'r, contract_file, deadline, costofwork, responsible, invoice, in' +
-        'voice_file, payment_note, payment_date, performance_of_work_note' +
-        ', performance_of_work_file, performance_of_work_date, act_accept' +
-        'ance, act_acceptance_file, contract_execution_note, contract_exe' +
-        'cution_file)'
+        '  (type_task_i, type_task_str, department, responsible, deadline' +
+        ', basis, basis_N, basis_ffile, contract_name, contract_number, c' +
+        'ontract_file, costofwork_F, invoice, invoice_file, payment_note,' +
+        ' payment_date, performance_of_work_note, performance_of_work_fil' +
+        'e, performance_of_work_date, act_acceptance, act_acceptance_file' +
+        ', contract_execution_note, contract_execution_file, dog_Primech,' +
+        ' emty, mail_Num_In, mail_Correspondent, mail_Data_In, mail_Soder' +
+        'ganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, nir_' +
+        'zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, nir_t' +
+        'z, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Zakazc' +
+        'hik, dog_Predmet, dog_Napravleniy, dog_Podpisan, `_SchedulerDBSt' +
+        'orage_START`, `_ID`, ParentID, Type, Start, Finish, Options, Cap' +
+        'tion, RecurrenceIndex, RecurrenceInfo, ResourceID, Location, Mes' +
+        'sage, ReminderDate, ReminderMinutes, State, LabelColor, ActualSt' +
+        'art, ActualFinish, SyncIDField, `__SchedulerDBStorage_END`)'
       'VALUES'
       
-        '  (:department, :basis, :basis_ffile, :contract_name, :contract_' +
-        'number, :contract_file, :deadline, :costofwork, :responsible, :i' +
-        'nvoice, :invoice_file, :payment_note, :payment_date, :performanc' +
-        'e_of_work_note, :performance_of_work_file, :performance_of_work_' +
-        'date, :act_acceptance, :act_acceptance_file, :contract_execution' +
-        '_note, :contract_execution_file)')
+        '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
+        'dline, :basis, :basis_N, :basis_ffile, :contract_name, :contract' +
+        '_number, :contract_file, :costofwork_F, :invoice, :invoice_file,' +
+        ' :payment_note, :payment_date, :performance_of_work_note, :perfo' +
+        'rmance_of_work_file, :performance_of_work_date, :act_acceptance,' +
+        ' :act_acceptance_file, :contract_execution_note, :contract_execu' +
+        'tion_file, :dog_Primech, :emty, :mail_Num_In, :mail_Corresponden' +
+        't, :mail_Data_In, :mail_Soderganie, :mail_F, :mail_Ispolnitel, :' +
+        'mail_Resoluzia, :nir_zayvka, :nir_zayvka_file, :nir_zayvka_otpra' +
+        'vleno, :nir_plan, :nir_teh_zad, :nir_tz, :nir_etap_srok, :nir_ot' +
+        'chet, :nir_act, :nir_vnedrenie, :dog_Zakazchik, :dog_Predmet, :d' +
+        'og_Napravleniy, :dog_Podpisan, :`_SchedulerDBStorage_START`, :`_' +
+        'ID`, :ParentID, :Type, :Start, :Finish, :Options, :Caption, :Rec' +
+        'urrenceIndex, :RecurrenceInfo, :ResourceID, :Location, :Message,' +
+        ' :ReminderDate, :ReminderMinutes, :State, :LabelColor, :ActualSt' +
+        'art, :ActualFinish, :SyncIDField, :`__SchedulerDBStorage_END`)')
     SQLDelete.Strings = (
       'DELETE FROM r1'
       'WHERE'
@@ -696,33 +715,64 @@ object DM: TDM
       'UPDATE r1'
       'SET'
       
-        '  department = :department, basis = :basis, basis_ffile = :basis' +
-        '_ffile, contract_name = :contract_name, contract_number = :contr' +
-        'act_number, contract_file = :contract_file, deadline = :deadline' +
-        ', costofwork = :costofwork, responsible = :responsible, invoice ' +
-        '= :invoice, invoice_file = :invoice_file, payment_note = :paymen' +
-        't_note, payment_date = :payment_date, performance_of_work_note =' +
-        ' :performance_of_work_note, performance_of_work_file = :performa' +
-        'nce_of_work_file, performance_of_work_date = :performance_of_wor' +
-        'k_date, act_acceptance = :act_acceptance, act_acceptance_file = ' +
-        ':act_acceptance_file, contract_execution_note = :contract_execut' +
-        'ion_note, contract_execution_file = :contract_execution_file'
+        '  type_task_i = :type_task_i, type_task_str = :type_task_str, de' +
+        'partment = :department, responsible = :responsible, deadline = :' +
+        'deadline, basis = :basis, basis_N = :basis_N, basis_ffile = :bas' +
+        'is_ffile, contract_name = :contract_name, contract_number = :con' +
+        'tract_number, contract_file = :contract_file, costofwork_F = :co' +
+        'stofwork_F, invoice = :invoice, invoice_file = :invoice_file, pa' +
+        'yment_note = :payment_note, payment_date = :payment_date, perfor' +
+        'mance_of_work_note = :performance_of_work_note, performance_of_w' +
+        'ork_file = :performance_of_work_file, performance_of_work_date =' +
+        ' :performance_of_work_date, act_acceptance = :act_acceptance, ac' +
+        't_acceptance_file = :act_acceptance_file, contract_execution_not' +
+        'e = :contract_execution_note, contract_execution_file = :contrac' +
+        't_execution_file, dog_Primech = :dog_Primech, emty = :emty, mail' +
+        '_Num_In = :mail_Num_In, mail_Correspondent = :mail_Correspondent' +
+        ', mail_Data_In = :mail_Data_In, mail_Soderganie = :mail_Sodergan' +
+        'ie, mail_F = :mail_F, mail_Ispolnitel = :mail_Ispolnitel, mail_R' +
+        'esoluzia = :mail_Resoluzia, nir_zayvka = :nir_zayvka, nir_zayvka' +
+        '_file = :nir_zayvka_file, nir_zayvka_otpravleno = :nir_zayvka_ot' +
+        'pravleno, nir_plan = :nir_plan, nir_teh_zad = :nir_teh_zad, nir_' +
+        'tz = :nir_tz, nir_etap_srok = :nir_etap_srok, nir_otchet = :nir_' +
+        'otchet, nir_act = :nir_act, nir_vnedrenie = :nir_vnedrenie, dog_' +
+        'Zakazchik = :dog_Zakazchik, dog_Predmet = :dog_Predmet, dog_Napr' +
+        'avleniy = :dog_Napravleniy, dog_Podpisan = :dog_Podpisan, `_Sche' +
+        'dulerDBStorage_START` = :`_SchedulerDBStorage_START`, `_ID` = :`' +
+        '_ID`, ParentID = :ParentID, Type = :Type, Start = :Start, Finish' +
+        ' = :Finish, Options = :Options, Caption = :Caption, RecurrenceIn' +
+        'dex = :RecurrenceIndex, RecurrenceInfo = :RecurrenceInfo, Resour' +
+        'ceID = :ResourceID, Location = :Location, Message = :Message, Re' +
+        'minderDate = :ReminderDate, ReminderMinutes = :ReminderMinutes, ' +
+        'State = :State, LabelColor = :LabelColor, ActualStart = :ActualS' +
+        'tart, ActualFinish = :ActualFinish, SyncIDField = :SyncIDField, ' +
+        '`__SchedulerDBStorage_END` = :`__SchedulerDBStorage_END`'
       'WHERE'
       '  id = :Old_id')
     SQLLock.Strings = (
       'UPDATE r1'
       'SET'
-      '  department = :department'
+      '  type_task_i = :type_task_i'
       'WHERE'
       '  id = :Old_id')
     SQLRefresh.Strings = (
       
-        'SELECT department, basis, basis_ffile, contract_name, contract_n' +
-        'umber, contract_file, deadline, costofwork, responsible, invoice' +
-        ', invoice_file, payment_note, payment_date, performance_of_work_' +
-        'note, performance_of_work_file, performance_of_work_date, act_ac' +
-        'ceptance, act_acceptance_file, contract_execution_note, contract' +
-        '_execution_file FROM r1'
+        'SELECT type_task_i, type_task_str, department, responsible, dead' +
+        'line, basis, basis_N, basis_ffile, contract_name, contract_numbe' +
+        'r, contract_file, costofwork_F, invoice, invoice_file, payment_n' +
+        'ote, payment_date, performance_of_work_note, performance_of_work' +
+        '_file, performance_of_work_date, act_acceptance, act_acceptance_' +
+        'file, contract_execution_note, contract_execution_file, dog_Prim' +
+        'ech, emty, mail_Num_In, mail_Correspondent, mail_Data_In, mail_S' +
+        'oderganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, ' +
+        'nir_zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, n' +
+        'ir_tz, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Za' +
+        'kazchik, dog_Predmet, dog_Napravleniy, dog_Podpisan, `_Scheduler' +
+        'DBStorage_START`, `_ID`, ParentID, Type, Start, Finish, Options,' +
+        ' Caption, RecurrenceIndex, RecurrenceInfo, ResourceID, Location,' +
+        ' Message, ReminderDate, ReminderMinutes, State, LabelColor, Actu' +
+        'alStart, ActualFinish, SyncIDField, `__SchedulerDBStorage_END` F' +
+        'ROM r1'
       'WHERE'
       '  id = :id')
     Connection = UniConnection1
@@ -827,6 +877,170 @@ object DM: TDM
     object SmallintField1: TSmallintField
       DisplayLabel = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072', '#1092#1072#1081#1083
       FieldName = 'contract_execution_file'
+    end
+    object tblReportFiltr2type_task_i: TStringField
+      FieldName = 'type_task_i'
+      Size = 255
+    end
+    object tblReportFiltr2type_task_str: TStringField
+      FieldName = 'type_task_str'
+      Size = 255
+    end
+    object tblReportFiltr2basis_N: TStringField
+      FieldName = 'basis_N'
+      Size = 255
+    end
+    object tblReportFiltr2costofwork_F: TFloatField
+      FieldName = 'costofwork_F'
+    end
+    object tblReportFiltr2dog_Primech: TStringField
+      FieldName = 'dog_Primech'
+      Size = 255
+    end
+    object tblReportFiltr2emty: TStringField
+      FieldName = 'emty'
+      Size = 255
+    end
+    object tblReportFiltr2mail_Num_In: TStringField
+      FieldName = 'mail_Num_In'
+      Size = 255
+    end
+    object tblReportFiltr2mail_Correspondent: TStringField
+      FieldName = 'mail_Correspondent'
+      Size = 255
+    end
+    object tblReportFiltr2mail_Data_In: TDateTimeField
+      FieldName = 'mail_Data_In'
+    end
+    object tblReportFiltr2mail_Soderganie: TStringField
+      FieldName = 'mail_Soderganie'
+      Size = 255
+    end
+    object tblReportFiltr2mail_F: TIntegerField
+      FieldName = 'mail_F'
+    end
+    object tblReportFiltr2mail_Ispolnitel: TStringField
+      FieldName = 'mail_Ispolnitel'
+      Size = 255
+    end
+    object tblReportFiltr2mail_Resoluzia: TStringField
+      FieldName = 'mail_Resoluzia'
+      Size = 255
+    end
+    object tblReportFiltr2nir_zayvka: TStringField
+      FieldName = 'nir_zayvka'
+      Size = 255
+    end
+    object tblReportFiltr2nir_zayvka_file: TIntegerField
+      FieldName = 'nir_zayvka_file'
+    end
+    object tblReportFiltr2nir_zayvka_otpravleno: TDateTimeField
+      FieldName = 'nir_zayvka_otpravleno'
+    end
+    object tblReportFiltr2nir_plan: TStringField
+      FieldName = 'nir_plan'
+      Size = 255
+    end
+    object tblReportFiltr2nir_teh_zad: TStringField
+      FieldName = 'nir_teh_zad'
+      Size = 255
+    end
+    object tblReportFiltr2nir_tz: TIntegerField
+      FieldName = 'nir_tz'
+    end
+    object tblReportFiltr2nir_etap_srok: TDateTimeField
+      FieldName = 'nir_etap_srok'
+    end
+    object tblReportFiltr2nir_otchet: TIntegerField
+      FieldName = 'nir_otchet'
+    end
+    object tblReportFiltr2nir_act: TIntegerField
+      FieldName = 'nir_act'
+    end
+    object tblReportFiltr2nir_vnedrenie: TIntegerField
+      FieldName = 'nir_vnedrenie'
+    end
+    object tblReportFiltr2dog_Zakazchik: TStringField
+      FieldName = 'dog_Zakazchik'
+      Size = 255
+    end
+    object tblReportFiltr2dog_Predmet: TStringField
+      FieldName = 'dog_Predmet'
+      Size = 255
+    end
+    object tblReportFiltr2dog_Napravleniy: TDateTimeField
+      FieldName = 'dog_Napravleniy'
+    end
+    object tblReportFiltr2dog_Podpisan: TDateTimeField
+      FieldName = 'dog_Podpisan'
+    end
+    object tblReportFiltr2_SchedulerDBStorage_START: TStringField
+      FieldName = '_SchedulerDBStorage_START'
+      Size = 255
+    end
+    object tblReportFiltr2_ID: TIntegerField
+      FieldName = '_ID'
+    end
+    object tblReportFiltr2ParentID: TIntegerField
+      FieldName = 'ParentID'
+    end
+    object tblReportFiltr2Type: TIntegerField
+      FieldName = 'Type'
+    end
+    object tblReportFiltr2Start: TDateTimeField
+      FieldName = 'Start'
+    end
+    object tblReportFiltr2Finish: TDateTimeField
+      FieldName = 'Finish'
+    end
+    object tblReportFiltr2Options: TIntegerField
+      FieldName = 'Options'
+    end
+    object tblReportFiltr2Caption: TStringField
+      FieldName = 'Caption'
+      Size = 255
+    end
+    object tblReportFiltr2RecurrenceIndex: TIntegerField
+      FieldName = 'RecurrenceIndex'
+    end
+    object tblReportFiltr2RecurrenceInfo: TBlobField
+      FieldName = 'RecurrenceInfo'
+    end
+    object tblReportFiltr2ResourceID: TBlobField
+      FieldName = 'ResourceID'
+    end
+    object tblReportFiltr2Location: TStringField
+      FieldName = 'Location'
+      Size = 255
+    end
+    object tblReportFiltr2Message: TStringField
+      FieldName = 'Message'
+      Size = 255
+    end
+    object tblReportFiltr2ReminderDate: TDateTimeField
+      FieldName = 'ReminderDate'
+    end
+    object tblReportFiltr2ReminderMinutes: TIntegerField
+      FieldName = 'ReminderMinutes'
+    end
+    object tblReportFiltr2State: TIntegerField
+      FieldName = 'State'
+    end
+    object tblReportFiltr2LabelColor: TIntegerField
+      FieldName = 'LabelColor'
+    end
+    object tblReportFiltr2ActualStart: TDateTimeField
+      FieldName = 'ActualStart'
+    end
+    object tblReportFiltr2ActualFinish: TDateTimeField
+      FieldName = 'ActualFinish'
+    end
+    object tblReportFiltr2SyncIDField: TStringField
+      FieldName = 'SyncIDField'
+      Size = 255
+    end
+    object tblReportFiltr2__SchedulerDBStorage_END: TIntegerField
+      FieldName = '__SchedulerDBStorage_END'
     end
   end
 end

@@ -8,7 +8,7 @@ uses
   XPStyleActnCtrls
   ,ShellAPI, JvAppStorage, JvAppIniStorage, JvComponentBase,
   JvFormPlacement, StdCtrls, cxPropertiesStore
-  , utility;
+  , utility, cxClasses;
 
 type
   TFormTuning = class(TBaseForm)

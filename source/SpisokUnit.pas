@@ -28,7 +28,7 @@ DBCtrls, cxVGrid, cxDBVGrid,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
   dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
   dxSkinXmas2008Blue, dxSkinscxPCPainter, cxFilterControl,
-  cxDBFilterControl;
+  cxDBFilterControl, cxDateUtils;
 
 type
   TSpisokForm = class(TBaseForm)
@@ -107,6 +107,9 @@ type
     procedure btn1Click(Sender: TObject);
     procedure cbAllDataClick(Sender: TObject);
     procedure chkAllClick(Sender: TObject);
+    procedure cxGrid2DBTableView1CustomDrawCell(Sender: TcxCustomGridTableView;
+        ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo; var ADone:
+        Boolean);
     procedure dblkcbb1Click(Sender: TObject);
     procedure dblkcbb1Exit(Sender: TObject);
     procedure dtp1Change(Sender: TObject);
@@ -144,10 +147,13 @@ begin
   cxLocalizerMethod(Sender);
   cxPropertiesStoreMethod(Sender);
 
-dtp1.Date := Now;
-dtp2.Date := Now;
+dtp1.Date := Now-15;
+dtp2.Date := Now+15;
 
 chkAll.State := cbChecked;
+
+//дата выполнения 
+//performance_of_work_date
   
 end;
 
@@ -352,6 +358,9 @@ begin
     ' "department"  LIKE :department AND '+
     ' "deadline" BETWEEN :in AND :end ' ;
 
+//дата выполнения 
+//performance_of_work_date
+
   dataset.SQL.Clear;
   dataset.Params.Clear;
 
@@ -380,5 +389,63 @@ begin
   DataSet.Close;
   DataSet.Open;       
 end;
+
+
+procedure TSpisokForm.cxGrid2DBTableView1CustomDrawCell(Sender:TcxCustomGridTableView; ACanvas: TcxCanvas; AViewInfo:
+    TcxGridTableDataCellViewInfo; var ADone: Boolean);
+var
+ARec: TRect;
+dt: TDateTime;
+fieldname : TcxGridDBColumn;
+var1: Variant;
+
+strVal: string;
+bRes :Boolean;
+
+begin
+
+ fieldname := cxGrid2DBTableView1performance_of_work_date;
+ var1 := AViewInfo.DisplayValue;
+
+ strVal := VarAsType(AViewInfo.GridRecord.DisplayTexts[cxGrid2DBTableView1performance_of_work_date.index], varString);
+ bRes := cxDateUtils.TextToDateEx(strVal, dt);
+ if bRes then begin
+ dt := StrToDate(strVal);
+ dt  := VarAsType(AViewInfo.GridRecord.DisplayTexts[cxGrid2DBTableView1performance_of_work_date.index], varDate);
+ var1:= VarAsType(AViewInfo.GridRecord.DisplayTexts[cxGrid2DBTableView1performance_of_work_date.index], varDate);
+
+
+ //dt := StrToDateTime(val);
+ if (dt >0) then begin
+ dt := VarToDateTime(var1);
+ if dt < Date then begin
+    ACanvas.Brush.Color:= $00FFEAD5;
+    ACanvas.Font.Color:= clRed;
+    ACanvas.Font.Style:= [fsBold];
+  end;
+  end;
+
+end;
+
+{
+ARec := AViewInfo.Bounds;
+val := VarAsType(AViewInfo.GridRecord.DisplayTexts[cxGrid2DBTableView1. ], varDateTime);
+if val < Date then
+ACanvas.Canvas.Brush.Color := $B9B9FF;
+ACanvas.Canvas.FillRect(ARec);
+end;
+
+Exit;
+}
+
+{
+  if not (TcxCustomGridTableView(Sender).FindColumnByFieldName(fieldname)=nil)  then
+  begin
+    if ANode.Values[TcxGridDBTableView(Sender).ColumnByFieldName(fieldname).Index] = "Нет" then
+      AColor := clRed;
+  end;
+}
+end;
+
 
 end.

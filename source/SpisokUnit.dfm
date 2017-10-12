@@ -1,6 +1,6 @@
 inherited SpisokForm: TSpisokForm
-  Left = -488
-  Top = 222
+  Left = 272
+  Top = 205
   Width = 1280
   Height = 768
   HorzScrollBar.Visible = False
@@ -21,7 +21,7 @@ inherited SpisokForm: TSpisokForm
   object pnlH: TPanel [1]
     Left = 0
     Top = 27
-    Width = 1264
+    Width = 1272
     Height = 41
     Align = alTop
     Caption = 'pnlH'
@@ -29,7 +29,7 @@ inherited SpisokForm: TSpisokForm
     object mmo1: TMemo
       Left = 1
       Top = 1
-      Width = 1262
+      Width = 1270
       Height = 39
       Align = alClient
       Alignment = taCenter
@@ -41,27 +41,27 @@ inherited SpisokForm: TSpisokForm
   object acttb1: TActionToolBar [2]
     Left = 0
     Top = 0
-    Width = 1264
+    Width = 1272
     Height = 27
     ActionManager = actmgr1
     Caption = 'acttb1'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Spacing = 0
   end
   object pnl_LR: TPanel [3]
     Left = 0
     Top = 68
-    Width = 1264
-    Height = 661
+    Width = 1272
+    Height = 673
     Align = alClient
     Caption = 'pnl_LR'
     TabOrder = 2
     object jvntscpspltr1: TJvNetscapeSplitter
       Left = 369
       Top = 1
-      Height = 628
+      Height = 640
       Align = alLeft
       Maximized = False
       Minimized = False
@@ -71,7 +71,7 @@ inherited SpisokForm: TSpisokForm
       Left = 1
       Top = 1
       Width = 368
-      Height = 628
+      Height = 640
       Align = alLeft
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -90,7 +90,7 @@ inherited SpisokForm: TSpisokForm
         Left = 2
         Top = 43
         Width = 364
-        Height = 583
+        Height = 595
         Align = alClient
         TabOrder = 1
         object pnlData1: TPanel
@@ -266,8 +266,8 @@ inherited SpisokForm: TSpisokForm
     object pnlL: TPanel
       Left = 379
       Top = 1
-      Width = 884
-      Height = 628
+      Width = 892
+      Height = 640
       Align = alClient
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -276,7 +276,7 @@ inherited SpisokForm: TSpisokForm
       object lbl3: TLabel
         Left = 2
         Top = 2
-        Width = 880
+        Width = 888
         Height = 18
         Align = alTop
         Alignment = taCenter
@@ -291,8 +291,8 @@ inherited SpisokForm: TSpisokForm
       object cxGrid2: TcxGrid
         Left = 2
         Top = 20
-        Width = 880
-        Height = 606
+        Width = 888
+        Height = 618
         Align = alClient
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
@@ -305,6 +305,7 @@ inherited SpisokForm: TSpisokForm
           Navigator.Buttons.CustomButtons = <>
           Navigator.Visible = True
           FilterBox.Visible = fvAlways
+          OnCustomDrawCell = cxGrid2DBTableView1CustomDrawCell
           DataController.DataModeController.GridMode = True
           DataController.DataModeController.SmartRefresh = True
           DataController.DataSource = dsReportFiltr
@@ -333,6 +334,14 @@ inherited SpisokForm: TSpisokForm
           object cxGrid2DBTableView1id: TcxGridDBColumn
             DataBinding.FieldName = 'id'
             Width = 55
+          end
+          object cxGrid2DBTableView1performance_of_work_file: TcxGridDBColumn
+            DataBinding.FieldName = 'performance_of_work_file'
+            Width = 55
+          end
+          object cxGrid2DBTableView1performance_of_work_date: TcxGridDBColumn
+            DataBinding.FieldName = 'performance_of_work_date'
+            Width = 77
           end
           object cxGrid2DBTableView1department: TcxGridDBColumn
             DataBinding.FieldName = 'department'
@@ -390,14 +399,6 @@ inherited SpisokForm: TSpisokForm
             DataBinding.FieldName = 'performance_of_work_note'
             Width = 55
           end
-          object cxGrid2DBTableView1performance_of_work_file: TcxGridDBColumn
-            DataBinding.FieldName = 'performance_of_work_file'
-            Width = 55
-          end
-          object cxGrid2DBTableView1performance_of_work_date: TcxGridDBColumn
-            DataBinding.FieldName = 'performance_of_work_date'
-            Width = 55
-          end
           object cxGrid2DBTableView1act_acceptance: TcxGridDBColumn
             DataBinding.FieldName = 'act_acceptance'
             Width = 55
@@ -422,8 +423,8 @@ inherited SpisokForm: TSpisokForm
     end
     object pnl_Navigator1: TPanel
       Left = 1
-      Top = 629
-      Width = 1262
+      Top = 641
+      Width = 1270
       Height = 31
       Align = alBottom
       BevelInner = bvLowered

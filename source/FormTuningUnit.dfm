@@ -7,30 +7,30 @@ inherited FormTuning: TFormTuning
   Position = poDesktopCenter
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
   object actmmb1: TActionMainMenuBar [0]
     Left = 0
     Top = 0
-    Width = 624
-    Height = 51
+    Width = 632
+    Height = 125
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     Spacing = 0
   end
   object btn1: TButton [1]
-    Left = 10
-    Top = 60
-    Width = 131
-    Height = 25
+    Left = 13
+    Top = 78
+    Width = 171
+    Height = 33
     Caption = #1048#1084#1087#1086#1088#1090' '#1076#1072#1085#1085#1099#1093
     TabOrder = 1
     Visible = False

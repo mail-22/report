@@ -23,6 +23,7 @@ inherited DBDemoMainForm: TDBDemoMainForm
     ViewWeek.ShowTimeAsClock = True
     ViewWeeks.ShowEndTime = False
     ViewWeeks.ShowTimeAsClock = True
+    OnCustomDrawEvent = SchedulerCustomDrawEvent
     LookAndFeel.Kind = lfStandard
     Storage = SchedulerDBStorage
     Splitters = {
@@ -61,6 +62,15 @@ inherited DBDemoMainForm: TDBDemoMainForm
           TabOrder = 1
           OnClick = chDataModeClick
           Width = 121
+        end
+        object ComboBox1: TComboBox
+          Left = 0
+          Top = 88
+          Width = 145
+          Height = 21
+          ItemHeight = 13
+          TabOrder = 2
+          Text = 'ComboBox1'
         end
       end
     end
@@ -162,7 +172,7 @@ inherited DBDemoMainForm: TDBDemoMainForm
   end
   object SchedulerDBStorage: TcxSchedulerDBStorage
     UseActualTimeRange = True
-    Reminders.Active = False
+    Reminders.DefaultReminder = True
     Resources.Items = <>
     Resources.ResourceID = 'ResourceID'
     Resources.ResourceName = 'ResourceName'

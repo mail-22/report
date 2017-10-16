@@ -68,6 +68,7 @@ ActualStart=ActualStart
 ActualFinish=ActualFinish
 SyncIDField=SyncIDField
 __SchedulerDBStorage_END=__SchedulerDBStorage_END
+dog_Predmet2=Предмет_
 [tblDepart]
 id=№
 depart=Отдел

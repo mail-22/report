@@ -61,6 +61,7 @@ type
   end;
 
 procedure StartEMailClient(MailTo, Subject, Body :string);
+procedure AboutForm_Show;
 
 var
   AboutForm: TAboutForm;
@@ -190,6 +191,13 @@ end;
 procedure TAboutForm.FormShortCut(var Msg: TWMKey; var Handled: Boolean);
 begin
   if msg.CharCode=VK_ESCAPE then close;
+end;
+
+procedure AboutForm_Show;
+begin
+  if (AboutForm = nil) then
+    Application.CreateForm(TAboutForm, AboutForm);
+  AboutForm.ShowModal;
 end;
 
 end.

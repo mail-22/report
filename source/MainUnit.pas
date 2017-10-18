@@ -56,10 +56,12 @@ type
     jvhnt1: TJvHint;
     act3: TAction;
     actSpisok: TAction;
+    Action1: TAction;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
     procedure act3Execute(Sender: TObject);
+    procedure actAboutExecute(Sender: TObject);
     procedure actHELP2Execute(Sender: TObject);
     procedure actListOfBildingExecute(Sender: TObject);
     procedure actListOfDepExecute(Sender: TObject);
@@ -276,6 +278,12 @@ procedure TFormMain.act3Execute(Sender: TObject);
 begin
   inherited;
   DBDemoMainForm_Show;
+end;
+
+procedure TFormMain.actAboutExecute(Sender: TObject);
+begin
+  inherited;
+  AboutForm_Show;
 end;
 
 procedure TFormMain.actListOfEmplExecute(Sender: TObject);

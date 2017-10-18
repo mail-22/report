@@ -1,6 +1,6 @@
 inherited EditGridJOleForm: TEditGridJOleForm
-  Left = 305
-  Top = 247
+  Left = 122
+  Top = 151
   Width = 1024
   Height = 756
   Caption = 'EditGridJOleForm'
@@ -9,15 +9,15 @@ inherited EditGridJOleForm: TEditGridJOleForm
   object lbl1: TLabel [0]
     Left = 0
     Top = 42
-    Width = 1016
+    Width = 1008
     Height = 17
     Align = alTop
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090#1099' '#1074#1080#1076#1072' :'
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 635
-    Width = 1016
+    Top = 623
+    Width = 1008
     Height = 41
     Align = alBottom
     BevelInner = bvLowered
@@ -27,8 +27,9 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object cxdbnvgtr1: TcxDBNavigator
       Left = 324
       Top = 2
-      Width = 675
+      Width = 677
       Height = 33
+      Buttons.CustomButtons = <>
       DataSource = DM.dsJpg
       Align = alClient
       TabOrder = 0
@@ -77,8 +78,8 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object pnl1: TPanel [2]
     Left = 0
-    Top = 676
-    Width = 1016
+    Top = 664
+    Width = 1008
     Height = 53
     Align = alBottom
     TabOrder = 1
@@ -106,29 +107,33 @@ inherited EditGridJOleForm: TEditGridJOleForm
     Left = 0
     Top = 86
     Width = 10
-    Height = 549
+    Height = 537
   end
   object pnlL: TPanel [4]
     Left = 10
     Top = 86
-    Width = 1006
-    Height = 549
+    Width = 998
+    Height = 537
     Align = alClient
     Caption = 'pnlL'
     TabOrder = 3
     object cxgrd1: TcxGrid
       Left = 1
       Top = 87
-      Width = 1004
-      Height = 461
+      Width = 996
+      Height = 449
       Align = alClient
       TabOrder = 0
       object cxgrdbtblvwGrid1DBTableView1: TcxGridDBTableView
-        NavigatorButtons.ConfirmDelete = False
+        Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = DM.dsJpg
         DataController.Summary.DefaultGroupSummaryItems = <>
         DataController.Summary.FooterSummaryItems = <>
         DataController.Summary.SummaryGroups = <>
+        OptionsCustomize.ColumnGrouping = False
+        OptionsCustomize.ColumnHiding = True
+        OptionsCustomize.ColumnsQuickCustomization = True
+        OptionsCustomize.DataRowSizing = True
         OptionsView.CellEndEllipsis = True
         OptionsView.ColumnAutoWidth = True
         OptionsView.GroupByBox = False
@@ -168,6 +173,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
         end
         object cxgrdbclmnGrid1DBTableView1UniqueName: TcxGridDBColumn
           DataBinding.FieldName = 'UniqueName'
+          Visible = False
           Width = 88
         end
         object cxgrdbclmn_Type_MRU: TcxGridDBColumn
@@ -182,7 +188,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object actmmb2: TActionMainMenuBar
       Left = 1
       Top = 55
-      Width = 1004
+      Width = 996
       Height = 32
       UseSystemFont = False
       ActionManager = actmgr1
@@ -198,44 +204,44 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object acttb1: TActionToolBar
       Left = 1
       Top = 1
-      Width = 1004
+      Width = 996
       Height = 27
       ActionManager = actmgr1
       Caption = 'acttb1'
-      ColorMap.HighlightColor = 14410210
+      ColorMap.HighlightColor = clWhite
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = 14410210
+      ColorMap.UnusedColor = clWhite
       Spacing = 0
     end
     object acttb3: TActionToolBar
       Left = 1
       Top = 28
-      Width = 1004
+      Width = 996
       Height = 27
       ActionManager = actmgr1
       Caption = 'acttb3'
-      ColorMap.HighlightColor = 14410210
+      ColorMap.HighlightColor = clWhite
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = 14410210
+      ColorMap.UnusedColor = clWhite
       Spacing = 0
     end
   end
   object acttb2: TActionToolBar [5]
     Left = 0
     Top = 59
-    Width = 1016
+    Width = 1008
     Height = 27
     ActionManager = actmgr1
     Caption = 'acttb2'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Spacing = 0
   end
   object Memo1: TMemo [6]
     Left = 0
     Top = 0
-    Width = 1016
+    Width = 1008
     Height = 42
     Align = alTop
     Alignment = taCenter

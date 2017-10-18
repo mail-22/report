@@ -1,6 +1,6 @@
 inherited EditGridJpgForm: TEditGridJpgForm
-  Left = 447
-  Top = 322
+  Left = 192
+  Top = 141
   Caption = 'EditGridJpgForm'
   PixelsPerInch = 96
   TextHeight = 17
@@ -8,14 +8,14 @@ inherited EditGridJpgForm: TEditGridJpgForm
     Left = 619
     Top = 0
     Width = 8
-    Height = 479
+    Height = 467
     HotZoneClassName = 'TcxSimpleStyle'
     Control = pnlL
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 479
-    Width = 792
+    Top = 467
+    Width = 784
     Height = 40
     Align = alBottom
     BevelInner = bvLowered
@@ -25,8 +25,9 @@ inherited EditGridJpgForm: TEditGridJpgForm
     object cxdbnvgtr1: TcxDBNavigator
       Left = 324
       Top = 2
-      Width = 450
+      Width = 452
       Height = 32
+      Buttons.CustomButtons = <>
       DataSource = ds1
       Align = alClient
       TabOrder = 0
@@ -75,8 +76,8 @@ inherited EditGridJpgForm: TEditGridJpgForm
   end
   object pnl1: TPanel [2]
     Left = 0
-    Top = 519
-    Width = 792
+    Top = 507
+    Width = 784
     Height = 54
     Align = alBottom
     TabOrder = 2
@@ -101,14 +102,14 @@ inherited EditGridJpgForm: TEditGridJpgForm
     Left = 0
     Top = 0
     Width = 10
-    Height = 479
+    Height = 467
     Control = cxgrd2
   end
   object pnlL: TPanel [4]
     Left = 10
     Top = 0
     Width = 609
-    Height = 479
+    Height = 467
     Align = alLeft
     Caption = 'pnlL'
     TabOrder = 4
@@ -116,7 +117,7 @@ inherited EditGridJpgForm: TEditGridJpgForm
       Left = 1
       Top = 28
       Width = 607
-      Height = 450
+      Height = 438
       Align = alClient
       Font.Charset = RUSSIAN_CHARSET
       Font.Color = clWindowText
@@ -126,7 +127,8 @@ inherited EditGridJpgForm: TEditGridJpgForm
       ParentFont = False
       TabOrder = 0
       object cxgrdbtblvwGrid2DBTableView1: TcxGridDBTableView
-        NavigatorButtons.ConfirmDelete = False
+        Navigator.Buttons.CustomButtons = <>
+        Navigator.Visible = True
         FilterBox.Visible = fvAlways
         DataController.DataModeController.SmartRefresh = True
         DataController.DataSource = ds1
@@ -147,7 +149,6 @@ inherited EditGridJpgForm: TEditGridJpgForm
         OptionsBehavior.IncSearch = True
         OptionsBehavior.NavigatorHints = True
         OptionsView.CellEndEllipsis = True
-        OptionsView.Navigator = True
         OptionsView.ColumnAutoWidth = True
         OptionsView.Footer = True
         OptionsView.FooterAutoHeight = True
@@ -180,17 +181,17 @@ inherited EditGridJpgForm: TEditGridJpgForm
       Height = 27
       ActionManager = actmgr1
       Caption = 'acttb1'
-      ColorMap.HighlightColor = 14410210
+      ColorMap.HighlightColor = clWhite
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = 14410210
+      ColorMap.UnusedColor = clWhite
       Spacing = 0
     end
   end
   object pnlR: TPanel [5]
     Left = 627
     Top = 0
-    Width = 165
-    Height = 479
+    Width = 157
+    Height = 467
     Align = alClient
     Caption = 'pnlR'
     TabOrder = 5
@@ -204,13 +205,13 @@ inherited EditGridJpgForm: TEditGridJpgForm
       Properties.GraphicClassName = 'TJPEGImage'
       Properties.ImmediatePost = True
       TabOrder = 0
-      Height = 423
-      Width = 163
+      Height = 411
+      Width = 155
     end
     object pnl2: TPanel
       Left = 1
       Top = 1
-      Width = 163
+      Width = 155
       Height = 54
       Align = alTop
       Caption = 'pnl2'
@@ -218,7 +219,7 @@ inherited EditGridJpgForm: TEditGridJpgForm
       object mmo1: TMemo
         Left = 1
         Top = 1
-        Width = 161
+        Width = 153
         Height = 52
         Align = alClient
         Alignment = taCenter

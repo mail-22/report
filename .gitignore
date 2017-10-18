@@ -64,3 +64,6 @@ __recovery/
 
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
 *.stat
+bin/log.txt
+bin/SpisokForm.cxprprtstr1.ini
+bin/tmp/iphist.dat

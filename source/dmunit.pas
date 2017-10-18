@@ -397,7 +397,13 @@ begin
         strConnection_Set(strTmp);
      end
      else begin
-            MessageDlg('Не определена строка ConnectionString', mtWarning, [mbOK], 0);
+            Application.MessageBox('Не определена строка ConnectionString: ', 'проблема', MB_OK + 
+              MB_ICONWARNING + MB_TOPMOST);
+              {
+            //MessageDlg('Не определена строка ConnectionString', mtWarning, [mbOK], 0);
+            //jvdyncontrolengine defaultdyncontrolengine not defined
+            // https://forums.embarcadero.com/thread.jspa?threadID=227492
+            }                                 
           end
   end;
   Data_Source :=  ExtractFilePath(strTmp);

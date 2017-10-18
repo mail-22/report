@@ -544,7 +544,7 @@ procedure GridForm_Show;
 begin
   if (GridForm = nil) then
     Application.CreateForm(TGridForm, GridForm);
-  GridForm.Show;
+  GridForm.ShowModal;
 end;
 
 end.

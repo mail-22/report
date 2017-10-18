@@ -447,6 +447,7 @@ procedure TEditGridJOleForm.Init();
 var
   i: integer;
 begin
+ //#ToDo2 Add сохранение насстроек у грида 
   BDDirPathName := ExtractFileDir(Application.ExeName) +'\'+ constBDname +'\';
   BDDirPathName := ExtractFileDir(dm.strConnection_Get) +'\'+ constBDname +'\';
 

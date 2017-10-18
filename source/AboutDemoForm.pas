@@ -34,6 +34,7 @@ procedure ShowAboutDemoForm;
 var
   ADescription: TStringList;
 begin
+  //exit;
   if FForm = nil then
   begin
     ADescription := TStringList.Create;

@@ -28,7 +28,7 @@ object formAboutDemo: TformAboutDemo
     Style.HotTrack = False
     Style.TransparentBorder = False
     TabOrder = 0
-    Height = 392
-    Width = 252
+    Height = 404
+    Width = 260
   end
 end

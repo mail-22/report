@@ -112,7 +112,6 @@ type
     tblReport2dog_Predmet: TStringField;
     tblReport2dog_Napravleniy: TDateTimeField;
     tblReport2dog_Podpisan: TDateTimeField;
-    intgrfldDepartn: TIntegerField;
     tblReport2_SchedulerDBStorage_START: TStringField;
     tblReport2_ID: TIntegerField;
     tblReport2ParentID: TIntegerField;
@@ -182,6 +181,8 @@ type
     tblReportFiltr2ActualFinish: TDateTimeField;
     tblReportFiltr2SyncIDField: TStringField;
     tblReportFiltr2__SchedulerDBStorage_END: TIntegerField;
+    tblReport2dog_Predmet2: TMemoField;
+    tblDepartn: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);

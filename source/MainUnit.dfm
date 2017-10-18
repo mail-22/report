@@ -1,6 +1,6 @@
 inherited FormMain: TFormMain
-  Left = 141
-  Top = 161
+  Left = -1249
+  Top = 175
   Caption = #1091#1095#1077#1090' '#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089#1090#1080'   '
   Color = clGradientInactiveCaption
   Icon.Data = {
@@ -2220,6 +2220,9 @@ inherited FormMain: TFormMain
           end
           item
             Action = act3
+          end
+          item
+            Action = actSpisok
           end>
         ActionBar = actmmb1
       end
@@ -2306,6 +2309,10 @@ inherited FormMain: TFormMain
     object act3: TAction
       Caption = #1050#1072#1083#1077#1085#1076#1072#1088#1100
       OnExecute = act3Execute
+    end
+    object actSpisok: TAction
+      Caption = #1054#1090#1095#1077#1090#1099
+      OnExecute = actSpisokExecute
     end
   end
   object jvplctnhtky1: TJvApplicationHotKey

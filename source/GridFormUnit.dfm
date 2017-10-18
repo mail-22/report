@@ -1,6 +1,6 @@
 inherited GridForm: TGridForm
-  Left = -1467
-  Top = 76
+  Left = -1588
+  Top = 104
   Width = 1456
   Height = 907
   Caption = 'GridForm'
@@ -182,9 +182,11 @@ inherited GridForm: TGridForm
             Index = 1
             Version = 1
           end
-          object cxdbdtrwcxdbvrtclgrd1DBEditorRow5: TcxDBEditorRow
-            Properties.DataBinding.FieldName = 'dog_Predmet'
-            ID = 10
+          object cxdbvrtclgrd1DBEditorRow3: TcxDBEditorRow
+            Height = 48
+            Properties.EditPropertiesClassName = 'TcxMemoProperties'
+            Properties.DataBinding.FieldName = 'dog_Predmet2'
+            ID = 37
             ParentID = 7
             Index = 2
             Version = 1
@@ -594,6 +596,7 @@ inherited GridForm: TGridForm
             OptionsCustomize.BandsQuickCustomization = True
             OptionsCustomize.BandsQuickCustomizationReordering = qcrEnabled
             OptionsView.CellEndEllipsis = True
+            OptionsView.DataRowHeight = 46
             OptionsView.GroupByBox = False
             OptionsView.HeaderEndEllipsis = True
             OptionsView.BandHeaderEndEllipsis = True
@@ -802,13 +805,6 @@ inherited GridForm: TGridForm
               Position.ColIndex = 2
               Position.RowIndex = 0
             end
-            object cxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn
-              DataBinding.FieldName = 'dog_Predmet'
-              Width = 75
-              Position.BandIndex = 2
-              Position.ColIndex = 3
-              Position.RowIndex = 0
-            end
             object cxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn
               DataBinding.FieldName = 'dog_Primech'
               Width = 127
@@ -827,6 +823,13 @@ inherited GridForm: TGridForm
               DataBinding.FieldName = 'dog_Podpisan'
               Width = 88
               Position.BandIndex = 5
+              Position.ColIndex = 3
+              Position.RowIndex = 0
+            end
+            object cxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'dog_Predmet2'
+              PropertiesClassName = 'TcxMemoProperties'
+              Position.BandIndex = 2
               Position.ColIndex = 3
               Position.RowIndex = 0
             end
@@ -851,9 +854,9 @@ inherited GridForm: TGridForm
           BorderStyle = bsSingle
           TabOrder = 1
           object cxDBNavigator3: TcxDBNavigator
-            Left = 259
+            Left = 213
             Top = 2
-            Width = 857
+            Width = 902
             Height = 23
             Buttons.CustomButtons = <>
             DataSource = DM.dsReport
@@ -863,7 +866,7 @@ inherited GridForm: TGridForm
           object pnl3: TPanel
             Left = 187
             Top = 2
-            Width = 72
+            Width = 26
             Height = 23
             Align = alLeft
             AutoSize = True
@@ -872,7 +875,7 @@ inherited GridForm: TGridForm
             object jvdbstslbl1: TJvDBStatusLabel
               Left = 0
               Top = 3
-              Width = 72
+              Width = 26
               Height = 17
               DataSource = DM.dsReport
               Style = lsRecordNo

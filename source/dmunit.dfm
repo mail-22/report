@@ -25,6 +25,7 @@ object DM: TDM
     DefaultTransaction = UniTransaction1
     Username = 'admin'
     Password = '1'
+    Connected = True
     Left = 38
     Top = 72
   end
@@ -60,6 +61,7 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'select * from depart;')
+    Active = True
     Left = 466
     Top = 272
     object intgrfld1: TIntegerField
@@ -69,13 +71,14 @@ object DM: TDM
       ReadOnly = True
     end
     object strngfldunqry1depart: TStringField
-      DisplayLabel = #1054#1090#1076#1077#1083
+      DisplayLabel = #1054#1090#1076#1077#1083' - '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
       FieldName = 'depart'
       Size = 255
     end
-    object intgrfldDepartn: TIntegerField
-      DisplayLabel = #1085#1086#1084#1077#1088' '#1086#1090#1076#1077#1083#1072
+    object tblDepartn: TStringField
+      DisplayLabel = #1054#1090#1076#1077#1083' - '#1085#1086#1084#1077#1088
       FieldName = 'n'
+      Size = 255
     end
   end
   object dsDepart: TDataSource
@@ -263,11 +266,12 @@ object DM: TDM
         'ganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, nir_' +
         'zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, nir_t' +
         'z, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Zakazc' +
-        'hik, dog_Predmet, dog_Napravleniy, dog_Podpisan, `_SchedulerDBSt' +
-        'orage_START`, `_ID`, ParentID, Type, Start, Finish, Options, Cap' +
-        'tion, RecurrenceIndex, RecurrenceInfo, ResourceID, Location, Mes' +
-        'sage, ReminderDate, ReminderMinutes, State, LabelColor, ActualSt' +
-        'art, ActualFinish, SyncIDField, `__SchedulerDBStorage_END`)'
+        'hik, dog_Predmet, dog_Predmet2, dog_Napravleniy, dog_Podpisan, `' +
+        '_SchedulerDBStorage_START`, `_ID`, ParentID, Type, Start, Finish' +
+        ', Options, Caption, RecurrenceIndex, RecurrenceInfo, ResourceID,' +
+        ' Location, Message, ReminderDate, ReminderMinutes, State, LabelC' +
+        'olor, ActualStart, ActualFinish, SyncIDField, `__SchedulerDBStor' +
+        'age_END`)'
       'VALUES'
       
         '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
@@ -281,11 +285,12 @@ object DM: TDM
         'mail_Resoluzia, :nir_zayvka, :nir_zayvka_file, :nir_zayvka_otpra' +
         'vleno, :nir_plan, :nir_teh_zad, :nir_tz, :nir_etap_srok, :nir_ot' +
         'chet, :nir_act, :nir_vnedrenie, :dog_Zakazchik, :dog_Predmet, :d' +
-        'og_Napravleniy, :dog_Podpisan, :`_SchedulerDBStorage_START`, :`_' +
-        'ID`, :ParentID, :Type, :Start, :Finish, :Options, :Caption, :Rec' +
-        'urrenceIndex, :RecurrenceInfo, :ResourceID, :Location, :Message,' +
-        ' :ReminderDate, :ReminderMinutes, :State, :LabelColor, :ActualSt' +
-        'art, :ActualFinish, :SyncIDField, :`__SchedulerDBStorage_END`)')
+        'og_Predmet2, :dog_Napravleniy, :dog_Podpisan, :`_SchedulerDBStor' +
+        'age_START`, :`_ID`, :ParentID, :Type, :Start, :Finish, :Options,' +
+        ' :Caption, :RecurrenceIndex, :RecurrenceInfo, :ResourceID, :Loca' +
+        'tion, :Message, :ReminderDate, :ReminderMinutes, :State, :LabelC' +
+        'olor, :ActualStart, :ActualFinish, :SyncIDField, :`__SchedulerDB' +
+        'Storage_END`)')
     SQLDelete.Strings = (
       'DELETE FROM r1'
       'WHERE'
@@ -315,17 +320,18 @@ object DM: TDM
         'pravleno, nir_plan = :nir_plan, nir_teh_zad = :nir_teh_zad, nir_' +
         'tz = :nir_tz, nir_etap_srok = :nir_etap_srok, nir_otchet = :nir_' +
         'otchet, nir_act = :nir_act, nir_vnedrenie = :nir_vnedrenie, dog_' +
-        'Zakazchik = :dog_Zakazchik, dog_Predmet = :dog_Predmet, dog_Napr' +
-        'avleniy = :dog_Napravleniy, dog_Podpisan = :dog_Podpisan, `_Sche' +
-        'dulerDBStorage_START` = :`_SchedulerDBStorage_START`, `_ID` = :`' +
-        '_ID`, ParentID = :ParentID, Type = :Type, Start = :Start, Finish' +
-        ' = :Finish, Options = :Options, Caption = :Caption, RecurrenceIn' +
-        'dex = :RecurrenceIndex, RecurrenceInfo = :RecurrenceInfo, Resour' +
-        'ceID = :ResourceID, Location = :Location, Message = :Message, Re' +
-        'minderDate = :ReminderDate, ReminderMinutes = :ReminderMinutes, ' +
-        'State = :State, LabelColor = :LabelColor, ActualStart = :ActualS' +
-        'tart, ActualFinish = :ActualFinish, SyncIDField = :SyncIDField, ' +
-        '`__SchedulerDBStorage_END` = :`__SchedulerDBStorage_END`'
+        'Zakazchik = :dog_Zakazchik, dog_Predmet = :dog_Predmet, dog_Pred' +
+        'met2 = :dog_Predmet2, dog_Napravleniy = :dog_Napravleniy, dog_Po' +
+        'dpisan = :dog_Podpisan, `_SchedulerDBStorage_START` = :`_Schedul' +
+        'erDBStorage_START`, `_ID` = :`_ID`, ParentID = :ParentID, Type =' +
+        ' :Type, Start = :Start, Finish = :Finish, Options = :Options, Ca' +
+        'ption = :Caption, RecurrenceIndex = :RecurrenceIndex, Recurrence' +
+        'Info = :RecurrenceInfo, ResourceID = :ResourceID, Location = :Lo' +
+        'cation, Message = :Message, ReminderDate = :ReminderDate, Remind' +
+        'erMinutes = :ReminderMinutes, State = :State, LabelColor = :Labe' +
+        'lColor, ActualStart = :ActualStart, ActualFinish = :ActualFinish' +
+        ', SyncIDField = :SyncIDField, `__SchedulerDBStorage_END` = :`__S' +
+        'chedulerDBStorage_END`'
       'WHERE'
       '  id = :Old_id')
     SQLLock.Strings = (
@@ -346,17 +352,18 @@ object DM: TDM
         'oderganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, ' +
         'nir_zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, n' +
         'ir_tz, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Za' +
-        'kazchik, dog_Predmet, dog_Napravleniy, dog_Podpisan, `_Scheduler' +
-        'DBStorage_START`, `_ID`, ParentID, Type, Start, Finish, Options,' +
-        ' Caption, RecurrenceIndex, RecurrenceInfo, ResourceID, Location,' +
-        ' Message, ReminderDate, ReminderMinutes, State, LabelColor, Actu' +
-        'alStart, ActualFinish, SyncIDField, `__SchedulerDBStorage_END` F' +
-        'ROM r1'
+        'kazchik, dog_Predmet, dog_Predmet2, dog_Napravleniy, dog_Podpisa' +
+        'n, `_SchedulerDBStorage_START`, `_ID`, ParentID, Type, Start, Fi' +
+        'nish, Options, Caption, RecurrenceIndex, RecurrenceInfo, Resourc' +
+        'eID, Location, Message, ReminderDate, ReminderMinutes, State, La' +
+        'belColor, ActualStart, ActualFinish, SyncIDField, `__SchedulerDB' +
+        'Storage_END` FROM r1'
       'WHERE'
       '  id = :id')
     Connection = UniConnection1
     SQL.Strings = (
       'SELECT * FROM r1 ;')
+    Active = True
     OnNewRecord = tblReport2NewRecord
     Left = 224
     Top = 40
@@ -668,6 +675,11 @@ object DM: TDM
     end
     object tblReport2__SchedulerDBStorage_END: TIntegerField
       FieldName = '__SchedulerDBStorage_END'
+    end
+    object tblReport2dog_Predmet2: TMemoField
+      DisplayLabel = #1055#1088#1077#1076#1084#1077#1090'_'
+      FieldName = 'dog_Predmet2'
+      BlobType = ftMemo
     end
   end
   object tblReportFiltr2: TUniQuery

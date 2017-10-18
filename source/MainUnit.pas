@@ -55,6 +55,7 @@ type
     jvblnhnt1: TJvBalloonHint;
     jvhnt1: TJvHint;
     act3: TAction;
+    actSpisok: TAction;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
@@ -65,6 +66,7 @@ type
     procedure actListOfEmplExecute(Sender: TObject);
     procedure actMailExecute(Sender: TObject);
     procedure actNirExecute(Sender: TObject);
+    procedure actSpisokExecute(Sender: TObject);
     procedure actTuning2Execute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -81,15 +83,16 @@ type
     procedure cxPropertiesStoreMethod(Sender: TObject);
     procedure EmplMethod;
     procedure TunMethod;
+    procedure SpisokMethod;
 
   public
     procedure FormTuning_Show;
     procedure AddBildForm_Show;
   end;
 
-procedure Help2;
-
+procedure Help2;     
 procedure DepMethod;
+function GetVersion: string;
 
 var
   FormMain: TFormMain;
@@ -101,7 +104,7 @@ implementation
 uses
     FormTuningUnit,  CommonUnit,
    ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit, SelDepUnit, EditForm2Unit, EditEmplFormUnit,
-  DMUnit, DBDemoMainUnit;
+  DMUnit, DBDemoMainUnit, SpisokUnit;
 
 {$R *.dfm}
 
@@ -140,6 +143,7 @@ end;
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
   inherited;
+  Self.Caption := Self.Caption + GetVersion;
     //Application.CreateForm(TForm3, Form3);
     //Form2.ShowModale;
     //Form3.ShowModale;
@@ -297,6 +301,17 @@ begin
   NirForm_Show;
 end;
 
+procedure TFormMain.actSpisokExecute(Sender: TObject);
+begin
+  inherited;
+  SpisokMethod;
+end;
+
+procedure TFormMain.SpisokMethod;
+begin
+  SpisokForm_Show;
+end;
+
 procedure TFormMain.actTuning2Execute(Sender: TObject);
 begin
   inherited;
@@ -345,5 +360,28 @@ begin
   inherited;
   stat1.SimpleText := Application.Hint;
 end;
+
+
+function GetVersion: string;
+var VerInfoSize: DWORD;
+    VerInfo: Pointer;
+    VerValueSize: DWORD;
+    VerValue: PVSFixedFileInfo;
+    Dummy: DWORD;
+begin
+  VerInfoSize := GetFileVersionInfoSize(PChar(ParamStr(0)), Dummy);
+  GetMem(VerInfo, VerInfoSize);
+  GetFileVersionInfo(PChar(ParamStr(0)), 0, VerInfoSize, VerInfo);
+  VerQueryValue(VerInfo, '\', Pointer(VerValue), VerValueSize);
+  with VerValue^ do
+  begin
+    Result := IntToStr(dwFileVersionMS shr 16);
+    Result := Result + '.' + IntToStr(dwFileVersionMS and $FFFF);
+    Result := Result + '.' + IntToStr(dwFileVersionLS shr 16);
+    Result := Result + '.' + IntToStr(dwFileVersionLS and $FFFF);
+  end;
+  FreeMem(VerInfo, VerInfoSize);
+end;
+
 
 end.

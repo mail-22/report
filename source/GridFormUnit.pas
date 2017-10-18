@@ -26,7 +26,8 @@ uses
   dxSkinscxPCPainter, cxGridBandedTableView, cxGridDBBandedTableView,
   dxSkinsdxStatusBarPainter, dxStatusBar, JvAppEvent, ComCtrls,
   JvExComCtrls, JvStatusBar, cxPropertiesStore, CommonUnit, cxCurrencyEdit,
-  JvHint, JvBalloonHint, AppEvnts, cxDBExtLookupComboBox
+  JvHint, JvBalloonHint, AppEvnts, cxDBExtLookupComboBox, cxMemo,
+  cxDropDownEdit
   ;
 
 type
@@ -139,7 +140,6 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1Column10: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column11: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column12: TcxGridDBBandedColumn;
-    cxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn;
     cxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn;
     cxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
@@ -149,7 +149,6 @@ type
     cxdbvrtclgrd1DBEditorRow2: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1DBEditorRow3: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1DBEditorRow4: TcxDBEditorRow;
-    cxdbdtrwcxdbvrtclgrd1DBEditorRow5: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow;
     cxctgryrwcxdbvrtclgrd1CategoryRow4: TcxCategoryRow;
@@ -158,6 +157,8 @@ type
     aplctnvnts1: TApplicationEvents;
     jvblnhnt1: TJvBalloonHint;
     jvhnt1: TJvHint;
+    cxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn;
+    cxdbvrtclgrd1DBEditorRow3: TcxDBEditorRow;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);

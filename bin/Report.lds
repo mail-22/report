@@ -69,6 +69,10 @@ ActualFinish=ActualFinish
 SyncIDField=SyncIDField
 __SchedulerDBStorage_END=__SchedulerDBStorage_END
 dog_Predmet2=Предмет_
+dog_rekviz_str=Реквизиты договора_
+dog_rekviz_data=Реквизиты договора (дата)
+dog_basis_data=основание для договора реквизиты дата
+dog_basis_str=основание для договора реквизиты
 [tblDepart]
 id=№
 depart=Отдел

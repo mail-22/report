@@ -183,6 +183,10 @@ type
     tblReportFiltr2__SchedulerDBStorage_END: TIntegerField;
     tblReport2dog_Predmet2: TMemoField;
     tblDepartn: TStringField;
+    tblReport2dog_rekviz_str: TStringField;
+    tblReport2dog_rekviz_data: TDateTimeField;
+    tblReport2dog_basis_data: TStringField;
+    tblReport2dog_basis_str: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);
@@ -287,12 +291,11 @@ uses
 Function ChangeFileExt2(Patch: string): String;
 var inistr:string ;
 begin
-
 inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + SysUtils.ChangeFileExt(Application.ExeName,'')
   +'_Profile\';
 
 inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)
-  +'_Profile\';  
+  +'_Profile\';
 
 If NOT DirectoryExists(inistr) Then ForceDirectories(inistr);
 inistr := inistr +Patch+ ChangeFileExt(ExtractFileName(Application.ExeName), '.ini');

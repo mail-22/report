@@ -3,7 +3,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
   Top = 151
   Width = 1024
   Height = 756
-  Caption = 'EditGridJOleForm'
+  Caption = #1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1077' '#1092#1072#1081#1083#1099
   PixelsPerInch = 96
   TextHeight = 17
   object lbl1: TLabel [0]

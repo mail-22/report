@@ -446,23 +446,26 @@ end;
 procedure TEditGridJOleForm.Init();
 var
   i: integer;
+  var inistr:string ;
 begin
  //#ToDo2 Add сохранение насстроек у грида 
   BDDirPathName := ExtractFileDir(Application.ExeName) +'\'+ constBDname +'\';
   BDDirPathName := ExtractFileDir(dm.strConnection_Get) +'\'+ constBDname +'\';
 
   ExportPath := ExtractFileDir(Application.ExeName) +'\'+ constExportDir + '\';
+  inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)
+  +'_Profile\';
+  ExportPath := '';
+  ExportPath := inistr  +'\'+ constBDname +'\';
   if  DirectoryExists(ExportPath) then
   begin // проверить на наличие
   end //
   else
   begin
-     MessageDlg('нет папки: ' + ExportPath, mtWarning, [mbOK], 0);
-    // Now force it to create this directory
-     if ForceDirectories('ExportPath')
-     then ShowMessage('Добавление нового каталога прошло успешно')
-     else ShowMessage('Добавление нового каталога вызвало ошибку : '+
-                      IntToStr(GetLastError));
+     if ForceDirectories(ExportPath)
+     then begin  {ShowMessage('Добавление нового каталога прошло успешно') } end
+     else begin ShowMessage('Добавление нового каталога вызвало ошибку : '+
+                      IntToStr(GetLastError)); end
   end;
 
 

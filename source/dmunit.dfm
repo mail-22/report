@@ -4,7 +4,7 @@ object DM: TDM
   Left = 320
   Top = 281
   Height = 477
-  Width = 760
+  Width = 712
   object OpenDialog1: TOpenDialog
     DefaultExt = '*.mdb'
     Left = 90
@@ -505,10 +505,23 @@ object DM: TDM
       FieldName = 'dog_Zakazchik'
       Size = 255
     end
+    object tblReport2dog_Napravleniy: TDateTimeField
+      DisplayLabel = #1044#1072#1090#1072' '#1085#1072#1087#1088#1072#1074#1083#1077#1085#1080#1103' '#1047#1072#1082#1072#1079#1095#1080#1082#1091
+      FieldName = 'dog_Napravleniy'
+    end
     object tblReport2dog_Predmet: TStringField
       DisplayLabel = #1055#1088#1077#1076#1084#1077#1090
       FieldName = 'dog_Predmet'
       Size = 255
+    end
+    object tblReport2dog_Predmet2: TMemoField
+      DisplayLabel = #1055#1088#1077#1076#1084#1077#1090'_'
+      FieldName = 'dog_Predmet2'
+      BlobType = ftMemo
+    end
+    object tblReport2dog_Podpisan: TDateTimeField
+      DisplayLabel = #1044#1072#1090#1072' '#1087#1086#1076#1087#1080#1089#1072#1085#1080#1103
+      FieldName = 'dog_Podpisan'
     end
     object tblReport2dog_Primech: TStringField
       DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' - '#1087#1088#1080#1084#1077#1095#1072#1085#1080#1077
@@ -553,6 +566,12 @@ object DM: TDM
       FieldName = 'nir_plan'
       Size = 255
     end
+    object tblReport2nir_zayvka_file: TIntegerField
+      DisplayLabel = 
+        #1053#1048#1056' '#1079#1072#1103#1074#1082#1072' - '#1086#1073#1086#1089#1085#1086#1074#1072#1085#1080#1077'   - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080' '#1076#1086#1082#1091#1084#1077#1085#1090 +
+        ') - '#1092#1072#1081#1083' !'
+      FieldName = 'nir_zayvka_file'
+    end
     object tblReport2nir_zayvka: TStringField
       DisplayLabel = #1053#1048#1056' '#1079#1072#1103#1074#1082#1072' - '#1086#1073#1086#1089#1085#1086#1074#1072#1085#1080#1077
       FieldName = 'nir_zayvka'
@@ -590,20 +609,6 @@ object DM: TDM
         #1053#1048#1056' '#1072#1082#1090' '#1074#1085#1077#1076#1088#1077#1085#1080#1103'   - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080' '#1076#1086#1082#1091#1084#1077#1085#1090') - '#1092#1072#1081 +
         #1083' !'
       FieldName = 'nir_vnedrenie'
-    end
-    object tblReport2nir_zayvka_file: TIntegerField
-      DisplayLabel = 
-        #1053#1048#1056' '#1079#1072#1103#1074#1082#1072' - '#1086#1073#1086#1089#1085#1086#1074#1072#1085#1080#1077'   - '#1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072' ('#1079#1072#1075#1088#1091#1078#1077#1085' '#1083#1080' '#1076#1086#1082#1091#1084#1077#1085#1090 +
-        ') - '#1092#1072#1081#1083' !'
-      FieldName = 'nir_zayvka_file'
-    end
-    object tblReport2dog_Napravleniy: TDateTimeField
-      DisplayLabel = #1044#1072#1090#1072' '#1085#1072#1087#1088#1072#1074#1083#1077#1085#1080#1103' '#1047#1072#1082#1072#1079#1095#1080#1082#1091
-      FieldName = 'dog_Napravleniy'
-    end
-    object tblReport2dog_Podpisan: TDateTimeField
-      DisplayLabel = #1044#1072#1090#1072' '#1087#1086#1076#1087#1080#1089#1072#1085#1080#1103
-      FieldName = 'dog_Podpisan'
     end
     object tblReport2_SchedulerDBStorage_START: TStringField
       FieldName = '_SchedulerDBStorage_START'
@@ -673,10 +678,24 @@ object DM: TDM
     object tblReport2__SchedulerDBStorage_END: TIntegerField
       FieldName = '__SchedulerDBStorage_END'
     end
-    object tblReport2dog_Predmet2: TMemoField
-      DisplayLabel = #1055#1088#1077#1076#1084#1077#1090'_'
-      FieldName = 'dog_Predmet2'
-      BlobType = ftMemo
+    object tblReport2dog_rekviz_str: TStringField
+      DisplayLabel = #1056#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1075#1086#1074#1086#1088#1072'_'
+      FieldName = 'dog_rekviz_str'
+      Size = 50
+    end
+    object tblReport2dog_rekviz_data: TDateTimeField
+      DisplayLabel = #1056#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1075#1086#1074#1086#1088#1072' ('#1076#1072#1090#1072')'
+      FieldName = 'dog_rekviz_data'
+    end
+    object tblReport2dog_basis_data: TStringField
+      DisplayLabel = #1086#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072' '#1088#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1072#1090#1072
+      FieldName = 'dog_basis_data'
+      Size = 50
+    end
+    object tblReport2dog_basis_str: TStringField
+      DisplayLabel = #1086#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072' '#1088#1077#1082#1074#1080#1079#1080#1090#1099
+      FieldName = 'dog_basis_str'
+      Size = 50
     end
   end
   object tblReportFiltr2: TUniQuery

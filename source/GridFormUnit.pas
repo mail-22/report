@@ -159,6 +159,14 @@ type
     jvhnt1: TJvHint;
     cxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn;
     cxdbvrtclgrd1DBEditorRow3: TcxDBEditorRow;
+    cxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn;
+    cxdbvrtclgrd1DBEditorRow4: TcxDBEditorRow;
+    cxdbvrtclgrd1DBEditorRow5: TcxDBEditorRow;
+    cxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow;
+    cxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);

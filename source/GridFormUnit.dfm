@@ -1,9 +1,9 @@
 inherited GridForm: TGridForm
-  Left = -1588
-  Top = 104
+  Left = -274
+  Top = 81
   Width = 1456
   Height = 907
-  Caption = 'GridForm'
+  Caption = #1044#1086#1075#1086#1074#1086#1088#1099
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
@@ -142,13 +142,30 @@ inherited GridForm: TGridForm
             Index = 2
             Version = 1
           end
+          object cxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow
+            Properties.EditPropertiesClassName = 'TcxDateEditProperties'
+            Properties.DataBinding.FieldName = 'dog_basis_data'
+            ID = 40
+            ParentID = 4
+            Index = 0
+            Version = 1
+          end
+          object cxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow
+            Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
+            Properties.DataBinding.FieldName = 'dog_basis_str'
+            ID = 39
+            ParentID = 4
+            Index = 1
+            Version = 1
+          end
           object cxdbdtrwcxdbvrtclgrd1basis: TcxDBEditorRow
             Properties.Caption = #1056#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
             Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
             Properties.DataBinding.FieldName = 'basis'
+            Visible = False
             ID = 5
             ParentID = 4
-            Index = 0
+            Index = 2
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1basis_ffile: TcxDBEditorRow
@@ -157,7 +174,7 @@ inherited GridForm: TGridForm
             Properties.Options.Editing = False
             ID = 6
             ParentID = 4
-            Index = 1
+            Index = 3
             Version = 1
           end
           object cxctgryrwcxdbvrtclgrd1CategoryRow1: TcxCategoryRow
@@ -167,19 +184,37 @@ inherited GridForm: TGridForm
             Index = 3
             Version = 1
           end
-          object cxdbdtrwcxdbvrtclgrd1contract_name: TcxDBEditorRow
+          object cxdbvrtclgrd1DBEditorRow4: TcxDBEditorRow
             Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
-            Properties.DataBinding.FieldName = 'contract_name'
-            ID = 8
+            Properties.DataBinding.FieldName = 'dog_rekviz_str'
+            ID = 37
             ParentID = 7
             Index = 0
             Version = 1
           end
+          object cxdbvrtclgrd1DBEditorRow5: TcxDBEditorRow
+            Properties.EditPropertiesClassName = 'TcxDateEditProperties'
+            Properties.DataBinding.FieldName = 'dog_rekviz_data'
+            ID = 38
+            ParentID = 7
+            Index = 1
+            Version = 1
+          end
+          object cxdbdtrwcxdbvrtclgrd1contract_name: TcxDBEditorRow
+            Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
+            Properties.DataBinding.FieldName = 'contract_name'
+            Visible = False
+            ID = 8
+            ParentID = 7
+            Index = 2
+            Version = 1
+          end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow4: TcxDBEditorRow
+            Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
             Properties.DataBinding.FieldName = 'dog_Zakazchik'
             ID = 9
             ParentID = 7
-            Index = 1
+            Index = 3
             Version = 1
           end
           object cxdbvrtclgrd1DBEditorRow3: TcxDBEditorRow
@@ -188,14 +223,14 @@ inherited GridForm: TGridForm
             Properties.DataBinding.FieldName = 'dog_Predmet2'
             ID = 10
             ParentID = 7
-            Index = 2
+            Index = 4
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow
             Properties.DataBinding.FieldName = 'costofwork_F'
             ID = 11
             ParentID = 7
-            Index = 3
+            Index = 5
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1deadline: TcxDBEditorRow
@@ -203,14 +238,14 @@ inherited GridForm: TGridForm
             Properties.DataBinding.FieldName = 'deadline'
             ID = 12
             ParentID = 7
-            Index = 4
+            Index = 6
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow
             Visible = False
             ID = 13
             ParentID = 7
-            Index = 5
+            Index = 7
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1contract_execution_note: TcxDBEditorRow
@@ -219,7 +254,7 @@ inherited GridForm: TGridForm
             Visible = False
             ID = 14
             ParentID = 7
-            Index = 6
+            Index = 8
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1contract_execution_file: TcxDBEditorRow
@@ -238,14 +273,15 @@ inherited GridForm: TGridForm
             Properties.Options.Editing = False
             ID = 16
             ParentID = 7
-            Index = 7
+            Index = 9
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1DBEditorRow8: TcxDBEditorRow
+            Height = 19
             Properties.DataBinding.FieldName = 'dog_Primech'
             ID = 17
             ParentID = 7
-            Index = 8
+            Index = 10
             Version = 1
           end
           object cxdbdtrwcxdbvrtclgrd1contract_number: TcxDBEditorRow
@@ -253,7 +289,7 @@ inherited GridForm: TGridForm
             Visible = False
             ID = 18
             ParentID = 7
-            Index = 9
+            Index = 11
             Version = 1
           end
           object cxctgryrwcxdbvrtclgrd1CategoryRow2: TcxCategoryRow
@@ -366,6 +402,7 @@ inherited GridForm: TGridForm
             Version = 1
           end
           object cxdbvrtclgrd1DBEditorRow1: TcxDBEditorRow
+            Properties.EditPropertiesClassName = 'TcxMRUEditProperties'
             Properties.DataBinding.FieldName = 'act_acceptance'
             ID = 32
             ParentID = 31
@@ -598,6 +635,7 @@ inherited GridForm: TGridForm
             OptionsView.CellEndEllipsis = True
             OptionsView.DataRowHeight = 46
             OptionsView.GroupByBox = False
+            OptionsView.HeaderAutoHeight = True
             OptionsView.HeaderEndEllipsis = True
             OptionsView.BandHeaderEndEllipsis = True
             Bands = <
@@ -607,7 +645,7 @@ inherited GridForm: TGridForm
               end
               item
                 Caption = #1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072
-                Width = 147
+                Width = 275
               end
               item
                 Caption = #1044#1086#1075#1086#1074#1086#1088
@@ -626,11 +664,11 @@ inherited GridForm: TGridForm
                 Width = 333
               end>
             object cxgrdbndclmncxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn
-              Caption = #1056#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
+              Caption = #1056#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072' X'
               DataBinding.FieldName = 'basis'
               PropertiesClassName = 'TcxMRUEditProperties'
               Properties.ShowEllipsis = False
-              Width = 60
+              Width = 67
               Position.BandIndex = 1
               Position.ColIndex = 0
               Position.RowIndex = 0
@@ -639,7 +677,7 @@ inherited GridForm: TGridForm
               Caption = #1085#1072#1083#1080#1095#1080#1077' '#1092#1072#1081#1083#1072
               DataBinding.FieldName = 'basis_ffile'
               PropertiesClassName = 'TcxMRUEditProperties'
-              Width = 87
+              Width = 69
               Position.BandIndex = 1
               Position.ColIndex = 1
               Position.RowIndex = 0
@@ -662,25 +700,26 @@ inherited GridForm: TGridForm
             object cxgrdbndclmncxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn
               Caption = #1092#1072#1081#1083
               DataBinding.FieldName = 'contract_file'
-              Width = 41
+              Width = 37
               Position.BandIndex = 2
-              Position.ColIndex = 7
+              Position.ColIndex = 6
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn
+              Caption = #1088#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072' X'
               DataBinding.FieldName = 'contract_name'
               PropertiesClassName = 'TcxMRUEditProperties'
-              Width = 86
+              Width = 70
               Position.BandIndex = 2
-              Position.ColIndex = 0
+              Position.ColIndex = 10
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn
               DataBinding.FieldName = 'deadline'
               PropertiesClassName = 'TcxDateEditProperties'
-              Width = 108
+              Width = 79
               Position.BandIndex = 2
-              Position.ColIndex = 6
+              Position.ColIndex = 5
               Position.RowIndex = 0
             end
             object cxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn
@@ -711,16 +750,16 @@ inherited GridForm: TGridForm
               Visible = False
               Width = 74
               Position.BandIndex = 2
-              Position.ColIndex = 1
+              Position.ColIndex = 0
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column10: TcxGridDBBandedColumn
               DataBinding.FieldName = 'costofwork_F'
               PropertiesClassName = 'TcxCurrencyEditProperties'
               Properties.DisplayFormat = ',0.00 ;-,0.00 '
-              Width = 39
+              Width = 48
               Position.BandIndex = 2
-              Position.ColIndex = 4
+              Position.ColIndex = 3
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible: TcxGridDBBandedColumn
@@ -753,7 +792,7 @@ inherited GridForm: TGridForm
               Visible = False
               Width = 94
               Position.BandIndex = 2
-              Position.ColIndex = 5
+              Position.ColIndex = 4
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1payment_date: TcxGridDBBandedColumn
@@ -795,21 +834,21 @@ inherited GridForm: TGridForm
               Visible = False
               Width = 159
               Position.BandIndex = 2
-              Position.ColIndex = 8
+              Position.ColIndex = 7
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column12: TcxGridDBBandedColumn
               DataBinding.FieldName = 'dog_Zakazchik'
-              Width = 79
+              Width = 42
               Position.BandIndex = 2
-              Position.ColIndex = 2
+              Position.ColIndex = 1
               Position.RowIndex = 0
             end
             object cxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn
               DataBinding.FieldName = 'dog_Primech'
-              Width = 127
+              Width = 67
               Position.BandIndex = 2
-              Position.ColIndex = 9
+              Position.ColIndex = 11
               Position.RowIndex = 0
             end
             object cxgrdbndclmncxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn
@@ -829,7 +868,36 @@ inherited GridForm: TGridForm
             object cxgrd1DBBandedTableView1Column5: TcxGridDBBandedColumn
               DataBinding.FieldName = 'dog_Predmet2'
               PropertiesClassName = 'TcxMemoProperties'
+              Width = 40
               Position.BandIndex = 2
+              Position.ColIndex = 2
+              Position.RowIndex = 0
+            end
+            object cxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'dog_rekviz_str'
+              Width = 83
+              Position.BandIndex = 2
+              Position.ColIndex = 8
+              Position.RowIndex = 0
+            end
+            object cxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'dog_rekviz_data'
+              Width = 89
+              Position.BandIndex = 2
+              Position.ColIndex = 9
+              Position.RowIndex = 0
+            end
+            object cxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'dog_basis_data'
+              Width = 69
+              Position.BandIndex = 1
+              Position.ColIndex = 2
+              Position.RowIndex = 0
+            end
+            object cxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn
+              DataBinding.FieldName = 'dog_basis_str'
+              Width = 70
+              Position.BandIndex = 1
               Position.ColIndex = 3
               Position.RowIndex = 0
             end
@@ -854,9 +922,9 @@ inherited GridForm: TGridForm
           BorderStyle = bsSingle
           TabOrder = 1
           object cxDBNavigator3: TcxDBNavigator
-            Left = 213
+            Left = 259
             Top = 2
-            Width = 887
+            Width = 842
             Height = 23
             Buttons.CustomButtons = <>
             DataSource = DM.dsReport
@@ -866,7 +934,7 @@ inherited GridForm: TGridForm
           object pnl3: TPanel
             Left = 187
             Top = 2
-            Width = 26
+            Width = 72
             Height = 23
             Align = alLeft
             AutoSize = True

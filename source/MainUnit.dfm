@@ -1,6 +1,6 @@
 inherited FormMain: TFormMain
-  Left = 0
-  Top = 175
+  Left = 151
+  Top = 184
   Caption = #1091#1095#1077#1090' '#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089#1090#1080'   '
   Color = clGradientInactiveCaption
   Icon.Data = {

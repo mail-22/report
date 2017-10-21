@@ -15,7 +15,7 @@ uses
   DMUnit, OleCtnrs, DBOleContainer, ActnList, ToolWin, ActnMan, ActnCtrls,
   XPStyleActnCtrls, ExtDlgs, jpeg ,  ShellApi, dxSkinsCore,
   dxSkinOffice2007Blue, dxSkinscxPCPainter
-  ;
+  , CommonUnit;
 
 type
   TEditGridJpgForm = class(TBaseForm)
@@ -119,9 +119,9 @@ begin
 exit;
 
   if openDialog.Execute
-    then begin //ShowMessage('File : '+openDialog.FileName);
+    then begin //ShowMessage2('File : '+openDialog.FileName);
   end
-  else begin ShowMessage('Открытие файла остановлено');
+  else begin ShowMessage2('Открытие файла остановлено');
   end;
 
   FileName := openDialog.FileName;

@@ -723,7 +723,8 @@ begin
 {
   MessageString := 'Произошел конфликт! Данные на сервере уже изменены!' + #10 + #10;
   MessageString := 'Исходные данные <=> Попытка изменения <=> Данные на сервере' + #10 + #10;
-//ShowMessage(String(MessageString)); Exit;
+//
+Application.MessageBox(PAnsiChar('Все поля пусты!'), ' ', MB_OK + MB_ICONWARNING + MB_TOPMOST);(String(MessageString)); Exit;
   for i := 1 to DataSet.Recordset.Fields.Count - 1 do
   begin
    ////перебираем поля не с нуля а с 1 - нулевое поле - автоинкремент
@@ -735,7 +736,7 @@ begin
 
     DataSet.Recordset.Fields[i].Value := DataSet.Recordset.Fields[i].UnderlyingValue;
   end;
-  ShowMessage(string(MessageString));
+  ShowMessage2(string(MessageString));
 }
 end;
 
@@ -889,7 +890,9 @@ procedure TDM.Init;
 var
   i: Integer;
 begin
-
+  {
+  //ShowMessage2(' test  ');
+  }
   SetConnection;
 
   A := nil;
@@ -992,7 +995,7 @@ begin
     dm.tblReport2.filtered := true;
   end
   else
-    Showmessage('Все поля пусты!');
+    ShowMessage2('Все поля пусты!');
 
 end;
 
@@ -1050,4 +1053,5 @@ Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=D:\My Dropbox\Share\W
 {
 Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=C:\Dropbox\Share5\Work\d7\db1.mdb;Mode=Share Deny None;Persist Security Info=False;Jet OLEDB:System database="";Jet OLEDB:Registry Path="";Jet OLEDB:Database Password=1;Jet OLEDB:Engine Type=5;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Password="";Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Don't Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=False;
 }
+
 

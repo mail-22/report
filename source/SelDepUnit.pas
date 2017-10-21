@@ -81,13 +81,14 @@ begin
 
   // Показ диалог открытия файла
   if openDialog.Execute
-  then begin //ShowMessage('File : '+openDialog.FileName);
+  then begin
     edt1.text := DM.strConnection_Get;
   dm.strConnection_Set ( openDialog.FileName);
   IniFile.WriteString('ConnectionString', 'ConnectionString', dm.strConnection_Get);
   edt1.text := dm.strConnection_Get;
   end
-  else begin ShowMessage('Открытие файла остановлено');
+  else begin 
+   Application.MessageBox('Открытие файла остановлено:', ' ', MB_OK + MB_ICONWARNING + MB_TOPMOST);
   end;
 
 

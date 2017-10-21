@@ -49,6 +49,8 @@ function Float2Str(Value: Extended): string; overload;
 function Str2Float(const S: string): Extended; overload;
 function TempDir: string;
 
+procedure ShowMessage2(const Msg: string);
+
 var
   xls_template_FileName  : string;
 
@@ -315,6 +317,13 @@ begin
 
   Result := dTmt;
 end; //Str2Float
+
+procedure ShowMessage2(const Msg: string);
+begin
+  // TODO -cMM: ShowMessage2 default body inserted
+  Application.MessageBox(PAnsiChar( Msg ), ' ', MB_OK + MB_ICONWARNING + MB_TOPMOST);
+end;
+
 ////////////////////////////////////////////////////////////////////////////////////////
 
 

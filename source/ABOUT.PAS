@@ -111,7 +111,7 @@ begin
   try
     label1.Caption:= '' ;
     v := CreateOleObject ( 'ADODB.Connection' );
-    //ShowMessage ( v.Version );
+    //ShowMessage2 ( v.Version );
     label1.Caption:= v.Version;
     ADOMemo.Clear;ADOMemo.Lines.Add('На front-end computer установлена ADO версии: '+v.Version);
   except  ;

@@ -513,7 +513,7 @@ const
   Note = 'Note: Printing functionality for the ExpressScheduler is only available if you own a copy of' + #13#10 +
     'the ExpressPrinting System, which is sold separately.';
 begin
-  ShowMessage(Note);
+  ShowMessage2(Note);
   ReportLink.Preview();
 end;
 

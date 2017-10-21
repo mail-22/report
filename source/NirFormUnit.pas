@@ -15,7 +15,7 @@ uses
   cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid, cxVGrid,
   cxDBVGrid, cxInplaceContainer, cxSplitter, ExtCtrls, StdCtrls, ToolWin,
   ActnMan, ActnCtrls, ActnMenus, dxStatusBar, XPStyleActnCtrls, ActnList,
-  cxPropertiesStore,GridFormUnit, CommonUnit;
+  cxPropertiesStore,GridFormUnit, CommonUnit, cxMemo;
 
 type
   TNirForm = class(TBaseForm)
@@ -294,8 +294,9 @@ begin
     // откатываем транзакцию в случае ошибки
     begin
       dm.UniTransaction1.Rollback;
-     // dm.ADOConnection1.RollbackTrans();  !!!
-      ShowMessage(E.ClassName + ' db error: ' + E.Message);
+     // dm.ADOConnection1.RollbackTrans();  !!! 
+         Application.MessageBox(PAnsiChar(E.ClassName + ' db error: ' + E.Message), ' ', MB_OK +
+     MB_ICONWARNING + MB_TOPMOST);
     end;
   end;
   finally
@@ -348,7 +349,7 @@ begin
     begin
       dm.UniTransaction1.Rollback;
      // dm.ADOConnection1.RollbackTrans();  !!!
-      ShowMessage(E.ClassName + ' db error: ' + E.Message);
+         Application.MessageBox(PAnsiChar(E.ClassName + ' db error: ' + E.Message), ' ', MB_OK + MB_ICONWARNING + MB_TOPMOST);
     end;
   end;
   finally
@@ -395,8 +396,7 @@ Exit;
     dm.tblReport2.filtered := true;
   end
   else
-    Showmessage('Все поля пусты!');
-
+    Application.MessageBox(PAnsiChar('Все поля пусты!'), ' ', MB_OK + MB_ICONWARNING + MB_TOPMOST);
 end;
 
 procedure TNirForm.GridFormactAddExecute(Sender: TObject);

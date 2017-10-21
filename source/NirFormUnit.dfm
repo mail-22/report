@@ -1,15 +1,15 @@
 inherited NirForm: TNirForm
   Left = -1841
   Top = 167
-  Width = 1754
+  Width = 1456
   Caption = 'NirForm'
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 17
   object dxstsbr1: TdxStatusBar [0]
     Left = 0
-    Top = 553
-    Width = 1746
+    Top = 541
+    Width = 1440
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET
@@ -21,14 +21,14 @@ inherited NirForm: TNirForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1746
+    Width = 1440
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -39,15 +39,15 @@ inherited NirForm: TNirForm
   object pnlGrid: TPanel [2]
     Left = 0
     Top = 26
-    Width = 1746
-    Height = 527
+    Width = 1440
+    Height = 515
     Align = alClient
     AutoSize = True
     TabOrder = 2
     object Label1: TLabel
       Left = 1
       Top = 1
-      Width = 1744
+      Width = 1438
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -60,27 +60,27 @@ inherited NirForm: TNirForm
     end
     object pnlBBB: TPanel
       Left = 1
-      Top = 515
-      Width = 1744
+      Top = 503
+      Width = 1438
       Height = 11
       Align = alBottom
       TabOrder = 0
       Visible = False
     end
     object cxspltr1: TcxSplitter
-      Left = 1567
+      Left = 1261
       Top = 14
       Width = 8
-      Height = 501
+      Height = 489
       HotZoneClassName = 'TcxMediaPlayer8Style'
       AlignSplitter = salRight
       Control = pnlR
     end
     object pnlR: TPanel
-      Left = 1575
+      Left = 1269
       Top = 14
       Width = 170
-      Height = 501
+      Height = 489
       Align = alRight
       TabOrder = 2
       Visible = False
@@ -103,7 +103,7 @@ inherited NirForm: TNirForm
         Left = 1
         Top = 14
         Width = 168
-        Height = 486
+        Height = 474
         Align = alClient
         DragCursor = crDrag
         Font.Charset = DEFAULT_CHARSET
@@ -332,15 +332,15 @@ inherited NirForm: TNirForm
     object pnlL: TPanel
       Left = 1
       Top = 14
-      Width = 1566
-      Height = 501
+      Width = 1260
+      Height = 489
       Align = alClient
       Caption = 'pnlL'
       TabOrder = 3
       object lbl1: TLabel
         Left = 1
         Top = 1
-        Width = 1564
+        Width = 1258
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -355,8 +355,8 @@ inherited NirForm: TNirForm
       object cxgrd2: TcxGrid
         Left = 1
         Top = 14
-        Width = 1564
-        Height = 455
+        Width = 1258
+        Height = 443
         Align = alClient
         BevelInner = bvLowered
         BevelKind = bkSoft
@@ -669,8 +669,8 @@ inherited NirForm: TNirForm
       end
       object pnl_Navigator1: TPanel
         Left = 1
-        Top = 469
-        Width = 1564
+        Top = 457
+        Width = 1258
         Height = 31
         Align = alBottom
         BevelInner = bvLowered
@@ -680,7 +680,7 @@ inherited NirForm: TNirForm
         object cxDBNavigator3: TcxDBNavigator
           Left = 259
           Top = 2
-          Width = 1292
+          Width = 992
           Height = 23
           Buttons.CustomButtons = <>
           DataSource = DM.dsReport

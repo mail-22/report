@@ -155,7 +155,7 @@ const
 implementation
 
 uses
-  FileUnit;
+  FileUnit, CommonUnit;
 
 {$R *.dfm}
 
@@ -202,11 +202,11 @@ begin
 
   // Показ диалог открытия файла
   if openDialog.Execute then
-  begin //ShowMessage('File : '+openDialog.FileName);
+  begin //ShowMessage2('File : '+openDialog.FileName);
   end
   else
   begin
-    ShowMessage('Открытие файла остановлено');
+    ShowMessage2('Открытие файла остановлено');
     Exit;
   end;
 
@@ -463,8 +463,8 @@ begin
   else
   begin
      if ForceDirectories(ExportPath)
-     then begin  {ShowMessage('Добавление нового каталога прошло успешно') } end
-     else begin ShowMessage('Добавление нового каталога вызвало ошибку : '+
+     then begin  {ShowMessage2('Добавление нового каталога прошло успешно') } end
+     else begin ShowMessage2('Добавление нового каталога вызвало ошибку : '+
                       IntToStr(GetLastError)); end
   end;
 

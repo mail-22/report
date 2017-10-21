@@ -307,7 +307,7 @@ begin
     begin
       dm.UniTransaction1.Rollback;
      // dm.ADOConnection1.RollbackTrans();  !!!
-      ShowMessage(E.ClassName + ' db error: ' + E.Message);
+      ShowMessage2(E.ClassName + ' db error: ' + E.Message);
     end;
   end;
   finally
@@ -366,7 +366,7 @@ begin
     begin
       dm.UniTransaction1.Rollback;
      // dm.ADOConnection1.RollbackTrans();  !!!
-      ShowMessage(E.ClassName + ' db error: ' + E.Message);
+      ShowMessage2(E.ClassName + ' db error: ' + E.Message);
     end;
   end;
   finally
@@ -415,7 +415,7 @@ Exit;
     dm.tblReport2.filtered := true;
   end
   else
-    Showmessage('Все поля пусты!');
+    ShowMessage2('Все поля пусты!');
 
 end;
 

@@ -255,11 +255,11 @@ end;
 procedure ExportXLSPrepare();
 begin
   if not IsOLEObjectInstalled('Excel.Application') then
-    ShowMessage(
+    ShowMessage2(
       'Класс не зарегистрирован'
       )
   else
-    ShowMessage(
+    ShowMessage2(
       'Класс найден'
       );
 end;

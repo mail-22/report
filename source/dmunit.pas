@@ -160,33 +160,17 @@ type
     tblReportFiltr2dog_Predmet: TStringField;
     tblReportFiltr2dog_Napravleniy: TDateTimeField;
     tblReportFiltr2dog_Podpisan: TDateTimeField;
-    tblReportFiltr2_SchedulerDBStorage_START: TStringField;
-    tblReportFiltr2_ID: TIntegerField;
-    tblReportFiltr2ParentID: TIntegerField;
-    tblReportFiltr2Type: TIntegerField;
-    tblReportFiltr2Start: TDateTimeField;
-    tblReportFiltr2Finish: TDateTimeField;
-    tblReportFiltr2Options: TIntegerField;
-    tblReportFiltr2Caption: TStringField;
-    tblReportFiltr2RecurrenceIndex: TIntegerField;
-    tblReportFiltr2RecurrenceInfo: TBlobField;
-    tblReportFiltr2ResourceID: TBlobField;
-    tblReportFiltr2Location: TStringField;
-    tblReportFiltr2Message: TStringField;
-    tblReportFiltr2ReminderDate: TDateTimeField;
-    tblReportFiltr2ReminderMinutes: TIntegerField;
-    tblReportFiltr2State: TIntegerField;
-    tblReportFiltr2LabelColor: TIntegerField;
-    tblReportFiltr2ActualStart: TDateTimeField;
-    tblReportFiltr2ActualFinish: TDateTimeField;
-    tblReportFiltr2SyncIDField: TStringField;
-    tblReportFiltr2__SchedulerDBStorage_END: TIntegerField;
     tblReport2dog_Predmet2: TMemoField;
     tblDepartn: TStringField;
     tblReport2dog_rekviz_str: TStringField;
     tblReport2dog_rekviz_data: TDateTimeField;
     tblReport2dog_basis_data: TStringField;
     tblReport2dog_basis_str: TStringField;
+    tblReportFiltr2dog_Predmet2: TMemoField;
+    tblReportFiltr2dog_rekviz_data: TDateTimeField;
+    tblReportFiltr2dog_rekviz_str: TStringField;
+    tblReportFiltr2dog_basis_data: TStringField;
+    tblReportFiltr2dog_basis_str: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);
@@ -261,9 +245,6 @@ type
     const Reason: TEventReason; const RecordCount: Integer;
     var EventStatus: TEventStatus);
 
-Function GetApplicationDataFolder :string;
-Function ChangeFileExt2(Patch: string):string;
-
 var
   DM: TDM;
 
@@ -287,36 +268,6 @@ uses
 {$R *.dfm}
 
 //var  strConnection:string;
-
-Function ChangeFileExt2(Patch: string): String;
-var inistr:string ;
-begin
-inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + SysUtils.ChangeFileExt(Application.ExeName,'')
-  +'_Profile\';
-
-inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)
-  +'_Profile\';
-
-If NOT DirectoryExists(inistr) Then ForceDirectories(inistr);
-inistr := inistr +Patch+ ChangeFileExt(ExtractFileName(Application.ExeName), '.ini');
-result := inistr;
-end;
-
-// ¬озвращает путь "Document and Settings" дл€ текущего пользовател€
-Function GetApplicationDataFolder: String;
-Var
-  RegIniFile : TRegIniFile;  strTmp:string ;
-Begin
-  Result := '';
-  Try
-    RegIniFile := TRegIniFile.Create;
-    strTmp:=  RegIniFile.ReadString('Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders',
-                                    'Local AppData', '');
-    Result := strTmp;
-  finally
-    FreeAndNil(RegIniFile);
-  end;
-End;
 
 procedure TDM.tblBildingAfterInsert(DataSet: TDataSet);
 begin

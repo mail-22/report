@@ -1,6 +1,6 @@
 inherited SpisokForm: TSpisokForm
-  Left = 272
-  Top = 205
+  Left = -468
+  Top = 96
   Width = 1280
   Height = 768
   HorzScrollBar.Visible = False
@@ -21,7 +21,7 @@ inherited SpisokForm: TSpisokForm
   object pnlH: TPanel [1]
     Left = 0
     Top = 27
-    Width = 1272
+    Width = 1264
     Height = 41
     Align = alTop
     Caption = 'pnlH'
@@ -29,7 +29,7 @@ inherited SpisokForm: TSpisokForm
     object mmo1: TMemo
       Left = 1
       Top = 1
-      Width = 1270
+      Width = 1262
       Height = 39
       Align = alClient
       Alignment = taCenter
@@ -41,27 +41,27 @@ inherited SpisokForm: TSpisokForm
   object acttb1: TActionToolBar [2]
     Left = 0
     Top = 0
-    Width = 1272
+    Width = 1264
     Height = 27
     ActionManager = actmgr1
     Caption = 'acttb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Spacing = 0
   end
   object pnl_LR: TPanel [3]
     Left = 0
     Top = 68
-    Width = 1272
-    Height = 673
+    Width = 1264
+    Height = 661
     Align = alClient
     Caption = 'pnl_LR'
     TabOrder = 2
     object jvntscpspltr1: TJvNetscapeSplitter
       Left = 369
       Top = 1
-      Height = 640
+      Height = 628
       Align = alLeft
       Maximized = False
       Minimized = False
@@ -71,7 +71,7 @@ inherited SpisokForm: TSpisokForm
       Left = 1
       Top = 1
       Width = 368
-      Height = 640
+      Height = 628
       Align = alLeft
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -90,7 +90,7 @@ inherited SpisokForm: TSpisokForm
         Left = 2
         Top = 43
         Width = 364
-        Height = 595
+        Height = 583
         Align = alClient
         TabOrder = 1
         object pnlData1: TPanel
@@ -266,8 +266,8 @@ inherited SpisokForm: TSpisokForm
     object pnlL: TPanel
       Left = 379
       Top = 1
-      Width = 892
-      Height = 640
+      Width = 884
+      Height = 628
       Align = alClient
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -276,7 +276,7 @@ inherited SpisokForm: TSpisokForm
       object lbl3: TLabel
         Left = 2
         Top = 2
-        Width = 888
+        Width = 880
         Height = 18
         Align = alTop
         Alignment = taCenter
@@ -291,8 +291,8 @@ inherited SpisokForm: TSpisokForm
       object cxGrid2: TcxGrid
         Left = 2
         Top = 20
-        Width = 888
-        Height = 618
+        Width = 880
+        Height = 606
         Align = alClient
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
@@ -325,6 +325,7 @@ inherited SpisokForm: TSpisokForm
           OptionsBehavior.ImmediateEditor = False
           OptionsBehavior.IncSearch = True
           OptionsBehavior.NavigatorHints = True
+          OptionsCustomize.ColumnHiding = True
           OptionsView.CellEndEllipsis = True
           OptionsView.ColumnAutoWidth = True
           OptionsView.Footer = True
@@ -423,8 +424,8 @@ inherited SpisokForm: TSpisokForm
     end
     object pnl_Navigator1: TPanel
       Left = 1
-      Top = 641
-      Width = 1270
+      Top = 629
+      Width = 1262
       Height = 31
       Align = alBottom
       BevelInner = bvLowered
@@ -432,7 +433,7 @@ inherited SpisokForm: TSpisokForm
       BorderStyle = bsSingle
       TabOrder = 2
       object cxdbnvgtr1: TcxDBNavigator
-        Left = 261
+        Left = 216
         Top = 2
         Width = 872
         Height = 23
@@ -444,7 +445,7 @@ inherited SpisokForm: TSpisokForm
       object pnl3: TPanel
         Left = 187
         Top = 2
-        Width = 74
+        Width = 29
         Height = 23
         Align = alLeft
         AutoSize = True
@@ -452,7 +453,7 @@ inherited SpisokForm: TSpisokForm
         object jvdbstslbl2: TJvDBStatusLabel
           Left = 1
           Top = 3
-          Width = 72
+          Width = 27
           Height = 17
           DataSource = dsReportFiltr
           Style = lsRecordNo

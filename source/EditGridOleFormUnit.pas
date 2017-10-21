@@ -98,6 +98,7 @@ type
     procedure act_nir_tzExecute(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnOKClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     procedure AddAnyDocMethod(Sender: TObject);
     procedure OLE2File(OleContainer: TOleContainer; DataSet: TDataSet;
@@ -272,6 +273,7 @@ begin //ds := DM.BLOB;   //OleContainer := XMLForm.XMLFrame1.DBOleContainer1;
   ms.Free; //fs.Free;
 end; //File2OLE
 
+ 
 procedure TEditGridJOleForm.acAddContractExecute(Sender: TObject);
 begin
   inherited;
@@ -447,16 +449,16 @@ procedure TEditGridJOleForm.Init();
 var
   i: integer;
   var inistr:string ;
+  tmpStr   :string ;
 begin
- //#ToDo2 Add сохранение насстроек у грида 
-  BDDirPathName := ExtractFileDir(Application.ExeName) +'\'+ constBDname +'\';
+ //#ToDo2 Add сохранение насстроек у грида
+ 
   BDDirPathName := ExtractFileDir(dm.strConnection_Get) +'\'+ constBDname +'\';
-
   ExportPath := ExtractFileDir(Application.ExeName) +'\'+ constExportDir + '\';
   inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)
   +'_Profile\';
   ExportPath := '';
-  ExportPath := inistr  +'\'+ constBDname +'\';
+  ExportPath := inistr  +'\'+ constExportDir +'\';
   if  DirectoryExists(ExportPath) then
   begin // проверить на наличие
   end //
@@ -468,19 +470,15 @@ begin
                       IntToStr(GetLastError)); end
   end;
 
-
   //'ConnectionString'
   DataSet := DM.tblJpg;
 
-  //MRU
-  MRUEdit_rubricator := ExtractFilePath(Application.ExeName) + Self.Name + '.' +
-    'MRUEdit.rubricator_F.txt';
-  MRUEdit_rubricator := ExtractFilePath(Application.ExeName) +
-    'MRUEdit.rubricator_F.txt';
+//MRU
+  tmpStr :=  '!_' + Self.Name+ '_' + 'cxgrdbclmn_Type_MRU'+ '_';
+  MRUEdit_rubricator :=  ChangeFileExt2(tmpStr);
   //
   if FileExists(MRUEdit_rubricator) then
   begin // проверить на наличие свойства MRU у пол€ !!!
-
     TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.LoadFromFile(MRUEdit_rubricator);
     TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.Text; //
   end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
@@ -488,8 +486,7 @@ begin
   begin
   end;
 
-  // tTypeOfDoc = (Basic=1, Contract, Invoice, Performance, Act, Contract_Execution);
-
+// tTypeOfDoc = (Basic=1, Contract, Invoice, Performance, Act, Contract_Execution);
   i := High(vDoc);
   i := Length(vDoc);
   SetLength(vDoc, Length(vDoc) + 1);
@@ -524,9 +521,7 @@ begin
 
   cDoc[nir_act].TypeOfDoc :=  nir_act;
   cDoc[nir_act].strTypeOfDoc := 'Ќ»– јкты';
-
-
-end;
+end; //Init
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -571,7 +566,20 @@ begin
   ShellApi.ShellExecute(EditGridJOleForm.Handle, 'open', Pchar(ExportFilePath), nil, nil, SW_RESTORE);
 end;
 
+procedure TEditGridJOleForm.FormClose(Sender: TObject; var Action:
+    TCloseAction);
+begin
+  inherited;
+  if True {FileExists(MRUEdit_rubricator)} then
+  begin // проверить на наличие свойства MRU у пол€ !!!
+    TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.SaveToFile(MRUEdit_rubricator);
+    TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.Text; //
+  end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
+  else
+  begin
+  end;
 
+end;          
 
 procedure TEditGridJOleForm.MakeUniqName;
 var
@@ -583,13 +591,6 @@ var
 
   guid: tguid;
 begin
-  // TODO -cMM: TEditGridJOleForm.MakeUniqName default body inserted
-
-//begin
-//  nTempNumber := Windows.GetTempFileName(PChar(BDDirPathName), '_prefix_', 0, strTempFile);
-//  FileNamePathUniq := strTempFile ;
-//end;
-
   Createguid(guid);
   FileNamePathUniq := BDDirPathName + GUIDToString(guid);
 

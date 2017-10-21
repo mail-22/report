@@ -119,6 +119,9 @@ type
     procedure FormShow(Sender: TObject);
   private
     { Private declarations }
+  protected
+    FileName_cxGrid2DBTableView1 :string;
+    tmpStr :string;
   public
     procedure cxLocalizerMethod(Sender: TObject);
     procedure cxPropertiesStoreMethod(Sender: TObject);
@@ -135,7 +138,7 @@ var
 
 implementation
 
-uses FormJPGUnit, FormRTFUnit, DMUnit, ExportXLSFormUnit, GridFormUnit
+uses FormJPGUnit, FormRTFUnit, DMUnit, ExportXLSFormUnit, GridFormUnit , CommonUnit
 ;
 
 {$R *.dfm}
@@ -154,6 +157,12 @@ chkAll.State := cbChecked;
 
 //дата выполнения 
 //performance_of_work_date
+
+
+
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxGrid2DBTableView1'+ '_';
+  FileName_cxGrid2DBTableView1 :=  ChangeFileExt2(tmpStr);
+  cxGrid2DBTableView1.RestoreFromIniFile(FileName_cxGrid2DBTableView1);
   
 end;
 
@@ -177,9 +186,8 @@ end;
 procedure TSpisokForm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
-
-  cxprprtstr1.StoreTo(True);
-
+  cxGrid2DBTableView1.StoreToIniFile(FileName_cxGrid2DBTableView1, true);
+  cxprprtstr1.StoreTo(True);      
 end;
 
 
@@ -356,15 +364,26 @@ begin
   strSQL.Text := 'SELECT * FROM r1 WHERE '+
     ' "responsible" LIKE :responsible AND '+
     ' "department"  LIKE :department AND '+
-    ' "deadline" BETWEEN :in AND :end ' ;
+    ' "deadline" BETWEEN :inDate AND :endDate ' ;
 
+  strSQL.Text := 'SELECT * FROM r1 WHERE '+
+    ' "responsible" LIKE :responsible AND '+
+    ' "department"  LIKE :department AND '+
+    ' (( "deadline" > :inDate AND ' + ' "deadline" < :endDate ) OR ("deadline" is NULL ) )' ;
+{
+SELECT * FROM r1 WHERE + "responsible" LIKE :responsible AND +
+     "department"  LIKE :department AND +
+     "deadline" BETWEEN :inDate AND :endDate  ;
+}
 //дата выполнения 
 //performance_of_work_date
+
 
   dataset.SQL.Clear;
   dataset.Params.Clear;
 
   DataSet.SQL := strSQL;
+
 
   DepDefaultID := DM.intgrfld1.AsInteger;
   SelDepUnit.DepDefaultName := DM.strngfldunqry1depart.AsString;
@@ -382,12 +401,12 @@ begin
   EmplName:= edt1.Text;
   dataset.ParamByName('responsible').Value := EmplName + '%';
   dataset.ParamByName('department').Value := strDepDefaultID +'%';
-  dataset.ParamByName('in').Value  := Date1;
-  dataset.ParamByName('end').Value := Date2;
+  dataset.ParamByName('inDate').AsDate  := Date1;
+  dataset.ParamByName('endDate').AsDate := Date2;
   DataSet.Active:=True;
 
   DataSet.Close;
-  DataSet.Open;       
+  DataSet.Open;
 end;
 
 

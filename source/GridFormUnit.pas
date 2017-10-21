@@ -441,6 +441,10 @@ DM.tblReport2.FindLast;
 
   //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
   MRUEdit_responsible := ExtractFilePath(Application.ExeName) +Self.Name+ '.' + 'MRUEdit.responsible.txt';
+
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible'+ '_';
+  MRUEdit_responsible :=  ChangeFileExt2(tmpStr);
+
   //MRUEdit_responsible := ExtractFilePath(Application.ExeName) + 'MRUEdit.responsible.txt';
   if FileExists(MRUEdit_responsible) then
   begin // проверить на наличие свойства MRU у поля !!!
@@ -465,12 +469,6 @@ begin
   cxprprtstr1.StoreTo(True);
 
   //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
-  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name + '.'
-    +
-    'MRUEdit.responsible.txt';
-  MRUEdit_responsible := ExtractFilePath(Application.ExeName) +
-    'MRUEdit.responsible.txt';
-  //
 //if FileExists(MRUEdit_responsible) then
   if True then
   begin // проверить на наличие свойства MRU у поля !!!

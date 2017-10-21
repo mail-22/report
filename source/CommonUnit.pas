@@ -51,6 +51,11 @@ function TempDir: string;
 
 procedure ShowMessage2(const Msg: string);
 
+
+Function GetApplicationDataFolder :string;
+Function ChangeFileExt2(Patch: string):string;
+Function GetProfileFolder(): String;
+
 var
   xls_template_FileName  : string;
 
@@ -85,6 +90,7 @@ implementation
 
 uses Dialogs
   , Windows
+  , Registry
       //, JvFileUtil
       //,JvJVCLUtils
   , JvJCLUtils
@@ -92,6 +98,44 @@ uses Dialogs
   ;
 
 {$R *.dfm}
+
+
+Function ChangeFileExt2(Patch: string): String;
+var inistr:string ;
+begin
+inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + SysUtils.ChangeFileExt(Application.ExeName,'')  +'_Profile\';
+inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)  +'_Profile\';
+
+If NOT DirectoryExists(inistr) Then ForceDirectories(inistr);
+  inistr := inistr +Patch+ ChangeFileExt(ExtractFileName(Application.ExeName), '.ini');
+  result := inistr;
+end;
+
+Function GetProfileFolder(): String;
+var inistr:string ;
+begin
+inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + SysUtils.ChangeFileExt(Application.ExeName,'')  +'_Profile\';
+inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)  +'_Profile\';
+
+If NOT DirectoryExists(inistr) Then ForceDirectories(inistr);
+  result := inistr;
+end;
+
+// Возвращает путь "Document and Settings" для текущего пользователя
+Function GetApplicationDataFolder: String;
+Var
+  RegIniFile : Registry.TRegIniFile;  strTmp:string ;
+Begin
+  Result := '';
+  Try
+    RegIniFile := Registry.TRegIniFile.Create;
+    strTmp:=  RegIniFile.ReadString('Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders',
+                                    'Local AppData', '');
+    Result := strTmp;
+  finally
+    FreeAndNil(RegIniFile);
+  end;
+End;
 
 function TempDir: string;
 {функция возвращает путь к папке временных файлов}

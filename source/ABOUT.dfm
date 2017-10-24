@@ -150,7 +150,7 @@ object AboutForm: TAboutForm
     Width = 68
     Height = 51
     Animate = True
-    FrameIndex = 8
+    FrameIndex = 4
     Image.Data = {
       F117000047494638396144003200C41E0004050639003167090A735210101465
       47086B6566669F0403F20202946918C64239A20B688F6E44C65252B58429C68C
@@ -408,7 +408,7 @@ object AboutForm: TAboutForm
     Color = 16776176
     ReadOnly = True
     TabOrder = 7
-    Text = 'vniipo@ctinet.ru'
+    Text = 'opbt@igps.ru'
     OnClick = edMailtoClick
   end
   object Panel2: TPanel
@@ -520,7 +520,7 @@ object AboutForm: TAboutForm
       Width = 74
       Height = 67
       Animate = True
-      FrameIndex = 6
+      FrameIndex = 26
       Image.Data = {
         0EE100004749463839614A004300D50000000000000810101830182040081020
         0808082020203030304848485050505058585858584040402030582838681828

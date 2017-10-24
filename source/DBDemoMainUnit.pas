@@ -228,7 +228,7 @@ begin
       end;
       continue; //
     end;
-    if (pd < dt0) then
+    if (pd > dt0) then
     begin
       OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clGreen;
@@ -237,7 +237,7 @@ begin
          cxSchedulerEvent.Post;
       end;
     end;
-    if (pd > dt0) then
+    if (pd < dt0) then
     begin
       OldColor := cxSchedulerEvent.LabelColor;
       cxSchedulerEvent.LabelColor := clRed;

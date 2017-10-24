@@ -75,6 +75,7 @@ object DemoBasicMainForm: TDemoBasicMainForm
           'Your controls can be placed '
           'here')
         TabOrder = 0
+        Visible = False
       end
     end
   end

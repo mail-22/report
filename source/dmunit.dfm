@@ -366,6 +366,8 @@ object DM: TDM
     Connection = UniConnection1
     SQL.Strings = (
       'SELECT * FROM r1 ;')
+    BeforePost = tblReport2BeforePost
+    AfterPost = tblReport2AfterPost
     OnNewRecord = tblReport2NewRecord
     Left = 224
     Top = 40

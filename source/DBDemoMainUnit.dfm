@@ -33,7 +33,6 @@ inherited DBDemoMainForm: TDBDemoMainForm
       inherited Memo1: TMemo
         Height = 120
         TabOrder = 1
-        Visible = False
       end
       object cxGroupBox1: TcxGroupBox
         Left = 0
@@ -51,6 +50,7 @@ inherited DBDemoMainForm: TDBDemoMainForm
           Width = 122
           Height = 22
           Caption = 'Generate 5000 events'
+          Enabled = False
           TabOrder = 0
           OnClick = cxButton1Click
         end
@@ -181,6 +181,7 @@ inherited DBDemoMainForm: TDBDemoMainForm
         FieldName = 'SyncIDField'
       end>
     DataSource = DM.dsReport
+    FieldNames.ActualFinish = 'deadline'
     FieldNames.Caption = 'responsible'
     FieldNames.EventType = 'Type'
     FieldNames.Finish = 'deadline'
@@ -189,9 +190,8 @@ inherited DBDemoMainForm: TDBDemoMainForm
     FieldNames.Location = 'DepartL'
     FieldNames.Message = 'type_task_str'
     FieldNames.Options = 'Options'
-    FieldNames.ReminderDate = 'performance_of_work_date'
+    FieldNames.ReminderDate = 'deadline'
     FieldNames.ResourceID = 'ResourceID'
-    FieldNames.Start = 'deadline'
     Left = 200
     Top = 80
   end

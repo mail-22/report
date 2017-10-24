@@ -73,6 +73,9 @@ ChartBMPFileName: string;
   IniFileName: string;
   IniFile: TIniFile; //GetWindowsDir
 
+IniLocalFileName: string;
+IniLocalFile: TIniFile;
+
   LngINISupp_FileName: string;
 
   TempDirName: string;
@@ -179,6 +182,9 @@ var
   i: integer;
 begin
   Init;
+
+  IniLocalFileName :=  GetProfileFolder + ChangeFileExt(ExtractFileName(Application.ExeName), '.ini');
+  IniLocalFile := TIniFile.Create(IniLocalFileName);
 
   IniFileName := ChangeFileExt(Application.ExeName, '.ini');
   //IniFileName := JvJCLUtils.GetWindowsDir +'\'+ ChangeFileExt(ExtractFileName(Application.ExeName), '.ini');

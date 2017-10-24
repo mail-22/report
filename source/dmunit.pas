@@ -186,6 +186,8 @@ type
     procedure tblBildingAfterInsert(DataSet: TDataSet);
     procedure tblJpgAfterInsert(DataSet: TDataSet);
     procedure tblJpgAfterPost(DataSet: TDataSet);
+    procedure tblReport2AfterPost(DataSet: TDataSet);
+    procedure tblReport2BeforePost(DataSet: TDataSet);
     procedure tblReport2NewRecord(DataSet: TDataSet);
 
   private
@@ -956,11 +958,11 @@ var
 begin
   inherited;
   strTmp := '-1';
-  strTmp := CommonUnit.IniFile.ReadString( 'DepDefaultID', 'DepDefaultID', strTmp); //
+  strTmp := CommonUnit.IniLocalFile.ReadString( 'DepDefaultID', 'DepDefaultID', strTmp); //
   DepDefaultID:=StrToInt(strTmp);
 
-  DepDefaultName := CommonUnit.IniFile.ReadString( 'DepDefaultID', 'DepDefaultName', DepDefaultName);
-  DepDefaultID := CommonUnit.IniFile.ReadInteger( 'DepDefaultID', 'DepDefaultID', DepDefaultID);
+  DepDefaultName := CommonUnit.IniLocalFile.ReadString( 'DepDefaultID', 'DepDefaultName', DepDefaultName);
+  DepDefaultID := CommonUnit.IniLocalFile.ReadInteger( 'DepDefaultID', 'DepDefaultID', DepDefaultID);
 
   DM.tblDepart.Locate('id', IntToStr(DepDefaultID), [loCaseInsensitive]);
 end;
@@ -970,13 +972,22 @@ var
   strTmp:string;
 begin
   //DBLookupComboBox1.KeyValue := DBLookupComboBox1.ListSource.DataSet.FieldByName(DBLookupComboBox1.KeyField).Value;
-
   DepDefaultID := DM.intgrfld1.AsInteger;
   DepDefaultName := DM.strngfldunqry1depart.AsString;
 
   strTmp := IntToStr(DepDefaultID);
-  CommonUnit.IniFile.WriteInteger( 'DepDefaultID', 'DepDefaultID', DepDefaultID);
-  CommonUnit.IniFile.WriteString( 'DepDefaultID', 'DepDefaultName', DepDefaultName);
+  CommonUnit.IniLocalFile.WriteInteger( 'DepDefaultID', 'DepDefaultID', DepDefaultID);
+  CommonUnit.IniLocalFile.WriteString( 'DepDefaultID', 'DepDefaultName', DepDefaultName);
+end;
+
+procedure TDM.tblReport2AfterPost(DataSet: TDataSet);
+begin
+//
+end;
+
+procedure TDM.tblReport2BeforePost(DataSet: TDataSet);
+begin
+//
 end;
 
 

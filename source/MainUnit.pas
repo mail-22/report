@@ -359,7 +359,6 @@ end;
 procedure TFormMain.dblkcbbDEPCloseUp(Sender: TObject);
 begin
   inherited;
-
   dm.Set_Dep;
 end;
 

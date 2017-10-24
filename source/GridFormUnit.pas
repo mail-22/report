@@ -167,6 +167,7 @@ type
     cxdbvrtclgrd1DBEditorRow5: TcxDBEditorRow;
     cxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow;
     cxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow;
+    btnAdd: TButton;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);

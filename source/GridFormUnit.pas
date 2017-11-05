@@ -114,7 +114,6 @@ type
     jvpvnts1: TJvAppEvents;
     cxprprtstr1: TcxPropertiesStore;
     cxgrd1DBBandedTableView1: TcxGridDBBandedTableView;
-    cxgrdlvlcxgrd1Level1: TcxGridLevel;
     cxgrdbndclmncxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
@@ -136,7 +135,6 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1act_acceptance_file:
     TcxGridDBBandedColumn;
-    cxprprtstr2cxgrdbtblvw1: TcxPropertiesStore;
     cxgrdbndclmncxgrd1DBBandedTableView1Column10: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column11: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column12: TcxGridDBBandedColumn;
@@ -168,6 +166,10 @@ type
     cxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow;
     cxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow;
     btnAdd: TButton;
+    tlb1: TToolBar;
+    btnAdd1: TToolButton;
+    btnacOle: TToolButton;
+    btnEdit: TToolButton;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -177,6 +179,7 @@ type
     procedure actSpisokExecute(Sender: TObject);
     procedure actTunExecute(Sender: TObject);
     procedure aplctnvnts1Hint(Sender: TObject);
+    procedure btnAddClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -349,6 +352,11 @@ begin
   //jvstsbr1.SimpleText := Application.Hint;
 end;
 
+procedure TGridForm.btnAddClick(Sender: TObject);
+begin
+  inherited;
+end;
+
 ///////////////////////////////////////////////////////////////////////////////
 
 procedure TGridForm.EditMethod;
@@ -434,7 +442,7 @@ DM.tblReport2.FindLast;
   FileName_cxprprtstr1 :=  ChangeFileExt2(tmpStr);
   cxprprtstr1.StorageName := FileName_cxprprtstr1 ;
   cxprprtstr1.RestoreFrom;
-  cxprprtstr1.Active := true;
+  cxprprtstr1.Active := true; cxprprtstr1.RestoreFrom;
 
   //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
   MRUEdit_responsible := ExtractFilePath(Application.ExeName) +Self.Name+ '.' + 'MRUEdit.responsible.txt';

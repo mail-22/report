@@ -9,7 +9,7 @@ uses Forms, ADOint, IniFiles, DbUtil
   , JvJCLUtils, JvComponentBase, JvBDEFilter, Windows,
   JvDSADialogs, cxClasses, DAAlerter, UniAlerter, DASQLMonitor,
   UniSQLMonitor, DBAccess, Uni, UniProvider, ODBCUniProvider,
-  AccessUniProvider, MemDS, Registry;
+  AccessUniProvider, MemDS, Registry, cxLocalization;
 
 type
   TDM = class(TDataModule)
@@ -171,6 +171,7 @@ type
     tblReportFiltr2dog_rekviz_str: TStringField;
     tblReportFiltr2dog_basis_data: TStringField;
     tblReportFiltr2dog_basis_str: TStringField;
+    cxLocalizer1: TcxLocalizer;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);
@@ -284,11 +285,12 @@ var sMyDocAppPath: string;
 begin
  // ADConnection1.Params.Text:='DSN=dbtemp'+#13#10+'User_Name=Admin' + 'Database=C:\Nir2015_FireDAC\Monitoring\db1.mdb';
  // ADConnection1.DriverName:='MSACC';
-{
-  cxLocalizer1.FileName:='DevExRus100Proc.ini';
+
+ cxLocalizer1.FileName:= ExtractFilePath(Application.ExeName) +'\'+ 'DevExRus100Proc.ini';
+ cxLocalizer1.FileName:= ExtractFilePath(Application.ExeName) +'\'+ 'Localization.ini';
  cxLocalizer1.Active:=true;
  cxLocalizer1.Locale:=1049;
-}
+
 {
    sMyDocAppPath:=ExtractFilePath(Application.ExeName)+'\';
 if FileExists(sMyDocAppPath + 'DevExRus100Proc.ini') then

@@ -1,8 +1,8 @@
 object DM: TDM
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 169
-  Top = 249
+  Left = 386
+  Top = 379
   Height = 477
   Width = 712
   object OpenDialog1: TOpenDialog
@@ -1055,5 +1055,9 @@ object DM: TDM
       FieldName = 'dog_basis_str'
       Size = 50
     end
+  end
+  object cxLocalizer1: TcxLocalizer
+    Left = 336
+    Top = 144
   end
 end

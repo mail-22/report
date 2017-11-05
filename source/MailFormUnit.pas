@@ -15,7 +15,7 @@ uses
   cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid, cxVGrid,
   cxDBVGrid, cxInplaceContainer, cxSplitter, ExtCtrls, StdCtrls, ToolWin,
   ActnMan, ActnCtrls, ActnMenus, dxStatusBar, XPStyleActnCtrls, ActnList,
-  cxPropertiesStore,GridFormUnit, CommonUnit, cxMemo;
+  cxPropertiesStore,GridFormUnit, CommonUnit, cxMemo, ComCtrls;
 
 type
   TMailForm = class(TBaseForm)
@@ -118,6 +118,10 @@ type
     cxgrdbndclmncxgrd21ViewColumn7: TcxGridDBBandedColumn;
     cxgrd21ViewColumn1: TcxGridDBBandedColumn;
     btnAdd: TButton;
+    tlb1: TToolBar;
+    btnAdd1: TToolButton;
+    btnEdit: TToolButton;
+    btnacOle: TToolButton;
     procedure acOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actEditExecute(Sender: TObject);

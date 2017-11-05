@@ -1,6 +1,6 @@
 object BaseForm: TBaseForm
-  Left = 624
-  Top = 280
+  Left = 130
+  Top = 155
   Width = 800
   Height = 600
   BorderIcons = [biSystemMenu, biMaximize]
@@ -32,6 +32,7 @@ object BaseForm: TBaseForm
     StorageOptions.BooleanStringTrueValues = 'TRUE, YES, Y'
     StorageOptions.BooleanStringFalseValues = 'FALSE, NO, N'
     FileName = 'JvAppIniStorage2.ini'
+    Location = flUserFolder
     SubStorages = <>
     Left = 60
     Top = 20

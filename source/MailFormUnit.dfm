@@ -1,6 +1,6 @@
 inherited MailForm: TMailForm
-  Left = 62
-  Top = 247
+  Left = 138
+  Top = 275
   Width = 1460
   Caption = 'MailForm'
   OnShow = FormShow
@@ -38,9 +38,9 @@ inherited MailForm: TMailForm
   end
   object pnlGrid: TPanel [2]
     Left = 0
-    Top = 26
+    Top = 55
     Width = 1444
-    Height = 516
+    Height = 487
     Align = alClient
     AutoSize = True
     TabOrder = 2
@@ -60,7 +60,7 @@ inherited MailForm: TMailForm
     end
     object pnlBBB: TPanel
       Left = 1
-      Top = 504
+      Top = 475
       Width = 1442
       Height = 11
       Align = alBottom
@@ -71,7 +71,7 @@ inherited MailForm: TMailForm
       Left = 1265
       Top = 14
       Width = 8
-      Height = 490
+      Height = 461
       HotZoneClassName = 'TcxMediaPlayer8Style'
       AlignSplitter = salRight
       Control = pnlR
@@ -80,7 +80,7 @@ inherited MailForm: TMailForm
       Left = 1273
       Top = 14
       Width = 170
-      Height = 490
+      Height = 461
       Align = alRight
       TabOrder = 2
       Visible = False
@@ -103,7 +103,7 @@ inherited MailForm: TMailForm
         Left = 1
         Top = 14
         Width = 168
-        Height = 475
+        Height = 446
         Align = alClient
         DragCursor = crDrag
         Font.Charset = DEFAULT_CHARSET
@@ -333,7 +333,7 @@ inherited MailForm: TMailForm
       Left = 1
       Top = 14
       Width = 1264
-      Height = 490
+      Height = 461
       Align = alClient
       Caption = 'pnlL'
       TabOrder = 3
@@ -356,7 +356,7 @@ inherited MailForm: TMailForm
         Left = 1
         Top = 14
         Width = 1262
-        Height = 444
+        Height = 415
         Align = alClient
         BevelInner = bvLowered
         BevelKind = bkSoft
@@ -661,7 +661,7 @@ inherited MailForm: TMailForm
       end
       object pnl_Navigator1: TPanel
         Left = 1
-        Top = 458
+        Top = 429
         Width = 1262
         Height = 31
         Align = alBottom
@@ -731,11 +731,56 @@ inherited MailForm: TMailForm
     Action = actAdd
     TabOrder = 3
   end
+  object tlb1: TToolBar [4]
+    Left = 0
+    Top = 26
+    Width = 1444
+    Height = 29
+    ButtonHeight = 25
+    ButtonWidth = 227
+    Caption = 'tlb1'
+    ShowCaptions = True
+    TabOrder = 4
+    object btnAdd1: TToolButton
+      Left = 0
+      Top = 2
+      Action = actAdd
+    end
+    object btnEdit: TToolButton
+      Left = 227
+      Top = 2
+      Action = actEdit
+    end
+    object btnacOle: TToolButton
+      Left = 454
+      Top = 2
+      Action = acOle
+    end
+  end
   object cxprprtstr1: TcxPropertiesStore
-    Components = <>
+    Components = <
+      item
+        Component = Owner
+        Properties.Strings = (
+          'Height'
+          'Left'
+          'Top'
+          'Width'
+          'WindowState')
+      end
+      item
+        Component = pnlL
+        Properties.Strings = (
+          'Width')
+      end
+      item
+        Component = pnlR
+        Properties.Strings = (
+          'Width')
+      end>
     StorageName = 'cxprprtstr1'
-    Left = 760
-    Top = 16
+    Left = 432
+    Top = 216
   end
   object actmgr1: TActionManager
     ActionBars = <
@@ -757,20 +802,19 @@ inherited MailForm: TMailForm
         ActionList = actlstM
         Caption = 'actlstM'
       end>
-    Left = 624
-    Top = 8
+    Left = 480
+    Top = 184
     StyleName = 'XP Style'
   end
   object actlstM: TActionList
-    Left = 722
-    Top = 8
+    Left = 514
+    Top = 216
     object actAdd: TAction
       Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1079#1072#1087#1080#1089#1100' ('#1087#1086' '#1087#1080#1089#1100#1084#1091')'
       OnExecute = actAddExecute
     end
     object actEdit: TAction
       Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1079#1072#1087#1080#1089#1100'  ('#1087#1086' '#1087#1080#1089#1100#1084#1091')'
-      Enabled = False
       OnExecute = actEditExecute
     end
     object acOle: TAction

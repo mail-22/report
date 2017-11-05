@@ -54,14 +54,14 @@ inherited SpisokForm: TSpisokForm
     Left = 0
     Top = 68
     Width = 1264
-    Height = 661
+    Height = 662
     Align = alClient
     Caption = 'pnl_LR'
     TabOrder = 2
     object jvntscpspltr1: TJvNetscapeSplitter
       Left = 369
       Top = 1
-      Height = 628
+      Height = 629
       Align = alLeft
       Maximized = False
       Minimized = False
@@ -71,7 +71,7 @@ inherited SpisokForm: TSpisokForm
       Left = 1
       Top = 1
       Width = 368
-      Height = 628
+      Height = 629
       Align = alLeft
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -90,7 +90,7 @@ inherited SpisokForm: TSpisokForm
         Left = 2
         Top = 43
         Width = 364
-        Height = 583
+        Height = 584
         Align = alClient
         TabOrder = 1
         object pnlData1: TPanel
@@ -267,7 +267,7 @@ inherited SpisokForm: TSpisokForm
       Left = 379
       Top = 1
       Width = 884
-      Height = 628
+      Height = 629
       Align = alClient
       BevelInner = bvSpace
       BevelOuter = bvLowered
@@ -292,7 +292,7 @@ inherited SpisokForm: TSpisokForm
         Left = 2
         Top = 20
         Width = 880
-        Height = 606
+        Height = 607
         Align = alClient
         Font.Charset = RUSSIAN_CHARSET
         Font.Color = clWindowText
@@ -424,7 +424,7 @@ inherited SpisokForm: TSpisokForm
     end
     object pnl_Navigator1: TPanel
       Left = 1
-      Top = 629
+      Top = 630
       Width = 1262
       Height = 31
       Align = alBottom
@@ -453,7 +453,7 @@ inherited SpisokForm: TSpisokForm
         object jvdbstslbl2: TJvDBStatusLabel
           Left = 1
           Top = 3
-          Width = 27
+          Width = 72
           Height = 17
           DataSource = dsReportFiltr
           Style = lsRecordNo

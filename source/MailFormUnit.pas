@@ -15,7 +15,7 @@ uses
   cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid, cxVGrid,
   cxDBVGrid, cxInplaceContainer, cxSplitter, ExtCtrls, StdCtrls, ToolWin,
   ActnMan, ActnCtrls, ActnMenus, dxStatusBar, XPStyleActnCtrls, ActnList,
-  cxPropertiesStore,GridFormUnit, CommonUnit;
+  cxPropertiesStore,GridFormUnit, CommonUnit, cxMemo;
 
 type
   TMailForm = class(TBaseForm)
@@ -94,7 +94,7 @@ type
     jvdbstslbl1: TJvDBStatusLabel;
     pnl4: TPanel;
     JvDBStatusLabel3: TJvDBStatusLabel;
-    actlst1: TActionList;
+    actlstM: TActionList;
     actAdd: TAction;
     actEdit: TAction;
     acOle: TAction;
@@ -117,6 +117,7 @@ type
     cxgrdbndclmncxgrd21ViewColumn6: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd21ViewColumn7: TcxGridDBBandedColumn;
     cxgrd21ViewColumn1: TcxGridDBBandedColumn;
+    btnAdd: TButton;
     procedure acOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actEditExecute(Sender: TObject);

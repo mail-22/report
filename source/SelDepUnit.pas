@@ -26,7 +26,7 @@ type
     openDialog: TOpenDialog;
     edt1: TEdit;
     btnOpen: TButton;
-    procedure btnOpenClick(Sender: TObject);
+    procedure btnOpenClick(Sender: TObject); 
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -96,7 +96,7 @@ begin
   //openDialog.Free;
   
 end;
-
+ 
 procedure TSelDepForm.FormCreate(Sender: TObject);
 var
   strTmp:string; res:boolean;

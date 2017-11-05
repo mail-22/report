@@ -94,7 +94,7 @@ type
     jvdbstslbl1: TJvDBStatusLabel;
     pnl4: TPanel;
     JvDBStatusLabel3: TJvDBStatusLabel;
-    actlst1: TActionList;
+    actlstN: TActionList;
     actAdd: TAction;
     actEdit: TAction;
     acOle: TAction;
@@ -118,6 +118,7 @@ type
     cxgrd21Viewnir_act: TcxGridDBBandedColumn;
     cxgrd21Viewnir_vnedrenie: TcxGridDBBandedColumn;
     cxgrd21Viewnir_zayvka_file: TcxGridDBBandedColumn;
+    btnAdd: TButton;
     procedure acOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actEditExecute(Sender: TObject);

@@ -1,5 +1,5 @@
 inherited NirForm: TNirForm
-  Left = -1841
+  Left = 0
   Top = 167
   Width = 1456
   Caption = 'NirForm'
@@ -8,7 +8,7 @@ inherited NirForm: TNirForm
   TextHeight = 17
   object dxstsbr1: TdxStatusBar [0]
     Left = 0
-    Top = 541
+    Top = 542
     Width = 1440
     Height = 20
     Panels = <>
@@ -40,7 +40,7 @@ inherited NirForm: TNirForm
     Left = 0
     Top = 26
     Width = 1440
-    Height = 515
+    Height = 516
     Align = alClient
     AutoSize = True
     TabOrder = 2
@@ -60,7 +60,7 @@ inherited NirForm: TNirForm
     end
     object pnlBBB: TPanel
       Left = 1
-      Top = 503
+      Top = 504
       Width = 1438
       Height = 11
       Align = alBottom
@@ -71,7 +71,7 @@ inherited NirForm: TNirForm
       Left = 1261
       Top = 14
       Width = 8
-      Height = 489
+      Height = 490
       HotZoneClassName = 'TcxMediaPlayer8Style'
       AlignSplitter = salRight
       Control = pnlR
@@ -80,7 +80,7 @@ inherited NirForm: TNirForm
       Left = 1269
       Top = 14
       Width = 170
-      Height = 489
+      Height = 490
       Align = alRight
       TabOrder = 2
       Visible = False
@@ -103,7 +103,7 @@ inherited NirForm: TNirForm
         Left = 1
         Top = 14
         Width = 168
-        Height = 474
+        Height = 475
         Align = alClient
         DragCursor = crDrag
         Font.Charset = DEFAULT_CHARSET
@@ -333,7 +333,7 @@ inherited NirForm: TNirForm
       Left = 1
       Top = 14
       Width = 1260
-      Height = 489
+      Height = 490
       Align = alClient
       Caption = 'pnlL'
       TabOrder = 3
@@ -356,7 +356,7 @@ inherited NirForm: TNirForm
         Left = 1
         Top = 14
         Width = 1258
-        Height = 443
+        Height = 444
         Align = alClient
         BevelInner = bvLowered
         BevelKind = bkSoft
@@ -669,7 +669,7 @@ inherited NirForm: TNirForm
       end
       object pnl_Navigator1: TPanel
         Left = 1
-        Top = 457
+        Top = 458
         Width = 1258
         Height = 31
         Align = alBottom
@@ -731,6 +731,14 @@ inherited NirForm: TNirForm
       end
     end
   end
+  object btnAdd: TButton [3]
+    Left = 608
+    Top = 0
+    Width = 185
+    Height = 25
+    Action = actAdd
+    TabOrder = 3
+  end
   object cxprprtstr1: TcxPropertiesStore
     Components = <>
     StorageName = 'cxprprtstr1'
@@ -754,18 +762,14 @@ inherited NirForm: TNirForm
       end>
     LinkedActionLists = <
       item
-        ActionList = actlst1
-        Caption = 'actlst1'
-      end
-      item
-        ActionList = GridForm.actlst1
-        Caption = 'actlst1'
+        ActionList = actlstN
+        Caption = 'actlstN'
       end>
     Left = 624
     Top = 8
     StyleName = 'XP Style'
   end
-  object actlst1: TActionList
+  object actlstN: TActionList
     Left = 786
     Top = 16
     object actAdd: TAction

@@ -49,7 +49,7 @@ type
     cxdbvrtclgrd1: TcxDBVerticalGrid;
     actmmb1: TActionMainMenuBar;
     actmgr1: TActionManager;
-    actlst1: TActionList;
+    actlstD: TActionList;
     actAdd: TAction;
     actEdit: TAction;
     acOle: TAction;
@@ -406,16 +406,11 @@ procedure TGridForm.FormCreate(Sender: TObject);
 var tmpStr :string;
 begin
   inherited;
-  // ???
 {
 DM.tblReport2.FindLast;
 DM.tblReport2.FindFirst;
 DM.tblReport2.FindLast;
 }
-
-  tmpStr :=  '_' + Self.Name+ '_' + 'cxprprtstr1'+ '_';
-  FileName_cxprprtstr1 :=  ChangeFileExt2(tmpStr);
-  cxprprtstr1.StorageName := FileName_cxprprtstr1;
 
 // cxgrd1
   FileName_cxgrdbtblvw1 := ExtractFilePath(Application.ExeName) + '_' + Self.Name
@@ -433,12 +428,13 @@ DM.tblReport2.FindLast;
   FileName_cxgrd1DBBandedTableView1 :=  ChangeFileExt2(tmpStr);
   cxgrd1DBBandedTableView1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
 
-  cxprprtstr1.Active := true;
+
   //cxprprtstr1.StorageName := ExtractFilePath(Application.ExeName) + '_' +     Self.Name + '_' + 'cxprprtstr1' + '.ini';
   tmpStr :=  '_' + Self.Name+ '_' + 'cxprprtstr1'+ '_';
   FileName_cxprprtstr1 :=  ChangeFileExt2(tmpStr);
   cxprprtstr1.StorageName := FileName_cxprprtstr1 ;
   cxprprtstr1.RestoreFrom;
+  cxprprtstr1.Active := true;
 
   //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
   MRUEdit_responsible := ExtractFilePath(Application.ExeName) +Self.Name+ '.' + 'MRUEdit.responsible.txt';

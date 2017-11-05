@@ -197,6 +197,8 @@ type
 
     procedure AfterPost(DataSet: TDataSet);
     procedure BeforePost(DataSet: TDataSet);
+    procedure filtr_0;
+    procedure filtr_2;
 
   protected   
     CursorLocation: TCursorLocation;
@@ -907,7 +909,7 @@ begin
 
 end;
 
-procedure TDM.filtr_();
+procedure TDM.filtr_0();
 var
   filtr, // формируемая строка фильтра
   add: string;
@@ -950,6 +952,54 @@ begin
   else
     ShowMessage2('Все поля пусты!');
 
+end;
+
+procedure TDM.filtr_2();
+var
+  DataSet0: TDataSet;
+  DataSet : TUniQuery;
+  strSQL :TStringList;
+  strDepDefaultID :string;  tmpStr :string;
+begin
+  DataSet:=tblReport2 as TUniQuery;
+
+  DataSet.Active:=False;
+  strSQL:= TStringList.create;
+
+  strSQL.Text := 'SELECT * FROM r1 WHERE ' +
+        ' "department"     LIKE :department    AND ' +
+        ' "type_task_str"  LIKE :type_task_str';
+
+  strSQL.Text := 'SELECT * FROM r1 WHERE ' +
+        ' "department"     LIKE :department AND' +
+        ' "type_task_str"  LIKE :type_task_str';
+  dataset.SQL.Clear;
+  dataset.Params.Clear;
+  DataSet.SQL := strSQL;
+
+  DepDefaultID := DM.intgrfld1.AsInteger;
+  SelDepUnit.DepDefaultName := DM.strngfldunqry1depart.AsString;
+  strDepDefaultID := IntToStr(DepDefaultID);
+  if (DepDefaultName = 'все') then
+  begin
+    strDepDefaultID := '';
+    dataset.ParamByName('department').Value := '%';
+  end
+  else
+  begin
+    dataset.ParamByName('department').Value := IntToStr(DepDefaultID);
+  end;
+
+  dataset.ParamByName('type_task_str').Value := cur_type_task_str;
+  DataSet.Active:=True;
+  DataSet.Close;
+  DataSet.Open;
+  tmpStr :=  strSQL.Text;
+end;
+
+procedure TDM.filtr_();
+begin
+  filtr_2();
 end;
 
 procedure TDM.Get_Dep;

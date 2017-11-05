@@ -353,7 +353,7 @@ begin
         strConnection_Set(strTmp);
      end
      else begin
-            Application.MessageBox('Не определена строка ConnectionString: ', 'проблема', MB_OK + 
+            Application.MessageBox('Не определена строка ConnectionString: ', PAnsiChar(strConnection_Get), MB_OK +
               MB_ICONWARNING + MB_TOPMOST);
               {
             //MessageDlg('Не определена строка ConnectionString', mtWarning, [mbOK], 0);

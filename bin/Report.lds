@@ -73,6 +73,14 @@ dog_rekviz_str=Реквизиты договора_
 dog_rekviz_data=Реквизиты договора (дата)
 dog_basis_data=основание для договора реквизиты дата
 dog_basis_str=основание для договора реквизиты
+ComputerName=ComputerName
+LocalUserName=LocalUserName
+IP=IP
+Date=Date
+Edit_ComputerName=Edit_ComputerName
+Edit_LocalUserName=Edit_LocalUserName
+Edit_IP=Edit_IP
+Edit_Date=Edit_Date
 [tblDepart]
 id=№
 depart=Отдел

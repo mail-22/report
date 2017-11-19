@@ -170,6 +170,10 @@ type
     btnAdd1: TToolButton;
     btnacOle: TToolButton;
     btnEdit: TToolButton;
+    cxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column10: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column11: TcxGridDBBandedColumn;
+    cxgrd1DBBandedTableView1Column12: TcxGridDBBandedColumn;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -463,7 +467,7 @@ DM.tblReport2.FindLast;
 end;
 
 procedure TGridForm.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
+  begin
   inherited;
 
   cxgrdbtblvw1.StoreToIniFile(FileName_cxgrdbtblvw1, true);

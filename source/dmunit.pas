@@ -172,6 +172,10 @@ type
     tblReportFiltr2dog_basis_data: TStringField;
     tblReportFiltr2dog_basis_str: TStringField;
     cxLocalizer1: TcxLocalizer;
+    strngfldReport2ComputerName: TStringField;
+    strngfldReport2LocalUserName: TStringField;
+    strngfldReport2IP: TStringField;
+    dtmfldReport2Date: TDateTimeField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dsDepartDataChange(Sender: TObject; Field: TField);
     procedure qryDescription0AfterPost(DataSet: TDataSet);
@@ -190,9 +194,10 @@ type
     procedure tblReport2AfterPost(DataSet: TDataSet);
     procedure tblReport2BeforePost(DataSet: TDataSet);
     procedure tblReport2NewRecord(DataSet: TDataSet);
+    procedure tblReport2UpdateRecord(DataSet: TDataSet; UpdateKind: TUpdateKind;
+        var UpdateAction: TUpdateAction);
 
   private
-
     ProcessDL: boolean;
     DL: TDL;
 
@@ -237,6 +242,8 @@ type
     procedure strConnection_Set(astrConnection: string);
     procedure filtr_;    
     procedure Get_Dep;
+
+    procedure tblReport2_SetCompName(DataSet: TDataSet);
   end;
 
   TMethodMakeConnectionString = (
@@ -268,7 +275,7 @@ implementation
 
 
 uses
-  CommonUnit, SelDepUnit;
+  CommonUnit, SelDepUnit, JclSysInfo, IPHelper, IPHLPAPI, WinSock;
 
 {$R *.dfm}
 
@@ -1033,15 +1040,93 @@ begin
 end;
 
 procedure TDM.tblReport2AfterPost(DataSet: TDataSet);
+var
+    strTmp :string;
 begin
 //
 end;
 
 procedure TDM.tblReport2BeforePost(DataSet: TDataSet);
 begin
-//
+  tblReport2_SetCompName(DataSet);
 end;
 
+procedure TDM.tblReport2UpdateRecord(DataSet: TDataSet; UpdateKind:
+    TUpdateKind; var UpdateAction: TUpdateAction);
+begin
+  tblReport2_SetCompName(DataSet);
+end;
+
+function GetIPByIndex(InterfaceIndex: Cardinal): string;
+var
+ i:  integer;
+ IPArr : TMIBIPAddrArray;
+begin
+   Result := '!not_found!'; 
+   Get_IPAddrTableMIB( IpArr );  // ???????? ??????? ???????
+   if Length(IPArr) > 0 then
+     for i := low(IPArr) to High(IPArr) do  // ???? ??????...
+       if IPArr[i].dwIndex = InterfaceIndex then
+       begin
+         Result := IPAddr2Str(IParr[i].dwAddr);
+         BREAK;
+       end;
+end;
+
+// uses WinSock;
+function GetLocalIP: String;
+const WSVer = $101;
+var
+wsaData: TWSAData;
+P: PHostEnt;
+Buf: array [0..127] of Char;
+begin
+Result := '';
+if WSAStartup(WSVer, wsaData) = 0 then begin
+if GetHostName(@Buf, 128) = 0 then begin
+P := GetHostByName(@Buf);
+if P <> nil then Result := iNet_ntoa(PInAddr(p^.h_addr_list^)^ );
+end;
+WSACleanup;
+end;
+end;
+
+procedure TDM.tblReport2_SetCompName(DataSet: TDataSet);
+var
+    strTmp :string;
+  MibArr: TMIBIfArray;
+  IP: string;
+  Index:Integer;
+  Date :TDateTime;
+  Year,Month,Day:Word;
+begin
+// strngfldReport2ComputerName
+  strTmp:=JvJCLUtils.GetComputerName;
+  DataSet.edit;  //DataSet.State;
+  DataSet.FieldByName('Edit_ComputerName').AsString :=JvJCLUtils.GetComputerName;
+
+  // strngfldReport2LocalUserName
+  strTmp:=JclSysInfo.GetLocalUserName;
+  DataSet.edit;  //DataSet.State;
+  DataSet.FieldByName('Edit_LocalUserName').AsString := JclSysInfo.GetLocalUserName;
+
+// strngfldReport2IP
+  // IPHelper, IPHLPAPI;
+  Get_IfTableMIB(MibArr);
+  Index:=0;
+  IP:= GetIPByIndex(MibArr[Index].dwIndex);
+
+  IP:= GetLocalIP;
+  DataSet.edit;  //DataSet.State;
+  DataSet.FieldByName('Edit_IP').AsString :=  IP;
+
+// dtmfldReport2Date  
+  Date := Now;
+  DecodeDate(Date,Year,Month,Day);
+  DataSet.edit;  //DataSet.State;
+  DataSet.FieldByName('Edit_Date').AsDateTime :=  Date;
+
+end;
 
 initialization
 

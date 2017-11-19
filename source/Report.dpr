@@ -38,7 +38,9 @@ uses
   NirFormUnit in 'NirFormUnit.pas' {NirForm},
   NirEditFormUnit in 'NirEditFormUnit.pas' {NirEditForm},
   DBDemoMainUnit in 'DBDemoMainUnit.pas' {DBDemoMainForm},
-  DemoBasicMain in 'DemoBasicMain.pas' {DemoBasicMainForm};
+  DemoBasicMain in 'DemoBasicMain.pas' {DemoBasicMainForm},
+  IPHelper in 'IPHelper.pas',
+  IPHLPAPI in 'IPHLPAPI.pas';
 
 {$R *.res}
 

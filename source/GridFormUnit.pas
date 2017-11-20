@@ -165,7 +165,6 @@ type
     cxdbvrtclgrd1DBEditorRow5: TcxDBEditorRow;
     cxdbvrtclgrd1DBEditorRow6: TcxDBEditorRow;
     cxdbvrtclgrd1DBEditorRow7: TcxDBEditorRow;
-    btnAdd: TButton;
     tlb1: TToolBar;
     btnAdd1: TToolButton;
     btnacOle: TToolButton;
@@ -174,6 +173,7 @@ type
     cxgrd1DBBandedTableView1Column10: TcxGridDBBandedColumn;
     cxgrd1DBBandedTableView1Column11: TcxGridDBBandedColumn;
     cxgrd1DBBandedTableView1Column12: TcxGridDBBandedColumn;
+    btnAdd: TButton;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);

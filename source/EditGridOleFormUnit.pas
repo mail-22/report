@@ -554,6 +554,7 @@ procedure TEditGridJOleForm.ExtractMethod;
 var
   strMyDir: string;
   bFileExist: Boolean;
+  Handle: HWND;
 begin
   FileName := DataSet.FieldByName('filename').AsString;
   ext := DataSet.FieldByName('ext').AsString;
@@ -563,7 +564,9 @@ begin
   FileNamePathUniq := BDDirPathName + '/' + UniqueName;
 
   CopyFile(PChar(FileNamePathUniq), PChar(ExportFilePath), bFileExist); //
-  ShellApi.ShellExecute(EditGridJOleForm.Handle, 'open', Pchar(ExportFilePath), nil, nil, SW_RESTORE);
+  Handle:= EditGridJOleForm.Handle;
+  Handle:=0;
+  ShellApi.ShellExecute(Handle, 'open', Pchar(ExportFilePath), nil, nil, SW_RESTORE);
 end;
 
 procedure TEditGridJOleForm.FormClose(Sender: TObject; var Action:

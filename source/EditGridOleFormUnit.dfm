@@ -8,7 +8,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
   TextHeight = 17
   object lbl1: TLabel [0]
     Left = 0
-    Top = 42
+    Top = 33
     Width = 1008
     Height = 17
     Align = alTop
@@ -16,7 +16,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 623
+    Top = 624
     Width = 1008
     Height = 41
     Align = alBottom
@@ -78,7 +78,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object pnl1: TPanel [2]
     Left = 0
-    Top = 664
+    Top = 665
     Width = 1008
     Height = 53
     Align = alBottom
@@ -105,15 +105,15 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object cxSplitter1: TcxSplitter [3]
     Left = 0
-    Top = 86
+    Top = 77
     Width = 10
-    Height = 537
+    Height = 547
   end
   object pnlL: TPanel [4]
     Left = 10
-    Top = 86
+    Top = 77
     Width = 998
-    Height = 537
+    Height = 547
     Align = alClient
     Caption = 'pnlL'
     TabOrder = 3
@@ -121,7 +121,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
       Left = 1
       Top = 87
       Width = 996
-      Height = 449
+      Height = 459
       Align = alClient
       TabOrder = 0
       object cxgrdbtblvwGrid1DBTableView1: TcxGridDBTableView
@@ -228,7 +228,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object acttb2: TActionToolBar [5]
     Left = 0
-    Top = 59
+    Top = 50
     Width = 1008
     Height = 27
     ActionManager = actmgr1
@@ -242,7 +242,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     Left = 0
     Top = 0
     Width = 1008
-    Height = 42
+    Height = 33
     Align = alTop
     Alignment = taCenter
     Lines.Strings = (

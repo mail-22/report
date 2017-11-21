@@ -21,7 +21,7 @@ uses
   dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinPumpkin, dxSkinSeven,
   dxSkinSharp, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
   dxSkinSummer2008, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinXmas2008Blue, dxSkinscxPCPainter, cxMRUEdit;
+  dxSkinXmas2008Blue, dxSkinscxPCPainter, cxMRUEdit, JvDSADialogs;
 
 type
   tTypeOfDoc = (Basic = 1, Contract, Invoice, Performance, Act, Contract_Execution,
@@ -156,7 +156,7 @@ const
 implementation
 
 uses
-  FileUnit, CommonUnit;
+  FileUnit, CommonUnit, Math;
 
 {$R *.dfm}
 
@@ -561,7 +561,20 @@ begin
   ExportFilePath := ExportPath + FileName + '.' + ext;
 
   UniqueName := DataSet.FieldByName('UniqueName').AsString;
-  FileNamePathUniq := BDDirPathName + '/' + UniqueName;
+  FileNamePathUniq := BDDirPathName + {'/' +} UniqueName;
+
+   if not FileExists(FileNamePathUniq) then
+   begin
+      //jvdsdlg1.GetModalResult
+      //DSAShowMessage(1, 'Test ShowMessage with DSA support.');
+      //DSAMessageDlg(2 , 'םוע פאיכא: ' +FileNamePathUniq + #13#10 + '', mtInformation, [], 0, dckScreen, 3);
+      //DSAMessageDlg(jvdsdlg1.DialogID , 'םוע פאיכא: ' +FileNamePathUniq + #13#10 + '', mtInformation, [], 0, dckScreen, 3);
+      ShowMessage3(FileNamePathUniq, 'םוע פאיכא');
+      Exit;
+   end
+   else
+   begin
+   end;   
 
   CopyFile(PChar(FileNamePathUniq), PChar(ExportFilePath), bFileExist); //
   Handle:= EditGridJOleForm.Handle;
@@ -569,6 +582,21 @@ begin
   ShellApi.ShellExecute(Handle, 'open', Pchar(ExportFilePath), nil, nil, SW_RESTORE);
 end;
 
+{
+var
+  jvdsdlg1: TJvDSADialog;
+
+  jvdsdlg1 := TJvDSADialog.Create(Self);
+
+  with jvdsdlg1 do
+  begin
+    Name := 'jvdsdlg1';
+    Timeout := 0;
+    DialogID := 1;
+    IgnoreDSAChkMrkTxt := False;
+  end;
+
+}
 procedure TEditGridJOleForm.FormClose(Sender: TObject; var Action:
     TCloseAction);
 begin

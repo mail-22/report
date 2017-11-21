@@ -4,7 +4,8 @@ unit CommonUnit;
 interface
 
 uses
-  SysUtils, Classes, IniFiles, Forms
+  SysUtils, Classes, IniFiles, Forms ,
+  JvDSADialogs
   //,PropStorageEh           SysUtils
   ;
 
@@ -50,7 +51,7 @@ function Str2Float(const S: string): Extended; overload;
 function TempDir: string;
 
 procedure ShowMessage2(const Msg: string);
-
+procedure ShowMessage3(const aText, aCaption: string);
 
 Function GetApplicationDataFolder :string;
 Function ChangeFileExt2(Patch: string):string;
@@ -373,7 +374,14 @@ begin
   // TODO -cMM: ShowMessage2 default body inserted
   Application.MessageBox(PAnsiChar( Msg ), ' ', MB_OK + MB_ICONWARNING + MB_TOPMOST);
 end;
- 
+
+procedure ShowMessage3(const aText, aCaption: string);
+begin
+  Application.MessageBox( PAnsiChar(aText),
+                          PAnsiChar(aCaption),
+                          MB_OK + MB_ICONWARNING+ MB_TOPMOST);
+end;
+
 
 
 

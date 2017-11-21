@@ -9,15 +9,15 @@ inherited EditGridJOleForm: TEditGridJOleForm
   object lbl1: TLabel [0]
     Left = 0
     Top = 33
-    Width = 1008
+    Width = 1016
     Height = 17
     Align = alTop
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090#1099' '#1074#1080#1076#1072' :'
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 624
-    Width = 1008
+    Top = 635
+    Width = 1016
     Height = 41
     Align = alBottom
     BevelInner = bvLowered
@@ -78,8 +78,8 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object pnl1: TPanel [2]
     Left = 0
-    Top = 665
-    Width = 1008
+    Top = 676
+    Width = 1016
     Height = 53
     Align = alBottom
     TabOrder = 1
@@ -107,21 +107,21 @@ inherited EditGridJOleForm: TEditGridJOleForm
     Left = 0
     Top = 77
     Width = 10
-    Height = 547
+    Height = 558
   end
   object pnlL: TPanel [4]
     Left = 10
     Top = 77
-    Width = 998
-    Height = 547
+    Width = 1006
+    Height = 558
     Align = alClient
     Caption = 'pnlL'
     TabOrder = 3
     object cxgrd1: TcxGrid
       Left = 1
       Top = 87
-      Width = 996
-      Height = 459
+      Width = 1004
+      Height = 470
       Align = alClient
       TabOrder = 0
       object cxgrdbtblvwGrid1DBTableView1: TcxGridDBTableView
@@ -188,7 +188,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object actmmb2: TActionMainMenuBar
       Left = 1
       Top = 55
-      Width = 996
+      Width = 1004
       Height = 32
       UseSystemFont = False
       ActionManager = actmgr1
@@ -204,44 +204,44 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object acttb1: TActionToolBar
       Left = 1
       Top = 1
-      Width = 996
+      Width = 1004
       Height = 27
       ActionManager = actmgr1
       Caption = 'acttb1'
-      ColorMap.HighlightColor = clWhite
+      ColorMap.HighlightColor = 14410210
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = clWhite
+      ColorMap.UnusedColor = 14410210
       Spacing = 0
     end
     object acttb3: TActionToolBar
       Left = 1
       Top = 28
-      Width = 996
+      Width = 1004
       Height = 27
       ActionManager = actmgr1
       Caption = 'acttb3'
-      ColorMap.HighlightColor = clWhite
+      ColorMap.HighlightColor = 14410210
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = clWhite
+      ColorMap.UnusedColor = 14410210
       Spacing = 0
     end
   end
   object acttb2: TActionToolBar [5]
     Left = 0
     Top = 50
-    Width = 1008
+    Width = 1016
     Height = 27
     ActionManager = actmgr1
     Caption = 'acttb2'
-    ColorMap.HighlightColor = clWhite
+    ColorMap.HighlightColor = 14410210
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = clWhite
+    ColorMap.UnusedColor = 14410210
     Spacing = 0
   end
   object Memo1: TMemo [6]
     Left = 0
     Top = 0
-    Width = 1008
+    Width = 1016
     Height = 33
     Align = alTop
     Alignment = taCenter

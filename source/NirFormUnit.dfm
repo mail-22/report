@@ -25,6 +25,7 @@ inherited NirForm: TNirForm
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
+    AllowHiding = True
     Caption = 'actmmb1'
     ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
@@ -35,6 +36,7 @@ inherited NirForm: TNirForm
     Font.Name = 'Segoe UI'
     Font.Style = []
     Spacing = 0
+    Visible = False
   end
   object pnlGrid: TPanel [2]
     Left = 0

@@ -39,8 +39,6 @@ type
     tblReport2id: TIntegerField;
     tblReport2department: TStringField;
     DepartL: TStringField;
-    tblReport2basis: TStringField;
-    tblReport2contract_name: TStringField;
     tblReport2contract_number: TStringField;
     tblReport2deadline: TDateTimeField;
     tblReport2responsible: TStringField;
@@ -65,10 +63,8 @@ type
     IntegerField1: TIntegerField;
     StringField1: TStringField;
     StringField2: TStringField;
-    StringField3: TStringField;
     IntegerField2: TIntegerField;
     StringField4: TStringField;
-    StringField5: TStringField;
     IntegerField3: TIntegerField;
     DateTimeField1: TDateTimeField;
     StringField6: TStringField;

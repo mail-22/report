@@ -114,12 +114,10 @@ type
     jvpvnts1: TJvAppEvents;
     cxprprtstr1: TcxPropertiesStore;
     cxgrd1DBBandedTableView1: TcxGridDBBandedTableView;
-    cxgrdbndclmncxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column2: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column3: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column4: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column6: TcxGridDBBandedColumn;
-    cxgrdbndclmncxgrd1DBBandedTableView1Column7: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column8: TcxGridDBBandedColumn;
     cxgrd1DBBandedTableView1Column1: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1Column9: TcxGridDBBandedColumn;

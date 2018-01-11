@@ -255,44 +255,43 @@ object DM: TDM
       'INSERT INTO r1'
       
         '  (type_task_i, type_task_str, department, responsible, deadline' +
-        ', basis, basis_N, basis_ffile, contract_name, contract_number, c' +
-        'ontract_file, costofwork_F, invoice, invoice_file, payment_note,' +
-        ' payment_date, performance_of_work_note, performance_of_work_fil' +
-        'e, performance_of_work_date, act_acceptance, act_acceptance_file' +
-        ', contract_execution_note, dog_Zakazchik, dog_Predmet, dog_Predm' +
-        'et2, dog_Napravleniy, dog_Podpisan, dog_rekviz_data, dog_rekviz_' +
-        'str, contract_execution_file, dog_Primech, dog_basis_data, dog_b' +
-        'asis_str, emty, mail_Num_In, mail_Correspondent, mail_Data_In, m' +
-        'ail_Soderganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zay' +
-        'vka, nir_zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_z' +
-        'ad, nir_tz, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, `' +
-        '_SchedulerDBStorage_START`, `_ID`, ParentID, Type, Start, Finish' +
-        ', Options, Caption, RecurrenceIndex, RecurrenceInfo, ResourceID,' +
-        ' Location, Message, ReminderDate, ReminderMinutes, State, LabelC' +
-        'olor, ActualStart, ActualFinish, SyncIDField, `__SchedulerDBStor' +
-        'age_END`, Edit_ComputerName, Edit_LocalUserName, Edit_IP, Edit_D' +
-        'ate)'
+        ', basis_N, basis_ffile, contract_number, contract_file, costofwo' +
+        'rk_F, invoice, invoice_file, payment_note, payment_date, perform' +
+        'ance_of_work_note, performance_of_work_file, performance_of_work' +
+        '_date, act_acceptance, act_acceptance_file, contract_execution_n' +
+        'ote, dog_Zakazchik, dog_Predmet, dog_Predmet2, dog_Napravleniy, ' +
+        'dog_Podpisan, dog_rekviz_data, dog_rekviz_str, contract_executio' +
+        'n_file, dog_Primech, dog_basis_data, dog_basis_str, emty, mail_N' +
+        'um_In, mail_Correspondent, mail_Data_In, mail_Soderganie, mail_F' +
+        ', mail_Ispolnitel, mail_Resoluzia, nir_zayvka, nir_zayvka_file, ' +
+        'nir_zayvka_otpravleno, nir_plan, nir_teh_zad, nir_tz, nir_etap_s' +
+        'rok, nir_otchet, nir_act, nir_vnedrenie, `_SchedulerDBStorage_ST' +
+        'ART`, `_ID`, ParentID, Type, Start, Finish, Options, Caption, Re' +
+        'currenceIndex, RecurrenceInfo, ResourceID, Location, Message, Re' +
+        'minderDate, ReminderMinutes, State, LabelColor, ActualStart, Act' +
+        'ualFinish, SyncIDField, `__SchedulerDBStorage_END`, Edit_Compute' +
+        'rName, Edit_LocalUserName, Edit_IP, Edit_Date)'
       'VALUES'
       
         '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
-        'dline, :basis, :basis_N, :basis_ffile, :contract_name, :contract' +
-        '_number, :contract_file, :costofwork_F, :invoice, :invoice_file,' +
-        ' :payment_note, :payment_date, :performance_of_work_note, :perfo' +
-        'rmance_of_work_file, :performance_of_work_date, :act_acceptance,' +
-        ' :act_acceptance_file, :contract_execution_note, :dog_Zakazchik,' +
-        ' :dog_Predmet, :dog_Predmet2, :dog_Napravleniy, :dog_Podpisan, :' +
-        'dog_rekviz_data, :dog_rekviz_str, :contract_execution_file, :dog' +
-        '_Primech, :dog_basis_data, :dog_basis_str, :emty, :mail_Num_In, ' +
-        ':mail_Correspondent, :mail_Data_In, :mail_Soderganie, :mail_F, :' +
-        'mail_Ispolnitel, :mail_Resoluzia, :nir_zayvka, :nir_zayvka_file,' +
-        ' :nir_zayvka_otpravleno, :nir_plan, :nir_teh_zad, :nir_tz, :nir_' +
-        'etap_srok, :nir_otchet, :nir_act, :nir_vnedrenie, :`_SchedulerDB' +
-        'Storage_START`, :`_ID`, :ParentID, :Type, :Start, :Finish, :Opti' +
-        'ons, :Caption, :RecurrenceIndex, :RecurrenceInfo, :ResourceID, :' +
-        'Location, :Message, :ReminderDate, :ReminderMinutes, :State, :La' +
-        'belColor, :ActualStart, :ActualFinish, :SyncIDField, :`__Schedul' +
-        'erDBStorage_END`, :Edit_ComputerName, :Edit_LocalUserName, :Edit' +
-        '_IP, :Edit_Date)')
+        'dline, :basis_N, :basis_ffile, :contract_name, :contract_number,' +
+        ' :contract_file, :costofwork_F, :invoice, :invoice_file, :paymen' +
+        't_note, :payment_date, :performance_of_work_note, :performance_o' +
+        'f_work_file, :performance_of_work_date, :act_acceptance, :act_ac' +
+        'ceptance_file, :contract_execution_note, :dog_Zakazchik, :dog_Pr' +
+        'edmet, :dog_Predmet2, :dog_Napravleniy, :dog_Podpisan, :dog_rekv' +
+        'iz_data, :dog_rekviz_str, :contract_execution_file, :dog_Primech' +
+        ', :dog_basis_data, :dog_basis_str, :emty, :mail_Num_In, :mail_Co' +
+        'rrespondent, :mail_Data_In, :mail_Soderganie, :mail_F, :mail_Isp' +
+        'olnitel, :mail_Resoluzia, :nir_zayvka, :nir_zayvka_file, :nir_za' +
+        'yvka_otpravleno, :nir_plan, :nir_teh_zad, :nir_tz, :nir_etap_sro' +
+        'k, :nir_otchet, :nir_act, :nir_vnedrenie, :`_SchedulerDBStorage_' +
+        'START`, :`_ID`, :ParentID, :Type, :Start, :Finish, :Options, :Ca' +
+        'ption, :RecurrenceIndex, :RecurrenceInfo, :ResourceID, :Location' +
+        ', :Message, :ReminderDate, :ReminderMinutes, :State, :LabelColor' +
+        ', :ActualStart, :ActualFinish, :SyncIDField, :`__SchedulerDBStor' +
+        'age_END`, :Edit_ComputerName, :Edit_LocalUserName, :Edit_IP, :Ed' +
+        'it_Date)')
     SQLDelete.Strings = (
       'DELETE FROM r1'
       'WHERE'
@@ -303,41 +302,40 @@ object DM: TDM
       
         '  type_task_i = :type_task_i, type_task_str = :type_task_str, de' +
         'partment = :department, responsible = :responsible, deadline = :' +
-        'deadline, basis = :basis, basis_N = :basis_N, basis_ffile = :bas' +
-        'is_ffile, contract_name = :contract_name, contract_number = :con' +
-        'tract_number, contract_file = :contract_file, costofwork_F = :co' +
-        'stofwork_F, invoice = :invoice, invoice_file = :invoice_file, pa' +
-        'yment_note = :payment_note, payment_date = :payment_date, perfor' +
-        'mance_of_work_note = :performance_of_work_note, performance_of_w' +
-        'ork_file = :performance_of_work_file, performance_of_work_date =' +
-        ' :performance_of_work_date, act_acceptance = :act_acceptance, ac' +
-        't_acceptance_file = :act_acceptance_file, contract_execution_not' +
-        'e = :contract_execution_note, dog_Zakazchik = :dog_Zakazchik, do' +
-        'g_Predmet = :dog_Predmet, dog_Predmet2 = :dog_Predmet2, dog_Napr' +
-        'avleniy = :dog_Napravleniy, dog_Podpisan = :dog_Podpisan, dog_re' +
-        'kviz_data = :dog_rekviz_data, dog_rekviz_str = :dog_rekviz_str, ' +
-        'contract_execution_file = :contract_execution_file, dog_Primech ' +
-        '= :dog_Primech, dog_basis_data = :dog_basis_data, dog_basis_str ' +
-        '= :dog_basis_str, emty = :emty, mail_Num_In = :mail_Num_In, mail' +
-        '_Correspondent = :mail_Correspondent, mail_Data_In = :mail_Data_' +
-        'In, mail_Soderganie = :mail_Soderganie, mail_F = :mail_F, mail_I' +
-        'spolnitel = :mail_Ispolnitel, mail_Resoluzia = :mail_Resoluzia, ' +
-        'nir_zayvka = :nir_zayvka, nir_zayvka_file = :nir_zayvka_file, ni' +
-        'r_zayvka_otpravleno = :nir_zayvka_otpravleno, nir_plan = :nir_pl' +
-        'an, nir_teh_zad = :nir_teh_zad, nir_tz = :nir_tz, nir_etap_srok ' +
-        '= :nir_etap_srok, nir_otchet = :nir_otchet, nir_act = :nir_act, ' +
-        'nir_vnedrenie = :nir_vnedrenie, `_SchedulerDBStorage_START` = :`' +
-        '_SchedulerDBStorage_START`, `_ID` = :`_ID`, ParentID = :ParentID' +
-        ', Type = :Type, Start = :Start, Finish = :Finish, Options = :Opt' +
-        'ions, Caption = :Caption, RecurrenceIndex = :RecurrenceIndex, Re' +
-        'currenceInfo = :RecurrenceInfo, ResourceID = :ResourceID, Locati' +
-        'on = :Location, Message = :Message, ReminderDate = :ReminderDate' +
-        ', ReminderMinutes = :ReminderMinutes, State = :State, LabelColor' +
-        ' = :LabelColor, ActualStart = :ActualStart, ActualFinish = :Actu' +
-        'alFinish, SyncIDField = :SyncIDField, `__SchedulerDBStorage_END`' +
-        ' = :`__SchedulerDBStorage_END`, Edit_ComputerName = :Edit_Comput' +
-        'erName, Edit_LocalUserName = :Edit_LocalUserName, Edit_IP = :Edi' +
-        't_IP, Edit_Date = :Edit_Date'
+        'deadline, basis_N = :basis_N, basis_ffile = :basis_ffile, contra' +
+        'ct_number = :contract_number, contract_file = :contract_file, co' +
+        'stofwork_F = :costofwork_F, invoice = :invoice, invoice_file = :' +
+        'invoice_file, payment_note = :payment_note, payment_date = :paym' +
+        'ent_date, performance_of_work_note = :performance_of_work_note, ' +
+        'performance_of_work_file = :performance_of_work_file, performanc' +
+        'e_of_work_date = :performance_of_work_date, act_acceptance = :ac' +
+        't_acceptance, act_acceptance_file = :act_acceptance_file, contra' +
+        'ct_execution_note = :contract_execution_note, dog_Zakazchik = :d' +
+        'og_Zakazchik, dog_Predmet = :dog_Predmet, dog_Predmet2 = :dog_Pr' +
+        'edmet2, dog_Napravleniy = :dog_Napravleniy, dog_Podpisan = :dog_' +
+        'Podpisan, dog_rekviz_data = :dog_rekviz_data, dog_rekviz_str = :' +
+        'dog_rekviz_str, contract_execution_file = :contract_execution_fi' +
+        'le, dog_Primech = :dog_Primech, dog_basis_data = :dog_basis_data' +
+        ', dog_basis_str = :dog_basis_str, emty = :emty, mail_Num_In = :m' +
+        'ail_Num_In, mail_Correspondent = :mail_Correspondent, mail_Data_' +
+        'In = :mail_Data_In, mail_Soderganie = :mail_Soderganie, mail_F =' +
+        ' :mail_F, mail_Ispolnitel = :mail_Ispolnitel, mail_Resoluzia = :' +
+        'mail_Resoluzia, nir_zayvka = :nir_zayvka, nir_zayvka_file = :nir' +
+        '_zayvka_file, nir_zayvka_otpravleno = :nir_zayvka_otpravleno, ni' +
+        'r_plan = :nir_plan, nir_teh_zad = :nir_teh_zad, nir_tz = :nir_tz' +
+        ', nir_etap_srok = :nir_etap_srok, nir_otchet = :nir_otchet, nir_' +
+        'act = :nir_act, nir_vnedrenie = :nir_vnedrenie, `_SchedulerDBSto' +
+        'rage_START` = :`_SchedulerDBStorage_START`, `_ID` = :`_ID`, Pare' +
+        'ntID = :ParentID, Type = :Type, Start = :Start, Finish = :Finish' +
+        ', Options = :Options, Caption = :Caption, RecurrenceIndex = :Rec' +
+        'urrenceIndex, RecurrenceInfo = :RecurrenceInfo, ResourceID = :Re' +
+        'sourceID, Location = :Location, Message = :Message, ReminderDate' +
+        ' = :ReminderDate, ReminderMinutes = :ReminderMinutes, State = :S' +
+        'tate, LabelColor = :LabelColor, ActualStart = :ActualStart, Actu' +
+        'alFinish = :ActualFinish, SyncIDField = :SyncIDField, `__Schedul' +
+        'erDBStorage_END` = :`__SchedulerDBStorage_END`, Edit_ComputerNam' +
+        'e = :Edit_ComputerName, Edit_LocalUserName = :Edit_LocalUserName' +
+        ', Edit_IP = :Edit_IP, Edit_Date = :Edit_Date'
       'WHERE'
       '  id = :Old_id')
     SQLLock.Strings = (
@@ -349,23 +347,22 @@ object DM: TDM
     SQLRefresh.Strings = (
       
         'SELECT type_task_i, type_task_str, department, responsible, dead' +
-        'line, basis, basis_N, basis_ffile, contract_name, contract_numbe' +
-        'r, contract_file, costofwork_F, invoice, invoice_file, payment_n' +
-        'ote, payment_date, performance_of_work_note, performance_of_work' +
-        '_file, performance_of_work_date, act_acceptance, act_acceptance_' +
-        'file, contract_execution_note, dog_Zakazchik, dog_Predmet, dog_P' +
-        'redmet2, dog_Napravleniy, dog_Podpisan, dog_rekviz_data, dog_rek' +
-        'viz_str, contract_execution_file, dog_Primech, dog_basis_data, d' +
-        'og_basis_str, emty, mail_Num_In, mail_Correspondent, mail_Data_I' +
-        'n, mail_Soderganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir' +
-        '_zayvka, nir_zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_t' +
-        'eh_zad, nir_tz, nir_etap_srok, nir_otchet, nir_act, nir_vnedreni' +
-        'e, `_SchedulerDBStorage_START`, `_ID`, ParentID, Type, Start, Fi' +
-        'nish, Options, Caption, RecurrenceIndex, RecurrenceInfo, Resourc' +
-        'eID, Location, Message, ReminderDate, ReminderMinutes, State, La' +
-        'belColor, ActualStart, ActualFinish, SyncIDField, `__SchedulerDB' +
-        'Storage_END`, Edit_ComputerName, Edit_LocalUserName, Edit_IP, Ed' +
-        'it_Date FROM r1'
+        'line, basis_N, basis_ffile, contract_number, contract_file, cost' +
+        'ofwork_F, invoice, invoice_file, payment_note, payment_date, per' +
+        'formance_of_work_note, performance_of_work_file, performance_of_' +
+        'work_date, act_acceptance, act_acceptance_file, contract_executi' +
+        'on_note, dog_Zakazchik, dog_Predmet, dog_Predmet2, dog_Napravlen' +
+        'iy, dog_Podpisan, dog_rekviz_data, dog_rekviz_str, contract_exec' +
+        'ution_file, dog_Primech, dog_basis_data, dog_basis_str, emty, ma' +
+        'il_Num_In, mail_Correspondent, mail_Data_In, mail_Soderganie, ma' +
+        'il_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, nir_zayvka_fi' +
+        'le, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, nir_tz, nir_et' +
+        'ap_srok, nir_otchet, nir_act, nir_vnedrenie, `_SchedulerDBStorag' +
+        'e_START`, `_ID`, ParentID, Type, Start, Finish, Options, Caption' +
+        ', RecurrenceIndex, RecurrenceInfo, ResourceID, Location, Message' +
+        ', ReminderDate, ReminderMinutes, State, LabelColor, ActualStart,' +
+        ' ActualFinish, SyncIDField, `__SchedulerDBStorage_END`, Edit_Com' +
+        'puterName, Edit_LocalUserName, Edit_IP, Edit_Date FROM r1'
       'WHERE'
       '  id = :id')
     Connection = UniConnection1
@@ -419,11 +416,6 @@ object DM: TDM
       FieldName = 'type_task_str'
       Size = 255
     end
-    object tblReport2basis: TStringField
-      DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072'  - '#1082#1086#1084#1084#1077#1085#1090#1072#1088#1080#1081' '
-      FieldName = 'basis'
-      Size = 255
-    end
     object strngfldReport2basis_N: TStringField
       DisplayLabel = #1086#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072' - '#1087#1080#1089#1100#1084#1086' '#8470
       FieldName = 'basis_N'
@@ -443,11 +435,6 @@ object DM: TDM
     object tblReport2contract_number: TStringField
       DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' -'#1085#1086#1084#1077#1088
       FieldName = 'contract_number'
-      Size = 255
-    end
-    object tblReport2contract_name: TStringField
-      DisplayLabel = #1088#1077#1082#1074#1080#1079#1080#1090#1099' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
-      FieldName = 'contract_name'
       Size = 255
     end
     object tblReport2contract_file: TIntegerField
@@ -731,22 +718,21 @@ object DM: TDM
       'INSERT INTO r1'
       
         '  (type_task_i, type_task_str, department, responsible, deadline' +
-        ', basis, basis_N, basis_ffile, contract_name, contract_number, c' +
-        'ontract_file, costofwork_F, invoice, invoice_file, payment_note,' +
-        ' payment_date, performance_of_work_note, performance_of_work_fil' +
-        'e, performance_of_work_date, act_acceptance, act_acceptance_file' +
-        ', contract_execution_note, contract_execution_file, dog_Primech,' +
-        ' emty, mail_Num_In, mail_Correspondent, mail_Data_In, mail_Soder' +
-        'ganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, nir_' +
-        'zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, nir_t' +
-        'z, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Zakazc' +
-        'hik, dog_Predmet, dog_Predmet2, dog_Napravleniy, dog_Podpisan, d' +
-        'og_rekviz_data, dog_rekviz_str, `_SchedulerDBStorage_START`, `_I' +
-        'D`, ParentID, Type, Start, Finish, Options, Caption, RecurrenceI' +
-        'ndex, RecurrenceInfo, ResourceID, Location, Message, ReminderDat' +
-        'e, ReminderMinutes, State, LabelColor, ActualStart, ActualFinish' +
-        ', SyncIDField, `__SchedulerDBStorage_END`, dog_basis_data, dog_b' +
-        'asis_str)'
+        ', basis, basis_N, basis_ffile, contract_number, contract_file, c' +
+        'ostofwork_F, invoice, invoice_file, payment_note, payment_date, ' +
+        'performance_of_work_note, performance_of_work_file, performance_' +
+        'of_work_date, act_acceptance, act_acceptance_file, contract_exec' +
+        'ution_note, contract_execution_file, dog_Primech, emty, mail_Num' +
+        '_In, mail_Correspondent, mail_Data_In, mail_Soderganie, mail_F, ' +
+        'mail_Ispolnitel, mail_Resoluzia, nir_zayvka, nir_zayvka_file, ni' +
+        'r_zayvka_otpravleno, nir_plan, nir_teh_zad, nir_tz, nir_etap_sro' +
+        'k, nir_otchet, nir_act, nir_vnedrenie, dog_Zakazchik, dog_Predme' +
+        't, dog_Predmet2, dog_Napravleniy, dog_Podpisan, dog_rekviz_data,' +
+        ' dog_rekviz_str, `_SchedulerDBStorage_START`, `_ID`, ParentID, T' +
+        'ype, Start, Finish, Options, Caption, RecurrenceIndex, Recurrenc' +
+        'eInfo, ResourceID, Location, Message, ReminderDate, ReminderMinu' +
+        'tes, State, LabelColor, ActualStart, ActualFinish, SyncIDField, ' +
+        '`__SchedulerDBStorage_END`, dog_basis_data, dog_basis_str)'
       'VALUES'
       
         '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
@@ -778,38 +764,37 @@ object DM: TDM
         '  type_task_i = :type_task_i, type_task_str = :type_task_str, de' +
         'partment = :department, responsible = :responsible, deadline = :' +
         'deadline, basis = :basis, basis_N = :basis_N, basis_ffile = :bas' +
-        'is_ffile, contract_name = :contract_name, contract_number = :con' +
-        'tract_number, contract_file = :contract_file, costofwork_F = :co' +
-        'stofwork_F, invoice = :invoice, invoice_file = :invoice_file, pa' +
-        'yment_note = :payment_note, payment_date = :payment_date, perfor' +
-        'mance_of_work_note = :performance_of_work_note, performance_of_w' +
-        'ork_file = :performance_of_work_file, performance_of_work_date =' +
-        ' :performance_of_work_date, act_acceptance = :act_acceptance, ac' +
-        't_acceptance_file = :act_acceptance_file, contract_execution_not' +
-        'e = :contract_execution_note, contract_execution_file = :contrac' +
-        't_execution_file, dog_Primech = :dog_Primech, emty = :emty, mail' +
-        '_Num_In = :mail_Num_In, mail_Correspondent = :mail_Correspondent' +
-        ', mail_Data_In = :mail_Data_In, mail_Soderganie = :mail_Sodergan' +
-        'ie, mail_F = :mail_F, mail_Ispolnitel = :mail_Ispolnitel, mail_R' +
-        'esoluzia = :mail_Resoluzia, nir_zayvka = :nir_zayvka, nir_zayvka' +
-        '_file = :nir_zayvka_file, nir_zayvka_otpravleno = :nir_zayvka_ot' +
-        'pravleno, nir_plan = :nir_plan, nir_teh_zad = :nir_teh_zad, nir_' +
-        'tz = :nir_tz, nir_etap_srok = :nir_etap_srok, nir_otchet = :nir_' +
-        'otchet, nir_act = :nir_act, nir_vnedrenie = :nir_vnedrenie, dog_' +
-        'Zakazchik = :dog_Zakazchik, dog_Predmet = :dog_Predmet, dog_Pred' +
-        'met2 = :dog_Predmet2, dog_Napravleniy = :dog_Napravleniy, dog_Po' +
-        'dpisan = :dog_Podpisan, dog_rekviz_data = :dog_rekviz_data, dog_' +
-        'rekviz_str = :dog_rekviz_str, `_SchedulerDBStorage_START` = :`_S' +
-        'chedulerDBStorage_START`, `_ID` = :`_ID`, ParentID = :ParentID, ' +
-        'Type = :Type, Start = :Start, Finish = :Finish, Options = :Optio' +
-        'ns, Caption = :Caption, RecurrenceIndex = :RecurrenceIndex, Recu' +
-        'rrenceInfo = :RecurrenceInfo, ResourceID = :ResourceID, Location' +
-        ' = :Location, Message = :Message, ReminderDate = :ReminderDate, ' +
-        'ReminderMinutes = :ReminderMinutes, State = :State, LabelColor =' +
-        ' :LabelColor, ActualStart = :ActualStart, ActualFinish = :Actual' +
-        'Finish, SyncIDField = :SyncIDField, `__SchedulerDBStorage_END` =' +
-        ' :`__SchedulerDBStorage_END`, dog_basis_data = :dog_basis_data, ' +
-        'dog_basis_str = :dog_basis_str'
+        'is_ffile, contract_number = :contract_number, contract_file = :c' +
+        'ontract_file, costofwork_F = :costofwork_F, invoice = :invoice, ' +
+        'invoice_file = :invoice_file, payment_note = :payment_note, paym' +
+        'ent_date = :payment_date, performance_of_work_note = :performanc' +
+        'e_of_work_note, performance_of_work_file = :performance_of_work_' +
+        'file, performance_of_work_date = :performance_of_work_date, act_' +
+        'acceptance = :act_acceptance, act_acceptance_file = :act_accepta' +
+        'nce_file, contract_execution_note = :contract_execution_note, co' +
+        'ntract_execution_file = :contract_execution_file, dog_Primech = ' +
+        ':dog_Primech, emty = :emty, mail_Num_In = :mail_Num_In, mail_Cor' +
+        'respondent = :mail_Correspondent, mail_Data_In = :mail_Data_In, ' +
+        'mail_Soderganie = :mail_Soderganie, mail_F = :mail_F, mail_Ispol' +
+        'nitel = :mail_Ispolnitel, mail_Resoluzia = :mail_Resoluzia, nir_' +
+        'zayvka = :nir_zayvka, nir_zayvka_file = :nir_zayvka_file, nir_za' +
+        'yvka_otpravleno = :nir_zayvka_otpravleno, nir_plan = :nir_plan, ' +
+        'nir_teh_zad = :nir_teh_zad, nir_tz = :nir_tz, nir_etap_srok = :n' +
+        'ir_etap_srok, nir_otchet = :nir_otchet, nir_act = :nir_act, nir_' +
+        'vnedrenie = :nir_vnedrenie, dog_Zakazchik = :dog_Zakazchik, dog_' +
+        'Predmet = :dog_Predmet, dog_Predmet2 = :dog_Predmet2, dog_Naprav' +
+        'leniy = :dog_Napravleniy, dog_Podpisan = :dog_Podpisan, dog_rekv' +
+        'iz_data = :dog_rekviz_data, dog_rekviz_str = :dog_rekviz_str, `_' +
+        'SchedulerDBStorage_START` = :`_SchedulerDBStorage_START`, `_ID` ' +
+        '= :`_ID`, ParentID = :ParentID, Type = :Type, Start = :Start, Fi' +
+        'nish = :Finish, Options = :Options, Caption = :Caption, Recurren' +
+        'ceIndex = :RecurrenceIndex, RecurrenceInfo = :RecurrenceInfo, Re' +
+        'sourceID = :ResourceID, Location = :Location, Message = :Message' +
+        ', ReminderDate = :ReminderDate, ReminderMinutes = :ReminderMinut' +
+        'es, State = :State, LabelColor = :LabelColor, ActualStart = :Act' +
+        'ualStart, ActualFinish = :ActualFinish, SyncIDField = :SyncIDFie' +
+        'ld, `__SchedulerDBStorage_END` = :`__SchedulerDBStorage_END`, do' +
+        'g_basis_data = :dog_basis_data, dog_basis_str = :dog_basis_str'
       'WHERE'
       '  id = :Old_id')
     SQLLock.Strings = (
@@ -821,22 +806,22 @@ object DM: TDM
     SQLRefresh.Strings = (
       
         'SELECT type_task_i, type_task_str, department, responsible, dead' +
-        'line, basis, basis_N, basis_ffile, contract_name, contract_numbe' +
-        'r, contract_file, costofwork_F, invoice, invoice_file, payment_n' +
-        'ote, payment_date, performance_of_work_note, performance_of_work' +
-        '_file, performance_of_work_date, act_acceptance, act_acceptance_' +
-        'file, contract_execution_note, contract_execution_file, dog_Prim' +
-        'ech, emty, mail_Num_In, mail_Correspondent, mail_Data_In, mail_S' +
-        'oderganie, mail_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, ' +
-        'nir_zayvka_file, nir_zayvka_otpravleno, nir_plan, nir_teh_zad, n' +
-        'ir_tz, nir_etap_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Za' +
-        'kazchik, dog_Predmet, dog_Predmet2, dog_Napravleniy, dog_Podpisa' +
-        'n, dog_rekviz_data, dog_rekviz_str, `_SchedulerDBStorage_START`,' +
-        ' `_ID`, ParentID, Type, Start, Finish, Options, Caption, Recurre' +
-        'nceIndex, RecurrenceInfo, ResourceID, Location, Message, Reminde' +
-        'rDate, ReminderMinutes, State, LabelColor, ActualStart, ActualFi' +
-        'nish, SyncIDField, `__SchedulerDBStorage_END`, dog_basis_data, d' +
-        'og_basis_str FROM r1'
+        'line, basis, basis_N, basis_ffile, contract_number, contract_fil' +
+        'e, costofwork_F, invoice, invoice_file, payment_note, payment_da' +
+        'te, performance_of_work_note, performance_of_work_file, performa' +
+        'nce_of_work_date, act_acceptance, act_acceptance_file, contract_' +
+        'execution_note, contract_execution_file, dog_Primech, emty, mail' +
+        '_Num_In, mail_Correspondent, mail_Data_In, mail_Soderganie, mail' +
+        '_F, mail_Ispolnitel, mail_Resoluzia, nir_zayvka, nir_zayvka_file' +
+        ', nir_zayvka_otpravleno, nir_plan, nir_teh_zad, nir_tz, nir_etap' +
+        '_srok, nir_otchet, nir_act, nir_vnedrenie, dog_Zakazchik, dog_Pr' +
+        'edmet, dog_Predmet2, dog_Napravleniy, dog_Podpisan, dog_rekviz_d' +
+        'ata, dog_rekviz_str, `_SchedulerDBStorage_START`, `_ID`, ParentI' +
+        'D, Type, Start, Finish, Options, Caption, RecurrenceIndex, Recur' +
+        'renceInfo, ResourceID, Location, Message, ReminderDate, Reminder' +
+        'Minutes, State, LabelColor, ActualStart, ActualFinish, SyncIDFie' +
+        'ld, `__SchedulerDBStorage_END`, dog_basis_data, dog_basis_str FR' +
+        'OM r1'
       'WHERE'
       '  id = :id')
     Connection = UniConnection1
@@ -884,11 +869,6 @@ object DM: TDM
       KeyFields = 'department'
       Lookup = True
     end
-    object StringField3: TStringField
-      DisplayLabel = ' '#1054#1089#1085#1086#1074#1072#1085#1080#1077' '#1076#1083#1103' '#1076#1086#1075#1086#1074#1086#1088#1072
-      FieldName = 'basis'
-      Size = 255
-    end
     object IntegerField2: TIntegerField
       DisplayLabel = #1054#1089#1085#1086#1074#1072#1085#1080#1077', '#1092#1072#1081#1083
       FieldName = 'basis_ffile'
@@ -896,11 +876,6 @@ object DM: TDM
     object StringField4: TStringField
       DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' -'#1085#1086#1084#1077#1088
       FieldName = 'contract_number'
-      Size = 255
-    end
-    object StringField5: TStringField
-      DisplayLabel = #1076#1086#1075#1086#1074#1086#1088' - '#1085#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077'  '
-      FieldName = 'contract_name'
       Size = 255
     end
     object IntegerField3: TIntegerField

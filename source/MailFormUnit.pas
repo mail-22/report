@@ -87,7 +87,6 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn;
     cxgrdlvl21: TcxGridLevel;
-    cxgrdlvl22: TcxGridLevel;
     pnl_Navigator1: TPanel;
     cxDBNavigator3: TcxDBNavigator;
     pnl3: TPanel;
@@ -122,6 +121,7 @@ type
     btnAdd1: TToolButton;
     btnEdit: TToolButton;
     btnacOle: TToolButton;
+    cxgrdbndclmn_contract_file: TcxGridDBBandedColumn;
     procedure acOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actEditExecute(Sender: TObject);
@@ -142,7 +142,6 @@ type
   end;
 
   procedure MailForm_Show;
-  procedure NirForm_Show;
 
 /////////////////////////////
 var
@@ -164,13 +163,6 @@ begin
   if (MailForm = nil) then
      Application.CreateForm(TMailForm, MailForm);
   MailForm.ShowModal;
-end;
-
-procedure NirForm_Show;
-begin
-  if (NirForm = nil) then
-     Application.CreateForm(TNirForm, NirForm);
-  NirForm.ShowModal;
 end;
 
 procedure TMailForm.acOleExecute(Sender: TObject);
@@ -256,6 +248,7 @@ begin
   //tmpStr :=
   MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name+ '.' +  'MRUEdit.responsible.txt';
   //MRUEdit_responsible := ExtractFilePath(Application.ExeName) + 'MRUEdit.responsible.txt';
+  MRUEdit_responsible :=  MRU_FiO;
   //
   if FileExists(MRUEdit_responsible) then
   begin // проверить на наличие свойства MRU у поля !!!

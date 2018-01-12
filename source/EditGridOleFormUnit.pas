@@ -26,7 +26,8 @@ uses
 type
   tTypeOfDoc = (Basic = 1, Contract, Invoice, Performance, Act, Contract_Execution,
     MailIn,
-    nir_tz, nir_otchet, nir_act);
+    nir_tz, nir_otchet, nir_act,
+    AnyDoc);
 
   tDoc = record
     strTypeOfDoc: string;
@@ -83,6 +84,8 @@ type
     act_nir_tz: TAction;
     act_nir_otchet: TAction;
     act_nir_act: TAction;
+    actAddAnyDoc: TAction;
+    procedure actAddAnyDocExecute(Sender: TObject);
     procedure acAddContractExecute(Sender: TObject);
     procedure actAddActExecute(Sender: TObject);
     procedure actAddBasisExecute(Sender: TObject);
@@ -274,6 +277,12 @@ begin //ds := DM.BLOB;   //OleContainer := XMLForm.XMLFrame1.DBOleContainer1;
 end; //File2OLE
 
  
+procedure TEditGridJOleForm.actAddAnyDocExecute(Sender: TObject);
+begin
+  inherited;
+  AddAnyDocMethod(Sender);
+end;
+
 procedure TEditGridJOleForm.acAddContractExecute(Sender: TObject);
 begin
   inherited;
@@ -295,10 +304,12 @@ end;
 
 procedure TEditGridJOleForm.SetTypeOfDoc(DataSet:TDataSet ; Field :TField ; Doc :tDoc);
 begin
-
     if not (DataSet.State in [dsInsert, dsEdit]) then
         DataSet.Edit;
     Field.AsString :=  Doc.strTypeOfDoc;
+    DataSet.Post;
+    DataSet.RecNo;
+    DataSet.RecordCount;
 end;
 
 procedure TEditGridJOleForm.IncMethod(DataSet:TDataSet ; Field :TIntegerField);
@@ -306,6 +317,9 @@ begin
     if not (DataSet.State in [dsInsert, dsEdit]) then
          DataSet.Edit;
     Field.AsInteger := Field.AsInteger + 1;
+    DataSet.Post;
+    DataSet.RecNo;
+    DataSet.RecordCount;
 end;
 
 
@@ -355,14 +369,35 @@ begin
 end;
 
 procedure TEditGridJOleForm.AddAnyDocMethod(Sender: TObject);
+var
+  DataSet:TDataSet;
 begin
-
+  DataSet:= dm.tblReport2;
   if not (Sender is TComponent) then   begin
      Exit;
   end;
 
   AddMethod;
 
+  if (TRUE) then  //  Любой документ произвольного типа
+  begin
+    IncMethod(dm.tblReport2 , dm.tblReport2contract_file);  // Contract_Execution ???
+    SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[AnyDoc]);
+  end;
+//Exit;
+  if (TComponent(Sender).Name = actAddAnyDoc.Name) then  //  Любой документ произвольного типа
+  begin
+    IncMethod(dm.tblReport2 , dm.tblReport2contract_file);  // Contract_Execution ???
+    SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[AnyDoc]);
+    Exit;
+  end
+  else
+  if (TComponent(Sender).Name = actAdd.Name) then  //  Любой документ произвольного типа
+  begin
+    IncMethod(dm.tblReport2 , dm.tblReport2contract_execution_file);
+    SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[Contract_Execution]);  // Contract_Execution ???
+  end
+  else
   if (TComponent(Sender).Name = act_nir_act.Name) then  // nir_tz
   begin
     IncMethod(dm.tblReport2 , dm.tblReport2nir_act);
@@ -392,6 +427,7 @@ begin
     IncMethod(dm.tblReport2 , dm.tblReport2basis_ffile);
     SetTypeOfDoc(dm.tblJpg ,  dm.tblTypeOfDoc ,  cDoc[Basic]);
   end
+
   else
   if (TComponent(Sender).Name = acAddContract.Name) then   //Договор
   begin
@@ -452,7 +488,7 @@ var
   tmpStr   :string ;
 begin
  //#ToDo2 Add сохранение насстроек у грида
- 
+
   BDDirPathName := ExtractFileDir(dm.strConnection_Get) +'\'+ constBDname +'\';
   ExportPath := ExtractFileDir(Application.ExeName) +'\'+ constExportDir + '\';
   inistr := IncludeTrailingBackslash(GetApplicationDataFolder) + ExtractFileName(Application.ExeName)
@@ -476,6 +512,8 @@ begin
 //MRU
   tmpStr :=  '!_' + Self.Name+ '_' + 'cxgrdbclmn_Type_MRU'+ '_';
   MRUEdit_rubricator :=  ChangeFileExt2(tmpStr);
+  MRUEdit_rubricator := ExtractFilePath(Application.ExeName) + Self.Name+ '.' +  'MRUEdit.TypeOfDoc.txt';
+
   //
   if FileExists(MRUEdit_rubricator) then
   begin // проверить на наличие свойства MRU у поля !!!
@@ -521,6 +559,9 @@ begin
 
   cDoc[nir_act].TypeOfDoc :=  nir_act;
   cDoc[nir_act].strTypeOfDoc := 'НИР Акты';
+
+  cDoc[AnyDoc].TypeOfDoc :=  AnyDoc;
+  cDoc[AnyDoc].strTypeOfDoc := 'Документ';
 end; //Init
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -603,14 +644,14 @@ begin
   inherited;
   if True {FileExists(MRUEdit_rubricator)} then
   begin // проверить на наличие свойства MRU у поля !!!
-    TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.SaveToFile(MRUEdit_rubricator);
+    TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.SaveToFile(MRUEdit_rubricator);   // 'C:\Users\admin\AppData\Local\Report.exe_Profile\!_EditGridJOleForm_cxgrdbclmn_Type_MRU_Report.ini'
     TcxMRUEditProperties(cxgrdbclmn_Type_MRU.Properties).LookupItems.Text; //
   end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
   else
   begin
   end;
 
-end;          
+end;
 
 procedure TEditGridJOleForm.MakeUniqName;
 var

@@ -1,6 +1,6 @@
 inherited EditGridJOleForm: TEditGridJOleForm
-  Left = 122
-  Top = 151
+  Left = 63
+  Top = 159
   Width = 1024
   Height = 756
   Caption = #1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1077' '#1092#1072#1081#1083#1099
@@ -9,15 +9,15 @@ inherited EditGridJOleForm: TEditGridJOleForm
   object lbl1: TLabel [0]
     Left = 0
     Top = 33
-    Width = 1016
+    Width = 1008
     Height = 17
     Align = alTop
     Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090#1099' '#1074#1080#1076#1072' :'
   end
   object pnl_Navigator1: TPanel [1]
     Left = 0
-    Top = 635
-    Width = 1016
+    Top = 624
+    Width = 1008
     Height = 41
     Align = alBottom
     BevelInner = bvLowered
@@ -78,8 +78,8 @@ inherited EditGridJOleForm: TEditGridJOleForm
   end
   object pnl1: TPanel [2]
     Left = 0
-    Top = 676
-    Width = 1016
+    Top = 665
+    Width = 1008
     Height = 53
     Align = alBottom
     TabOrder = 1
@@ -107,21 +107,21 @@ inherited EditGridJOleForm: TEditGridJOleForm
     Left = 0
     Top = 77
     Width = 10
-    Height = 558
+    Height = 547
   end
   object pnlL: TPanel [4]
     Left = 10
     Top = 77
-    Width = 1006
-    Height = 558
+    Width = 998
+    Height = 547
     Align = alClient
     Caption = 'pnlL'
     TabOrder = 3
     object cxgrd1: TcxGrid
       Left = 1
       Top = 87
-      Width = 1004
-      Height = 470
+      Width = 996
+      Height = 459
       Align = alClient
       TabOrder = 0
       object cxgrdbtblvwGrid1DBTableView1: TcxGridDBTableView
@@ -188,7 +188,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object actmmb2: TActionMainMenuBar
       Left = 1
       Top = 55
-      Width = 1004
+      Width = 996
       Height = 32
       UseSystemFont = False
       ActionManager = actmgr1
@@ -204,44 +204,44 @@ inherited EditGridJOleForm: TEditGridJOleForm
     object acttb1: TActionToolBar
       Left = 1
       Top = 1
-      Width = 1004
+      Width = 996
       Height = 27
       ActionManager = actmgr1
       Caption = 'acttb1'
-      ColorMap.HighlightColor = 14410210
+      ColorMap.HighlightColor = clWhite
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = 14410210
+      ColorMap.UnusedColor = clWhite
       Spacing = 0
     end
     object acttb3: TActionToolBar
       Left = 1
       Top = 28
-      Width = 1004
+      Width = 996
       Height = 27
       ActionManager = actmgr1
       Caption = 'acttb3'
-      ColorMap.HighlightColor = 14410210
+      ColorMap.HighlightColor = clWhite
       ColorMap.BtnSelectedColor = clBtnFace
-      ColorMap.UnusedColor = 14410210
+      ColorMap.UnusedColor = clWhite
       Spacing = 0
     end
   end
   object acttb2: TActionToolBar [5]
     Left = 0
     Top = 50
-    Width = 1016
+    Width = 1008
     Height = 27
     ActionManager = actmgr1
     Caption = 'acttb2'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Spacing = 0
   end
   object Memo1: TMemo [6]
     Left = 0
     Top = 0
-    Width = 1016
+    Width = 1008
     Height = 33
     Align = alTop
     Alignment = taCenter
@@ -335,7 +335,7 @@ inherited EditGridJOleForm: TEditGridJOleForm
             Action = actAddBasis
           end
           item
-            Action = actAdd
+            Action = actAddAnyDoc
           end>
         ActionBar = acttb2
       end
@@ -434,6 +434,11 @@ inherited EditGridJOleForm: TEditGridJOleForm
       Caption = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072
       Hint = #1054#1090#1084#1077#1090#1082#1072' '#1086' '#1074#1099#1087#1086#1083#1085#1077#1085#1080#1080' '#1076#1086#1075#1086#1074#1086#1088#1072'- '#1076#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090'!'
       OnExecute = actAddContrExExecute
+    end
+    object actAddAnyDoc: TAction
+      Category = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1076#1086#1082#1091#1084#1077#1085#1090' !'
+      OnExecute = actAddAnyDocExecute
     end
   end
   object xpclrmp1: TXPColorMap

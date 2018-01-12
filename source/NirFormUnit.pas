@@ -87,7 +87,6 @@ type
     cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn;
     cxgrdbndclmncxgrd1DBBandedTableView1responsible: TcxGridDBBandedColumn;
     cxgrdlvl21: TcxGridLevel;
-    cxgrdlvl22: TcxGridLevel;
     pnl_Navigator1: TPanel;
     cxDBNavigator3: TcxDBNavigator;
     pnl3: TPanel;
@@ -123,6 +122,7 @@ type
     btnAdd1: TToolButton;
     btnEdit: TToolButton;
     btnacOle: TToolButton;
+    cxgrdbnd_contract_file: TcxGridDBBandedColumn;
     procedure acOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actEditExecute(Sender: TObject);
@@ -245,7 +245,8 @@ begin
 
   //MRU     cxgrdbndclmncxgrd1DBBandedTableView1responsible
   //tmpStr :=
-  MRUEdit_responsible := ExtractFilePath(Application.ExeName) + Self.Name+ '.' +  'MRUEdit.responsible.txt';
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName)+ '.' +  'MRU.FiO.txt';
+  MRUEdit_responsible := MRU_FiO;
   //MRUEdit_responsible := ExtractFilePath(Application.ExeName) + 'MRUEdit.responsible.txt';
   //
   if FileExists(MRUEdit_responsible) then

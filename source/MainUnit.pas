@@ -106,7 +106,7 @@ implementation
 uses
     FormTuningUnit,  CommonUnit,
    ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit, SelDepUnit, EditForm2Unit, EditEmplFormUnit,
-  DMUnit, DBDemoMainUnit, SpisokUnit;
+  DMUnit, DBDemoMainUnit, SpisokUnit, NirFormUnit;
 
 {$R *.dfm}
 

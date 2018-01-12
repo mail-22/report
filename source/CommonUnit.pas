@@ -90,6 +90,7 @@ IniLocalFile: TIniFile;
   cur_type_task_str :string;
   cur_type_task_i :integer;
 
+  MRU_FiO :string;
 implementation
 
 uses Dialogs
@@ -174,7 +175,7 @@ begin
   cTask[Nir].TypeOfTask := Nir;
   cTask[Nir].strTypeOfTask := 'Õ»–';
 
-
+  MRU_FiO := ExtractFilePath(Application.ExeName)+ 'MRU.FiO.txt';
 end;
 
 procedure TCommon.DataModuleCreate(Sender: TObject);

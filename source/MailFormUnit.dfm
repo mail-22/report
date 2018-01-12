@@ -1,6 +1,6 @@
 inherited MailForm: TMailForm
-  Left = 138
-  Top = 275
+  Left = -153
+  Top = 214
   Width = 1460
   Caption = 'MailForm'
   OnShow = FormShow
@@ -551,9 +551,17 @@ inherited MailForm: TMailForm
               Caption = #1055#1088#1086#1095#1077#1077
               Width = 129
             end>
+          object cxgrdbndclmn_contract_file: TcxGridDBBandedColumn
+            Caption = #1082#1086#1083'-'#1074#1086' '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1093' '#1076#1086#1082#1091#1084#1077#1085#1090#1086#1074
+            DataBinding.FieldName = 'contract_file'
+            Width = 122
+            Position.BandIndex = 0
+            Position.ColIndex = 2
+            Position.RowIndex = 0
+          end
           object cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn
             DataBinding.FieldName = 'id'
-            Width = 33
+            Width = 30
             Position.BandIndex = 0
             Position.ColIndex = 0
             Position.RowIndex = 0
@@ -599,16 +607,16 @@ inherited MailForm: TMailForm
           end
           object cxgrdbndclmncxgrd21ViewColumn1: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Correspondent'
-            Width = 76
+            Width = 65
             Position.BandIndex = 0
-            Position.ColIndex = 5
+            Position.ColIndex = 6
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21ViewColumn2: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Data_In'
-            Width = 95
+            Width = 81
             Position.BandIndex = 0
-            Position.ColIndex = 2
+            Position.ColIndex = 3
             Position.RowIndex = 0
           end
           object cxgrdbndclmncxgrd21ViewColumn3: TcxGridDBBandedColumn
@@ -625,40 +633,37 @@ inherited MailForm: TMailForm
           end
           object cxgrdbndclmncxgrd21ViewColumn5: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Resoluzia'
-            Width = 127
-            Position.BandIndex = 0
-            Position.ColIndex = 3
-            Position.RowIndex = 0
-          end
-          object cxgrdbndclmncxgrd21ViewColumn6: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'mail_Soderganie'
-            Width = 131
+            Width = 109
             Position.BandIndex = 0
             Position.ColIndex = 4
             Position.RowIndex = 0
           end
+          object cxgrdbndclmncxgrd21ViewColumn6: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'mail_Soderganie'
+            Width = 113
+            Position.BandIndex = 0
+            Position.ColIndex = 5
+            Position.RowIndex = 0
+          end
           object cxgrdbndclmncxgrd21ViewColumn7: TcxGridDBBandedColumn
             DataBinding.FieldName = 'mail_Data_In'
-            Width = 127
+            Width = 109
             Position.BandIndex = 0
-            Position.ColIndex = 6
+            Position.ColIndex = 7
             Position.RowIndex = 0
           end
           object cxgrd21ViewColumn1: TcxGridDBBandedColumn
             DataBinding.FieldName = 'basis_ffile'
-            Width = 282
+            Visible = False
+            Width = 242
             Position.BandIndex = 0
-            Position.ColIndex = 7
+            Position.ColIndex = 8
             Position.RowIndex = 0
           end
         end
         object cxgrdlvl21: TcxGridLevel
           Caption = '2'
           GridView = cxgrd21View
-        end
-        object cxgrdlvl22: TcxGridLevel
-          Caption = '1'
-          GridView = cxgrd22View
         end
       end
       object pnl_Navigator1: TPanel

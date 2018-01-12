@@ -55,7 +55,7 @@ inherited FormMain: TFormMain
   object img1: TJvImage [0]
     Left = 0
     Top = 190
-    Width = 792
+    Width = 784
     Height = 158
     Align = alTop
     AutoSize = True
@@ -1666,14 +1666,14 @@ inherited FormMain: TFormMain
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 27
-    Width = 792
+    Width = 784
     Height = 27
     UseSystemFont = False
     ActionManager = actmgr1
     Caption = 'actmmb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -1684,7 +1684,7 @@ inherited FormMain: TFormMain
   object jvstctxt1: TJvStaticText [2]
     Left = 0
     Top = 54
-    Width = 792
+    Width = 784
     Height = 33
     Align = alTop
     Alignment = taCenter
@@ -1708,7 +1708,7 @@ inherited FormMain: TFormMain
   object jvstctxt2: TJvStaticText [3]
     Left = 0
     Top = 87
-    Width = 792
+    Width = 784
     Height = 98
     Align = alTop
     Alignment = taCenter
@@ -1737,7 +1737,7 @@ inherited FormMain: TFormMain
   object jvstctxt3: TJvStaticText [4]
     Left = 0
     Top = 376
-    Width = 792
+    Width = 784
     Height = 48
     Align = alTop
     Alignment = taCenter
@@ -1764,7 +1764,7 @@ inherited FormMain: TFormMain
   object jvstctxt4: TJvStaticText [5]
     Left = 0
     Top = 185
-    Width = 792
+    Width = 784
     Height = 5
     Align = alTop
     Alignment = taCenter
@@ -1788,7 +1788,7 @@ inherited FormMain: TFormMain
   object jvstctxt5: TJvStaticText [6]
     Left = 0
     Top = 348
-    Width = 792
+    Width = 784
     Height = 28
     Align = alTop
     Alignment = taCenter
@@ -1812,19 +1812,19 @@ inherited FormMain: TFormMain
   object acttb1: TActionToolBar [7]
     Left = 0
     Top = 0
-    Width = 792
+    Width = 784
     Height = 27
     ActionManager = actmgr1
     Caption = 'acttb1'
-    ColorMap.HighlightColor = 14410210
+    ColorMap.HighlightColor = clWhite
     ColorMap.BtnSelectedColor = clBtnFace
-    ColorMap.UnusedColor = 14410210
+    ColorMap.UnusedColor = clWhite
     Spacing = 0
   end
   object pnlDep: TPanel [8]
     Left = 0
-    Top = 518
-    Width = 792
+    Top = 507
+    Width = 784
     Height = 35
     Hint = #1074#1099#1073#1086#1088' '#1090#1077#1082#1091#1097#1077#1075#1086' '#1086#1090#1076#1077#1083#1072' | '#1074#1099#1073#1086#1088' '#1090#1077#1082#1091#1097#1077#1075#1086' '#1086#1090#1076#1077#1083#1072
     Align = alBottom
@@ -1857,8 +1857,8 @@ inherited FormMain: TFormMain
   end
   object dxstsbr1: TdxStatusBar [9]
     Left = 0
-    Top = 553
-    Width = 792
+    Top = 542
+    Width = 784
     Height = 20
     Panels = <>
     SimplePanelStyle.Active = True
@@ -1871,8 +1871,8 @@ inherited FormMain: TFormMain
   end
   object stat1: TStatusBar [10]
     Left = 0
-    Top = 499
-    Width = 792
+    Top = 488
+    Width = 784
     Height = 19
     AutoHint = True
     Panels = <>
@@ -1881,8 +1881,8 @@ inherited FormMain: TFormMain
   end
   object jvstsbr1: TJvStatusBar [11]
     Left = 0
-    Top = 480
-    Width = 792
+    Top = 469
+    Width = 784
     Height = 19
     AutoHint = True
     Panels = <>

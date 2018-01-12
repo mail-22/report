@@ -1,7 +1,7 @@
 inherited NirForm: TNirForm
-  Left = 63
-  Top = 186
-  Width = 1456
+  Left = 87
+  Top = 207
+  Width = 1227
   Caption = 'NirForm'
   OnShow = FormShow
   PixelsPerInch = 96
@@ -9,7 +9,7 @@ inherited NirForm: TNirForm
   object dxstsbr1: TdxStatusBar [0]
     Left = 0
     Top = 542
-    Width = 1440
+    Width = 1211
     Height = 20
     Panels = <>
     Font.Charset = DEFAULT_CHARSET
@@ -21,7 +21,7 @@ inherited NirForm: TNirForm
   object actmmb1: TActionMainMenuBar [1]
     Left = 0
     Top = 0
-    Width = 1440
+    Width = 1211
     Height = 26
     UseSystemFont = False
     ActionManager = actmgr1
@@ -41,7 +41,7 @@ inherited NirForm: TNirForm
   object pnlGrid: TPanel [2]
     Left = 0
     Top = 55
-    Width = 1440
+    Width = 1211
     Height = 487
     Align = alClient
     AutoSize = True
@@ -49,7 +49,7 @@ inherited NirForm: TNirForm
     object Label1: TLabel
       Left = 1
       Top = 1
-      Width = 1438
+      Width = 1209
       Height = 13
       Align = alTop
       Alignment = taCenter
@@ -63,14 +63,14 @@ inherited NirForm: TNirForm
     object pnlBBB: TPanel
       Left = 1
       Top = 475
-      Width = 1438
+      Width = 1209
       Height = 11
       Align = alBottom
       TabOrder = 0
       Visible = False
     end
     object cxspltr1: TcxSplitter
-      Left = 1261
+      Left = 1032
       Top = 14
       Width = 8
       Height = 461
@@ -79,7 +79,7 @@ inherited NirForm: TNirForm
       Control = pnlR
     end
     object pnlR: TPanel
-      Left = 1269
+      Left = 1040
       Top = 14
       Width = 170
       Height = 461
@@ -334,7 +334,7 @@ inherited NirForm: TNirForm
     object pnlL: TPanel
       Left = 1
       Top = 14
-      Width = 1260
+      Width = 1031
       Height = 461
       Align = alClient
       Caption = 'pnlL'
@@ -342,7 +342,7 @@ inherited NirForm: TNirForm
       object lbl1: TLabel
         Left = 1
         Top = 1
-        Width = 1258
+        Width = 1029
         Height = 13
         Align = alTop
         Alignment = taCenter
@@ -357,7 +357,7 @@ inherited NirForm: TNirForm
       object cxgrd2: TcxGrid
         Left = 1
         Top = 14
-        Width = 1258
+        Width = 1029
         Height = 415
         Align = alClient
         BevelInner = bvLowered
@@ -541,16 +541,24 @@ inherited NirForm: TNirForm
             end
             item
               Caption = #1053#1048#1056
-              Width = 1292
+              Width = 695
             end
             item
               Caption = #1055#1088#1086#1095#1077#1077
-              Width = 42
+              Width = 67
             end
             item
               Caption = #1042#1099#1087#1086#1083#1085#1077#1085#1080#1077
-              Width = 39
+              Width = 92
             end>
+          object cxgrdbnd_contract_file: TcxGridDBBandedColumn
+            Caption = #1082#1086#1083'-'#1074#1086' '#1089#1086#1087#1088#1086#1074#1086#1076#1080#1090#1077#1083#1100#1085#1099#1093' '#1092#1072#1081#1083#1086#1074
+            DataBinding.FieldName = 'contract_file'
+            Width = 125
+            Position.BandIndex = 1
+            Position.ColIndex = 0
+            Position.RowIndex = 0
+          end
           object cxgrdbndclmncxgrd1DBBandedTableView1id: TcxGridDBBandedColumn
             DataBinding.FieldName = 'id'
             Width = 20
@@ -598,65 +606,70 @@ inherited NirForm: TNirForm
           end
           object cxgrd21Viewnir_zayvka: TcxGridDBBandedColumn
             DataBinding.FieldName = 'nir_zayvka'
-            Width = 85
-            Position.BandIndex = 1
-            Position.ColIndex = 1
-            Position.RowIndex = 0
-          end
-          object cxgrd21Viewnir_zayvka_otpravleno: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'nir_zayvka_otpravleno'
-            Width = 159
+            Width = 76
             Position.BandIndex = 1
             Position.ColIndex = 2
             Position.RowIndex = 0
           end
-          object cxgrd21Viewnir_plan: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'nir_plan'
-            Width = 150
-            Position.BandIndex = 1
-            Position.ColIndex = 0
-            Position.RowIndex = 0
-          end
-          object cxgrd21Viewnir_tz: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'nir_tz'
-            Width = 132
+          object cxgrd21Viewnir_zayvka_otpravleno: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_zayvka_otpravleno'
+            Width = 144
             Position.BandIndex = 1
             Position.ColIndex = 3
             Position.RowIndex = 0
           end
-          object cxgrd21Viewnir_etap_srok: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'nir_etap_srok'
-            Width = 79
+          object cxgrd21Viewnir_plan: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_plan'
+            Width = 136
+            Position.BandIndex = 1
+            Position.ColIndex = 1
+            Position.RowIndex = 0
+          end
+          object cxgrd21Viewnir_tz: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_tz'
+            Visible = False
+            Width = 135
             Position.BandIndex = 1
             Position.ColIndex = 4
             Position.RowIndex = 0
           end
-          object cxgrd21Viewnir_otchet: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'nir_otchet'
-            Width = 158
+          object cxgrd21Viewnir_etap_srok: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_etap_srok'
+            Width = 70
             Position.BandIndex = 1
             Position.ColIndex = 5
             Position.RowIndex = 0
           end
-          object cxgrd21Viewnir_act: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'nir_act'
-            Width = 172
+          object cxgrd21Viewnir_otchet: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_otchet'
+            Visible = False
+            Width = 140
             Position.BandIndex = 1
             Position.ColIndex = 6
             Position.RowIndex = 0
           end
-          object cxgrd21Viewnir_vnedrenie: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'nir_vnedrenie'
-            Width = 167
+          object cxgrd21Viewnir_act: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_act'
+            Visible = False
+            Width = 150
             Position.BandIndex = 1
             Position.ColIndex = 7
             Position.RowIndex = 0
           end
-          object cxgrd21Viewnir_zayvka_file: TcxGridDBBandedColumn
-            DataBinding.FieldName = 'nir_zayvka_file'
-            Width = 190
+          object cxgrd21Viewnir_vnedrenie: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_vnedrenie'
+            Visible = False
+            Width = 148
             Position.BandIndex = 1
             Position.ColIndex = 8
+            Position.RowIndex = 0
+          end
+          object cxgrd21Viewnir_zayvka_file: TcxGridDBBandedColumn
+            DataBinding.FieldName = 'nir_zayvka_file'
+            Visible = False
+            Width = 168
+            Position.BandIndex = 1
+            Position.ColIndex = 9
             Position.RowIndex = 0
           end
         end
@@ -664,15 +677,11 @@ inherited NirForm: TNirForm
           Caption = '2'
           GridView = cxgrd21View
         end
-        object cxgrdlvl22: TcxGridLevel
-          Caption = '1'
-          GridView = cxgrd22View
-        end
       end
       object pnl_Navigator1: TPanel
         Left = 1
         Top = 429
-        Width = 1258
+        Width = 1029
         Height = 31
         Align = alBottom
         BevelInner = bvLowered
@@ -682,7 +691,7 @@ inherited NirForm: TNirForm
         object cxDBNavigator3: TcxDBNavigator
           Left = 259
           Top = 2
-          Width = 992
+          Width = 752
           Height = 23
           Buttons.CustomButtons = <>
           DataSource = DM.dsReport
@@ -744,7 +753,7 @@ inherited NirForm: TNirForm
   object tlb1: TToolBar [4]
     Left = 0
     Top = 26
-    Width = 1440
+    Width = 1211
     Height = 29
     ButtonHeight = 25
     ButtonWidth = 217

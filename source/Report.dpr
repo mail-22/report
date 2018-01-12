@@ -2,6 +2,8 @@ program Report;
 {$WARNINGS OFF}
 {$WARN UNIT_PLATFORM OFF}
 
+{%ToDo 'Report.todo'}
+
 uses
   ExceptionLog,
   Forms,

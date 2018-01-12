@@ -91,7 +91,7 @@ type
     cxdbdtrwcxdbvrtclgrd1contract_execution_note: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1deadline: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1costofwork: TcxDBEditorRow;
-    cxdbdtrwcxdbvrtclgrd1responsible: TcxDBEditorRow;
+    cxdbdtrwcxdbvrtclgrd1_responsible: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1invoice: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1invoice_file: TcxDBEditorRow;
     cxdbdtrwcxdbvrtclgrd1payment_note: TcxDBEditorRow;
@@ -172,6 +172,7 @@ type
     cxgrd1DBBandedTableView1Column11: TcxGridDBBandedColumn;
     cxgrd1DBBandedTableView1Column12: TcxGridDBBandedColumn;
     btnAdd: TButton;
+    cxgrdbndclmncxgrd1_contract_file: TcxGridDBBandedColumn;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
@@ -412,58 +413,6 @@ begin
   end;
 end;
 
-procedure TGridForm.FormCreate(Sender: TObject);
-var tmpStr :string;
-begin
-  inherited;
-{
-DM.tblReport2.FindLast;
-DM.tblReport2.FindFirst;
-DM.tblReport2.FindLast;
-}
-
-// cxgrd1
-  FileName_cxgrdbtblvw1 := ExtractFilePath(Application.ExeName) + '_' + Self.Name
-    + '_' + 'cxgrdbtblvw1' + '.ini';
-  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrdbtblvw1'+ '_';
-  FileName_cxgrdbtblvw1 :=  ChangeFileExt2(tmpStr);
-  cxgrdbtblvw1.RestoreFromIniFile(FileName_cxgrdbtblvw1);
-
-  tmpStr :=  '_' + Self.Name+ '_' + 'cxdbvrtclgrd1'+ '_';
-  FileName_cxdbvrtclgrd1 :=  ChangeFileExt2(tmpStr);
-  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
-
-  //cxgrd1DBBandedTableView1
-  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrd1DBBandedTableView1'+ '_';
-  FileName_cxgrd1DBBandedTableView1 :=  ChangeFileExt2(tmpStr);
-  cxgrd1DBBandedTableView1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
-
-
-  //cxprprtstr1.StorageName := ExtractFilePath(Application.ExeName) + '_' +     Self.Name + '_' + 'cxprprtstr1' + '.ini';
-  tmpStr :=  '_' + Self.Name+ '_' + 'cxprprtstr1'+ '_';
-  FileName_cxprprtstr1 :=  ChangeFileExt2(tmpStr);
-  cxprprtstr1.StorageName := FileName_cxprprtstr1 ;
-  cxprprtstr1.RestoreFrom;
-  cxprprtstr1.Active := true; cxprprtstr1.RestoreFrom;
-
-  //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
-  MRUEdit_responsible := ExtractFilePath(Application.ExeName) +Self.Name+ '.' + 'MRUEdit.responsible.txt';
-
-  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible'+ '_';
-  MRUEdit_responsible :=  ChangeFileExt2(tmpStr);
-
-  //MRUEdit_responsible := ExtractFilePath(Application.ExeName) + 'MRUEdit.responsible.txt';
-  if FileExists(MRUEdit_responsible) then
-  begin // проверить на наличие свойства MRU у поля !!!
-    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.LoadFromFile(MRUEdit_responsible);
-    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.Text; //
-  end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
-  else
-  begin
-  end;
-
-end;
-
 procedure TGridForm.FormClose(Sender: TObject; var Action: TCloseAction);
   begin
   inherited;
@@ -559,6 +508,72 @@ begin
     Application.CreateForm(TGridForm, GridForm);
   GridForm.ShowModal;
 end;
+
+
+procedure TGridForm.FormCreate(Sender: TObject);
+var
+  tmpStr :string;
+  cxGridDBBandedColumn:TcxGridDBBandedColumn;
+  cxDBEditorRow:TcxDBEditorRow;
+begin
+  inherited;
+{
+DM.tblReport2.FindLast;
+DM.tblReport2.FindFirst;
+DM.tblReport2.FindLast;
+}
+
+// cxgrd1
+  FileName_cxgrdbtblvw1 := ExtractFilePath(Application.ExeName) + '_' + Self.Name
+    + '_' + 'cxgrdbtblvw1' + '.ini';
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrdbtblvw1'+ '_';
+  FileName_cxgrdbtblvw1 :=  ChangeFileExt2(tmpStr);
+  cxgrdbtblvw1.RestoreFromIniFile(FileName_cxgrdbtblvw1);
+
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxdbvrtclgrd1'+ '_';
+  FileName_cxdbvrtclgrd1 :=  ChangeFileExt2(tmpStr);
+  cxdbvrtclgrd1.RestoreFromIniFile(FileName_cxdbvrtclgrd1);
+
+  //cxgrd1DBBandedTableView1
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrd1DBBandedTableView1'+ '_';
+  FileName_cxgrd1DBBandedTableView1 :=  ChangeFileExt2(tmpStr);
+  cxgrd1DBBandedTableView1.RestoreFromIniFile(FileName_cxgrd1DBBandedTableView1);
+
+
+  //cxprprtstr1.StorageName := ExtractFilePath(Application.ExeName) + '_' +     Self.Name + '_' + 'cxprprtstr1' + '.ini';
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxprprtstr1'+ '_';
+  FileName_cxprprtstr1 :=  ChangeFileExt2(tmpStr);
+  cxprprtstr1.StorageName := FileName_cxprprtstr1 ;
+  cxprprtstr1.RestoreFrom;
+  cxprprtstr1.Active := true; cxprprtstr1.RestoreFrom;
+
+  //MRU     cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible
+  MRUEdit_responsible := ExtractFilePath(Application.ExeName) +Self.Name+ '.' + 'MRUEdit.responsible.txt';
+
+  tmpStr :=  '_' + Self.Name+ '_' + 'cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible'+ '_';
+  MRUEdit_responsible :=  ChangeFileExt2(tmpStr);
+  MRUEdit_responsible :=  MRU_FiO;
+
+  //MRUEdit_responsible := ExtractFilePath(Application.ExeName) + 'MRUEdit.responsible.txt';
+  if FileExists(MRUEdit_responsible) then
+  begin // проверить на наличие свойства MRU у поля !!!
+    TcxMRUEditProperties(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible.Properties).LookupItems.LoadFromFile(MRUEdit_responsible);
+    TcxMRUEditProperties(TcxGridDBBandedColumn(cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible).Properties).LookupItems.Text; //
+    cxGridDBBandedColumn := cxgrdbndclmncxgrd1DBBandedTableView1_MRU_responsible;
+    TcxMRUEditProperties(cxGridDBBandedColumn.Properties).LookupItems.LoadFromFile(MRUEdit_responsible);
+
+{ TODO : cxDBEditorRow }
+    //TcxDBEditorRow
+{
+    cxDBEditorRow := cxdbdtrwcxdbvrtclgrd1_responsible;
+    TcxMRUEditProperties(cxDBEditorRow.Properties).LookupItems.LoadFromFile(MRUEdit_responsible);
+    TcxMRUEditProperties(TcxDBEditorRow(cxdbdtrwcxdbvrtclgrd1_responsible.Properties)).LookupItems.LoadFromFile(MRUEdit_responsible);
+}
+  end // cxdbdtrwcxdbvrtclgrd1DBEditorRow3
+  else
+  begin
+  end;
+end; //FormCreate
 
 end.
 

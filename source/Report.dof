@@ -105,13 +105,17 @@ HostApplication=
 Launcher=
 UseLauncher=0
 DebugCWD=
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
 [Version Info]
 IncludeVerInfo=1
 AutoIncBuild=1
 MajorVer=0
 MinorVer=0
 Release=0
-Build=14
+Build=45
 Debug=1
 PreRelease=1
 Special=1
@@ -122,7 +126,7 @@ CodePage=1251
 [Version Info Keys]
 CompanyName=
 FileDescription=
-FileVersion=0.0.0.14
+FileVersion=0.0.0.45
 InternalName=
 LegalCopyright=
 LegalTrademarks=
@@ -131,6 +135,19 @@ ProductName=
 ProductVersion=1.0.0.0
 SpecialBuild=
 PrivateBuild=
+LastCompiledTime=25.01.2018 16:28:57
+[Excluded Packages]
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPSLnksD7.bpl=ExpressPrinting System ReportLinks (Standard) by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPScxCommonD7.bpl=ExpressPrinting System Cross Platform Library by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPScxExtCommonD7.bpl=ExpressPrinting System Extended Cross Platform Library by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPScxVGridLnkD7.bpl=ExpressPrinting System ReportLink for ExpressVerticalGrid by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPSTeeChartD7.bpl=ExpressPrinting System ReportLink for TeeChart by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPSDBTeeChartD7.bpl=ExpressPrinting System ReportLink for DBTeeChart by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPSdxFCLnkD7.bpl=ExpressPrinting System ReportLinks for ExpressFlowChart by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPSdxOCLnkD7.bpl=ExpressPrinting System ReportLinks for ExpressOrgChart by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPSdxDBOCLnkD7.bpl=ExpressPrinting System ReportLinks for ExpressDBOrgChart by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPSdxDBTVLnkD7.bpl=ExpressPrinting System ReportLink for ExpressDBTree by Developer Express Inc.
+C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dxPScxPCProdD7.bpl=ExpressPrinting System ContainerProducer for ExpressPageControl by Developer Express Inc.
 [Exception Log]
 EurekaLog Version=6101
 Activate=1

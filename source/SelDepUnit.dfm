@@ -80,6 +80,15 @@ inherited SelDepForm: TSelDepForm
       OnClick = btnOpenClick
     end
   end
+  object btn1: TButton [3]
+    Left = 560
+    Top = 376
+    Width = 75
+    Height = 25
+    Caption = 'btn1'
+    TabOrder = 3
+    OnClick = btn1Click
+  end
   inherited jvfrmstrg1: TJvFormStorage
     StoredValues = <
       item

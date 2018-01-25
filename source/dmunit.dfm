@@ -274,24 +274,23 @@ object DM: TDM
       'VALUES'
       
         '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
-        'dline, :basis_N, :basis_ffile, :contract_name, :contract_number,' +
-        ' :contract_file, :costofwork_F, :invoice, :invoice_file, :paymen' +
-        't_note, :payment_date, :performance_of_work_note, :performance_o' +
-        'f_work_file, :performance_of_work_date, :act_acceptance, :act_ac' +
-        'ceptance_file, :contract_execution_note, :dog_Zakazchik, :dog_Pr' +
-        'edmet, :dog_Predmet2, :dog_Napravleniy, :dog_Podpisan, :dog_rekv' +
-        'iz_data, :dog_rekviz_str, :contract_execution_file, :dog_Primech' +
-        ', :dog_basis_data, :dog_basis_str, :emty, :mail_Num_In, :mail_Co' +
-        'rrespondent, :mail_Data_In, :mail_Soderganie, :mail_F, :mail_Isp' +
-        'olnitel, :mail_Resoluzia, :nir_zayvka, :nir_zayvka_file, :nir_za' +
-        'yvka_otpravleno, :nir_plan, :nir_teh_zad, :nir_tz, :nir_etap_sro' +
-        'k, :nir_otchet, :nir_act, :nir_vnedrenie, :`_SchedulerDBStorage_' +
-        'START`, :`_ID`, :ParentID, :Type, :Start, :Finish, :Options, :Ca' +
-        'ption, :RecurrenceIndex, :RecurrenceInfo, :ResourceID, :Location' +
-        ', :Message, :ReminderDate, :ReminderMinutes, :State, :LabelColor' +
-        ', :ActualStart, :ActualFinish, :SyncIDField, :`__SchedulerDBStor' +
-        'age_END`, :Edit_ComputerName, :Edit_LocalUserName, :Edit_IP, :Ed' +
-        'it_Date)')
+        'dline, :basis_N, :basis_ffile, :contract_number, :contract_file,' +
+        ' :costofwork_F, :invoice, :invoice_file, :payment_note, :payment' +
+        '_date, :performance_of_work_note, :performance_of_work_file, :pe' +
+        'rformance_of_work_date, :act_acceptance, :act_acceptance_file, :' +
+        'contract_execution_note, :dog_Zakazchik, :dog_Predmet, :dog_Pred' +
+        'met2, :dog_Napravleniy, :dog_Podpisan, :dog_rekviz_data, :dog_re' +
+        'kviz_str, :contract_execution_file, :dog_Primech, :dog_basis_dat' +
+        'a, :dog_basis_str, :emty, :mail_Num_In, :mail_Correspondent, :ma' +
+        'il_Data_In, :mail_Soderganie, :mail_F, :mail_Ispolnitel, :mail_R' +
+        'esoluzia, :nir_zayvka, :nir_zayvka_file, :nir_zayvka_otpravleno,' +
+        ' :nir_plan, :nir_teh_zad, :nir_tz, :nir_etap_srok, :nir_otchet, ' +
+        ':nir_act, :nir_vnedrenie, :`_SchedulerDBStorage_START`, :`_ID`, ' +
+        ':ParentID, :Type, :Start, :Finish, :Options, :Caption, :Recurren' +
+        'ceIndex, :RecurrenceInfo, :ResourceID, :Location, :Message, :Rem' +
+        'inderDate, :ReminderMinutes, :State, :LabelColor, :ActualStart, ' +
+        ':ActualFinish, :SyncIDField, :`__SchedulerDBStorage_END`, :Edit_' +
+        'ComputerName, :Edit_LocalUserName, :Edit_IP, :Edit_Date)')
     SQLDelete.Strings = (
       'DELETE FROM r1'
       'WHERE'
@@ -736,7 +735,7 @@ object DM: TDM
       'VALUES'
       
         '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
-        'dline, :basis, :basis_N, :basis_ffile, :contract_name, :contract' +
+        'dline, :basis, :basis_N, :basis_ffile, :contract' +
         '_number, :contract_file, :costofwork_F, :invoice, :invoice_file,' +
         ' :payment_note, :payment_date, :performance_of_work_note, :perfo' +
         'rmance_of_work_file, :performance_of_work_date, :act_acceptance,' +

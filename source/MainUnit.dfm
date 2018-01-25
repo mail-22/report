@@ -1,6 +1,6 @@
 inherited FormMain: TFormMain
   Left = 151
-  Top = 184
+  Top = 133
   Caption = #1091#1095#1077#1090' '#1076#1077#1103#1090#1077#1083#1100#1085#1086#1089#1090#1080'   '
   Color = clGradientInactiveCaption
   Icon.Data = {
@@ -2350,5 +2350,76 @@ inherited FormMain: TFormMain
   object jvhnt1: TJvHint
     Left = 736
     Top = 424
+  end
+  object WebUpdate1: TWebUpdate
+    Agent = 'TWebUpdate'
+    Authenticate = waAuto
+    DateFormat = 'dd/mm/yyyy'
+    DateSeparator = '/'
+    ExtractCAB = True
+    Host = 'ftp.gear.host'
+    Logging = True
+    LogFileName = 'WUPDATE.LOG'
+    Password = 'WMhecowPhRtatcGQtckyw3SbkbL0fG98Pbuk7ZwthrjjwvN3nyiBRmcudvxl'
+    PostUpdateInfo.Enabled = False
+    ShowDownloadProgress = True
+    Signature = 'WebUpdate'
+    TempDirectory = '.'
+    TimeFormat = 'hh:nn'
+    TimeSeparator = ':'
+    UpdateType = ftpUpdate
+    UpdateUpdate = wuuSilent
+    URL = 'D:\TEST_UpdateBuilder_To/Project1.INF'
+    UserID = 'test2018\$test2018'
+    UseCRC32 = True
+    UseWinTempDir = False
+    Version = '2.2.0.1'
+    Left = 64
+    Top = 432
+  end
+  object WebUpdateWizard1: TWebUpdateWizard
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Verdana'
+    Font.Style = [fsBold]
+    Language = WebUpdateWizardEnglish1
+    WebUpdate = WebUpdate1
+    Left = 168
+    Top = 432
+  end
+  object WebUpdateWizardEnglish1: TWebUpdateWizardEnglish
+    Welcome = 
+      'Press start to start checking for available application updates ' +
+      '...'
+    StartButton = 'Start'
+    NextButton = 'Next'
+    ExitButton = 'Exit'
+    RestartButton = 'Restart'
+    CancelButton = 'Cancel'
+    FailedDownload = 'Failed to download updates'
+    GetUpdateButton = 'Get update'
+    NewVersionFound = 'New version found'
+    NewVersion = 'New version'
+    NoNewVersionAvail = 'No new version available.'
+    NewVersionAvail = 'New version available.'
+    CurrentVersion = 'Current version'
+    NoFilesFound = 'No files found for update'
+    NoUpdateOnServer = 'no update found on server ...'
+    CannotConnect = 'Could not connect to update server or'
+    WhatsNew = 'What'#39's new'
+    License = 'License agreement'
+    AcceptLicense = 'I accept'
+    NotAcceptLicense = 'I do not accept'
+    ComponentsAvail = 'Available application components'
+    DownloadingFiles = 'Downloading files'
+    CurrentProgress = 'Current file progress'
+    TotalProgress = 'Total file progress'
+    UpdateComplete = 'Update completed ...'
+    RestartInfo = 'Press restart to start the updated application.'
+    WhatsNewPopup = 'View in Notepad'
+    LicensePopup = 'View in Notepad'
+    Left = 300
+    Top = 430
   end
 end

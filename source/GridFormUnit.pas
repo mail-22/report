@@ -173,11 +173,14 @@ type
     cxgrd1DBBandedTableView1Column12: TcxGridDBBandedColumn;
     btnAdd: TButton;
     cxgrdbndclmncxgrd1_contract_file: TcxGridDBBandedColumn;
+    actGroupsExpand: TAction;
+    btnGroupsExpand: TToolButton;
     procedure actOleExecute(Sender: TObject);
     procedure actAddExecute(Sender: TObject);
     procedure actDepExecute(Sender: TObject);
     procedure actEditExecute(Sender: TObject);
     procedure actEmplExecute(Sender: TObject);
+    procedure actGroupsExpandExecute(Sender: TObject);
     procedure actJpgExecute(Sender: TObject);
     procedure actSpisokExecute(Sender: TObject);
     procedure actTunExecute(Sender: TObject);
@@ -509,6 +512,12 @@ begin
   GridForm.ShowModal;
 end;
 
+
+procedure TGridForm.actGroupsExpandExecute(Sender: TObject);
+begin
+  inherited;
+    cxgrd1DBBandedTableView1.DataController.Groups.FullExpand;
+end;
 
 procedure TGridForm.FormCreate(Sender: TObject);
 var

@@ -176,19 +176,17 @@ begin
    if WebUpdate1.NewVersionAvailable then
    begin
      ShowMessage('A new version of this application is available !');
-     WebUpdate1.DoUpdate(true);
+     //WebUpdate1.DoUpdate(true);
    end;
 
    WebUpdate1.Connected;
    WebUpdate1.StartConnection;
    WebUpdate1.GetControlFile;
    WebUpdate1.DoVersionCheck;
-   if WebUpdate1.NewVersionInfo>WebUpdate1.CurVersionInfo
-   then ;
+   if WebUpdate1.NewVersionInfo > WebUpdate1.CurVersionInfo
+   then WebUpdate1.DoUpdate;;
    //WebUpdate1.s
    WebUpdate1.StopConnection;
-   WebUpdate1.DoUpdate;
-
 
    //WebUpdateWizard1.Execute(true);
 end;

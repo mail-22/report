@@ -9,11 +9,11 @@ MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
 DCC = $(ROOT)\bin\dcc32.exe $**
 BRCC = $(ROOT)\bin\brcc32.exe $**
 #------------------------------------------------------------------------------
-PROJECTS = Report.exe
+PROJECTS = NIIPI_LIB.exe
 #------------------------------------------------------------------------------
 default: $(PROJECTS)
 #------------------------------------------------------------------------------
 
-Report.exe: Report.dpr
+NIIPI_LIB.exe: ..\..\NIIPI_LIB\source\NIIPI_LIB.dpr
   $(DCC)
 

@@ -12,7 +12,7 @@ uses
   cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   dxSkinsCore, dxSkinOffice2007Blue, dxSkinsdxStatusBarPainter, dxStatusBar,
   cxContainer, cxEdit, cxTextEdit, ComCtrls, AppEvnts, JvBalloonHint,
-  JvExComCtrls, JvStatusBar, JvHint, WUpdateWiz, WUpdate, WUpdateLanguages;
+  JvExComCtrls, JvStatusBar, JvHint, WUpdateWiz, WUpdate;
 
 type
   TFormMain = class(TBaseForm)
@@ -59,7 +59,6 @@ type
     Action1: TAction;
     WebUpdate1: TWebUpdate;
     WebUpdateWizard1: TWebUpdateWizard;
-    WebUpdateWizardEnglish1: TWebUpdateWizardEnglish;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
@@ -177,7 +176,7 @@ begin
    if WebUpdate1.NewVersionAvailable then
    begin
      ShowMessage('A new version of this application is available !');
-     //WebUpdate1.DoUpdate(true);   // Update !!!
+     WebUpdate1.DoUpdate(true);
    end;
 
    WebUpdate1.Connected;
@@ -188,10 +187,10 @@ begin
    then ;
    //WebUpdate1.s
    WebUpdate1.StopConnection;
-   //WebUpdate1.DoUpdate;
+   WebUpdate1.DoUpdate;
 
 
-   WebUpdateWizard1.Execute(true);
+   //WebUpdateWizard1.Execute(true);
 end;
 
 procedure TFormMain.FormShow(Sender: TObject);

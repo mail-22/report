@@ -12,7 +12,7 @@ uses
   cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   dxSkinsCore, dxSkinOffice2007Blue, dxSkinsdxStatusBarPainter, dxStatusBar,
   cxContainer, cxEdit, cxTextEdit, ComCtrls, AppEvnts, JvBalloonHint,
-  JvExComCtrls, JvStatusBar, JvHint, WUpdateWiz, WUpdate;
+  JvExComCtrls, JvStatusBar, JvHint, WUpdateWiz, WUpdate, WUpdateLanguages;
 
 type
   TFormMain = class(TBaseForm)
@@ -59,6 +59,7 @@ type
     Action1: TAction;
     WebUpdate1: TWebUpdate;
     WebUpdateWizard1: TWebUpdateWizard;
+    WebUpdateWizardEnglish1: TWebUpdateWizardEnglish;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
@@ -187,8 +188,8 @@ begin
    then WebUpdate1.DoUpdate;;
    //WebUpdate1.s
    WebUpdate1.StopConnection;
-
-   //WebUpdateWizard1.Execute(true);
+   WebUpdate1.DoUpdate;
+   WebUpdateWizard1.Execute(true);
 end;
 
 procedure TFormMain.FormShow(Sender: TObject);

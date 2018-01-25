@@ -12,7 +12,7 @@ uses
   cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
   dxSkinsCore, dxSkinOffice2007Blue, dxSkinsdxStatusBarPainter, dxStatusBar,
   cxContainer, cxEdit, cxTextEdit, ComCtrls, AppEvnts, JvBalloonHint,
-  JvExComCtrls, JvStatusBar, JvHint;
+  JvExComCtrls, JvStatusBar, JvHint, WUpdateWiz, WUpdate;
 
 type
   TFormMain = class(TBaseForm)
@@ -57,6 +57,8 @@ type
     act3: TAction;
     actSpisok: TAction;
     Action1: TAction;
+    WebUpdate1: TWebUpdate;
+    WebUpdateWizard1: TWebUpdateWizard;
     procedure AboutExecuteExecute(Sender: TObject);
     procedure act1Execute(Sender: TObject);
     procedure act2Execute(Sender: TObject);
@@ -169,6 +171,26 @@ begin
   end;
   *)
   cxPropertiesStoreMethod(Sender);
+
+   //WebUpdate1.URL := 'D:\TEST_UpdateBuilder_To';
+   if WebUpdate1.NewVersionAvailable then
+   begin
+     ShowMessage('A new version of this application is available !');
+     WebUpdate1.DoUpdate(true);
+   end;
+
+   WebUpdate1.Connected;
+WebUpdate1.StartConnection;
+WebUpdate1.GetControlFile;
+WebUpdate1.DoVersionCheck;
+if WebUpdate1.NewVersionInfo>WebUpdate1.CurVersionInfo
+ then ;
+//WebUpdate1.s
+WebUpdate1.StopConnection;
+WebUpdate1.DoUpdate;
+
+
+   //WebUpdateWizard1.Execute(true);
 end;
 
 procedure TFormMain.FormShow(Sender: TObject);
@@ -367,7 +389,6 @@ begin
   inherited;
   stat1.SimpleText := Application.Hint;
 end;
-
 
 function GetVersion: string;
 var VerInfoSize: DWORD;

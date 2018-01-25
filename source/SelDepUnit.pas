@@ -11,6 +11,7 @@ uses
   cxMaskEdit, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit,
   cxDBExtLookupComboBox, Grids, DBGrids, StdCtrls, cxListBox, cxDBEdit
   , ExtCtrls, cxPropertiesStore  , utility     , CommonUnit, cxClasses
+  , ShellAPI
    ;
 
 type
@@ -26,7 +27,9 @@ type
     openDialog: TOpenDialog;
     edt1: TEdit;
     btnOpen: TButton;
-    procedure btnOpenClick(Sender: TObject); 
+    btn1: TButton;
+    procedure btn1Click(Sender: TObject);
+    procedure btnOpenClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -57,6 +60,17 @@ begin
   if (SelDepForm = nil) then
      Application.CreateForm(TSelDepForm, SelDepForm);
   SelDepForm.ShowModal;
+end;
+
+procedure TSelDepForm.btn1Click(Sender: TObject);
+var  
+strTmp :string;
+NameUDLFile   :string;
+pan:PAnsiChar ;
+begin
+      strTmp:=GetProfileFolder;
+      pan :=  PChar (strTmp);
+ShellExecute(0, 'open', pan, '', '', SW_SHOWNORMAL);
 end;
 
 procedure TSelDepForm.btnOpenClick(Sender: TObject);

@@ -23,9 +23,11 @@ type
     cxprprtstr1: TcxPropertiesStore;
     actXLS: TAction;
     actImport: TAction;
+    actFolder: TAction;
     procedure FormCreate(Sender: TObject);
     procedure acBackExecute(Sender: TObject);
     procedure actConnExecute(Sender: TObject);
+    procedure actFolderExecute(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
   private
@@ -91,6 +93,25 @@ begin
                 + ChangeFileExt(ExtractFileName(Application.ExeName) , '.udl');
       pan :=  PChar (NameUDLFile);
 ShellExecute(0, 'open', pan, '', '', SW_SHOWNORMAL);
+end;
+
+procedure TFormTuning.actFolderExecute(Sender: TObject);
+var
+
+strTmp :string;
+NameUDLFile   :string;
+pan:PAnsiChar ;
+begin
+  inherited;
+      strTmp:=GetProfileFolder;
+      SetCurrentDir(ExtractFilePath(Application.ExeName)  +'\');
+      strTmp := GetCurrentDir;
+      NameUDLFile := ChangeFileExt(Application.ExeName ,'.udl');
+      NameUDLFile := ExtractFilePath(Application.ExeName)  +'\'
+                + ChangeFileExt(ExtractFileName(Application.ExeName) , '.udl');
+      pan :=  PChar (strTmp);
+ShellExecute(0, 'open', pan, '', '', SW_SHOWNORMAL);
+
 end;
 
 procedure TFormTuning.FormClose(Sender: TObject; var Action: TCloseAction);

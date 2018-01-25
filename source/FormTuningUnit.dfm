@@ -1,6 +1,6 @@
 inherited FormTuning: TFormTuning
-  Left = 261
-  Top = 259
+  Left = 640
+  Top = 357
   Width = 640
   Height = 480
   Caption = 'tuning'
@@ -68,6 +68,10 @@ inherited FormTuning: TFormTuning
           end
           item
             Action = actImport
+          end
+          item
+            Action = actFolder
+            Caption = '&actFolder'
           end>
         ActionBar = actmmb1
       end>
@@ -99,6 +103,10 @@ inherited FormTuning: TFormTuning
     end
     object actImport: TAction
       Caption = #1048#1084#1087#1086#1088#1090' '#1076#1072#1085#1085#1099#1093
+    end
+    object actFolder: TAction
+      Caption = 'actFolder'
+      OnExecute = actFolderExecute
     end
   end
   object actlst1: TActionList

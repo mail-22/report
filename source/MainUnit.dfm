@@ -2354,6 +2354,7 @@ inherited FormMain: TFormMain
   object WebUpdate1: TWebUpdate
     Agent = 'TWebUpdate'
     Authenticate = waAuto
+    CertCheck = ccDisable
     DateFormat = 'dd/mm/yyyy'
     DateSeparator = '/'
     ExtractCAB = True
@@ -2368,7 +2369,7 @@ inherited FormMain: TFormMain
     TimeFormat = 'hh:nn'
     TimeSeparator = ':'
     UpdateType = ftpUpdate
-    URL = 'ftp.gear.host\Project1.INF'
+    URL = 'ftp://test2018%255C%2524test2018@ftp.gear.host/Project1.INF'
     UserID = 'test2018\$test2018'
     UseCRC32 = True
     UseWinTempDir = False

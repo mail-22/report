@@ -42,8 +42,8 @@ uses
   DBDemoMainUnit in 'DBDemoMainUnit.pas' {DBDemoMainForm},
   DemoBasicMain in 'DemoBasicMain.pas' {DemoBasicMainForm},
   IPHelper in 'IPHelper.pas',
-  IPHLPAPI in 'IPHLPAPI.pas',
-  Unit3 in '..\..\WebUpdate\Simple\Unit3.pas' {Form3};
+  IPHLPAPI in 'IPHLPAPI.pas'
+  ;
 
 {$R *.res}
 

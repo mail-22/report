@@ -4,7 +4,7 @@ localversion=Report.exe
 [files]
 count=1
 [file1]
-url=D:\TEST_UpdateBuilder_To/Report.CAB
+url=ftp://test2018%255C%2524test2018@ftp.gear.host/REPORT/REPORT.CAB
 localversion=Report.exe
 newversion=1.1.0.0
 [application]

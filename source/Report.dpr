@@ -42,8 +42,8 @@ uses
   DBDemoMainUnit in 'DBDemoMainUnit.pas' {DBDemoMainForm},
   DemoBasicMain in 'DemoBasicMain.pas' {DemoBasicMainForm},
   IPHelper in 'IPHelper.pas',
-  IPHLPAPI in 'IPHLPAPI.pas'
-  ;
+  IPHLPAPI in 'IPHLPAPI.pas',
+  WebUpdateUnit in 'WebUpdateUnit.pas' {WebUpdateForm};
 
 {$R *.res}
 
@@ -52,9 +52,8 @@ begin
 
   Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TCommon, Common);
-  Application.CreateForm(TDM, DM);
-  //Application.CreateForm(TForm3, Form3);
-  //Application.CreateForm(TDemoBasicMainForm, DemoBasicMainForm);
+  Application.CreateForm(TDM, DM);     
+
   Application.Run;
 end.
 

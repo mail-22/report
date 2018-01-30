@@ -109,7 +109,7 @@ implementation
 uses
     FormTuningUnit,  CommonUnit,
    ABOUT, utility, WordUnit,  AddBildUnit, GridFormUnit, MailFormUnit, SelDepUnit, EditForm2Unit, EditEmplFormUnit,
-  DMUnit, DBDemoMainUnit, SpisokUnit, NirFormUnit;
+  DMUnit, DBDemoMainUnit, SpisokUnit, NirFormUnit, WebUpdateUnit;
 
 {$R *.dfm}
 
@@ -172,26 +172,7 @@ begin
   end;
   *)
   cxPropertiesStoreMethod(Sender);
-
-   //WebUpdate1.URL := 'D:\TEST_UpdateBuilder_To';
-   if WebUpdate1.NewVersionAvailable then
-   begin
-     //ShowMessage('A new version of this application is available !');
-     //WebUpdate1.DoUpdate(true);
-   end;
-
-   WebUpdate1.Connected;
-   WebUpdate1.StartConnection;
-   WebUpdate1.GetControlFile;   // ???
-   //WebUpdate1.DoVersionCheck;
-   if WebUpdate1.NewVersionInfo > WebUpdate1.CurVersionInfo
-   then WebUpdate1.DoUpdate;;
-   //WebUpdate1.s
-   WebUpdate1.StopConnection;
-   WebUpdate1.DoUpdate;
-
-   //WebUpdateWizard1.Execute(true);
-end;
+end; //FormCreate
 
 procedure TFormMain.FormShow(Sender: TObject);
 var

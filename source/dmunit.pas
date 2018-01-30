@@ -271,7 +271,8 @@ implementation
 
 
 uses
-  CommonUnit, SelDepUnit, JclSysInfo, IPHelper, IPHLPAPI, WinSock;
+  CommonUnit, SelDepUnit, JclSysInfo, IPHelper, IPHLPAPI, WinSock, 
+  WebUpdateUnit;
 
 {$R *.dfm}
 
@@ -286,6 +287,8 @@ end;
 procedure TDM.DataModuleCreate(Sender: TObject);
 var sMyDocAppPath: string;
 begin
+  WebUpdateForm_Show;
+
  // ADConnection1.Params.Text:='DSN=dbtemp'+#13#10+'User_Name=Admin' + 'Database=C:\Nir2015_FireDAC\Monitoring\db1.mdb';
  // ADConnection1.DriverName:='MSACC';
 
@@ -325,7 +328,7 @@ end;
 
 procedure TDM.SetConnection;
 var
-  strTmp: string; //ovTmp: OleVariant;
+  //strTmp: string; //ovTmp: OleVariant;
   ConnectionString: string;
   Section, Ident, Default: string;
   i: integer;
@@ -340,155 +343,38 @@ var
   IniFile: TIniFile; //CommonUnit
   IniFileName: string; //CommonUnit
   tmpB: Boolean;
+  PathToBD: string; //
 begin
   IniFileName := ChangeFileExt(Forms.Application.ExeName, '.ini');
   IniFile := TIniFile.Create(IniFileName);
 
-
   UniConnection1.Disconnect;
-  strTmp := ExtractFilePath(Application.ExeName) + 'r1.mdb';
-
-/// <author>.</author>
-  strTmp:=IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp);
-  strConnection_Set(IniFile.ReadString('ConnectionString', 'ConnectionString', strTmp) );
-  if ( FileExists(strTmp)) then  begin
-     strConnection_Set(strTmp);
+// сначала пытаемся подключится к бд по пути из ini
+  PathToBD:=IniFile.ReadString('ConnectionString', 'ConnectionString', PathToBD);
+  //strConnection_Set(IniFile.ReadString('ConnectionString', 'ConnectionString', PathToBD) );
+  if ( FileExists(PathToBD)) then  begin
+     strConnection_Set(PathToBD);
   end
-  else begin
-     strTmp := ExtractFilePath(Application.ExeName) + 'r1.mdb';
-     if ( FileExists(strTmp)) then  begin
-        strConnection_Set(strTmp);
+  else begin    // gопытаемся дключится к БД лежащей в паке рядом с EXE 
+     PathToBD := ExtractFilePath(Application.ExeName) + 'r1.mdb';
+     if ( FileExists(PathToBD)) then  begin
+        strConnection_Set(PathToBD);
      end
      else begin
             Application.MessageBox('Не определена строка ConnectionString: ', PAnsiChar(strConnection_Get), MB_OK +
               MB_ICONWARNING + MB_TOPMOST);
-              {
-            //MessageDlg('Не определена строка ConnectionString', mtWarning, [mbOK], 0);
-            //jvdyncontrolengine defaultdyncontrolengine not defined
-            // https://forums.embarcadero.com/thread.jspa?threadID=227492
-            }                                 
           end
   end;
-  Data_Source :=  ExtractFilePath(strTmp);
+  //Data_Source :=  ExtractFilePath(strTmp);
 
 {
   strConnection   := '\\SRV-NIIPIIT\r\bin\r1.mdb';
   strConnection   := '\\192.168.80.10\r\bin\r1.mdb';
   strConnection   := 'C:\github\report\report\bin\r1.mdb';
 }
-
   UniConnection1.Database := strConnection_Get;
   tmpB := UniConnection1.Connected;
   UniConnection1.Connect;
-
-exit;
-  TestADO();
-  //GetDBPath;
-  Data_Source := DBFileName;
-
-
-
-
-//////////////////////////////////////////////////////////
-  Section := 'ModeConnectionStringMake';
-  Ident := 'UDL';
-  i := ord(csUDL); //?
-  //MethodMakeConnectionString:=csSelfMakeConnectionString;//csUDL;
-  iDefault := ord(csUDL); //TMethodMakeConnectionString=(csSelfMakeConnectionString,csUDL,csINI
-  //iDefault := utility.INI(IniFile, 'TEST', 'TEST', 2);//IniFile.UpdateFile;  IniFile.UpdateFile;
-  i := IniFile.ReadInteger(Section, Ident, iDefault);
-  IniFile.WriteInteger(Section, Ident, i);
-  MethodMakeConnectionString := TMethodMakeConnectionString(i); //csUDL;
-{
-  iINI := DataIniFile.ReadInteger(Section, 'INI', 0);
-  DataIniFile.WriteInteger(Section, 'INI', iINI);
-                                       }
-  case MethodMakeConnectionString of
-    csINI:
-      begin
-        ConnectionString := '';
-        Section := 'ConnectionString';
-        Ident := 'ConnectionString'; Default := '';
-        ConnectionString := IniFile.ReadString(Section, Ident, Default);
-        ConnectionString := 'Provider=Microsoft.Jet.OLEDB.4.0;';
-          //Password="";User ID=Admin;';
-        ConnectionString := ConnectionString + 'Password="";'; //--
-        ConnectionString := ConnectionString + 'User ID=' + User_ID + ';';
-        ConnectionString := ConnectionString + 'Data Source=' + Data_Source + ';';
-        ConnectionString := ConnectionString +
-          'Mode=Share Deny None;Extended Properties="";Jet OLEDB:System database="";Jet OLEDB:Registry Path="";';
-        ConnectionString := ConnectionString + 'Jet OLEDB:Database Password=' +
-          Word2 + ';'; //--
-        ConnectionString := ConnectionString +
-          'Jet OLEDB:Engine Type=5;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;';
-        ConnectionString := ConnectionString +
-          'Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Password="";Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Don''t Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;';
-        ConnectionString := ConnectionString + 'Jet OLEDB:SFP=False';
-      end; //csINI:
-    csUDL:
-      begin
-      //'FILE NAME=C:\Program Files\Common Files\SYSTEM\ole db\Data Links\Data.udl'
-        SetCurrentDir(ExtractFilePath(Application.ExeName) + '\');
-        strTmp := GetCurrentDir;
-        NameUDLFile := ChangeFileExt(Application.ExeName, '.udl');
-        NameUDLFile := ExtractFilePath(Application.ExeName) + '\'
-          + ChangeFileExt(ExtractFileName(Application.ExeName), '.udl');
-
-        ConnectionString := ''; //ExtractFilePath //ExtractFileDir
-        ConnectionString := 'FILE NAME=' + NameUDLFile;
-      end; //csUDL
-    csSelfMakeConnectionString:
-      begin
-        ConnectionString := 'Provider=Microsoft.Jet.OLEDB.4.0;';
-        ConnectionString := ConnectionString + 'Password="";'; //--
-        ConnectionString := ConnectionString + 'User ID=Admin;'; //'User ID=' + User_ID + ';';
-        ConnectionString := ConnectionString + 'Data Source=' + Data_Source + ';';
-        ConnectionString := ConnectionString +
-          'Mode=Share Deny None;Extended Properties="";Jet OLEDB:System database="";Jet OLEDB:Registry Path="";';
-        ConnectionString := ConnectionString + 'Jet OLEDB:Database Password=' +
-          Word2 + ';'; //--
-        ConnectionString := ConnectionString +
-          'Jet OLEDB:Engine Type=5;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;';
-        ConnectionString := ConnectionString +
-          'Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Password="";Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Don''t Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;';
-        ConnectionString := ConnectionString + 'Jet OLEDB:SFP=False';
-      //DBFileName := utility.INI(IniFile, 'ConnectionString', 'DBFileName', DBFileName);
-
-        ConnectionString := 'Provider=Microsoft.Jet.OLEDB.4.0;';
-        ConnectionString := ConnectionString + 'User ID=Admin;';
-        ConnectionString := ConnectionString + 'Data Source=' + Data_Source + ';';
-        ConnectionString := ConnectionString + 'JPersist Security Info=False';
-
-
-        IniFile.WriteString('ConnectionString', 'DBFileName', DBFileName);
-      end; //csSelfMakeConnectionString:
-  else
-    MessageDlg('Не определен метод формирования ConnectionString', mtWarning, [mbOK], 0);
-  end; //case
-//
-{
-  ConnectionString := '';
-  ConnectionString :=
-    'Provider=Microsoft.Jet.OLEDB.4.0;Password="";User ID=Admin;';
-  ConnectionString := ConnectionString +
-    'Data Source=' + Data_Source + ';';
-  ConnectionString := ConnectionString +
-    'Mode=Share Deny None;Extended Properties="";Jet OLEDB:System database="";Jet OLEDB:Registry Path="";Jet OLEDB:Database Password="";Jet OLEDB:Engine Type=5;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Global Partial Bulk Ops=2;';
-  ConnectionString := ConnectionString +
-    'Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Database Password="";Jet OLEDB:Create System Database=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Don''t Copy Locale on Compact=False;Jet OLEDB:Compact Without Replica Repair=False;';
-  ConnectionString := ConnectionString + 'Jet OLEDB:SFP=False';
-}
-{
-  ADOConnection1.Close;
-  ADOConnection1.ConnectionString := ConnectionString;
-  try
-    ADOConnection1.Open; //ADOConnection1.mode;
-  except
-    MessageDlg('ADOConnection: проблема соединения с базой данных' + #13 +
-      'ADOConnection...' + #13
-      + ADOConnection1.ConnectionString, mtError, [mbOk], 0); //Abort;
-  end;
-}
 end;
 //SetConnection
 

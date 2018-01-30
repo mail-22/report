@@ -115,7 +115,7 @@ AutoIncBuild=1
 MajorVer=0
 MinorVer=0
 Release=0
-Build=48
+Build=51
 Debug=1
 PreRelease=1
 Special=1
@@ -126,7 +126,7 @@ CodePage=1251
 [Version Info Keys]
 CompanyName=
 FileDescription=
-FileVersion=0.0.0.48
+FileVersion=0.0.0.51
 InternalName=
 LegalCopyright=
 LegalTrademarks=
@@ -136,6 +136,8 @@ ProductVersion=1.0.0.0
 SpecialBuild=
 PrivateBuild=
 [Excluded Packages]
+c:\program files (x86)\borland\delphi7\Bin\dcldss70.bpl=Borland Decision Cube Components
+c:\program files (x86)\borland\delphi7\Bin\dcltqr70.bpl=TeeChart for QuickReport Components
 C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPSLnksD7.bpl=ExpressPrinting System ReportLinks (Standard) by Developer Express Inc.
 C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPScxCommonD7.bpl=ExpressPrinting System Cross Platform Library by Developer Express Inc.
 C:\Program Files (x86)\Developer Express Inc\Library\Delphi7\dcldxPScxExtCommonD7.bpl=ExpressPrinting System Extended Cross Platform Library by Developer Express Inc.

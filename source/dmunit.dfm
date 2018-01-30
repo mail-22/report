@@ -735,23 +735,23 @@ object DM: TDM
       'VALUES'
       
         '  (:type_task_i, :type_task_str, :department, :responsible, :dea' +
-        'dline, :basis, :basis_N, :basis_ffile, :contract' +
-        '_number, :contract_file, :costofwork_F, :invoice, :invoice_file,' +
-        ' :payment_note, :payment_date, :performance_of_work_note, :perfo' +
-        'rmance_of_work_file, :performance_of_work_date, :act_acceptance,' +
-        ' :act_acceptance_file, :contract_execution_note, :contract_execu' +
-        'tion_file, :dog_Primech, :emty, :mail_Num_In, :mail_Corresponden' +
-        't, :mail_Data_In, :mail_Soderganie, :mail_F, :mail_Ispolnitel, :' +
-        'mail_Resoluzia, :nir_zayvka, :nir_zayvka_file, :nir_zayvka_otpra' +
-        'vleno, :nir_plan, :nir_teh_zad, :nir_tz, :nir_etap_srok, :nir_ot' +
-        'chet, :nir_act, :nir_vnedrenie, :dog_Zakazchik, :dog_Predmet, :d' +
-        'og_Predmet2, :dog_Napravleniy, :dog_Podpisan, :dog_rekviz_data, ' +
-        ':dog_rekviz_str, :`_SchedulerDBStorage_START`, :`_ID`, :ParentID' +
-        ', :Type, :Start, :Finish, :Options, :Caption, :RecurrenceIndex, ' +
-        ':RecurrenceInfo, :ResourceID, :Location, :Message, :ReminderDate' +
-        ', :ReminderMinutes, :State, :LabelColor, :ActualStart, :ActualFi' +
-        'nish, :SyncIDField, :`__SchedulerDBStorage_END`, :dog_basis_data' +
-        ', :dog_basis_str)')
+        'dline, :basis, :basis_N, :basis_ffile, :contract_number, :contra' +
+        'ct_file, :costofwork_F, :invoice, :invoice_file, :payment_note, ' +
+        ':payment_date, :performance_of_work_note, :performance_of_work_f' +
+        'ile, :performance_of_work_date, :act_acceptance, :act_acceptance' +
+        '_file, :contract_execution_note, :contract_execution_file, :dog_' +
+        'Primech, :emty, :mail_Num_In, :mail_Correspondent, :mail_Data_In' +
+        ', :mail_Soderganie, :mail_F, :mail_Ispolnitel, :mail_Resoluzia, ' +
+        ':nir_zayvka, :nir_zayvka_file, :nir_zayvka_otpravleno, :nir_plan' +
+        ', :nir_teh_zad, :nir_tz, :nir_etap_srok, :nir_otchet, :nir_act, ' +
+        ':nir_vnedrenie, :dog_Zakazchik, :dog_Predmet, :dog_Predmet2, :do' +
+        'g_Napravleniy, :dog_Podpisan, :dog_rekviz_data, :dog_rekviz_str,' +
+        ' :`_SchedulerDBStorage_START`, :`_ID`, :ParentID, :Type, :Start,' +
+        ' :Finish, :Options, :Caption, :RecurrenceIndex, :RecurrenceInfo,' +
+        ' :ResourceID, :Location, :Message, :ReminderDate, :ReminderMinut' +
+        'es, :State, :LabelColor, :ActualStart, :ActualFinish, :SyncIDFie' +
+        'ld, :`__SchedulerDBStorage_END`, :dog_basis_data, :dog_basis_str' +
+        ')')
     SQLDelete.Strings = (
       'DELETE FROM r1'
       'WHERE'

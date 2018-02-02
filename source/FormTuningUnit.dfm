@@ -1,6 +1,6 @@
 inherited FormTuning: TFormTuning
-  Left = 640
-  Top = 357
+  Left = 297
+  Top = 255
   Width = 640
   Height = 480
   Caption = 'tuning'
@@ -27,8 +27,8 @@ inherited FormTuning: TFormTuning
     Spacing = 0
   end
   object btn1: TButton [1]
-    Left = 13
-    Top = 78
+    Left = 5
+    Top = 142
     Width = 171
     Height = 33
     Caption = #1048#1084#1087#1086#1088#1090' '#1076#1072#1085#1085#1099#1093

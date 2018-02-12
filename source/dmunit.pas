@@ -272,7 +272,7 @@ implementation
 
 uses
   CommonUnit, SelDepUnit, JclSysInfo, IPHelper, IPHLPAPI, WinSock, 
-  WebUpdateUnit;
+  WebUpdateUnit, LogicUnit, NetProcsUnit;
 
 {$R *.dfm}
 
@@ -982,6 +982,10 @@ var
   Date :TDateTime;
   Year,Month,Day:Word;
 begin
+{ TODO -oSVS -cMAC : GetMACAddressTest; }
+  GetMACAddressTest;
+
+
 // strngfldReport2ComputerName
   strTmp:=JvJCLUtils.GetComputerName;
   DataSet.edit;  //DataSet.State;

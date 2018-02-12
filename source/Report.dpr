@@ -24,7 +24,7 @@ uses
   EditFormUnit in 'EditFormUnit.pas' {EditForm},
   EditForm2Unit in 'EditForm2Unit.pas' {EditForm2},
   SelDepUnit in 'SelDepUnit.pas' {SelDepForm},
-  LogicUnit in 'LogicUnit.pas' {LogicForm},
+  NetProcsUnit in 'NetProcsUnit.pas' {NetProcsForm},
   EditGridJpgFormUnit in 'EditGridJpgFormUnit.pas' {EditGridJpgForm},
   EditGridOleFormUnit in 'EditGridOleFormUnit.pas' {EditGridJOleForm},
   DBOleContainer in 'DBOleContainer.pas',
@@ -43,7 +43,8 @@ uses
   DemoBasicMain in 'DemoBasicMain.pas' {DemoBasicMainForm},
   IPHelper in 'IPHelper.pas',
   IPHLPAPI in 'IPHLPAPI.pas',
-  WebUpdateUnit in 'WebUpdateUnit.pas' {WebUpdateForm};
+  WebUpdateUnit in 'WebUpdateUnit.pas' {WebUpdateForm},
+  Nb30 in 'Nb30.pas';
 
 {$R *.res}
 
@@ -52,8 +53,7 @@ begin
 
   Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TCommon, Common);
-  Application.CreateForm(TDM, DM);     
-
+  Application.CreateForm(TDM, DM);
   Application.Run;
 end.
 

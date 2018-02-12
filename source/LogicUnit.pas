@@ -14,19 +14,21 @@ type
   public
     { Public declarations }
   end;
+ 
 
 var
   LogicForm: TLogicForm;
 
 implementation
 
-uses EditFormUnit;
+
 
 {$R *.dfm}
 
 
 
-
+ 
+end.
 
 
 

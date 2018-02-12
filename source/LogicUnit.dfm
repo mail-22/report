@@ -1,7 +1,7 @@
 inherited LogicForm: TLogicForm
-  Left = 760
-  Top = 332
+  Left = 324
+  Top = 273
   Caption = 'LogicForm'
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 17
 end

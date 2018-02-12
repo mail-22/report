@@ -30,6 +30,7 @@ implementation
 
 procedure TWebUpdateForm.Work();
 begin
+exit;
 {   //WebUpdate1.URL := 'D:\TEST_UpdateBuilder_To';     .
    if WebUpdate1.NewVersionAvailable then
    begin
